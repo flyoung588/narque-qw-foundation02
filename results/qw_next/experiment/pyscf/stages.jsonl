@@ -1,0 +1,13 @@
+{"stage": "START", "pid": 11, "UTC": "2026-10-21T05:26:52.177063+00:00", "mode": "inherited", "import_only": false, "data_limit_before": [-1, -1]}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.177923+00:00", "module": "numpy", "position": "before"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.274953+00:00", "module": "numpy", "position": "after"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.275417+00:00", "module": "scipy", "position": "before"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.354345+00:00", "module": "scipy", "position": "after"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.354843+00:00", "module": "pyscf", "position": "before"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.759570+00:00", "module": "pyscf", "position": "after"}
+{"stage": "IMPORT", "pid": 11, "UTC": "2026-10-21T05:26:52.858010+00:00"}
+{"stage": "MOLECULE_BUILD", "pid": 11, "UTC": "2026-10-21T05:26:52.885857+00:00"}
+{"stage": "SCF_START", "pid": 11, "UTC": "2026-10-21T05:26:52.888914+00:00"}
+{"stage": "SCF_END", "pid": 11, "UTC": "2026-10-21T05:26:52.939113+00:00"}
+{"stage": "GRADIENT_START", "pid": 11, "UTC": "2026-10-21T05:26:52.939521+00:00"}
+{"stage": "GRADIENT_END", "pid": 11, "UTC": "2026-10-21T05:26:53.049719+00:00"}

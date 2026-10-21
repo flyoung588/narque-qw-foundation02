@@ -1,0 +1,7 @@
+{"stage": "START", "pid": 9, "UTC": "2026-10-21T05:26:51.408324+00:00", "mode": "inherited", "import_only": true, "data_limit_before": [-1, -1]}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.409145+00:00", "module": "numpy", "position": "before"}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.507492+00:00", "module": "numpy", "position": "after"}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.508006+00:00", "module": "scipy", "position": "before"}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.587777+00:00", "module": "scipy", "position": "after"}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.588314+00:00", "module": "pyscf", "position": "before"}
+{"stage": "IMPORT", "pid": 9, "UTC": "2026-10-21T05:26:51.985098+00:00", "module": "pyscf", "position": "after"}

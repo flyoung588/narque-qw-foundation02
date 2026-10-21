@@ -1,0 +1,33 @@
+{
+  "old_energy_Eh": -99.95952604001582,
+  "new_energy_Eh": -99.98739744034897,
+  "delta_energy_Eh": -0.027871400333154384,
+  "frozen_tangent_prediction_Eh": -0.029134532107894358,
+  "nonlinear_remainder_Eh": 0.0012631317747399742,
+  "old_forces_Eh_per_bohr": [
+    [
+      7.199255799914488e-17,
+      8.635813578342831e-17,
+      0.15417330442314903
+    ],
+    [
+      -7.199255799914543e-17,
+      -8.635813578343046e-17,
+      -0.15417330442314747
+    ]
+  ],
+  "new_forces_Eh_per_bohr": [
+    [
+      -1.3556404780583182e-16,
+      -1.3288822928145715e-17,
+      0.13763571677689956
+    ],
+    [
+      1.3556404780583564e-16,
+      1.328882292814795e-17,
+      -0.1376357167768969
+    ]
+  ],
+  "prediction_supported": true,
+  "meaning": "same composition/charge/spin/RHF/cc-pVDZ, not discovery or stability; actual AI analysis follows after this numeric receipt"
+}

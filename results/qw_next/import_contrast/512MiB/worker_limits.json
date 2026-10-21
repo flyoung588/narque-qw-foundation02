@@ -1,0 +1,8 @@
+{
+  "RLIMIT_DATA": [
+    536870912,
+    536870912
+  ],
+  "outer_memory_limit": "1073741824",
+  "only_probe_may_add_DATA_limit": true
+}

@@ -1,0 +1,287 @@
+{
+  "receipt_type": "QW_NEXT_EXECUTION_RECEIPT",
+  "runtime_recovery": "PHYSICALLY_CALCULATED_SUCCESS_ONCE_WITH_INDEPENDENT_WORKER_AND1GiB_CGROUP",
+  "historical_crash_root_cause": "UNRESOLVED_BY_LIMITED_IMPORT_CONTROL",
+  "controls": {
+    "rows": [
+      {
+        "mode": "512MiB",
+        "returncode": 0,
+        "success_file": true
+      },
+      {
+        "mode": "inherited",
+        "returncode": 0,
+        "success_file": true
+      }
+    ],
+    "science_calculations": 0,
+    "scope": "import-only cap contrast in one environment; no SCF/molecule/gradient repeated. Even a contrasting outcome only identifies this import-stage causal association, not every historical crash.",
+    "cause_claim": "PENDING_AI_REVIEW_OF_ACTUAL_OUTCOMES"
+  },
+  "W3_candidate_verdict": "W3_BOUNDED_ADAPTIVE_EXPLORATION_PROVEN",
+  "W3_scientific_adjudication": "CANDIDATE_SUBMITTED_BCHAT_REVIEW_PENDING_NOT_CANONICAL_PROMOTION",
+  "W2_FEDERATED_ENGINE_STATUS": "INCOMPLETE_NO_SECOND_ENGINE_RETRY",
+  "ORIGINAL_DISCOVERY_STATUS": "NOT_TESTED",
+  "actual_comparison": {
+    "old_energy_Eh": -99.95952604001582,
+    "new_energy_Eh": -99.98739744034897,
+    "delta_energy_Eh": -0.027871400333154384,
+    "frozen_tangent_prediction_Eh": -0.029134532107894358,
+    "nonlinear_remainder_Eh": 0.0012631317747399742,
+    "old_forces_Eh_per_bohr": [
+      [
+        7.199255799914488e-17,
+        8.635813578342831e-17,
+        0.15417330442314903
+      ],
+      [
+        -7.199255799914543e-17,
+        -8.635813578343046e-17,
+        -0.15417330442314747
+      ]
+    ],
+    "new_forces_Eh_per_bohr": [
+      [
+        -1.3556404780583182e-16,
+        -1.3288822928145715e-17,
+        0.13763571677689956
+      ],
+      [
+        1.3556404780583564e-16,
+        1.328882292814795e-17,
+        -0.1376357167768969
+      ]
+    ],
+    "prediction_supported": true,
+    "meaning": "same composition/charge/spin/RHF/cc-pVDZ, not discovery or stability; actual AI analysis follows after this numeric receipt"
+  },
+  "AI_feedback_after_second_observation": {
+    "authored_after_actual_run_UTC": "2026-10-21T05:29:55.051035+00:00",
+    "observation_used_sha256": "4523a45dd5d03cc2700d45ef5a31dd07346eb3d4bbc12cdcc9576b8fe862a9e7",
+    "hypothesis_assessment": "Frozen primary prediction supported: same-composition RHF/cc-pVDZ BO total energy decreases fromR1.20 to1.10A by0.027871400333154384Eh; SCF converged, numerical gradients are analytic, not a guessed energy table.",
+    "forces": "H force remains inward, magnitude decreases from0.15417330442314747 to0.1376357167768969Eh/bohr (7.9279100631 to7.0775131153eV/A), about10.7266percent weaker. Thus1.10 is not a stationary point in this restricted bond coordinate.",
+    "tangent_limit": "Old local tangent predicted-0.029134532107894358Eh; actual finite step gives-0.027871400333154384, discrepancy+0.0012631317747399742Eh (4.3355percent of tangent magnitude). The first derivative predicted direction but is not the finite-displacement potential curve. No formal separation of curvature/basis/numerical errors is claimed.",
+    "actual_next_decision": "STOP this ordinary HF branch; no third geometry. The direction remains locally inward, but another nearby point would mainly refine a known bond coordinate rather than broaden world capability. Return to the already selected generic periodic-cell constructor and future resource/convergence admission, without executing it now.",
+    "root_cause_judgment": "Both512MiB and inherited import-only probes passed in the same current environment. This does NOT reproduce an import-stage cap failure and does NOT establishRLIMIT_DATA as historical root cause. The science path with no new processDATA cap completed all stages under the unchanged1GiB cgroup, proving this bounded recovery configuration works once. A controlled SCF/gradient run under512MiB was NOT performed. Stop diagnosis here per bounded mandate.",
+    "new_question_not_executed": "Which physically comparable neutral periodic-cell constructions can the generic module represent with tractable convergence/resource bounds? No material or geometry selected for calculation.",
+    "claim_ceiling": "B-Work AI-authored, human-authorized bounded feedback loop with two actual observations across tranches; not fully unattended science, global stability, material synthesis, a new mechanism or original physics."
+  },
+  "seven_required_stage_categories_recorded": [
+    "START",
+    "IMPORT",
+    "MOLECULE_BUILD",
+    "SCF_START",
+    "SCF_END",
+    "GRADIENT_START",
+    "GRADIENT_END"
+  ],
+  "numeric_QA": {
+    "source14_hashes": "MATCH",
+    "frozen_request_sha256": "abe459d3157bfb12954979c21d8210a1eabd65aa218b50659e7933a49d5b3f95",
+    "raw_recovery_files": 27,
+    "SCF_converged": true,
+    "same_physical_model": true,
+    "force_unit_conversion": "PASS",
+    "energy_difference_alternate_summation_Eh": -0.027871400333154384,
+    "source_predates_actual_new_run": "source commit checkout binds unchanged frozen request; local selected_at and earlier observation provenance retained",
+    "separate_solver_process": "PASS",
+    "all_actual_stage_timestamps": [
+      {
+        "stage": "START",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.177063+00:00",
+        "mode": "inherited",
+        "import_only": false,
+        "data_limit_before": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.177923+00:00",
+        "module": "numpy",
+        "position": "before"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.274953+00:00",
+        "module": "numpy",
+        "position": "after"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.275417+00:00",
+        "module": "scipy",
+        "position": "before"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.354345+00:00",
+        "module": "scipy",
+        "position": "after"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.354843+00:00",
+        "module": "pyscf",
+        "position": "before"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.759570+00:00",
+        "module": "pyscf",
+        "position": "after"
+      },
+      {
+        "stage": "IMPORT",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.858010+00:00"
+      },
+      {
+        "stage": "MOLECULE_BUILD",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.885857+00:00"
+      },
+      {
+        "stage": "SCF_START",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.888914+00:00"
+      },
+      {
+        "stage": "SCF_END",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.939113+00:00"
+      },
+      {
+        "stage": "GRADIENT_START",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:52.939521+00:00"
+      },
+      {
+        "stage": "GRADIENT_END",
+        "pid": 11,
+        "UTC": "2026-10-21T05:26:53.049719+00:00"
+      }
+    ]
+  },
+  "resources": {
+    "wall_seconds": 2.8746621250000146,
+    "cgroup_end": {
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "memory.current": "19808256",
+      "memory.peak": "86020096",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.oom.group": "0",
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 2957692\nuser_usec 2620499\nsystem_usec 337192\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 30\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    "self_rusage": [
+      0.342419,
+      0.033234,
+      26828,
+      0,
+      0,
+      0,
+      6232,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      235,
+      72
+    ],
+    "children_rusage": [
+      2.279527,
+      0.300984,
+      137176,
+      0,
+      0,
+      0,
+      50295,
+      0,
+      0,
+      0,
+      264,
+      0,
+      0,
+      0,
+      72,
+      100
+    ]
+  },
+  "environment": {
+    "python": "3.12.15",
+    "versions": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "pyscf": "2.8.0",
+      "ase": "3.29.0",
+      "jsonschema": "4.25.1"
+    },
+    "sha": "cb029bab4c7ad3ef6b13179f3b1865ef40c7b25c",
+    "process_DATA_policy": "inherited/no newly imposed cap in science child; total1GiB cgroup remains",
+    "Psi4": "NOT_INSTALLED_OR_REQUESTED"
+  },
+  "limits": {
+    "RLIMIT_DATA": [
+      -1,
+      -1
+    ],
+    "outer_memory_limit": "1073741824",
+    "only_probe_may_add_DATA_limit": true
+  },
+  "admission": {
+    "cgroup": {
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "memory.current": "12410880",
+      "memory.peak": "12886016",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.oom.group": "0",
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 201015\nuser_usec 179013\nsystem_usec 22001\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    "network": [
+      "lo"
+    ],
+    "affinity": [
+      0
+    ]
+  },
+  "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39549550986",
+  "source_commit": "cb029bab4c7ad3ef6b13179f3b1865ef40c7b25c",
+  "job_seconds": 34.0,
+  "periodic_module": {
+    "IMPLEMENTED": [
+      "WorldSpec cell extension",
+      "bounded affine strain",
+      "ASE/PySCFPBC adapter source",
+      "resource/domain/ref-comparison guards"
+    ],
+    "TESTED": "14 prior stdlib semantic/logging checks, not backend physical accuracy",
+    "PHYSICALLY_CALCULATED": false,
+    "BLOCKED": "periodic scientific admission/convergence/independent reference not tested",
+    "NOT_STARTED": [
+      "periodic material computation",
+      "periodic forces/stress",
+      "materials discovery",
+      "third HF experiment"
+    ]
+  },
+  "capability_map_preparation_snapshot": "qw_next/CAPABILITY_MAP.json remains frozen preparation history; current status here supersedes its then-blockedW3 only as an execution-evidence candidate, not a formal scientific adjudication",
+  "no_extra_science": true,
+  "history": "old failed runs/STOP/W1/Core01-03 bytes and qualifications unchanged",
+  "execution_next": "STOP_NO_NEXT_STAGE"
+}

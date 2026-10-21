@@ -1,0 +1,17 @@
+{
+  "rows": [
+    {
+      "mode": "512MiB",
+      "returncode": 0,
+      "success_file": true
+    },
+    {
+      "mode": "inherited",
+      "returncode": 0,
+      "success_file": true
+    }
+  ],
+  "science_calculations": 0,
+  "scope": "import-only cap contrast in one environment; no SCF/molecule/gradient repeated. Even a contrasting outcome only identifies this import-stage causal association, not every historical crash.",
+  "cause_claim": "PENDING_AI_REVIEW_OF_ACTUAL_OUTCOMES"
+}

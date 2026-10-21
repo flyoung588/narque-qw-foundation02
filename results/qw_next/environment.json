@@ -1,0 +1,13 @@
+{
+  "python": "3.12.15",
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pyscf": "2.8.0",
+    "ase": "3.29.0",
+    "jsonschema": "4.25.1"
+  },
+  "sha": "cb029bab4c7ad3ef6b13179f3b1865ef40c7b25c",
+  "process_DATA_policy": "inherited/no newly imposed cap in science child; total1GiB cgroup remains",
+  "Psi4": "NOT_INSTALLED_OR_REQUESTED"
+}
