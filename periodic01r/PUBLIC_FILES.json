@@ -1,0 +1,18 @@
+{
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-periodic01r",
+  "base": "21fd95b3d26895d5b72b43e89734a234fbdaf131",
+  "files": {
+    ".github/workflows/foundation02.yml": "b77d733b1bae57758b33ad200e45489590115c7aa0b1d9c4c70bbec1fcda3e2a",
+    "periodic01/host.py": "cdcd6be420f4a2e0b82f1d8f5da839cff51261b7470bbcbdf1a83edf898d8fc7",
+    "qw_next/periodic_world.py": "66013d6a5243c5ac07ba622b19bd38d1907b3e4be37a446f9fbf5d7eec4b75b0",
+    "qw_next/periodic_evidence.py": "b5c358b9eb468bc4b435e15078b6d47098fdf324f77747ebea0fe04ca767096f",
+    "periodic01r/test_repair.py": "98dd054758b724e02590338afd6ab6ce3606b4dfc73796aac07f4e94b7e3016e",
+    "periodic01r/RESOURCE_AND_API_AUDIT.json": "21794649877b48b3184cde982de8a64af94175aad4f56f167941326c8da9da07",
+    "periodic01r/CAPABILITY_MAP.json": "5bccb81c285462304355ef3a16e370f37a1d94f58bc0297cb9e4d3b3e5f922f1"
+  },
+  "frozen_input_byte_SHA256": "91f250b999ae35a6c930595820022607c19e9b8eef7213349775da6789e20373",
+  "public_manifest_excluded_from_own_hash": true,
+  "reviewed_runtime_results": "Only this recovery inputs/construction/stages/observation-or-failure/resources/version/logs; review individually before publication; no old logs overwritten",
+  "request": "One new manual15min standard ubuntu-24.04 Job,1CPU/1thread/1GiB/0extraSwap/science-container-no-network/0purchases/no-rerun; frozen baseFCCNe only; noHF/P3"
+}

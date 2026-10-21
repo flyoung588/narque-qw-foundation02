@@ -1,4 +1,4 @@
-name: QW-PERIODIC01 one bounded periodic observation
+name: QW-PERIODIC01R one bounded recovery observation
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: qw-periodic01-single
+  group: qw-periodic01r-single
   cancel-in-progress: false
 jobs:
   experiment:
@@ -28,4 +28,4 @@ jobs:
         run: python3 periodic01/host.py
       - name: Preserve partial or complete evidence
         if: always()
-        run: python3 cloud/export_logs.py "$RUNNER_TEMP/periodic01-results"
+        run: python3 cloud/export_logs.py "$RUNNER_TEMP/periodic01r-results"

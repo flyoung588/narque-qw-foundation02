@@ -47,6 +47,9 @@ def compatible_cell_energy(a,b):
  return sa['physics']==sb['physics'] and [x['element'] for x in sa['matter']['atoms']]==[x['element'] for x in sb['matter']['atoms']] and a['observation']['energy_zero']==b['observation']['energy_zero']
 def solve_cell(spec,out):
  meta=validate_cell(spec)
+ from qw_next.periodic_evidence import stage,plain,cell_evidence,resource_preflight
+ out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
+ stage(out,'WORLD_SPEC_VALIDATED',spec=spec,validation=meta)
  # Actual scientific execution remains bounded even if invoked outside its CLI.
  import os
  cg=pathlib.Path('/sys/fs/cgroup')
@@ -63,12 +66,33 @@ def solve_cell(spec,out):
  lib.num_threads(1);m=spec['matter'];out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
  atoms=Atoms([a['element'] for a in m['atoms']],positions=[a['xyz_angstrom'] for a in m['atoms']],cell=m['cell_angstrom'],pbc=True)
  if len(neighbor_list('d',atoms,.35,self_interaction=False)):raise ValueError('PHYSICALLY_INVALID: periodic nucleus separation<.35A')
+ # Enumerate periodic neighbors within one shortest lattice-vector radius.
+ ii,dist=neighbor_list('id',atoms,min(atoms.cell.lengths())*1.01,self_interaction=False)
+ near=[]
+ for i in range(len(atoms)):
+  ds=dist[ii==i];r=float(ds.min()) if len(ds) else None
+  near.append({'atom':i,'distance_A':r,'count':int(np.sum(np.isclose(ds,r,atol=1e-9,rtol=0))) if r is not None else 0})
+ stage(out,'ASE_PERIODIC_ATOMS_CONSTRUCTED',symbols=atoms.get_chemical_symbols(),positions_A=plain(atoms.positions),cell_A=plain(atoms.cell.array),volume_A3=float(atoms.get_volume()),pbc=plain(atoms.pbc),neighbors=near)
  cell=gto.Cell();cell.atom=[(a['element'],a['xyz_angstrom']) for a in m['atoms']];cell.a=m['cell_angstrom'];cell.unit='Angstrom';cell.dimension=3;cell.charge=0;cell.spin=0;cell.basis='cc-pvdz';cell.precision=1e-6;cell.max_memory=400;cell.verbose=4;cell.output=str(out/'pbc.log');cell.build()
  if cell.nao_nr()>80:raise ValueError('OUT_OF_MODEL_DOMAIN: AO count>80, no computation')
- save(out/'construction.json',{'spec':spec,'ASE':{'symbols':atoms.get_chemical_symbols(),'positions_A':atoms.positions.tolist(),'cell_A':atoms.cell.array.tolist(),'pbc':atoms.pbc.tolist(),'volume_A3':atoms.get_volume()},'PySCF_Cell':{'a_bohr':cell.a.tolist(),'atom_coords_bohr':cell.atom_coords().tolist(),'nelectron':cell.nelectron,'spin':cell.spin,'dimension':cell.dimension,'AO_count':cell.nao_nr(),'mesh':cell.mesh.tolist(),'precision':cell.precision,'max_memory_MB_advisory':cell.max_memory},'resource_warning':'GDF intermediate storage is not bounded by AO matrix size; outer cgroup is authoritative'})
+ stage(out,'PYSCF_CELL_BUILT',lattice_vectors_Bohr=plain(cell.lattice_vectors()),atom_coords_Bohr=plain(cell.atom_coords(unit='Bohr')),nelectron=cell.nelectron,AO_count=cell.nao_nr())
+ from pyscf.lib.parameters import BOHR
+ evidence=cell_evidence(spec,atoms,cell,near,BOHR)
+ save(out/'construction.json',evidence);stage(out,'CONSTRUCTION_EVIDENCE_SAVED',path='construction.json')
  mf=dft.RKS(cell,kpt=np.zeros(3)).density_fit(auxbasis='weigend');mf.xc='PBE';mf.grids=BeckeGrids(cell);mf.grids.level=1;mf.conv_tol=1e-8;mf.max_cycle=80
+ resource_preflight(cell,mf,out)
+ stage(out,'GDF_INITIALIZATION_STARTED')
+ mf.with_df.build()
+ stage(out,'GDF_INITIALIZATION_FINISHED',aux_AO_count=mf.with_df.auxcell.nao_nr())
+ mf.grids.build()
+ stage(out,'PERIODIC_SCF_STARTED',XC=mf.xc,kpt=plain(mf.kpt),Becke_level=mf.grids.level,Becke_points=len(mf.grids.weights),conv_tol=mf.conv_tol,max_cycle=mf.max_cycle)
+ def iteration(env):
+  stage(out,'SCF_ITERATION_'+str(env.get('cycle',-1)),cycle=int(env.get('cycle',-1)),energy_Eh=float(env['e_tot']))
+ mf.callback=iteration
  energy=float(mf.kernel());obs={'engine':'PySCF-PBC','engine_version':pyscf.__version__,'ASE_version':ase.__version__,'ASE_Atoms_constructed':True,'method':'Gamma-only RKS/PBE','basis':'cc-pvdz all-electron','density_fitting':'GDF weigend auxiliary basis','integration':'Becke level1, NOT convergence certified','kmesh':[1,1,1],'cell_precision':cell.precision,'AO_count':cell.nao_nr(),'energy_Eh_per_cell':energy,'energy_unit':'Eh/cell','energy_zero':'neutral3D periodic all-electron BO/PBE total per primitive input cell with Ewald convention; NOT molecular HF absolute reference','SCF_converged':bool(mf.converged),'forces':None,'forces_status':'NOT_IMPLEMENTED','stress_status':'NOT_IMPLEMENTED','basis_kmesh_grid_convergence':'NOT_TESTED','physical_precision':'NOT_CERTIFIED','construction':meta,'scope':'periodic scalar ground-state density/energy only, not atomistic dynamics or full many-body wavefunction'}
- save(out/'raw_observation.json',obs)
+ stage(out,'PERIODIC_SCF_FINISHED',converged=bool(mf.converged),finite_energy=math.isfinite(energy),energy_Eh=energy if math.isfinite(energy) else None)
+ if not math.isfinite(energy):raise RuntimeError('NUMERICAL_NONFINITE_ENERGY')
+ save(out/'raw_observation.json',obs);stage(out,'OBSERVATION_SAVED',converged=bool(mf.converged),path='raw_observation.json')
  return {'status':'CALCULATED' if mf.converged and math.isfinite(energy) else 'UNVERIFIED','spec':spec,'observation':obs}
 def route_world(spec,out):
  t=time.monotonic()

@@ -1,5 +1,5 @@
 import json,os,pathlib,subprocess,traceback
-out=pathlib.Path(os.environ['RUNNER_TEMP'])/'periodic01-results';out.mkdir(exist_ok=True);cid=None
+out=pathlib.Path(os.environ['RUNNER_TEMP'])/'periodic01r-results';out.mkdir(exist_ok=True);cid=None
 try:
  cpu=min(os.sched_getaffinity(0))
  cid=subprocess.check_output(['docker','create','--network','none','--memory','1g','--memory-swap','1g','--cpus','1','--cpuset-cpus',str(cpu),'--pids-limit','64','--cap-drop','ALL','--security-opt','no-new-privileges','--read-only','--user',f'{os.getuid()}:{os.getgid()}','--tmpfs','/tmp:rw,nosuid,size=512m','--mount',f'type=bind,src={out},dst=/out','-e','GITHUB_SHA='+os.environ['GITHUB_SHA'],'periodic01:once'],text=True).strip()
