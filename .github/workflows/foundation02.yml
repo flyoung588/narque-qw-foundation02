@@ -1,0 +1,31 @@
+name: Foundation02 bounded round manually authorized
+on:
+  workflow_dispatch:
+    inputs:
+      round:
+        type: choice
+        options: ['1', '2']
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: foundation02-single
+  cancel-in-progress: false
+jobs:
+  experiment:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Build environment without persistent cache
+        run: timeout --kill-after=5s 200s docker build --pull --no-cache -f cloud/Dockerfile -t foundation02:once .
+      - name: Run one bounded observation round
+        env:
+          ROUND: ${{ inputs.round }}
+        run: python3 cloud/host.py "$ROUND"
+      - name: Preserve partial or complete evidence
+        if: always()
+        run: python3 cloud/export_logs.py "$RUNNER_TEMP/foundation02-results"

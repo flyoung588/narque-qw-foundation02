@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Foundation02 compatible engine-selector extension",
+  "type": "object",
+  "required": [
+    "version",
+    "object_id",
+    "epistemic_mode",
+    "matter",
+    "physics"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "QW-WORLDSPEC-0.1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "epistemic_mode": {
+      "enum": [
+        "GROUNDED",
+        "EXTRAPOLATIVE",
+        "MODEL_CHALLENGE"
+      ]
+    },
+    "matter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "atoms",
+        "charge",
+        "spin_2S",
+        "periodic"
+      ],
+      "properties": {
+        "type": {
+          "const": "molecule"
+        },
+        "atoms": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "element",
+              "xyz_angstrom"
+            ],
+            "properties": {
+              "element": {
+                "enum": [
+                  "B",
+                  "Be",
+                  "C",
+                  "F",
+                  "H",
+                  "He",
+                  "Li",
+                  "N",
+                  "Ne",
+                  "O"
+                ]
+              },
+              "xyz_angstrom": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "bonds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "i",
+              "j",
+              "order"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "i": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "j": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "order": {
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  1.5
+                ]
+              }
+            }
+          }
+        },
+        "charge": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "spin_2S": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "periodic": {
+          "const": false
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "smiles": {
+          "type": "string",
+          "maxLength": 250
+        }
+      }
+    },
+    "physics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "engine",
+        "method",
+        "observables"
+      ],
+      "properties": {
+        "engine": {
+          "enum": [
+            "rdkit",
+            "pyscf",
+            "ase-pyscf",
+            "psi4"
+          ]
+        },
+        "method": {
+          "enum": [
+            "MMFF94",
+            "UFF",
+            "RHF",
+            "UHF",
+            "RKS",
+            "UKS"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "xc": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "observables": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "energy",
+              "forces"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "const": "single_point"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

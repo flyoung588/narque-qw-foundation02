@@ -1,0 +1,13 @@
+# FOUNDATION-02 bounded engine federation / adaptive exploration
+
+Status: source implementation only, no live second-engine or adaptive physics run yet.
+
+WorldSpec is inherited from Foundation01. The minimal extension adds `psi4` as an engine selector. Chemistry, charge, spin, element/size bounds, units and model validation use the original contract. `WorldSpec.schema.json` is retained as the original reference; `WorldSpec.foundation02.schema.json` is its explicit engine-enum extension, not a parallel matter protocol.
+
+`router.run(spec,out)` chooses real PySCF or Psi4 adapters. Same-theory comparison restricts geometry/composition/charge/spin/basis/method and energy reference. Neither named basis nor agreement alone certifies physical precision. Raw contractions are saved for review; normalization conventions may differ. Conventional HF, spherical cc-pVDZ, no density fitting in the final calculation, no core potential, no relativistic/nuclear dynamics. Psi4 `pk` is explicit rather than default DF. Gradients remain in the input frame (`no_com`, `no_reorient`, `c1`).
+
+`explorer.py request1.json /out` executes only the selected first question, not a future decision. A second request must be authored by the current AI after reading the actual first observation. Its `prior_observation`, hash-bound `decision.analysis_after_observation`, `changed_because`, `prediction`, `worldspec` and `action` preserve that link. No model provider calls or API purchases occur inside the container. Hash checks alone are not proof of adaptive intelligence; the actual reasoning must be reviewed. No request2 is supplied before feedback.
+
+Cloud proposal: at most two manual Jobs, one per actual round, each 7min including installation/cleanup (14min total), one CPU/thread, science cgroup1GiB/zero swap/no network, no automatic rerun. Round2 is omitted if round1 fails or an evidence-based stop is chosen. Standard Ubuntu preparation runs outside science container. No new costs, cache, artifacts or Packages. Installation of Psi41.9.1+Python3.11 is untested in this environment; failure must be preserved, no automatic alternative engine/paid escalation. Original W1 Python3.12 environment and frozen evidence remain unchanged. Base image is version-tagged, not yet digest-locked; actual image ID and installed dependency list must be captured on the Runner.
+
+Only stdlib synthetic tests may run locally on the Mac: `python3 -B -m unittest -v test_software`. They do not import or certify physical engines. Real execution requires new explicit GitHub repository/file/two-round authorization. No W2/W3 PASS, independent numerical validation, stability, novel material or new physics is asserted from prepared code.
