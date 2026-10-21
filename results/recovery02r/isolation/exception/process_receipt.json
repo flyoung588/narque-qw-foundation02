@@ -1,0 +1,19 @@
+{
+  "parent_pid": 1,
+  "solver_pid": 11,
+  "exit_code": 3,
+  "signal": null,
+  "timed_out": false,
+  "reason": "NONZERO_EXIT",
+  "wall_seconds": 0.16653021000000479,
+  "cgroup_before": {
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "memory.oom.group": "0\n"
+  },
+  "cgroup_after": {
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "memory.oom.group": "0\n"
+  },
+  "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+  "synthetic": true
+}

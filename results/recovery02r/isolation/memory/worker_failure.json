@@ -1,0 +1,6 @@
+{
+  "type": "MemoryError",
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/app/recovery02r/solver_worker.py\", line 14, in <module>\n    resource.setrlimit(resource.RLIMIT_AS,(96*1024**2,96*1024**2));bytearray(256*1024**2)\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^\nMemoryError\n",
+  "synthetic": true
+}

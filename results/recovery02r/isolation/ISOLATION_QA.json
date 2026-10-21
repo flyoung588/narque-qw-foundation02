@@ -1,0 +1,108 @@
+{
+  "status": "ENGINE_FAILURE_ISOLATION_PROVEN",
+  "scope": "Actual child SIGSEGV/SIGKILL/timeout/Python exception; parent continued and synthetic completed record hash unchanged. Memory-limit result separately classified, no physical or whole-container OOM guarantee.",
+  "parent_pid": 1,
+  "completed_result_sha256": "6119be111a2084db7064e2f8ce4dc5e951156e071b39da353e4ade1163f44c89",
+  "faults": {
+    "segv": {
+      "parent_pid": 1,
+      "solver_pid": 8,
+      "exit_code": -11,
+      "signal": "SIGSEGV",
+      "timed_out": false,
+      "reason": "NATIVE_SIGNAL_SIGSEGV",
+      "wall_seconds": 0.3165518139999932,
+      "cgroup_before": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "cgroup_after": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+      "synthetic": true
+    },
+    "kill": {
+      "parent_pid": 1,
+      "solver_pid": 9,
+      "exit_code": -9,
+      "signal": "SIGKILL",
+      "timed_out": false,
+      "reason": "NATIVE_SIGNAL_SIGKILL",
+      "wall_seconds": 0.16530916499999648,
+      "cgroup_before": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "cgroup_after": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+      "synthetic": true
+    },
+    "timeout": {
+      "parent_pid": 1,
+      "solver_pid": 10,
+      "exit_code": -9,
+      "signal": "SIGKILL",
+      "timed_out": true,
+      "reason": "TIMEOUT",
+      "wall_seconds": 0.30543245900000215,
+      "cgroup_before": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "cgroup_after": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+      "synthetic": true
+    },
+    "exception": {
+      "parent_pid": 1,
+      "solver_pid": 11,
+      "exit_code": 3,
+      "signal": null,
+      "timed_out": false,
+      "reason": "NONZERO_EXIT",
+      "wall_seconds": 0.16653021000000479,
+      "cgroup_before": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "cgroup_after": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+      "synthetic": true
+    },
+    "memory": {
+      "parent_pid": 1,
+      "solver_pid": 12,
+      "exit_code": 3,
+      "signal": null,
+      "timed_out": false,
+      "reason": "WORKER_MEMORY_ALLOCATION_FAILED",
+      "wall_seconds": 0.165935814000008,
+      "cgroup_before": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "cgroup_after": {
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "memory.oom.group": "0\n"
+      },
+      "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+      "synthetic": true
+    }
+  },
+  "physical_calculations": 0,
+  "memory_limit_test": "MEMORY_ERROR_ISOLATED",
+  "whole_container_OOM": "NOT_TESTED",
+  "parent_survived": true,
+  "continued_after_fault": true
+}

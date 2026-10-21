@@ -1,0 +1,5 @@
+{
+  "type": "AssertionError",
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/app/recovery02r/cloud_run.py\", line 16, in <module>\n    request=json.loads(pathlib.Path('/app/recovery02r/request.json').read_text());result=execute(request,out/'experiment');assert result.get('status')!='UNVERIFIED'\n                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

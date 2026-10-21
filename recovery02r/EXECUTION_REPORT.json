@@ -1,0 +1,242 @@
+{
+  "receipt_type": "QW_FOUNDATION02R_EXECUTION_RECEIPT",
+  "ENGINE_FAILURE_ISOLATION_STATUS": "ENGINE_FAILURE_ISOLATION_PROVEN_WITHIN_TESTED_PROCESS_SCOPE",
+  "W2_FEDERATED_ENGINE_STATUS": "INCOMPLETE_PSI4_NOT_RETRIED",
+  "W3_ADAPTIVE_EXPLORATION_STATUS": "UNVERIFIED_SECOND_CALCULATION_FAILED_NO_SECOND_PHYSICAL_OBSERVATION",
+  "ORIGINAL_DISCOVERY_STATUS": "NOT_TESTED",
+  "AI_after_actual_run_analysis": {
+    "actual_read": "archived first HF observation, SHA and frozen after-observation AI decision verified unchanged",
+    "prediction": "energy should decrease from1.20A to1.10A; tangent estimate is not physical data",
+    "old_energy_Eh": -99.95952604001582,
+    "requested_new_R_Angstrom": 1.1,
+    "actual_new_energy_Eh": null,
+    "actual_delta_energy_Eh": null,
+    "actual_new_forces_Eh_per_bohr": null,
+    "SCF_convergence": "UNKNOWN_NO_SAVED_OBSERVATION",
+    "finite_step_prediction_status": "NOT_TESTED_NO_NEW_PHYSICAL_OBSERVATION",
+    "root_cause": "UNKNOWN. Native solver process receivedSIGSEGV; logs do not locate import/integral/SCF phase.",
+    "known_constraints": "outercgroupOOM/oom_kill0, peak92053504bytes; not an outer1GiB OOM according to events. This does not exclude RLIMIT_DATA/malloc/native-library failure.",
+    "suspected_contributor_not_proven": "New Linux worker RLIMIT_DATA512MiB differs from previously successful nonisolated run; may interfere with native allocation/mappings. No controlled removal/retry performed, so not a demonstrated cause.",
+    "actual_decision": "STOP after this authorized one attempt. Do not repair/retry or convert the frozen prediction into an observed energy reduction.",
+    "W2": "Psi4 not requested; previous native failure qualification unchanged",
+    "W3": "AI evidence-linked new request exists and was actually attempted, but no second energy/force, so bounded adaptive physical closure NOT_PROVEN",
+    "engineering": "Actual parent received native child signal and saved world_return/process_receipt/resources; final Job failure is intentional fail-closed AssertionError, not native death of the world parent.",
+    "next_missing_capability": "Check per-child resource compatibility and native startup in a separately authorized repair; not started."
+  },
+  "actual_process_failure": {
+    "parent_pid": 1,
+    "solver_pid": 14,
+    "exit_code": -11,
+    "signal": "SIGSEGV",
+    "timed_out": false,
+    "reason": "NATIVE_SIGNAL_SIGSEGV",
+    "wall_seconds": 1.8711861879999958,
+    "cgroup_before": {
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "memory.oom.group": "0\n"
+    },
+    "cgroup_after": {
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "memory.oom.group": "0\n"
+    },
+    "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+    "synthetic": false
+  },
+  "engineering_QA": {
+    "status": "ENGINE_FAILURE_ISOLATION_PROVEN",
+    "scope": "Actual child SIGSEGV/SIGKILL/timeout/Python exception; parent continued and synthetic completed record hash unchanged. Memory-limit result separately classified, no physical or whole-container OOM guarantee.",
+    "parent_pid": 1,
+    "completed_result_sha256": "6119be111a2084db7064e2f8ce4dc5e951156e071b39da353e4ade1163f44c89",
+    "faults": {
+      "segv": {
+        "parent_pid": 1,
+        "solver_pid": 8,
+        "exit_code": -11,
+        "signal": "SIGSEGV",
+        "timed_out": false,
+        "reason": "NATIVE_SIGNAL_SIGSEGV",
+        "wall_seconds": 0.3165518139999932,
+        "cgroup_before": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "cgroup_after": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+        "synthetic": true
+      },
+      "kill": {
+        "parent_pid": 1,
+        "solver_pid": 9,
+        "exit_code": -9,
+        "signal": "SIGKILL",
+        "timed_out": false,
+        "reason": "NATIVE_SIGNAL_SIGKILL",
+        "wall_seconds": 0.16530916499999648,
+        "cgroup_before": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "cgroup_after": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+        "synthetic": true
+      },
+      "timeout": {
+        "parent_pid": 1,
+        "solver_pid": 10,
+        "exit_code": -9,
+        "signal": "SIGKILL",
+        "timed_out": true,
+        "reason": "TIMEOUT",
+        "wall_seconds": 0.30543245900000215,
+        "cgroup_before": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "cgroup_after": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+        "synthetic": true
+      },
+      "exception": {
+        "parent_pid": 1,
+        "solver_pid": 11,
+        "exit_code": 3,
+        "signal": null,
+        "timed_out": false,
+        "reason": "NONZERO_EXIT",
+        "wall_seconds": 0.16653021000000479,
+        "cgroup_before": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "cgroup_after": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+        "synthetic": true
+      },
+      "memory": {
+        "parent_pid": 1,
+        "solver_pid": 12,
+        "exit_code": 3,
+        "signal": null,
+        "timed_out": false,
+        "reason": "WORKER_MEMORY_ALLOCATION_FAILED",
+        "wall_seconds": 0.165935814000008,
+        "cgroup_before": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "cgroup_after": {
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+          "memory.oom.group": "0\n"
+        },
+        "OOM_attribution": "SIGKILL alone is not proof of OOM; inspect recorded cgroup event deltas. Whole-parent/container death is outside process-isolation proof.",
+        "synthetic": true
+      }
+    },
+    "physical_calculations": 0,
+    "memory_limit_test": "MEMORY_ERROR_ISOLATED",
+    "whole_container_OOM": "NOT_TESTED",
+    "parent_survived": true,
+    "continued_after_fault": true
+  },
+  "engineering_scope_limits": "SyntheticRLIMIT_AS allocation failure and native child SIGSEGV isolated; no claim of survival of whole-container/host/parent death.",
+  "runtime_admission": {
+    "cgroup": {
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "memory.current": "12566528",
+      "memory.peak": "12849152",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.oom.group": "0",
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 201445\nuser_usec 180399\nsystem_usec 21046\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+    },
+    "network": [
+      "lo"
+    ],
+    "affinity": [
+      0
+    ]
+  },
+  "environment": {
+    "python": "3.12.15",
+    "versions": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "pyscf": "2.8.0",
+      "ase": "3.29.0",
+      "jsonschema": "4.25.1"
+    },
+    "sha": "dbbe3acfe8a8c5d9b3105202124c3f40dc185e8f",
+    "world_parent_imports_physical_engine": false,
+    "Psi4": "not installed/requested; W2 independent qualification unchanged"
+  },
+  "resources": {
+    "wall_seconds": 3.5095952459999964,
+    "cgroup_end": {
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "memory.current": "19521536",
+      "memory.peak": "92053504",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.oom.group": "0",
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 2727136\nuser_usec 2219925\nsystem_usec 507211\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 36\nnr_throttled 1\nthrottled_usec 839\nnr_bursts 0\nburst_usec 0"
+    },
+    "self_rusage": [
+      0.359938,
+      0.038528,
+      26720,
+      0,
+      0,
+      0,
+      5959,
+      0,
+      0,
+      0,
+      328,
+      0,
+      0,
+      0,
+      287,
+      88
+    ],
+    "children_rusage": [
+      1.860907,
+      0.46673099999999995,
+      129424,
+      0,
+      0,
+      0,
+      45149,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      95,
+      122
+    ]
+  },
+  "job_seconds": 39.0,
+  "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39538283415",
+  "source_commit": "dbbe3acfe8a8c5d9b3105202124c3f40dc185e8f",
+  "preserved_raw_files": 61,
+  "no_rerun": true,
+  "frozen_request_unchanged": true,
+  "historical_main_STOP_failure_evidence": "UNCHANGED",
+  "BChat_review": "PENDING"
+}

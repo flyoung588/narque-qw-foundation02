@@ -1,0 +1,6 @@
+{
+  "type": "RuntimeError",
+  "error": "INJECTED_SYNTHETIC_EXCEPTION",
+  "traceback": "Traceback (most recent call last):\n  File \"/app/recovery02r/solver_worker.py\", line 12, in <module>\n    elif mode=='exception':raise RuntimeError('INJECTED_SYNTHETIC_EXCEPTION')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: INJECTED_SYNTHETIC_EXCEPTION\n",
+  "synthetic": true
+}

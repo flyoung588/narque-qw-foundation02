@@ -1,0 +1,7 @@
+{
+  "memory": 1073741824,
+  "swap_total": 1073741824,
+  "cpu": 1000000000,
+  "network": "none",
+  "image": "sha256:8afd187f494ca929be1a3c328cc1dac40d41885fceeb490b642e5b9de0906ff6"
+}

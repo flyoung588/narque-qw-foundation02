@@ -1,0 +1,13 @@
+{
+  "status": "UNVERIFIED",
+  "spec": {
+    "physics": {
+      "engine": "SYNTHETIC_NOT_A_PHYSICAL_SOLVER"
+    }
+  },
+  "world_spec_sha256": "a75a1b0dd5a0b651e44b1b479bd05fb000d29325d8d5021a0723b3a294f20a13",
+  "reason": "WORKER_MEMORY_ALLOCATION_FAILED",
+  "exit_code": 3,
+  "signal": null,
+  "physical_result": null
+}
