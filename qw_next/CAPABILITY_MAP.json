@@ -1,0 +1,116 @@
+{
+  "basis": "master architecture manifest v0.1.0 read in full; source-owned frozen evidence, not a new architecture",
+  "master_document_visibility": "original DOCX not found in named local Downloads/sources; manifest and provenance read, not claimed original DOCX reverified",
+  "authority": "Design intent only; NOT XREM Canonical; NO new compute/repo/publication permission",
+  "state_transfer_rule": "geometry passes via ASE with charge/spin/basis/cell explicit; energy/forces may be observations, not a quantum-state identity. No automatic Gaussian MO->periodic density->learned potential->QuTiP ket mapping.",
+  "current_world": [
+    {
+      "module": "Core01-03",
+      "status": "PHYSICALLY_CALCULATED_WITHIN_HISTORIC_MODEL",
+      "state": "specific1D/2D nuclear waves, H2+ twoBOchannels",
+      "ceiling": "not arbitrary electronic matter or intrinsic nonadiabatic/full spin"
+    },
+    {
+      "module": "W1",
+      "status": "PHYSICALLY_CALCULATED",
+      "state": "bounded nonperiodic RHF/UHF energies/analytic nuclear forces through genericWorldSpec",
+      "ceiling": "finite-basis mean-field, not arbitrary quantum matter"
+    },
+    {
+      "module": "isolated runtime",
+      "status": "TESTED_WITHIN_PROCESS_SCOPE",
+      "state": "actual OS crashes/timeouts/MemoryError survived, evidence saved",
+      "ceiling": "not host/container death"
+    },
+    {
+      "module": "W2",
+      "status": "BLOCKED",
+      "reason": "Psi4 native failure, independent comparison incomplete"
+    },
+    {
+      "module": "W3",
+      "status": "BLOCKED",
+      "reason": "frozen second geometry attempted but no second observation; recovery not yet run"
+    },
+    {
+      "module": "periodic extension",
+      "status": "IMPLEMENTED_SEMANTICS_TESTED",
+      "state": "lattice/spec/affine strain/ASE-PBC bridge/DFT adapter code",
+      "ceiling": "real backend NOT_STARTED, forces/stress/convergence NOT_QUALIFIED"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "ASE+PySCF-PBC",
+      "priority": "SELECTED_FIRST_INCREMENT",
+      "new_space": "neutral3D periodic crystalline cells, cell strain and electronic density/energy rather than another named molecule",
+      "model": "all-electron Gaussian KS/PBE approximate DFT, periodic Coulomb/Ewald, Gamma sample first",
+      "objects": "generic input atoms/lattice; bounded initial H..Ar, <=4atoms,<=30electrons, closed shell",
+      "resource": "existing dependency, no model weights; true PBC resource/convergence still unmeasured and may exceed1GiB",
+      "reuse": "matureASE geometry and PySCF solvers, own thin semantic bridge only",
+      "energy_material_value": "direct relation to condensed-matter energy/structure questions, no M1 performance claim",
+      "source": [
+        "https://pyscf.org/user/pbcgto.html",
+        "https://pyscf.org/user/pbc/scf.html",
+        "https://pyscf.org/user/pbc/df.html"
+      ],
+      "qualification": "NOT_RUN"
+    },
+    {
+      "name": "MatterSim/UMA via ASE",
+      "priority": "NEXT_CONDITIONAL_BROAD_FAST_SURROGATES",
+      "new_space": "larger atomistic structures and trajectories/forces/stress within trained domains",
+      "model": "learned surrogate of training-label electronic approximations, not wavefunction/electron engine",
+      "constraints": "verify exact checkpoint license/access/training domain/reference; CPU/GPU/RAM and extrapolation unknown locally",
+      "reuse": "mature calculators/checkpoints but separate reference validation essential",
+      "state_transfer": "ASE geometry and model-specific task may transfer; charge/spin/energy reference not automatically compatible",
+      "source": [
+        "https://github.com/microsoft/mattersim",
+        "https://fair-chem.github.io/",
+        "https://github.com/facebookresearch/fairchem/blob/main/docs/uma_tutorials/uma_tutorial.md"
+      ],
+      "qualification": "DESIGN_ONLY_NOT_INSTALLED"
+    },
+    {
+      "name": "QuTiP",
+      "priority": "CONDITIONAL_OPEN_QUANTUM_STATE_LAYER",
+      "new_space": "finite Hilbert-space kets/density matrices, open-system and driven dynamics",
+      "model": "user-specified Hamiltonian/collapse operators; parameters need actual physical derivation",
+      "constraints": "small Hilbert spaces can be CPU tractable, scales rapidly; not automatically a material state constructor",
+      "state_transfer": "ab-initio projected Hamiltonian and environment-rate validation needed; no direct ASEAtoms->rho mapping",
+      "source": [
+        "https://qutip.readthedocs.io/en/stable/guide/dynamics/dynamics-master.html"
+      ],
+      "qualification": "DESIGN_ONLY_NOT_INSTALLED"
+    },
+    {
+      "name": "Octopus",
+      "priority": "CONDITIONAL_REALTIME_ELECTRON_DYNAMICS",
+      "new_space": "realspace KS electronic states, external fields and real-time evolution",
+      "model": "TDDFT/exchange-correlation/pseudopotential and discretization choices",
+      "constraints": "binary/toolchain and spatial/time convergence;1GiB capability not established",
+      "state_transfer": "molecular structure can seed input, but orbital/density/grid/frame transfer from PySCF must be explicitly validated",
+      "source": [
+        "https://octopus-code.org/documentation/main/"
+      ],
+      "qualification": "DESIGN_ONLY_NOT_INSTALLED"
+    },
+    {
+      "name": "NetKet",
+      "priority": "CONDITIONAL_EXPLICIT_MANY_BODY_MODEL_SPACE",
+      "new_space": "spin/fermion/boson Hilbert-space variational states and MonteCarlo sampling",
+      "model": "specified Hamiltonians, statistical/sampling/ansatz errors, not generic atomistic accuracy",
+      "constraints": "JAX environment and sampling cost; require a concrete Hamiltonian and small resource audit",
+      "state_transfer": "material->effectiveHamiltonian mapping UNKNOWN; independent of merely sharing an object identifier",
+      "source": [
+        "https://netket.readthedocs.io/en/stable/user-guides/hilbert.html",
+        "https://netket.readthedocs.io/en/latest/user-guides/varstate.html"
+      ],
+      "qualification": "DESIGN_ONLY_NOT_INSTALLED"
+    }
+  ],
+  "selection_is_current_engineering_judgment": "periodic cells broaden physically grounded construction most directly using existing resources; not a measured efficiency ranking or permanent search boundary",
+  "not_selected_by_software_name": true,
+  "new_periodic_physics_runs_authorized_in_this_tranche": 0,
+  "next_real_entry": "after capability/resource admission: submit any valid user/AI periodicWorldSpec to isolated adapter, measure convergence and independent reference; no hardcoded material or automatic execution"
+}

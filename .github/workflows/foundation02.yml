@@ -1,4 +1,4 @@
-name: Foundation02R one isolated PySCF feedback experiment
+name: QW-NEXT bounded import contrast and frozen W3 recovery once
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: foundation02r-single
+  group: qw-next-single
   cancel-in-progress: false
 jobs:
   experiment:
@@ -21,11 +21,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Build environment without persistent cache
-        run: timeout --kill-after=5s 200s docker build --pull --no-cache -f recovery02r/Dockerfile -t foundation02r:once .
+        run: timeout --kill-after=5s 200s docker build --pull --no-cache -f qw_next/Dockerfile -t qw-next:once .
       - name: Run one bounded observation round
         env:
           ROUND: ${{ inputs.round }}
-        run: python3 recovery02r/host.py
+        run: python3 qw_next/host.py
       - name: Preserve partial or complete evidence
         if: always()
-        run: python3 cloud/export_logs.py "$RUNNER_TEMP/foundation02r-results"
+        run: python3 cloud/export_logs.py "$RUNNER_TEMP/qw-next-results"

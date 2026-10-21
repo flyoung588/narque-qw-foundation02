@@ -2,10 +2,10 @@
 import json,os,pathlib,signal,subprocess,sys,time
 from router import digest,save
 WORKER=pathlib.Path(__file__).with_name('solver_worker.py')
-def run_isolated(spec,outdir,timeout=60,fault=None):
+def run_isolated(spec,outdir,timeout=60,fault=None,worker_path=None):
  out=pathlib.Path(outdir).resolve();out.mkdir(parents=True,exist_ok=True);request=out/'input.json';save(request,spec)
  before={k:(pathlib.Path('/sys/fs/cgroup')/k).read_text() for k in ['memory.events','memory.oom.group'] if (pathlib.Path('/sys/fs/cgroup')/k).exists()}
- cmd=[sys.executable,'-B',str(WORKER),str(request),str(out)]
+ cmd=[sys.executable,'-B',str(worker_path or WORKER),str(request),str(out)]
  if fault is not None:cmd+=['--synthetic-fault',fault]
  env={**os.environ,**{k:'1' for k in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','BLIS_NUM_THREADS','NUMEXPR_NUM_THREADS','VECLIB_MAXIMUM_THREADS']}}
  started=time.monotonic();timed_out=False

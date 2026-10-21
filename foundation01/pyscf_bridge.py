@@ -10,17 +10,20 @@ HARTREE_TO_EV = 27.211386245988
 BOHR_TO_ANGSTROM = 0.529177210903
 
 
-def solve(spec):
+def solve(spec, stage_callback=None):
+    stage = stage_callback or (lambda name: None)
     meta = validate(spec)
     request = spec["physics"]
     if request["engine"] not in ("pyscf", "ase-pyscf"):
         raise ValueError("WRONG_ENGINE")
+    stage('IMPORT')
     try:
         import pyscf
         from pyscf import gto, scf, dft
     except ImportError as e:
         raise RuntimeError("ENGINE_UNAVAILABLE_PYSCF_NOT_INSTALLED") from e
     atoms = [(a["element"], a["xyz_angstrom"]) for a in spec["matter"]["atoms"]]
+    stage('MOLECULE_BUILD')
     mol = gto.M(atom=atoms, unit="Angstrom", charge=spec["matter"]["charge"],
                 spin=spec["matter"]["spin_2S"], basis=request["basis"],
                 symmetry=False, verbose=0, max_memory=500)
@@ -37,13 +40,17 @@ def solve(spec):
         raise ValueError("MODEL_UNSUPPORTED")
     mf.conv_tol = 1e-10
     mf.max_cycle = 80
+    stage('SCF_START')
     energy_eh = float(mf.kernel())
+    stage('SCF_END')
     if not bool(mf.converged):
         return {"status": "UNVERIFIED", "reason": "SCF_NOT_CONVERGED", "energy_Eh_raw": energy_eh,
                 "method": method, "basis": request["basis"]}
     if not np.isfinite(energy_eh):
         raise RuntimeError("NONFINITE_ELECTRONIC_ENERGY")
+    stage('GRADIENT_START')
     grad = np.asarray(mf.nuc_grad_method().kernel(), dtype=float)
+    stage('GRADIENT_END')
     if grad.shape != (len(atoms), 3) or not np.isfinite(grad).all():
         raise RuntimeError("NUMERICAL_GRADIENT_UNAVAILABLE")
     forces_eh_bohr = -grad
