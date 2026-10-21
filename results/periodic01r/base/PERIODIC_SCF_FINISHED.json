@@ -1,0 +1,7 @@
+{
+  "stage": "PERIODIC_SCF_FINISHED",
+  "UTC": "2026-10-21T15:03:55.180755+00:00",
+  "converged": true,
+  "finite_energy": true,
+  "energy_Eh": -128.75069034579442
+}

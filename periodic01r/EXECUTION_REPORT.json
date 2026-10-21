@@ -1,0 +1,20 @@
+{
+ "receipt":"QW_PERIODIC01R_EXECUTION_RECEIPT",
+ "status":"BOUNDED_EXECUTION_COMPLETED_PENDING_B_CHAT_REVIEW",
+ "run":"https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39622273751",
+ "source_commit":"813fbe3f8b1051a77254f7c9f5f402a3e10c9309",
+ "run_attempt":1,"job_count":1,"job_conclusion":"success",
+ "publication_review":{"source_files":7,"SHA256_matches":7,"input_unchanged":true,"history_unchanged":true,"private_data_found":false},
+ "P1":"PERIODIC_WORLD_CONSTRUCTION_PROVEN",
+ "P1_evidence":"Actual ASE3.29.0 periodic Atoms, actual PySCF2.8.0 3D Cell.build, independent atomic construction.json and stage files. Ne10electrons14AO; explicit Angstrom vs Bohr conversion checks passed; nearest12neighbors3.1536962440920018Angstrom; volume22.179134Angstrom3=149.6722150181391Bohr3.",
+ "P2":"BOUNDED_PERIODIC_QUANTUM_CALCULATION_PROVEN",
+ "P2_evidence":{"actual_engine":"PySCF-PBC2.8.0","method":"Gamma-only RKS/PBE","basis":"cc-pVDZ all-electron","GDF_auxiliary":"weigend49AO","GDF_actual_primary_mesh":[13,13,13],"nuclear_actual_mesh":[11,11,11],"Becke_level":1,"Becke_points":4292,"cell_precision":1e-6,"SCF_conv_tol":1e-8,"SCF_max_cycle":80,"SCF_main_cycles":5,"SCF_extra_check":true,"SCF_converged":true,"energy_Eh_per_cell":-128.75069034579442,"energy_reference":"Periodic all-electron BO/PBE total energy including nuclear/Ewald convention; same primitive cell, not a molecular absolute ranking"},
+ "P3":"NOT_STARTED_NOT_AUTHORIZED",
+ "resource":{"standard_runner":"ubuntu-24.04","Job_wall_seconds":40,"scientific_container_wall_seconds":1.5312324040000078,"solver_subprocess_wall_seconds":1.5199677900000097,"cgroup_CPU_total_seconds":1.289668,"memory_max_bytes":1073741824,"memory_peak_bytes":98181120,"extra_swap_bytes":0,"cpu_quota":"100000 100000","numerical_threads":1,"network":"lo only","OOM":0,"OOM_kill":0,"tmpfs_limit_bytes":536870912,"tmpfs_included_in_cgroup":true,"tmp_initial_free_bytes":536870912,"tmp_actual_peak_usage":"NOT_RECORDED","new_purchases":0,"automatic_reruns":0},
+ "resource_delta":"The huge Cell default mesh2201^3 was not used as GDF primary mesh. Actual RSGDF13^3 and RSNuc11^3 observed in raw engine log. No manual precision/mesh relaxation or physics-model change was made.",
+ "QA":{"recovered_files":32,"recovered_hashes_verified":32,"postprocess_checks_passed":17,"postprocess_checks_total":17,"local_engineering_tests_passed":26,"interpretation":"Same-run byte/consistency QA, not an independent physical engine or accuracy certification"},
+ "numerical_limitations":{"SCF_convergence_not_accuracy":true,"last_integrated_electron_count":9.999961745209927,"integrated_electron_count_error_about":-0.000038254790073,"grid_weight_volume_sum_Bohr3":149.880715,"basis_grid_kpoint_convergence":"NOT_TESTED","PBE_rare_gas_dispersion":"NOT_CERTIFIED","forces":"NOT_IMPLEMENTED","stress":"NOT_IMPLEMENTED","material_stability":"NOT_PROVEN","independent_engine":"NOT_PROVEN","original_discovery":"NOT_PROVEN"},
+ "history":"W1/W3/Core01-03 unchanged; W2 incomplete; original QW-PERIODIC01 failure retained unchanged; no HF or second geometry calculated",
+ "next":"Stop and submit P1/P2 evidence for B-Chat scientific review. Do not repeat Ne demonstrations, start P3, or expand mission claims automatically.",
+ "state_effect":"NO_STATE_CHANGE"
+}

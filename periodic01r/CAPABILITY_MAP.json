@@ -4,7 +4,7 @@
  "W3":"BOUNDED_ADAPTIVE_EXPLORATION_PROVEN_WITHIN_HISTORIC_DOMAIN",
  "W2":"INCOMPLETE",
  "Core01_03":"UNCHANGED",
- "periodic":{"object":"Generic 3D periodic WorldSpec, bounded H..Ar/<=4atoms/<=30electrons neutral closed shell","implementation":"MINIMAL_TYPE_UNIT_PERSISTENCE_REPAIR_IMPLEMENTED","engineering_tests":"26/26 passed local; actual NumPy, no physical engine run","P1":"INHERITED_PARTIAL_REAL_CONSTRUCTION; recovery runtime evidence pending","P2":"NOT_PROVEN","P3":"NOT_STARTED","forces_stress":"NOT_IMPLEMENTED","accuracy":"NOT_CERTIFIED"},
+ "periodic":{"object":"Generic 3D periodic WorldSpec, bounded H..Ar/<=4atoms/<=30electrons neutral closed shell; physically exercised only on frozen FCCNe","implementation":"MINIMAL_TYPE_UNIT_PERSISTENCE_REPAIR_IMPLEMENTED","engineering_tests":"26/26 local and17/17 recovered-result consistency checks","P1":"PERIODIC_WORLD_CONSTRUCTION_PROVEN","P2":"BOUNDED_PERIODIC_QUANTUM_CALCULATION_PROVEN","P3":"NOT_STARTED","forces_stress":"NOT_IMPLEMENTED","accuracy":"NOT_CERTIFIED","actual_run":"39622273751; one Job/attempt1; no automatic follow-on"},
  "not_claimed":["material stability","energy mission advance","new material","original physics discovery","independent second engine"],
- "external_execution":"NEW_HUMAN_AUTHORIZATION_REQUIRED"
+ "external_execution":"HUMAN_AUTHORIZED_TRANCHE_EXECUTED_ONCE_AND_STOPPED; subsequent work not authorized here"
 }

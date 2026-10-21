@@ -1,0 +1,64 @@
+{
+  "stage": "WORLD_SPEC_VALIDATED",
+  "UTC": "2026-10-21T15:03:53.878593+00:00",
+  "spec": {
+    "version": "QW-WORLDSPEC-0.1",
+    "object_id": "fcc_ne_a4p46",
+    "epistemic_mode": "GROUNDED",
+    "matter": {
+      "type": "periodic_cell",
+      "periodic": true,
+      "charge": 0,
+      "spin_2S": 0,
+      "cell_angstrom": [
+        [
+          0,
+          2.23,
+          2.23
+        ],
+        [
+          2.23,
+          0,
+          2.23
+        ],
+        [
+          2.23,
+          2.23,
+          0
+        ]
+      ],
+      "atoms": [
+        {
+          "element": "Ne",
+          "xyz_angstrom": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "physics": {
+      "engine": "pyscf-pbc",
+      "method": "RKS",
+      "basis": "cc-pvdz",
+      "xc": "PBE",
+      "observables": [
+        "energy"
+      ]
+    },
+    "experiment": {
+      "action": "single_point"
+    }
+  },
+  "validation": {
+    "all_electron_count": 10,
+    "cell_volume_A3": 22.179134,
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "geometry_collision_check": "required actual ASE neighbor check at construction, not yet performed by stdlib validation"
+  }
+}

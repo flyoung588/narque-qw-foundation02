@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "all_recovered_hashes": true,
+    "frozen_spec_unchanged": true,
+    "actual_ASE_pbc": true,
+    "actual_Cell_identity": true,
+    "FCC_neighbors": true,
+    "lattice_units": true,
+    "volume_units": true,
+    "stage_files_match": true,
+    "ordered_physics_stages": true,
+    "finite_converged_energy": true,
+    "energy_matches_raw_log": true,
+    "parent_preserved_return": true,
+    "hard_resources": true,
+    "no_OOM": true,
+    "no_P3": true,
+    "single_job_once": true,
+    "no_sensitive_patterns": true
+  },
+  "passed": 17,
+  "total": 17,
+  "source": "Original recovered bytes; postprocess only, not independent physical engine or new science run",
+  "recovered_files": 32,
+  "last_numeric_electron_count": 9.999961745209927,
+  "no_accuracy_certification": true
+}
