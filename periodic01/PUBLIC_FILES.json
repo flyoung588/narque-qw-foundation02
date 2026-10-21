@@ -1,0 +1,19 @@
+{
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-periodic01",
+  "base": "e09fb33a5812feb3cc7c24a695faf77d08c4fbbb",
+  "files": {
+    ".github/workflows/foundation02.yml": "ebb380bf167d8e01c5f4c746287220bc5bfbd410a8311d81d2ba2da43785a728",
+    "qw_next/periodic_world.py": "7051a10b1fa560333d02b72f8881315a1a6444e084470d3b5d74e97c0c3c98e7",
+    "periodic01/DECISION.json": "4fad62871397e05eead53d903ce1955b6f89a04edb470f3967ba2ef0db53974b",
+    "periodic01/Dockerfile": "135b7a6c16f9464b611a8627e971779b685f44fcd96a1dbdd9f4c6ee23982a91",
+    "periodic01/host.py": "7b332cd27727ef968c7c2500256a0351f51d8b66b3ff2f0dc174f32acb00de15",
+    "periodic01/input.json": "91f250b999ae35a6c930595820022607c19e9b8eef7213349775da6789e20373",
+    "periodic01/prepare_evidence.py": "8d392ba9e5bf863597570177d76d432118d661bafd66626abef93b55d7f2f12c",
+    "periodic01/run.py": "44861ccf8fa07bf3754df1029a736876edceaee056b49e6c7f4ee0617269b767",
+    "periodic01/test_prepare.py": "0a49906e2c0a42dd67c9f6583812547916f4225c80be19a86cc8e5a40e6ce9d9",
+    "periodic01/worker.py": "6dffd778567eecb523bdee886d570f363d4c499b9102c16cec2f2cc6ec7a0ea0"
+  },
+  "result_scope": "Reviewed outputs only: request, construction, observation, environment, resource and failure logs. No private data.",
+  "execution": "One manual standard ubuntu-24.04 job <=15min; single base FCC Ne calculation; no rerun; P3 not started without actual same-job AI feedback"
+}

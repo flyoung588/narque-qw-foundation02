@@ -1,0 +1,13 @@
+{
+ "object":"FCC Ne primitive cell, conventional a=4.46 Angstrom, input not measured equilibrium",
+ "reason":"One atom/10 electrons, closed shell, 12 periodic nearest neighbors; a compact solid prototype rather than vacuum atom. Generic router unchanged in scope.",
+ "source":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.6.4766",
+ "source_role":"Primary solid-Ne lattice study motivates FCC prototype; chosen rounded geometry is a model input, not physical validation.",
+ "prediction":"If resource admission and SCF converge, finite periodic PBE energy per primitive cell; no preselected numeric answer or claimed binding energy.",
+ "limitations":["PBE does not certify dispersion binding in rare-gas solid","No zero-point nuclear motion","Gamma-only and finite cc-pVDZ; no basis/grid/k convergence","No force, stress or stability claim"],
+ "resource_risk":"Ne cc-pVDZ spherical AO count expected14: 196 matrix elements, but periodic lattice sums, GDF auxiliary/Fourier intermediates and Becke grids dominate. Exact initialization/peak demand UNKNOWN before Runner. 400 MB PySCF advisory does not enforce memory; 1 GiB cgroup does. tmpfs512MiB counts within same memory, not extra allocation. OOM/time/temp-space failure is permitted, no retry.",
+ "P3":"NOT_STARTED: no live B-Work AI feedback channel within offline single scientific Job; preprogrammed strain forbidden. First-only execution is requested explicitly, not hidden as resource exhaustion.",
+ "free_execution":"Public repository standard ubuntu-24.04, no larger runner, no artifact/cache/packages upload. Verify current official free policy and public visibility again before dispatch.",
+ "API_audit":"Fixed v2.8.0 df.py supports GDF auxbasis; basis alias weigend -> def2-universal-jfit.dat. Actual Cell/RKS/BeckeGrids integration still requires cloud runtime. Unit Angstrom input converted by Cell; construction records a and atom_coords in bohr.",
+ "historical_evidence":"Base e09fb33a5812feb3cc7c24a695faf77d08c4fbbb; old branches/files not overwritten. No HF rerun."
+}

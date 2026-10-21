@@ -1,4 +1,4 @@
-name: QW-NEXT bounded import contrast and frozen W3 recovery once
+name: QW-PERIODIC01 one bounded periodic observation
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: qw-next-single
+  group: qw-periodic01-single
   cancel-in-progress: false
 jobs:
   experiment:
@@ -21,11 +21,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Build environment without persistent cache
-        run: timeout --kill-after=5s 200s docker build --pull --no-cache -f qw_next/Dockerfile -t qw-next:once .
+        run: timeout --kill-after=5s 200s docker build --pull --no-cache -f periodic01/Dockerfile -t periodic01:once .
       - name: Run one bounded observation round
         env:
           ROUND: ${{ inputs.round }}
-        run: python3 qw_next/host.py
+        run: python3 periodic01/host.py
       - name: Preserve partial or complete evidence
         if: always()
-        run: python3 cloud/export_logs.py "$RUNNER_TEMP/qw-next-results"
+        run: python3 cloud/export_logs.py "$RUNNER_TEMP/periodic01-results"

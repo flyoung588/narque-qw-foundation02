@@ -1,0 +1,9 @@
+{
+  "version":"QW-WORLDSPEC-0.1", "object_id":"fcc_ne_a4p46",
+  "epistemic_mode":"GROUNDED",
+  "matter":{"type":"periodic_cell","periodic":true,"charge":0,"spin_2S":0,
+    "cell_angstrom":[[0,2.23,2.23],[2.23,0,2.23],[2.23,2.23,0]],
+    "atoms":[{"element":"Ne","xyz_angstrom":[0,0,0]}]},
+  "physics":{"engine":"pyscf-pbc","method":"RKS","basis":"cc-pvdz","xc":"PBE","observables":["energy"]},
+  "experiment":{"action":"single_point"}
+}
