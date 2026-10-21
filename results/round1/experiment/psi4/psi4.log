@@ -1,0 +1,53 @@
+2026-10-21:01:33:23,193 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'D_CONVERGENCE': 1e-08, 'E_CONVERGENCE': 1e-10, 'FAIL_ON_MAXITER': 1, 'GUESS': 'SAD', 'MAXITER': 80, 'PUREAM': 1, 'REFERENCE': 'RHF', 'SCF_TYPE': 'PK', 'function_kwargs': {}}
+2026-10-21:01:33:23,195 INFO     [psi4.driver.driver:636] Compute gradient(): method=scf, basis=cc-pvdz, molecule=default, nre=3.968829080025001
+ Lehtola, J. P. Misiewicz, M. Scheurer,
+    R. A. Shaw, J. B. Schriber, Y. Xie, Z. L. Glick, D. A. Sirianni,
+    J. S. O'Brien, J. M. Waldrop, A. Kumar, E. G. Hohenstein,
+    B. P. Pritchard, B. R. Brooks, H. F. Schaefer III, A. Yu. Sokolov,
+    K. Patkowski, A. E. DePrince III, U. Bozkaya, R. A. King,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, C. D. Sherrill,
+    J. Chem. Phys. 152(18) 184108 (2020). https://doi.org/10.1063/5.0006002
+
+                            Additional Code Authors
+    E. T. Seidl, C. L. Janssen, E. F. Valeev, M. L. Leininger,
+    J. F. Gonthier, R. M. Richard, H. R. McAlexander, M. Saitow, X. Wang,
+    P. Verma, M. H. Lechner, A. Jiang, S. Behnle, A. G. Heide,
+    M. F. Herbst, and D. L. Poole
+
+             Previous Authors, Complete List of Code Contributors,
+                       and Citations for Specific Modules
+    https://github.com/psi4/psi4/blob/master/codemeta.json
+    https://github.com/psi4/psi4/graphs/contributors
+    http://psicode.org/psi4manual/master/introduction.html#citing-psifour
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Wednesday, 21 October 2026 01:33AM
+
+    Process ID: 1
+    Host:       45f5ceff674e
+    PSIDATADIR: /opt/conda/envs/science/share/psi4
+    Memory:     400.0 MiB
+    Threads:    1
+    
+Scratch directory: /tmp/
+gradient() will perform analytic gradient computation.
+   => Libint2 <=
+
+    Primary   basis highest AM E, G, H:  7, 6, 4
+    Auxiliary basis highest AM E, G, H:  7, 7, 6
+    Onebody   basis highest AM E, G, H:  -, -, -
+    Solid Harmonics ordering:            Gaussian
+
+*** tstart() called on 45f5ceff674e
+*** at Wed Oct 21 01:33:23 2026
+
+   => Loading Basis Set <=
+
+    Name: CC-PVDZ
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1 entry F          line   228 file /opt/conda/envs/science/share/psi4/basis/cc-pvdz.gbs 
+    atoms 2 entry H          line    22 file /opt/conda/envs/science/share/psi4/basis/cc-pvdz.gbs 
+

@@ -1,0 +1,15 @@
+test_composition_block (test_software.Software.test_composition_block) ... ok
+test_feedback_change_required (test_software.Software.test_feedback_change_required) ... ok
+test_feedback_hash_required (test_software.Software.test_feedback_hash_required) ... ok
+test_geometry_block (test_software.Software.test_geometry_block) ... ok
+test_same_engine_not_independent (test_software.Software.test_same_engine_not_independent) ... ok
+test_stop_supported (test_software.Software.test_stop_supported) ... ok
+test_theory_block (test_software.Software.test_theory_block) ... ok
+test_two_sources_not_precision (test_software.Software.test_two_sources_not_precision) ... ok
+test_unknown_not_negative (test_software.Software.test_unknown_not_negative) ... ok
+test_zero_block (test_software.Software.test_zero_block) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

@@ -1,0 +1,51 @@
+{
+  "round": 1,
+  "AI_choice": "B-Work selected neutral singlet HF at a stretched 1.20 Angstrom separation, not a user-specified molecule or repeat of the four W1 objects.",
+  "question": "Do two independent conventional RHF codes predict an inward force at this stretched polar bond, and what magnitude should inform a later bounded geometry change?",
+  "reason": "Few atoms and ten electrons permit small HF/cc-pVDZ calculations; same-composition forces support a subsequent discriminative experiment without cross-composition energy ranking.",
+  "prediction": "H force along negative z, F force positive z; changing R slightly in negative direction should lower same-model BO energy. No numerical result predicted or looked up.",
+  "falsifier": "Nonconvergence invalidates test; outward or near-zero force weakens inward-force premise; code disagreement requires basis/settings review, not invention of new physics.",
+  "successor": "NOT_SPECIFIED_BEFORE_FIRST_OBSERVATION. AI will inspect measured force, convergence and code differences; may shorten, branch or stop. No automatic optimizer.",
+  "worldspec": {
+    "version": "QW-WORLDSPEC-0.1",
+    "object_id": "QW_F02_AI_HF_R120",
+    "epistemic_mode": "GROUNDED",
+    "matter": {
+      "type": "molecule",
+      "atoms": [
+        {
+          "element": "F",
+          "xyz_angstrom": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            1.2
+          ]
+        }
+      ],
+      "charge": 0,
+      "spin_2S": 0,
+      "periodic": false
+    },
+    "physics": {
+      "engine": "pyscf",
+      "method": "RHF",
+      "basis": "cc-pvdz",
+      "observables": [
+        "energy",
+        "forces"
+      ]
+    },
+    "experiment": {
+      "action": "single_point",
+      "description": "AI selected stretched HF; first observation only, not a binding/stability/newness proof"
+    }
+  }
+}

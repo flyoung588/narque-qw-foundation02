@@ -1,0 +1,1 @@
+{"type": "RuntimeError", "error": "CONTAINER_EXIT_139", "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/narque-qw-foundation02/narque-qw-foundation02/cloud/host.py\", line 10, in <module>\n    if code:raise RuntimeError(f'CONTAINER_EXIT_{code}')\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: CONTAINER_EXIT_139\n"}

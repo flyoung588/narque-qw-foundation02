@@ -1,0 +1,12 @@
+{
+  "results/round1/HOST_FAILURE.json": "2e400bad8515d7b6b1e72c089d53d1150ae86c5900143253937367e734d80390",
+  "results/round1/admission.json": "bbb0d4af2668b45f646ef7cd039f8e4463d744a0f63e217c7a538f6bd5d45b32",
+  "results/round1/environment.json": "030313754950cf10669a39a61688fd9a129d73c8308a37bff06ce7ffd501d226",
+  "results/round1/experiment/psi4/psi4.log": "7c85cb0bb58e55cfb3135cd2db461146aa91d474fbdecec12f1968ddcb63667b",
+  "results/round1/experiment/pyscf/observation.json": "2b4ef028d82b03a4afc3ff07e8d4cf18dc16b366db8be510881fceaecd628f60",
+  "results/round1/experiment/request.json": "838cd607d4a9a8c8c35ccbc1483aa5f6e27c354fce58d04ac6bcd5462979402c",
+  "results/round1/host_config.json": "356e664b09efe6d231d85c18cb63d1db8d4960aeb22dff502768d6d3ade6d639",
+  "results/round1/software_tests.log": "37a62a402766b8243a1a2a540eb35a932bda2c02071069f22f198a5e137f23e9",
+  "request2.json": "444b1c093a48b85ffdf47ff0a09c6d259489fbfcacb1258277ded04e2f6caf72",
+  "FOUNDATION02_REPORT.json": "0e51eacb22d02516ad6eabfded80097d6a74e884a763b53fadfbbe5518ec6714"
+}

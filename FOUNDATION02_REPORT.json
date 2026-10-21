@@ -1,0 +1,342 @@
+{
+  "W2_FEDERATED_ENGINE_STATUS": "INCOMPLETE_SECOND_ENGINE_NATIVE_FAILURE",
+  "W2_INDEPENDENT_NUMERICAL_CHECK_STATUS": "NOT_PERFORMED_NO_PSI4_OBSERVATION",
+  "W3_ADAPTIVE_EXPLORATION_STATUS": "PARTIAL_REAL_OBSERVATION_AND_AI_FEEDBACK_STOP; SECOND_COMPUTATIONAL_EXPERIMENT_NOT_RUN",
+  "ORIGINAL_DISCOVERY_STATUS": "NOT_TESTED",
+  "first_question": "AI selected stretched neutral singlet HF R1.20A RHF/cc-pVDZ, inward-force hypothesis",
+  "actual_physics": {
+    "spec": {
+      "version": "QW-WORLDSPEC-0.1",
+      "object_id": "QW_F02_AI_HF_R120",
+      "epistemic_mode": "GROUNDED",
+      "matter": {
+        "type": "molecule",
+        "atoms": [
+          {
+            "element": "F",
+            "xyz_angstrom": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              1.2
+            ]
+          }
+        ],
+        "charge": 0,
+        "spin_2S": 0,
+        "periodic": false
+      },
+      "physics": {
+        "engine": "pyscf",
+        "method": "RHF",
+        "basis": "cc-pvdz",
+        "observables": [
+          "energy",
+          "forces"
+        ]
+      },
+      "experiment": {
+        "action": "single_point",
+        "description": "AI selected stretched HF; first observation only, not a binding/stability/newness proof"
+      }
+    },
+    "world_spec_sha256": "cb73f2fd8e73091b7563bfc5e24892a774c45cd991431c88fede36933a6cfd0f",
+    "status": "CALCULATED",
+    "raw_source": "/out/experiment/pyscf",
+    "precision_qualified": false,
+    "observation": {
+      "energy": -99.95952604001582,
+      "energy_unit": "Eh",
+      "energy_eV": -2720.0372720407654,
+      "forces_Eh_per_bohr": [
+        [
+          7.199255799914488e-17,
+          8.635813578342831e-17,
+          0.15417330442314903
+        ],
+        [
+          -7.199255799914543e-17,
+          -8.635813578343046e-17,
+          -0.15417330442314747
+        ]
+      ],
+      "forces_eV_per_angstrom": [
+        [
+          3.702006175225333e-15,
+          4.440713885385163e-15,
+          7.927910063095302
+        ],
+        [
+          -3.702006175225361e-15,
+          -4.4407138853852746e-15,
+          -7.927910063095221
+        ]
+      ],
+      "engine": "PySCF",
+      "engine_version": "2.8.0",
+      "method": "RHF",
+      "basis": "cc-pvdz",
+      "converged": true,
+      "orbital_basis_size": 19,
+      "SCF_convergence_threshold_Eh": 1e-10,
+      "SCF_max_iterations": 80,
+      "nuclear_repulsion_Eh": 3.9688290819000005,
+      "electrons": 10,
+      "spin_2S": 0,
+      "electronic_structure_solved": true,
+      "solver_equation": "single-determinant mean-field electronic Hamiltonian; approximate finite-basis solution",
+      "physics_limit": "nonrelativistic fixed-nuclei Born-Oppenheimer; no nuclear dynamics, no correlated many-electron accuracy claim",
+      "comparison_scope": "same composition/charge/spin/method/basis and geometry branch only",
+      "model": "nonrelativistic all-electron fixed-nuclei BO conventional HF",
+      "energy_Eh": -99.95952604001582,
+      "energy_zero": "total BO electronic-structure energy including nuclear repulsion",
+      "gradient_Eh_per_bohr": [
+        [
+          -7.199255799914488e-17,
+          -8.635813578342831e-17,
+          -0.15417330442314903
+        ],
+        [
+          7.199255799914543e-17,
+          8.635813578343046e-17,
+          0.15417330442314747
+        ]
+      ],
+      "force_definition": "negative analytic Cartesian nuclear gradient in original input frame",
+      "basis_AO_count": 19,
+      "basis_shells": [
+        {
+          "center": 0,
+          "l": 0,
+          "exponents": [
+            14710.0,
+            2207.0,
+            502.8,
+            142.6,
+            46.47,
+            16.7,
+            6.356,
+            1.316
+          ],
+          "contraction_coefficients": [
+            [
+              0.0007206737087319736,
+              -0.00032119389049892736
+            ],
+            [
+              0.005550486968916296,
+              -0.002546191568318769
+            ],
+            [
+              0.02825420766258904,
+              -0.012643359507821412
+            ],
+            [
+              0.10639582836652732,
+              -0.05195749170489011
+            ],
+            [
+              0.28668420124306837,
+              -0.14344713812646034
+            ],
+            [
+              0.44843796582416284,
+              -0.3324376232960292
+            ],
+            [
+              0.26464118141135373,
+              -0.21865906750347278
+            ],
+            [
+              0.015326060993047645,
+              1.0955904138622017
+            ]
+          ]
+        },
+        {
+          "center": 0,
+          "l": 0,
+          "exponents": [
+            0.3897
+          ],
+          "contraction_coefficients": [
+            [
+              1.0
+            ]
+          ]
+        },
+        {
+          "center": 0,
+          "l": 1,
+          "exponents": [
+            22.67,
+            4.977,
+            1.347
+          ],
+          "contraction_coefficients": [
+            [
+              0.06483402149388744
+            ],
+            [
+              0.3405353598310121
+            ],
+            [
+              0.7346464067938218
+            ]
+          ]
+        },
+        {
+          "center": 0,
+          "l": 1,
+          "exponents": [
+            0.3471
+          ],
+          "contraction_coefficients": [
+            [
+              1.0000000000000002
+            ]
+          ]
+        },
+        {
+          "center": 0,
+          "l": 2,
+          "exponents": [
+            1.64
+          ],
+          "contraction_coefficients": [
+            [
+              1.0
+            ]
+          ]
+        },
+        {
+          "center": 1,
+          "l": 0,
+          "exponents": [
+            13.01,
+            1.962,
+            0.4446
+          ],
+          "contraction_coefficients": [
+            [
+              0.033498726389998235
+            ],
+            [
+              0.23480080117413188
+            ],
+            [
+              0.8136829578828995
+            ]
+          ]
+        },
+        {
+          "center": 1,
+          "l": 0,
+          "exponents": [
+            0.122
+          ],
+          "contraction_coefficients": [
+            [
+              1.0000000000000002
+            ]
+          ]
+        },
+        {
+          "center": 1,
+          "l": 1,
+          "exponents": [
+            0.727
+          ],
+          "contraction_coefficients": [
+            [
+              1.0
+            ]
+          ]
+        }
+      ],
+      "basis_coefficient_convention": "PySCF bas_ctr_coeff; normalization review required versus Psi4",
+      "settings": {
+        "density_fitting": false,
+        "cartesian": false,
+        "conv_tol": 1e-10,
+        "max_cycle": 80
+      },
+      "geometry_bohr": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.267671349478074
+        ]
+      ],
+      "numerical_threads": 1
+    },
+    "wall_seconds": 0.4359117560000101
+  },
+  "feedback": {
+    "action": "stop",
+    "based_on_observation_sha256": "96de8e9f04bcd21ec3f5d50144351ee9aedc49a02a9d9b073a765b7d1ac7b51e",
+    "analysis_after_observation": "Actual PySCF returned E=-99.95952604001582 Eh and H Fz=-0.15417330442314747 Eh/bohr at R1.20 Angstrom. This supports the predicted inward force, but supplies only a local first derivative, not a minimum/stability/novelty proof. Psi4 was reached with conventional PK/RHF and analytic gradient requested, then native container exit139 occurred after basis loading; no second energy/gradient returned. The exact cause is UNKNOWN. Admission OOM count0 is only a startup snapshot; no end snapshot survived. Repeating the same adapter in Experiment2 would encounter an unisolated native failure and could destroy new partial evidence. The prepared explorer always calls both engines, so a PySCF-only repair or process-isolation rewrite is outside the approved exact20-file reuse. I therefore stop this tranche instead of treating unused allowance as a reason to retry. A future physics question would be whether an inward displacement lowers energy, but its geometry is deliberately not chosen or computed here.",
+    "changed_because": "Real inward force supports the local prediction, while native Psi4 failure changes resource choice from a possible geometry branch to STOP. No synthetic engine substitute and no retry.",
+    "prediction_assessment": "local force sign supported by one real engine; cross-engine prediction untested; energy-lowering displacement not tested",
+    "created_at_UTC": "2026-10-21T01:36:21.108462+00:00",
+    "run_evidence": "39527902059 attempt1; actual logs and recovered original observation",
+    "reasoned_stop_not_physical_negative": true
+  },
+  "second_request": "stop only, no new geometry or energy fabricated",
+  "second_Job": "NOT_DISPATCHED",
+  "engine_failure": {
+    "type": "RuntimeError",
+    "error": "CONTAINER_EXIT_139",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/narque-qw-foundation02/narque-qw-foundation02/cloud/host.py\", line 10, in <module>\n    if code:raise RuntimeError(f'CONTAINER_EXIT_{code}')\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: CONTAINER_EXIT_139\n"
+  },
+  "failure_scope": "native exit139 consistent with SIGSEGV; exact crashing library/cause UNKNOWN, no proof of memory exhaustion or physical instability",
+  "resource_admission": {
+    "cgroup": {
+      "memory.max": "1073741824\n",
+      "memory.swap.max": "0\n",
+      "memory.current": "8929280\n",
+      "memory.peak": "8929280\n",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "cpu.max": "100000 100000\n",
+      "cpu.stat": "usage_usec 62108\nuser_usec 38447\nsystem_usec 23660\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 1\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n"
+    },
+    "network": [
+      "lo"
+    ],
+    "affinity": [
+      0
+    ]
+  },
+  "job_seconds": 59.0,
+  "source_commit": "d1bf44d86c24102ecdcd51229d6ac072b05862a3",
+  "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39527902059",
+  "no_auto_rerun": true,
+  "original_source20_hashes": "MATCH",
+  "preserved_original_files": 8,
+  "software_tests": "cloud10/10 synthetic, not solver or physical qualification",
+  "limitations": [
+    "No Psi4 energy, gradient, completed basis fingerprint, cross-engine agreement or independent numerical certification.",
+    "One SCF geometry and force sign do not prove energy trend over finite displacements, structure stability, synthesis, or physical novelty.",
+    "Native termination bypassed Python finally; end resources.json/cgroup peak/OOM snapshot absent. CPU time and peak memory UNKNOWN rather than zero.",
+    "1CPU/1GiB/0swap/no-network admission and host config are verified. Standard hosted-runner build itself is outside science cgroup.",
+    "Python3.11.17 and direct pip/conda build versions are in environment/build logs; actual imageID preserved. Requested Psi4 package pin is installation provenance, not successful physical execution.",
+    "Psi4 log nre3.968829080025001 vs PySCF3.9688290819000005 Eh includes unit-constant differences; no cross-engine energy assertion follows.",
+    "No full adaptive two-computation loop shown. AI chose a justified stop after actual feedback; no automatic optimizer or hidden model/API calls.",
+    "No xTB fallback installed/executed, no repair or source change to rescue a PASS.",
+    "W1/Core01-03 evidence and scientific qualifications unchanged."
+  ],
+  "missing_next_capability": "Isolate independent solver crashes and establish compatible native dependencies before a newly authorized real W2 comparison; then evidence-driven next geometry. This is a future need, not an automatically started stage.",
+  "BChat_review": "PENDING"
+}
