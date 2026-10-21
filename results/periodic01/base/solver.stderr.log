@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/app/periodic01/worker.py", line 12, in <module>
+    if result['status']!='CALCULATED':raise RuntimeError('PERIODIC_RESULT_NOT_VERIFIED_NO_RETRY')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: PERIODIC_RESULT_NOT_VERIFIED_NO_RETRY

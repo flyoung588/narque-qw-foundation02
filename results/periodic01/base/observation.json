@@ -1,0 +1,57 @@
+{
+  "status": "UNVERIFIED",
+  "error": "'list' object has no attribute 'tolist'",
+  "traceback": "Traceback (most recent call last):\n  File \"/app/qw_next/periodic_world.py\", line 78, in route_world\n    try:result=solve_cell(spec,out)\n               ^^^^^^^^^^^^^^^^^^^^\n  File \"/app/qw_next/periodic_world.py\", line 68, in solve_cell\n    save(out/'construction.json',{'spec':spec,'ASE':{'symbols':atoms.get_chemical_symbols(),'positions_A':atoms.positions.tolist(),'cell_A':atoms.cell.array.tolist(),'pbc':atoms.pbc.tolist(),'volume_A3':atoms.get_volume()},'PySCF_Cell':{'a_bohr':cell.a.tolist(),'atom_coords_bohr':cell.atom_coords().tolist(),'nelectron':cell.nelectron,'spin':cell.spin,'dimension':cell.dimension,'AO_count':cell.nao_nr(),'mesh':cell.mesh.tolist(),'precision':cell.precision,'max_memory_MB_advisory':cell.max_memory},'resource_warning':'GDF intermediate storage is not bounded by AO matrix size; outer cgroup is authoritative'})\n                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^\nAttributeError: 'list' object has no attribute 'tolist'\n",
+  "spec": {
+    "version": "QW-WORLDSPEC-0.1",
+    "object_id": "fcc_ne_a4p46",
+    "epistemic_mode": "GROUNDED",
+    "matter": {
+      "type": "periodic_cell",
+      "periodic": true,
+      "charge": 0,
+      "spin_2S": 0,
+      "cell_angstrom": [
+        [
+          0,
+          2.23,
+          2.23
+        ],
+        [
+          2.23,
+          0,
+          2.23
+        ],
+        [
+          2.23,
+          2.23,
+          0
+        ]
+      ],
+      "atoms": [
+        {
+          "element": "Ne",
+          "xyz_angstrom": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "physics": {
+      "engine": "pyscf-pbc",
+      "method": "RKS",
+      "basis": "cc-pvdz",
+      "xc": "PBE",
+      "observables": [
+        "energy"
+      ]
+    },
+    "experiment": {
+      "action": "single_point"
+    }
+  },
+  "world_spec_sha256": "5afe7fbe229310b1a8e874ada5809e8d40321c21722a89029d64657459d6071b",
+  "wall_seconds": 0.7709472340000048
+}

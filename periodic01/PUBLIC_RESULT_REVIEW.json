@@ -1,0 +1,9 @@
+{
+ "review":"All18 files listed by RESULT_SHA256 reviewed in full before publication; scientific result files17 plus report1",
+ "content":"Only public frozen Ne input, PySCF public environment/version/banner, generated runtime errors, cgroup limits/counters, process metadata, public container source paths and image hash",
+ "sensitive_scan":"No tokens, secrets, passwords, private user paths or credential patterns found; entire recovered result set10714 bytes",
+ "path_assessment":"/app, /out, /usr/local and /home/runner/work paths are public ephemeral Actions/container paths, not private workstation paths",
+ "authority":"Current user explicitly authorizes reviewed results publication to qw-periodic01 and preservation of actual failure evidence",
+ "excluded":"Original full Actions logs ZIP and coordinator/cloud account metadata stay local; only reviewed17 recovered files plus bounded report/hash/review published",
+ "scientific_claim":"No SCF energy, no P2, no P3, no new discovery"
+}

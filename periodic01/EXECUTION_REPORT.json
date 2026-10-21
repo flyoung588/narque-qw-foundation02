@@ -1,0 +1,20 @@
+{
+ "receipt":"QW_PERIODIC01_EXECUTION_RECEIPT",
+ "status":"FAILED_BEFORE_SCF_NO_RERUN",
+ "run":"https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39571276120",
+ "run_attempt":1,"job_count":1,"source_commit":"cae6690a40a03172981dcc7cd21120229e63320f",
+ "authorization":"Human explicitly approved frozen10 files plus manifest and reviewed results; one base Ne job, no P3/HF/rerun",
+ "engineering_error":{"location":"qw_next/periodic_world.py construction evidence serialization","exception":"AttributeError: list object has no attribute tolist","specific_expression":"cell.a.tolist()","cause":"Adapter assumed ndarray; PySCF Cell.a retained list-valued lattice input. This is an implementation error, not an engine crash or physical rejection.","additional_unit_audit":"cell.a retained Angstrom input; actual converted lattice should be read using cell.lattice_vectors(), not labeled a_bohr from cell.a. No correction applied or rerun performed."},
+ "actual_support":{"ASE_periodic_object":"Constructed and periodic collision check executed before cell.build; inferred from executed path, not standalone exported ASE object","PySCF_periodic_Cell":"Built: 3D, Ne at origin, 10electrons, spin0, 14AO, cc-pVDZ, lattice vectors in pbc.log","SCF":"NOT_REACHED","energy_Eh_per_cell":null,"forces":"NOT_IMPLEMENTED","stress":"NOT_IMPLEMENTED"},
+ "P1":"PARTIAL_REAL_CONSTRUCTION_NOT_FULLY_EVIDENCE_QUALIFIED",
+ "P2":"NOT_PROVEN_SCF_NOT_STARTED",
+ "P3":"NOT_STARTED_BY_AUTHORIZED_SCOPE",
+ "physical_accuracy":"NOT_CERTIFIED",
+ "resource_evidence":{"Job_wall_seconds":41,"container_wall_seconds":1.0342755180000154,"cgroup_CPU_seconds":1.400452,"memory_max_bytes":1073741824,"memory_peak_bytes":73117696,"swap_max_bytes":0,"cpu_max":"100000 100000","network":"lo only","affinity_count":1,"oom":0,"oom_kill":0,"numerical_threads":1},
+ "resource_risk":"Cell default mesh2201^3 =10662526601 plane waves. No such full array was allocated here; GDF initialization was not reached. Do not claim observed GDF memory demand or infer impossibility solely from default Cell mesh.",
+ "history":"W1/W3/W2 and prior failures unchanged; no HF/P3 calculation",
+ "cost":"Public standard Ubuntu; no artifact/cache/Packages uploads, purchases0",
+ "next_step":"B-Chat review only. Any repair/run would require a separately authorized tranche. No automatic retry.",
+ "M1_energy_discovery_claim":"NONE",
+ "state_effect":"NO_STATE_CHANGE"
+}
