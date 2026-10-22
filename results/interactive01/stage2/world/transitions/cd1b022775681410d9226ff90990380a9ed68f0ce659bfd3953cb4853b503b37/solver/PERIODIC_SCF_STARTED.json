@@ -1,0 +1,13 @@
+{
+  "stage": "PERIODIC_SCF_STARTED",
+  "UTC": "2026-10-22T11:30:59.506386+00:00",
+  "solver": "KRKS",
+  "nkpts": 1,
+  "Becke_points": 10552,
+  "numerics": {
+    "Becke_level": 1,
+    "cell_precision": 1e-06,
+    "conv_tol": 1e-08,
+    "max_cycle": 80
+  }
+}

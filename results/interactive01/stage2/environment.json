@@ -1,0 +1,11 @@
+{
+  "commit": "fde46f22afcc6e10dd10b975f91abda5f8cc5c77",
+  "python": "3.12.15",
+  "versions": {
+    "ase": "3.29.0",
+    "jsonschema": "4.25.1",
+    "numpy": "2.2.6",
+    "pyscf": "2.8.0",
+    "scipy": "1.15.3"
+  }
+}

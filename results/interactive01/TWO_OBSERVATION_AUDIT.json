@@ -1,0 +1,128 @@
+{
+  "Becke_weight_arrays_exactly_equal": false,
+  "alternate_decimal_delta_Eh": -0.00130873079467,
+  "checks": [
+    {
+      "actual_SCFs": 1,
+      "checks": "State/hash/parent/action/spec/observation identity, separate worker, resources, run1attempt, 3 electron counts verified",
+      "stage": 1
+    },
+    {
+      "actual_SCFs": 1,
+      "checks": "State/hash/parent/action/spec/observation identity, separate worker, resources, run1attempt, 3 electron counts verified",
+      "stage": 2
+    }
+  ],
+  "chronology": "Job1 completed -> current Work AI read -> frozen decision/action -> second commit -> separate Job2 -> Work read; verified timestamps and hashes",
+  "comparison": {
+    "delta_energy_Eh": -0.001308730794676194,
+    "first_state": "1667358db81b04b56f80873a851da30806465dc109a8004444723cadaead3c4e",
+    "interpretation": "FINITE_STRUCTURE_PATH_RESPONSE_NOT_FORCE_OR_STABILITY",
+    "numerical_caveat": "Inspect both raw qualities and realized GDF/grid settings; nominal equality does not isolate numerical error.",
+    "second_state": "2c504c7d5739769227b1d02e5f57eb73a3e2e9f6ce4df4d484b6e1c00f9bba6a"
+  },
+  "computed_sign": "DECREASE",
+  "delta_energy_eV_per_cell": -0.03561237914578418,
+  "energy_increase_prediction_supported_by_computed_sign": false,
+  "grid_coordinates_exported": false,
+  "kind": "OFFLINE_EVIDENCE_QA_NOT_INDEPENDENT_PHYSICS",
+  "limits": "Large overlap condition and AO density steps retained; no energy error bound, basis/k/quadrature convergence or model accuracy certified. Different Becke weights/grids may co-vary with moved atom; cannot isolate a precise physical force or genuine instability. No new SCF/gradient performed during QA.",
+  "realized_GDF_meshes_equal": true,
+  "realized_GDF_omegas_equal": true,
+  "stages": [
+    {
+      "Becke_points": 11334,
+      "Becke_weight_volume": 126.56817067033518,
+      "SCF_converged": true,
+      "action_sha256": "48a92808e679ded43fe1a4b6948979ad08a2aaa832ff1d78034896aafd64ea25",
+      "actual_GDF_meshes": [
+        "[11 11 11]",
+        "[11 11 11]"
+      ],
+      "actual_GDF_omegas": [
+        "0.5067382414835355",
+        "0.5381389993678259"
+      ],
+      "electron_counts_offline": {
+        "TrDS_scalar": 19.999999999999936,
+        "occupation": 20.0,
+        "quadrature_fsum": 20.00134210384627
+      },
+      "energy_Eh_per_cell": -274.89491557530187,
+      "last_extra_AO_density_step_precise": 13.449044498623744,
+      "last_extra_AO_density_step_raw_log": 13.4,
+      "last_extra_delta_Eh": 1.1368683772161603e-13,
+      "last_extra_orbital_gradient_norm": 1.79e-06,
+      "main_SCF_cycles": 11,
+      "observation_sha256": "8ee9365692be494aa7a835165d83cd5e64f35d490bd4cfed7168a6e39e52056f",
+      "overlap_condition_number": 165817358518.3317,
+      "overlap_min_eigenvalue": 1.211582864672219e-10,
+      "resources": {
+        "OOM": 0,
+        "container_cpu_seconds": 16.487494,
+        "container_wall_seconds": 16.250595087999997,
+        "extra_swap": 0,
+        "hard_CPU": 1,
+        "hard_memory_bytes": 1073741824,
+        "job_wall_seconds": 43.0,
+        "memory_peak_bytes": 148389888,
+        "network": "lo only",
+        "threads": 1
+      },
+      "run_id": 39770558189,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39770558189",
+      "source_commit": "999476363de34e2b52a38d883358fb3f23f40901",
+      "stage": 1,
+      "state_chain_files": 3,
+      "state_sha256": "1667358db81b04b56f80873a851da30806465dc109a8004444723cadaead3c4e",
+      "worker_exit_code": 0
+    },
+    {
+      "Becke_points": 10552,
+      "Becke_weight_volume": 126.49666568714599,
+      "SCF_converged": true,
+      "action_sha256": "624f1961d42f02b57ceb31b08ea68a94b7416d2eb2bd4d6a2fa4a679372aae6a",
+      "actual_GDF_meshes": [
+        "[11 11 11]",
+        "[11 11 11]"
+      ],
+      "actual_GDF_omegas": [
+        "0.5067382414835355",
+        "0.5381389993678259"
+      ],
+      "electron_counts_offline": {
+        "TrDS_scalar": 19.999999999999023,
+        "occupation": 20.0,
+        "quadrature_fsum": 20.001165275678165
+      },
+      "energy_Eh_per_cell": -274.89622430609654,
+      "last_extra_AO_density_step_precise": 30.894245702873924,
+      "last_extra_AO_density_step_raw_log": 30.9,
+      "last_extra_delta_Eh": 2.751221472863108e-11,
+      "last_extra_orbital_gradient_norm": 1.86e-05,
+      "main_SCF_cycles": 11,
+      "observation_sha256": "099dbb9f4b0280e823135e3a30df3ddf72ccbc608cdc4421a8920020bf5f92a9",
+      "overlap_condition_number": 164127384446.04303,
+      "overlap_min_eigenvalue": 1.2240577895316795e-10,
+      "resources": {
+        "OOM": 0,
+        "container_cpu_seconds": 15.549877,
+        "container_wall_seconds": 15.33507062999999,
+        "extra_swap": 0,
+        "hard_CPU": 1,
+        "hard_memory_bytes": 1073741824,
+        "job_wall_seconds": 43.0,
+        "memory_peak_bytes": 141410304,
+        "network": "lo only",
+        "threads": 1
+      },
+      "run_id": 39771082910,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39771082910",
+      "source_commit": "fde46f22afcc6e10dd10b975f91abda5f8cc5c77",
+      "stage": 2,
+      "state_chain_files": 5,
+      "state_sha256": "2c504c7d5739769227b1d02e5f57eb73a3e2e9f6ce4df4d484b6e1c00f9bba6a",
+      "worker_exit_code": 0
+    }
+  ]
+}

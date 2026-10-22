@@ -1,0 +1,305 @@
+{
+  "numerical_quality": {
+    "Becke_level": 1,
+    "Becke_points": 10552,
+    "SCF_converged": true,
+    "SCF_iterations": [
+      {
+        "PySCF_density_norm": 124871369.84876631,
+        "cycle": 0,
+        "delta_Eh": null,
+        "density_step_Frobenius": null,
+        "energy_Eh": -269.63424231845653,
+        "orbital_gradient_norm": 6.0770452764174925
+      },
+      {
+        "PySCF_density_norm": 123803276.87288569,
+        "cycle": 1,
+        "delta_Eh": 3.8462145494789297,
+        "density_step_Frobenius": 123803276.87288569,
+        "energy_Eh": -265.7880277689776,
+        "orbital_gradient_norm": 2.7647904090760815
+      },
+      {
+        "PySCF_density_norm": 14042956.511434829,
+        "cycle": 2,
+        "delta_Eh": -6.349573099112035,
+        "density_step_Frobenius": 14042956.511434829,
+        "energy_Eh": -272.13760086808963,
+        "orbital_gradient_norm": 3.972985690656085
+      },
+      {
+        "PySCF_density_norm": 6653663.146499051,
+        "cycle": 3,
+        "delta_Eh": -0.6640658547045177,
+        "density_step_Frobenius": 6653663.146499051,
+        "energy_Eh": -272.80166672279415,
+        "orbital_gradient_norm": 3.5053713498287733
+      },
+      {
+        "PySCF_density_norm": 3676285.0386679987,
+        "cycle": 4,
+        "delta_Eh": -1.1717805985177279,
+        "density_step_Frobenius": 3676285.0386679987,
+        "energy_Eh": -273.9734473213119,
+        "orbital_gradient_norm": 2.4046560427698696
+      },
+      {
+        "PySCF_density_norm": 3000408.729809124,
+        "cycle": 5,
+        "delta_Eh": -0.6735945448606344,
+        "density_step_Frobenius": 3000408.729809124,
+        "energy_Eh": -274.6470418661725,
+        "orbital_gradient_norm": 1.2477840177802098
+      },
+      {
+        "PySCF_density_norm": 357576.33569759084,
+        "cycle": 6,
+        "delta_Eh": -0.24784220079766328,
+        "density_step_Frobenius": 357576.33569759084,
+        "energy_Eh": -274.8948840669702,
+        "orbital_gradient_norm": 0.08868295782349796
+      },
+      {
+        "PySCF_density_norm": 69675.51287942458,
+        "cycle": 7,
+        "delta_Eh": -0.0012854565215434377,
+        "density_step_Frobenius": 69675.51287942458,
+        "energy_Eh": -274.8961695234917,
+        "orbital_gradient_norm": 0.014451668399690023
+      },
+      {
+        "PySCF_density_norm": 3118.952450298623,
+        "cycle": 8,
+        "delta_Eh": -5.100346822928259e-05,
+        "density_step_Frobenius": 3118.952450298623,
+        "energy_Eh": -274.89622052695995,
+        "orbital_gradient_norm": 0.0038314895465232286
+      },
+      {
+        "PySCF_density_norm": 5572.144452974043,
+        "cycle": 9,
+        "delta_Eh": -3.7775985219923314e-06,
+        "density_step_Frobenius": 5572.144452974043,
+        "energy_Eh": -274.8962243045585,
+        "orbital_gradient_norm": 8.944418163396004e-05
+      },
+      {
+        "PySCF_density_norm": 463.12158953819085,
+        "cycle": 10,
+        "delta_Eh": -1.5655814422643743e-09,
+        "density_step_Frobenius": 463.12158953819085,
+        "energy_Eh": -274.89622430612405,
+        "orbital_gradient_norm": 1.312642424670928e-05
+      }
+    ],
+    "aux_AO_count": 105,
+    "aux_basis": "weigend",
+    "basis": "cc-pVDZ all-electron",
+    "cell_volume_Bohr3": 125.88758356294065,
+    "cost": {
+      "scientific_wall_seconds": 14.680530775999998,
+      "temporary_3c_file_bytes": 451688
+    },
+    "definitions": "Uniform k-weight sum of spin-summed occupations and Tr(D_k S_k); independent finite realspace quadrature of same final density. A quadrature mismatch does not change actual electron number.",
+    "density_overlap_trace_electrons": 19.999999999999,
+    "diagnostic_only_thresholds": {
+      "electron_trace_abs_1e_6": "screening algebraic identity, not material accuracy; no automatic resource allocation",
+      "quadrature_abs_1e_3": "warning only, not material accuracy or execution gate"
+    },
+    "final_vs_last_callback_delta_Eh": 2.751221472863108e-11,
+    "final_vs_last_callback_density_Frobenius": 30.894245702873924,
+    "grid_weight_volume_Bohr3": 126.49666568714599,
+    "integer_closed_shell_occupations": true,
+    "k_sampling": {
+      "Gamma_included": true,
+      "actual_fractional_reciprocal_kpts": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_kpts_absolute_1_per_Bohr": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_weights": [
+        1.0
+      ],
+      "coordinate_unit": "1/Bohr",
+      "definition": "fractional coordinates multiply primitive reciprocal vectors including2pi; absolute rad/Bohr. Even2mesh uses fractions0,-1/2, not half-shifted Monkhorst-Pack. No IBZ/symmetry reduction.",
+      "generator": "cell.make_kpts",
+      "mesh": [
+        1,
+        1,
+        1
+      ],
+      "symmetry_reduction": false,
+      "weights": "uniform",
+      "with_gamma_point": true,
+      "wrap_around": true
+    },
+    "labels": [
+      "NUMERICAL_CONVERGENCE_OBSERVED",
+      "QUADRATURE_SENSITIVITY_UNKNOWN",
+      "KPOINT_SENSITIVITY_UNKNOWN",
+      "BASIS_SENSITIVITY_UNKNOWN",
+      "MODEL_ACCURACY_NOT_CERTIFIED",
+      "INDEPENDENT_REFERENCE_NOT_TESTED"
+    ],
+    "occupation_electrons": 20.0,
+    "occupation_minus_trace": 9.983125437429408e-13,
+    "physics_limits": "PBE, finite Gaussian basis, finite full k mesh; no independent reference; quadrature/momentum/basis errors distinct and coupled",
+    "quadrature_minus_trace": 0.0011652756791669105,
+    "realspace_integrated_electrons": 20.00116527567817,
+    "sensitivity_checks_performed": [],
+    "theoretical_electrons": 20,
+    "trace_imaginary_abs": 0.0,
+    "warnings": [
+      "QUADRATURE_ELECTRON_SCREEN"
+    ]
+  },
+  "observation": {
+    "AO_count": 32,
+    "SCF_converged": true,
+    "basis": "cc-pvdz all-electron",
+    "density_fitting": "GDF weigend",
+    "energy_Eh_per_cell": -274.89622430609654,
+    "energy_unit": "Eh/cell",
+    "energy_zero": "neutral3D periodic all-electron BO/PBE total per primitive input cell with Ewald convention; NOT molecular HF absolute reference",
+    "engine": "PySCF-PBC",
+    "forces_status": "NOT_IMPLEMENTED",
+    "integration": "Becke level1",
+    "method": "KRKS/PBE",
+    "numerics": {
+      "Becke_level": 1,
+      "cell_precision": 1e-06,
+      "conv_tol": 1e-08,
+      "max_cycle": 80
+    },
+    "physical_accuracy": "NOT_CERTIFIED",
+    "sampling": {
+      "Gamma_included": true,
+      "actual_fractional_reciprocal_kpts": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_kpts_absolute_1_per_Bohr": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_weights": [
+        1.0
+      ],
+      "coordinate_unit": "1/Bohr",
+      "definition": "fractional coordinates multiply primitive reciprocal vectors including2pi; absolute rad/Bohr. Even2mesh uses fractions0,-1/2, not half-shifted Monkhorst-Pack. No IBZ/symmetry reduction.",
+      "generator": "cell.make_kpts",
+      "mesh": [
+        1,
+        1,
+        1
+      ],
+      "symmetry_reduction": false,
+      "weights": "uniform",
+      "with_gamma_point": true,
+      "wrap_around": true
+    },
+    "solver": "KRKS",
+    "stress_status": "NOT_IMPLEMENTED",
+    "versions": {
+      "ASE": "3.29.0",
+      "NumPy": "2.2.6",
+      "PySCF": "2.8.0"
+    }
+  },
+  "spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "Mg",
+          "xyz_angstrom": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "element": "O",
+          "xyz_angstrom": [
+            2.155,
+            2.105,
+            2.105
+          ]
+        }
+      ],
+      "cell_angstrom": [
+        [
+          0.0,
+          2.105,
+          2.105
+        ],
+        [
+          2.105,
+          0.0,
+          2.105
+        ],
+        [
+          2.105,
+          2.105,
+          0.0
+        ]
+      ],
+      "charge": 0,
+      "periodic": true,
+      "source": "Inherited unused MgO proposal; geometry input, not equilibrium or stability proof",
+      "spin_2S": 0,
+      "type": "periodic_cell"
+    },
+    "object_id": "QW_I01_MGO_INITIAL",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf-pbc",
+      "k_sampling": {
+        "coordinate_unit": "1/Bohr",
+        "generator": "cell.make_kpts",
+        "mesh": [
+          1,
+          1,
+          1
+        ],
+        "symmetry_reduction": false,
+        "weights": "uniform",
+        "with_gamma_point": true,
+        "wrap_around": true
+      },
+      "method": "KRKS",
+      "numerics": {
+        "Becke_level": 1,
+        "cell_precision": 1e-06,
+        "conv_tol": 1e-08,
+        "max_cycle": 80
+      },
+      "observables": [
+        "energy"
+      ],
+      "xc": "PBE"
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  },
+  "status": "CALCULATED",
+  "world_spec_sha256": "8244cfb2452ee50ee2619914362535c7eda4805bb889668f2421c6369ea6d1c2"
+}

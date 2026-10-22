@@ -1,0 +1,163 @@
+{
+  "I1": {
+    "evidence": "3 immutable hashed states after stage1,5 after stage2; inherited parents preserved and checked",
+    "status": "IMPLEMENTED_SOFTWARE_TESTED_AND_RESTORED_IN_REAL_EXECUTION"
+  },
+  "I2": {
+    "limits": "AFFINE_STRAIN_CELL software-tested only; no actual strain solve; no arbitrary charge/spin/model mutation",
+    "status": "GENERIC_MEASUREMENT_AND_DISPLACEMENT_REAL_EXECUTION"
+  },
+  "I3": {
+    "evidence": "Independent inherited PySCF2.8 KRKS solver returned two actual converged static BO energies, each attached to immutable state with complete action/observation/worker/resource chain",
+    "physical_accuracy": "NOT_CERTIFIED",
+    "status": "STATE_TRANSITION_EXECUTED_REAL_PERIODIC_MODEL_RESPONSE"
+  },
+  "I4": {
+    "evidence": "Job1 completion precedes AI decision/action freeze, which precedes distinct stage2 source commit and Job2 start; original observation/action/decision hashes retained",
+    "mode": "Current Work AI, not prewritten optimizer or realtime model in offline runner",
+    "status": "AI_DECISION_AFTER_OBSERVATION"
+  },
+  "I5": {
+    "claim_ceiling": "Execution-loop proof within tested periodic static-energy model and authorized Work context, pending B-Chat scientific adjudication; not accurate restoring force/stability proof",
+    "status": "BOUNDED_INTERACTIVE_WORLD_LOOP_PROVEN"
+  },
+  "QA": {
+    "offline_alternate_checks": "Scalar/compensated three electron sums, decimal energy subtraction, state/action/spec/observation hash chain, chronological binding and actual cgroup/network/exit metadata; no new physics or independent physical reference",
+    "raw_files_SHA_verified": [
+      47,
+      49
+    ],
+    "software_tests_before_second": 41,
+    "software_tests_postapproval": 41
+  },
+  "SCFs": 2,
+  "action": {
+    "Becke_level": 1,
+    "SCF_conv_tol": 1e-08,
+    "atom_id": "atom-1",
+    "basis": "cc-pvdz",
+    "cell": "FIXED",
+    "charge": 0,
+    "composition": "MgO",
+    "density_fit": "GDF/weigend",
+    "element": "O",
+    "kmesh": [
+      1,
+      1,
+      1
+    ],
+    "max_cycle": 80,
+    "method": "KRKS/PBE",
+    "precision": 1e-06,
+    "spin_2S": 0,
+    "vector_A": [
+      0.05,
+      0,
+      0
+    ]
+  },
+  "attempts_each": 1,
+  "automatic_reruns": 0,
+  "branch": "qw-interactive01",
+  "capability_map": {
+    "P1_P2_PERIODIC02_03": "INHERITED_UNCHANGED",
+    "W1": "INHERITED_UNCHANGED",
+    "W2": "INCOMPLETE",
+    "W3": "INHERITED_UNCHANGED",
+    "immutable_world_interaction": "BOUNDED_REAL_EXECUTION",
+    "new_force_capability": "NOT_PROVEN",
+    "original_discovery": "NOT_ESTABLISHED",
+    "periodic_response": "ENERGY_ONLY_STRUCTURAL_RESPONSE",
+    "time_evolution": "NOT_IMPLEMENTED_THIS_TRANCHE"
+  },
+  "delta_energy_Eh_per_cell": -0.001308730794676194,
+  "energy_Eh_per_cell": [
+    -274.89491557530187,
+    -274.89622430609654
+  ],
+  "history": "No historical evidence, source solvers, XREM Canonical or earlier scientific qualifications changed. Negative original prediction retained.",
+  "new_jobs": 2,
+  "numerical_quality": {
+    "Becke_points": [
+      11334,
+      10552
+    ],
+    "Becke_weights_same": false,
+    "GDF_mesh_omega_same": true,
+    "SCF_flags": [
+      true,
+      true
+    ],
+    "dynamics": "NOT_IMPLEMENTED",
+    "energy_error_bound": "UNKNOWN",
+    "force": "NOT_COMPUTED",
+    "full_grid_coordinates_saved": false,
+    "last_extra_AO_density_steps": [
+      13.449044498623744,
+      30.894245702873924
+    ],
+    "last_extra_orbital_gradients": [
+      1.79e-06,
+      1.86e-05
+    ],
+    "occupation_electrons": [
+      20,
+      20
+    ],
+    "overlap_condition_numbers": [
+      165817358518.3317,
+      164127384446.04303
+    ],
+    "overlap_trace_electrons": [
+      19.999999999999936,
+      19.999999999999023
+    ],
+    "physical_accuracy": "NOT_CERTIFIED",
+    "realspace_integrals": [
+      20.00134210384627,
+      20.001165275678165
+    ]
+  },
+  "physical_response_interpretation": "Computed decrease, not expected increase; physical structural-stability inference INCONCLUSIVE due conditioning and changed quadrature.",
+  "prediction_supported": false,
+  "receipt": "QW_INTERACTIVE01_EXECUTION_RECEIPT",
+  "repository": "flyoung588/narque-qw-foundation02",
+  "resource": {
+    "OOM": 0,
+    "artifact_cache_Packages_uploads": 0,
+    "container_seconds": [
+      16.250595087999997,
+      15.33507062999999
+    ],
+    "cost_evidence": "https://docs.github.com/en/billing/concepts/product-billing/github-actions; public standard runner free, ordinary logs do not consume artifact storage; no billable service provisioned",
+    "cpu_seconds": [
+      16.487494,
+      15.549877
+    ],
+    "each_limits": "1CPU/1numerical_thread/1GiB/0extraSwap/networknone/15minute Job",
+    "job_seconds": [
+      43.0,
+      43.0
+    ],
+    "memory_peak_bytes": [
+      148389888,
+      141410304
+    ],
+    "provider_total_tokens": "UNKNOWN",
+    "purchases": 0,
+    "runner": "public standard ubuntu-24.04"
+  },
+  "runs": [
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39770558189",
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39771082910"
+  ],
+  "scientific_verdict_owner": "B-CHAT_PENDING_REVIEW",
+  "scope": "Human-authorized Work-AI-driven two-stage static Born-Oppenheimer periodic energy-only world interaction; not autonomous scientist or continuous quantum time evolution",
+  "source_commits": [
+    "999476363de34e2b52a38d883358fb3f23f40901",
+    "fde46f22afcc6e10dd10b975f91abda5f8cc5c77"
+  ],
+  "state_effect": "NO_STATE_CHANGE",
+  "status": "BOUNDED_INTERACTIVE_WORLD_LOOP_PROVEN_SUBMITTED_FOR_BCHAT_REVIEW",
+  "stop": "Two authorized Jobs spent; no third run/automatic retry or new experiment. Return B-Chat."
+}
