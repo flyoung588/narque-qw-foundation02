@@ -1,0 +1,10 @@
+{
+  "converged": true,
+  "energy_Eh": -1.128700093556442,
+  "permanent_dipole_au": [
+    0.0,
+    0.0,
+    -2.7755575615628914e-17
+  ],
+  "point_group": "Dooh"
+}

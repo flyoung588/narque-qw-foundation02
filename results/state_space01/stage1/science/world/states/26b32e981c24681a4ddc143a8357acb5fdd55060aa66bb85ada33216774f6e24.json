@@ -1,0 +1,215 @@
+{
+  "payload": {
+    "arrays": {
+      "format": "NPZ_COMPLEX128_FLOAT64",
+      "keys": [
+        "H0_Eh",
+        "H0_expectation_Eh",
+        "coherence_01",
+        "dipole_au",
+        "dipole_projection_au",
+        "field_au",
+        "instantaneous_H_expectation_Eh",
+        "ket",
+        "kets",
+        "populations",
+        "tighter_kets",
+        "time_au",
+        "time_fs"
+      ],
+      "path": "arrays/fa6c2071816ffcf69b04a1b6463ee64e82a282f6268654e886ddd00402c52aa5.npz",
+      "sha256": "fa6c2071816ffcf69b04a1b6463ee64e82a282f6268654e886ddd00402c52aa5"
+    },
+    "basis": [
+      "RHF_REFERENCE_EFFECTIVE_LABEL",
+      "SELECTED_TDA_SINGLET_EFFECTIVE_LABEL"
+    ],
+    "control": {
+      "amplitude_au": 0.001,
+      "carrier_ratio": 1,
+      "duration_au": 400,
+      "envelope": "sin2",
+      "field_unit": "atomic_electric_field",
+      "phase_rad": 0,
+      "polarization": [
+        0,
+        0,
+        1
+      ],
+      "time_unit": "atomic_time"
+    },
+    "control_origin_au": 0.0,
+    "dimension": 2,
+    "interpretation": "SEPARATE_WORK_AI_DECISION",
+    "model": {
+      "H0_Eh": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.5172713569900522
+        ]
+      ],
+      "diagonal_dipoles": "Zero by centrosymmetric parity-state assumption, not fitted excited-state moments. Selected root required isolated among computed roots.",
+      "dipole_au": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            1.3357081258236245
+          ],
+          [
+            1.3357081258236245,
+            0.0
+          ]
+        ]
+      ],
+      "dipole_sign": "PySCF length transition uses electronic position; chosen effective root phase absorbs overall electronic minus sign, and dipole projection is positive. Recorded coherence is in this declared gauge.",
+      "energy_zero": "RHF-reference effective level set0; excitation relative to that reference",
+      "engine": "PySCF",
+      "engine_version": "2.8.0",
+      "model_space": "Reference+one isolated bright TDA singlet, phase fixed by positive projected moment",
+      "omissions": [
+        "all other electronic levels and continuum",
+        "excited-excited dipoles",
+        "nuclear motion",
+        "ionization",
+        "relativity",
+        "decoherence/dissipation",
+        "self-consistent real-time electron density"
+      ],
+      "selected": {
+        "effective_root_phase_relative_to_PySCF_X": -1,
+        "gap_Eh": 0.5172713569900522,
+        "nearest_computed_omitted_root_separation_Eh": 0.27117774493564073,
+        "phase_convention": "physical dipole projection positive; electronic minus sign absorbed in root phase",
+        "root_index": 0,
+        "transition_dipole_au": [
+          0.0,
+          0.0,
+          1.3357081258236245
+        ]
+      },
+      "source_SCF_energy_Eh": -1.128700093556442,
+      "source_TDA_residual": 6.471408320277935e-16,
+      "source_files_sha256": {
+        "SCF.json": "00d8db8300c7331f6682a73bd5853c1633d3ac1a45810edb93d6b0f3017cb366",
+        "TDA.json": "f251302282cba3f60e6aaf4f166676beba6067b29cf062337fb5902e990bc26e",
+        "electronic_response.npz": "d735e4d737951dde23ae14bfd933b906efbe6ee23a352d5690683fe04078c3fb"
+      },
+      "source_type": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+      "truncation_validity": "Weak coupling screens against computed gaps only; uncomputed roots/multiphoton/ionization errors UNKNOWN. Not a certified low-energy reduction.",
+      "world_spec_sha256": "d22e5761582e43d875211c62f6121cd2e7c4eb2c96c6824ca2b7ca8d607a552c"
+    },
+    "norm": 0.9999999999996112,
+    "observation": {
+      "atomic_time_in_fs": 0.024188843265864,
+      "coherence_abs_max": 0.1319877874845815,
+      "end_time_au": 400.0,
+      "interpretation": "Two-state effective amplitudes/population, not exact many-electron population or electron density",
+      "population_final": 0.01773531753308116,
+      "population_max": 0.01773531753308116,
+      "quality": {
+        "Hermitian_Hamiltonian": true,
+        "basis_truncation": "NOT_CERTIFIED",
+        "derived_density_hermitian": "Outer-product construction; algebraic consistency, not an independent physics test",
+        "derived_density_trace_error_max": 3.8913317013111737e-13,
+        "effective_coupling_over_gap": 0.0025822193859640135,
+        "energy_check": "Driven H(t): neither H0 nor instantaneous H(t) expectation is required constant. Zero-field constant-H conservation is software-tested separately.",
+        "engine": "QuTiP",
+        "integrator_options": {
+          "atol": 1e-11,
+          "max_step": 0.5061161501818554,
+          "method": "dop853",
+          "normalize_output": false,
+          "nsteps": 20000,
+          "progress_bar": "",
+          "rtol": 1e-09,
+          "store_states": true
+        },
+        "norm_error_max": 3.8913317013111737e-13,
+        "physical_molecular_accuracy": "NOT_CERTIFIED",
+        "population_sum_error_max": 3.8913317013111737e-13,
+        "population_tolerance_difference_max": 2.224644080062177e-13,
+        "propagations": 2,
+        "state_vector_tolerance_difference_max": 6.211944936217054e-12,
+        "tighter_replica": {
+          "atol": 1e-13,
+          "rtol": 1e-11
+        },
+        "version": "5.2.1"
+      },
+      "start_time_au": 0.0,
+      "status": "CALCULATED_EFFECTIVE_MODEL"
+    },
+    "parent_state_id": "0917dd32fedc76a7b9553de21090d5d0eb5c0703ae239016053335991e7dbc2e",
+    "reason": "EVOLVE_QUANTUM_STATE",
+    "schema": "QW_EFFECTIVE_QUANTUM_STATE_01",
+    "scope": "Truncated response-derived effective ket; NOT SCF orbitals or a full molecular wavefunction",
+    "state_kind": "TIME_DEPENDENT_EFFECTIVE_QUANTUM_KET",
+    "time_au": 400.0,
+    "world_spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              -0.37
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              0.37
+            ]
+          }
+        ],
+        "charge": 0,
+        "periodic": false,
+        "spin_2S": 0,
+        "type": "molecule"
+      },
+      "object_id": "QW_SS01_H2_ELECTRONIC_RESPONSE_SOURCE",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf",
+        "method": "RHF",
+        "observables": [
+          "energy"
+        ]
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    }
+  },
+  "sha256": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+  "state_id": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24"
+}

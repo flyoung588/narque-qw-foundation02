@@ -1,0 +1,81 @@
+{
+  "H0_Eh": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0.5172713569900522
+    ]
+  ],
+  "diagonal_dipoles": "Zero by centrosymmetric parity-state assumption, not fitted excited-state moments. Selected root required isolated among computed roots.",
+  "dipole_au": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        1.3357081258236245
+      ],
+      [
+        1.3357081258236245,
+        0.0
+      ]
+    ]
+  ],
+  "dipole_sign": "PySCF length transition uses electronic position; chosen effective root phase absorbs overall electronic minus sign, and dipole projection is positive. Recorded coherence is in this declared gauge.",
+  "energy_zero": "RHF-reference effective level set0; excitation relative to that reference",
+  "engine": "PySCF",
+  "engine_version": "2.8.0",
+  "model_space": "Reference+one isolated bright TDA singlet, phase fixed by positive projected moment",
+  "omissions": [
+    "all other electronic levels and continuum",
+    "excited-excited dipoles",
+    "nuclear motion",
+    "ionization",
+    "relativity",
+    "decoherence/dissipation",
+    "self-consistent real-time electron density"
+  ],
+  "selected": {
+    "effective_root_phase_relative_to_PySCF_X": -1,
+    "gap_Eh": 0.5172713569900522,
+    "nearest_computed_omitted_root_separation_Eh": 0.27117774493564073,
+    "phase_convention": "physical dipole projection positive; electronic minus sign absorbed in root phase",
+    "root_index": 0,
+    "transition_dipole_au": [
+      0.0,
+      0.0,
+      1.3357081258236245
+    ]
+  },
+  "source_SCF_energy_Eh": -1.128700093556442,
+  "source_TDA_residual": 6.471408320277935e-16,
+  "source_files_sha256": {
+    "SCF.json": "00d8db8300c7331f6682a73bd5853c1633d3ac1a45810edb93d6b0f3017cb366",
+    "TDA.json": "f251302282cba3f60e6aaf4f166676beba6067b29cf062337fb5902e990bc26e",
+    "electronic_response.npz": "d735e4d737951dde23ae14bfd933b906efbe6ee23a352d5690683fe04078c3fb"
+  },
+  "source_type": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+  "truncation_validity": "Weak coupling screens against computed gaps only; uncomputed roots/multiphoton/ionization errors UNKNOWN. Not a certified low-energy reduction.",
+  "world_spec_sha256": "d22e5761582e43d875211c62f6121cd2e7c4eb2c96c6824ca2b7ca8d607a552c"
+}

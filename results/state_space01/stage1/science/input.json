@@ -1,0 +1,63 @@
+{
+  "first_control": {
+    "amplitude_au": 0.001,
+    "carrier_ratio": 1,
+    "duration_au": 400,
+    "envelope": "sin2",
+    "field_unit": "atomic_electric_field",
+    "phase_rad": 0,
+    "polarization": [
+      0,
+      0,
+      1
+    ],
+    "time_unit": "atomic_time"
+  },
+  "first_prediction": "Conditional positive isolated bright root: excited population max>1e-6 and norm error<1e-7, ODE-tolerance population difference<1e-6. No exact molecular population or real-time TDDFT claim.",
+  "frontier_decision_sha256": "72bd50b2e16d7958fcf79cbb73f99b028d6ba55a66f8fe445e635d0f0e5c80f1",
+  "model": "PYSCF_RHF_TDA_RESPONSE_DERIVED_TWO_STATE",
+  "model_check_failure": "Preserve raw partial results then STOP; no fallback, relaxed thresholds, extra roots or rerun",
+  "root_count_max": 6,
+  "second_action": "NOT_SELECTED_PENDING_REAL_FIRST_OBSERVATION",
+  "stage": 1,
+  "world_spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            -0.37
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            0.37
+          ]
+        }
+      ],
+      "charge": 0,
+      "periodic": false,
+      "spin_2S": 0,
+      "type": "molecule"
+    },
+    "object_id": "QW_SS01_H2_ELECTRONIC_RESPONSE_SOURCE",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf",
+      "method": "RHF",
+      "observables": [
+        "energy"
+      ]
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  }
+}

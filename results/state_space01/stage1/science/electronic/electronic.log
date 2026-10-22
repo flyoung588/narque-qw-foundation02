@@ -1,0 +1,136 @@
+#INFO: **** input file is /app/state_space01/worker.py ****
+"""One isolated new-domain worker, inherited supervisor handles native failures."""
+import json,pathlib,resource,sys,traceback
+ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from interactive01.world import freeze,verify
+from router import digest
+from state_space01.state import QuantumStore
+from state_space01.world_runtime import act
+from state_space01.excitation import build_model
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+def operate(store,state,action):return act(store,state,action,authority=True,resources=True)
+request=json.loads(pathlib.Path(sys.argv[1]).read_text());out=pathlib.Path(sys.argv[2]);store=QuantumStore(out/'world')
+try:
+    if request['stage']==1:
+        spec=request['world_spec'];root=store.create(spec,'STRUCTURAL_SOURCE_FOR_NEW_ELECTRONIC_DOMAIN')
+        freeze(out/'structural_source.json',root)
+        model=build_model(spec,out/'electronic',request['first_control']['polarization'])
+        state=store.save(parent=root['sha256'],world_spec=spec,model=model,ket=[1,0],time_au=0,reason='PREPARE_REFERENCE_EFFECTIVE_STATE')
+        state,_=operate(store,state,{'type':'APPLY_EXTERNAL_FIELD','source_state_sha256':state['sha256'],'control':request['first_control']})
+        state,receipt=operate(store,state,{'type':'EVOLVE_QUANTUM_STATE','source_state_sha256':state['sha256'],'duration_au':request['first_control']['duration_au'],'time_unit':'atomic_time'})
+    elif request['stage']==2:
+        # The imported scientific arrays are real NPZ bytes, not JSON amplitudes.
+        # They must be prepared only after completed Job1 and Work AI decision.
+        source_dir=ROOT/'state_space01/inherited';import shutil
+        for p in sorted(source_dir.rglob('*')):
+            if not p.is_file():continue
+            rel=p.relative_to(source_dir);dest=store.root/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest)
+        state=store.load(request['source_state_sha256']);arrays=store.arrays(state)
+        ancestor=state
+        while ancestor['payload']['parent_state_id'] is not None:
+            ancestor=store.load(ancestor['payload']['parent_state_id'])
+        decision=request['ai_decision']
+        if decision['source_state_sha256']!=state['sha256'] or decision['observation_sha256']!=digest(state['payload']['observation']) or not decision['first_job_run_id']:raise ValueError('UNBOUND_POSTOBSERVATION_DECISION')
+        if decision['actions_sha256']!=digest(request['actions']):raise ValueError('UNBOUND_ACTIONS')
+        if not 1<=len(request['actions'])<=3 or sum(a['type']=='EVOLVE_QUANTUM_STATE' for a in request['actions'])!=1:raise ValueError('ONE_NEW_PHYSICAL_PROPAGATION_REQUIRED')
+        # Work freezes a bounded sequence after observation; only source hash of
+        # subsequent operations is filled from actual preceding immutable output.
+        for item in request['actions']:
+            action={**item,'source_state_sha256':state['sha256']};state,receipt=operate(store,state,action)
+    else:raise ValueError('STAGE_DOMAIN')
+    result={'status':'CALCULATED','domain':'RESPONSE_DERIVED_EFFECTIVE_QUANTUM_DYNAMICS','request_sha256':digest(request),'state':state,'observation':state['payload']['observation'],'last_transition':receipt,'model_accuracy':'NOT_CERTIFIED','full_electron_realtime':'NOT_IMPLEMENTED'}
+    freeze(out/'observation.json',result)
+except BaseException as e:
+    freeze(out/'worker_failure.json',{'status':'UNVERIFIED','type':type(e).__name__,'error':str(e),'traceback':traceback.format_exc(),'partial_electronic_and_dynamics_evidence_preserved':True});raise
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='6ff7370f505d', release='6.17.0-1022-azure', version='#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026', machine='x86_64')  Threads 1
+Python 3.12.15 (main, Oct  6 2026, 02:02:31) [GCC 12.2.0]
+numpy 2.2.6  scipy 1.15.3  h5py 3.16.0
+Date: Thu Oct 22 12:24:47 2026
+PySCF version 2.8.0
+PySCF path  /usr/local/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 2
+[INPUT] num. electrons = 2
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry True subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 H      0.000000000000   0.000000000000  -0.370000000000 AA    0.000000000000   0.000000000000  -0.699198666089 Bohr   0.0
+[INPUT]  2 H      0.000000000000   0.000000000000   0.370000000000 AA    0.000000000000   0.000000000000   0.699198666089 Bohr   0.0
+
+nuclear repulsion = 0.715104339081081
+point group symmetry = Dooh
+symmetry origin: [0. 0. 0.]
+symmetry axis x: [1. 0. 0.]
+symmetry axis y: [0. 1. 0.]
+symmetry axis z: [0. 0. 1.]
+num. orbitals of irrep A1g = 3
+num. orbitals of irrep E1gx = 1
+num. orbitals of irrep E1gy = 1
+num. orbitals of irrep A1u = 3
+num. orbitals of irrep E1uy = 1
+num. orbitals of irrep E1ux = 1
+number of shells = 6
+number of NR pGTOs = 14
+number of NR cGTOs = 10
+basis = cc-pvdz
+ecp = {}
+CPU time:         0.93
+
+
+******** <class 'pyscf.scf.hf_symm.SymAdaptedRHF'> ********
+method = SymAdaptedRHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-10
+SCF conv_tol_grad = None
+SCF max_cycles = 80
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /tmp/tmpfi2b9zgq
+max_memory 400 MB (current use 111 MB)
+Freeze 0 electrons in irreps []
+    2 free electrons in irreps A1g E1gx E1gy A1u E1uy E1ux
+Set gradient conv threshold to 1e-05
+Initial guess from minao.
+init E= -0.812083679939727
+HOMO (A1g) = -0.554565732564958  LUMO (A1u) = 0.155207455491931
+cycle= 1 E= -1.12773421671327  delta_E= -0.316  |g|= 0.0451  |ddm|= 0.706
+HOMO (A1g) = -0.599776376507856  LUMO (A1u) = 0.193233599759234
+cycle= 2 E= -1.12867333647629  delta_E= -0.000939  |g|= 0.00705  |ddm|= 0.0427
+HOMO (A1g) = -0.592585612088552  LUMO (A1u) = 0.19733684153465
+cycle= 3 E= -1.12870004279955  delta_E= -2.67e-05  |g|= 0.000367  |ddm|= 0.00928
+HOMO (A1g) = -0.592406179645731  LUMO (A1u) = 0.197439216995556
+cycle= 4 E= -1.12870009355196  delta_E= -5.08e-08  |g|= 2.87e-06  |ddm|= 0.000472
+HOMO (A1g) = -0.592410985511227  LUMO (A1u) = 0.197440055441001
+cycle= 5 E= -1.12870009355644  delta_E= -4.48e-12  |g|= 7.44e-10  |ddm|= 4.01e-06
+HOMO (A1g) = -0.592410986083975  LUMO (A1u) = 0.197440055702658
+Extra cycle  E= -1.12870009355644  delta_E= -1.33e-15  |g|= 1.37e-10  |ddm|= 9e-10
+converged SCF energy = -1.12870009355644
+
+
+******** <class 'pyscf.tdscf.rhf.TDA'> for <class 'pyscf.scf.hf_symm.SymAdaptedRHF'> ********
+nstates = 6 singlet
+deg_eia_thresh = 1.000e-03
+wfnsym = None
+conv_tol = 1e-09
+eigh lindep = 1e-12
+eigh level_shift = 0
+eigh max_cycle = 80
+chkfile = /tmp/tmpfi2b9zgq
+max_memory 400 MB (current use 120 MB)
+
+
+Excited State energies (eV)
+[14.07567057 21.45479287 32.30709355 40.31196952 40.31196952 56.61069596]

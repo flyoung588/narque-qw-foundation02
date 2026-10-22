@@ -1,0 +1,18 @@
+{
+  "action": {
+    "duration_au": 400,
+    "source_state_sha256": "0917dd32fedc76a7b9553de21090d5d0eb5c0703ae239016053335991e7dbc2e",
+    "time_unit": "atomic_time",
+    "type": "EVOLVE_QUANTUM_STATE"
+  },
+  "action_sha256": "501bb6d78a8659bf4b9f2eb0fac84141f2d774a6775127704f9caf41e29576b7",
+  "arrays_sha256": "fa6c2071816ffcf69b04a1b6463ee64e82a282f6268654e886ddd00402c52aa5",
+  "created_UTC": "2026-10-22T12:24:47.702677+00:00",
+  "fixture": false,
+  "model_source": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+  "new_state_sha256": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+  "physical_action": "EVOLVE_QUANTUM_STATE",
+  "scope": "No full-electron realtime dynamics, no W2 or discovery promotion",
+  "source_state_sha256": "0917dd32fedc76a7b9553de21090d5d0eb5c0703ae239016053335991e7dbc2e",
+  "status": "EFFECTIVE_MODEL_TRANSITION"
+}

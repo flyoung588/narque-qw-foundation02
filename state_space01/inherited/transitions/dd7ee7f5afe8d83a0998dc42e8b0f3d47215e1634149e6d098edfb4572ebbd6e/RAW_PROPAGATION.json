@@ -1,0 +1,59 @@
+{
+  "arrays": {
+    "format": "NPZ_COMPLEX128_FLOAT64",
+    "keys": [
+      "H0_expectation_Eh",
+      "coherence_01",
+      "dipole_projection_au",
+      "field_au",
+      "instantaneous_H_expectation_Eh",
+      "kets",
+      "populations",
+      "tighter_kets",
+      "time_au",
+      "time_fs"
+    ],
+    "path": "arrays/b33cfca418e1da7bcab6b7c9c1033dc8114eb3b48ff6ccb2c6a5d897e3aaffd7.npz",
+    "sha256": "b33cfca418e1da7bcab6b7c9c1033dc8114eb3b48ff6ccb2c6a5d897e3aaffd7"
+  },
+  "observation": {
+    "atomic_time_in_fs": 0.024188843265864,
+    "coherence_abs_max": 0.1319877874845815,
+    "end_time_au": 400.0,
+    "interpretation": "Two-state effective amplitudes/population, not exact many-electron population or electron density",
+    "population_final": 0.01773531753308116,
+    "population_max": 0.01773531753308116,
+    "quality": {
+      "Hermitian_Hamiltonian": true,
+      "basis_truncation": "NOT_CERTIFIED",
+      "derived_density_hermitian": "Outer-product construction; algebraic consistency, not an independent physics test",
+      "derived_density_trace_error_max": 3.8913317013111737e-13,
+      "effective_coupling_over_gap": 0.0025822193859640135,
+      "energy_check": "Driven H(t): neither H0 nor instantaneous H(t) expectation is required constant. Zero-field constant-H conservation is software-tested separately.",
+      "engine": "QuTiP",
+      "integrator_options": {
+        "atol": 1e-11,
+        "max_step": 0.5061161501818554,
+        "method": "dop853",
+        "normalize_output": false,
+        "nsteps": 20000,
+        "progress_bar": "",
+        "rtol": 1e-09,
+        "store_states": true
+      },
+      "norm_error_max": 3.8913317013111737e-13,
+      "physical_molecular_accuracy": "NOT_CERTIFIED",
+      "population_sum_error_max": 3.8913317013111737e-13,
+      "population_tolerance_difference_max": 2.224644080062177e-13,
+      "propagations": 2,
+      "state_vector_tolerance_difference_max": 6.211944936217054e-12,
+      "tighter_replica": {
+        "atol": 1e-13,
+        "rtol": 1e-11
+      },
+      "version": "5.2.1"
+    },
+    "start_time_au": 0.0,
+    "status": "CALCULATED_EFFECTIVE_MODEL"
+  }
+}

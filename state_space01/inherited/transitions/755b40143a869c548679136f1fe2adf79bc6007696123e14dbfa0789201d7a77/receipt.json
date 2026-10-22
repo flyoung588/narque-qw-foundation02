@@ -1,0 +1,30 @@
+{
+  "action": {
+    "control": {
+      "amplitude_au": 0.001,
+      "carrier_ratio": 1,
+      "duration_au": 400,
+      "envelope": "sin2",
+      "field_unit": "atomic_electric_field",
+      "phase_rad": 0,
+      "polarization": [
+        0,
+        0,
+        1
+      ],
+      "time_unit": "atomic_time"
+    },
+    "source_state_sha256": "10d8481a4d55a6e4708d91b2d5e1d148e87ac387d51ceb21e3359fd682767e03",
+    "type": "APPLY_EXTERNAL_FIELD"
+  },
+  "action_sha256": "57f69c066eb353640132f0b86814aff56207efa3acf4311802a66427f6d027d2",
+  "arrays_sha256": "94f6b45d6bbb23a10107664c39e154412106b7981a365bdddc3f9ab03132850c",
+  "created_UTC": "2026-10-22T12:24:47.698230+00:00",
+  "fixture": false,
+  "model_source": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+  "new_state_sha256": "0917dd32fedc76a7b9553de21090d5d0eb5c0703ae239016053335991e7dbc2e",
+  "physical_action": "APPLY_EXTERNAL_FIELD",
+  "scope": "No full-electron realtime dynamics, no W2 or discovery promotion",
+  "source_state_sha256": "10d8481a4d55a6e4708d91b2d5e1d148e87ac387d51ceb21e3359fd682767e03",
+  "status": "EFFECTIVE_MODEL_TRANSITION"
+}
