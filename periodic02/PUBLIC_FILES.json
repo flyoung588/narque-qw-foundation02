@@ -1,0 +1,63 @@
+{
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-periodic02",
+  "base": "b0d8d8109b229cf0291120301772b1ab16503aa2",
+  "files": {
+    ".github/workflows/periodic02-once.yml": "1653388d5be3e872e40f8cacd3ed002acac0105bf8143611c286b24bec1ea57d",
+    "README.md": "2b46f4f842ac5567f560b8e1caea4dc1af96f3e585501a715750750086ef85cc",
+    "decisions/AI_PRECOMPUTE_CHOICES.json": "9c97c109cc2e241b0dca311d3685630d218aaabd982e9f1a45e3493c7fbb2c28",
+    "decisions/PREOBSERVATION_FROZEN.json": "685fb6ecdc4757f22e9def6fa0b8dbe530acb2833c38b5040b604cbefd4fd6fd",
+    "decisions/WorldSpec_QW_P02_C_DIAMOND_2ATOM.json": "90f6699c5dce0c226598a9f9d08cf5e0538922dac8099c084c013466699a562d",
+    "decisions/WorldSpec_QW_P02_MGO_ROCKSALT_2ATOM.json": "0de1074df67ae6a630a793b19b4aca95cf0079e74afab592222f994c64414ae4",
+    "periodic02/Dockerfile": "20a2c1f8ab433a461b7388058107c9600973a145e82cf8dd1f76072dfd472673",
+    "periodic02/EXECUTION_SCOPE_TEMPLATE.json": "74f5d0fa9cf756dfab0ae74bb78c546ead31a3af6c60f9c40d64c6be5c0cbbad",
+    "periodic02/__init__.py": "e1ebe57ff669e2cfd3cbd300d11308025c92f6b6e0a50ac2d87decdbd0de804c",
+    "periodic02/admission.py": "e50ca682c0d2b5daa078d4ae52ed91da436fb6fd9e3da13cc6cf4984777aff52",
+    "periodic02/cli.py": "365c3ca44fdfe6f4a240f748c52db5b1967c1bf405e011013c7ed67bee98ab53",
+    "periodic02/cloud_run.py": "5a14228e7ddea57ddbedbfa38bb158b2938c1d30a695c4c1ad163506f480fc25",
+    "periodic02/construct.py": "1ca43f6c4a3f7ba161f3631f914979addb044647f42a632293d64486720724a4",
+    "periodic02/decisions.py": "2b91567b700fc2e35e455ffabf257ba3c2b06f10a96e3e75a681e2f9b44c1ecb",
+    "periodic02/host.py": "8a78d16312c7ec5bf98af7748bba928a017ec50a1dce286eb88aa44adfbc1c9b",
+    "periodic02/io.py": "174be992bf03d9e71f2fa200da87a4de6a47c44f7c6d722c2ef3f99a4066a839",
+    "periodic02/quality.py": "0826c945bb6c4549c61c41598a2560d29ebeb00302c9d702aa374608f69f188e",
+    "periodic02/run_once.py": "eb367dc7ab33042496fd02a6b2a6be391b5658a8c80bc6a3b80922a437383009",
+    "periodic02/science_worker.py": "386149cfe8c064103ef73243144e82e0164aead092cf5a3117542c563101ae67",
+    "tests/test_cloud_contract.py": "9554f12e6ea527c6b5b2515a12b37f30ac8826fd2cdb3672450ae363b91440e3",
+    "tests/test_periodic02.py": "f8ccd428815c1d418ff156625c4b25d48d5f9ca1126dda59c09b0e7338197a24",
+    "tests/test_worker_contract.py": "71abe9183876577f2e03ff6b017bd3f7b60e1697f103d1ee9cfde5c86a1ca89d",
+    ".github/workflows/foundation02.yml": "606d9fc823685afef205676e608877dcd967c8a9ad0d1b82183c0304ec730e24",
+    "tests/test_route_status.py": "3fedfd8a34ed1a5ed57359d85c56260c156a018698a7a6b3c46301e2e9b5d80f"
+  },
+  "original_package": "NARQUE_QW_PERIODIC02_Local_Implementation_v0.1.0.zip, original payload retained unchanged",
+  "changes_from_original": [
+    "admission.py: normalized public routing status functions, strict integer quantum numbers",
+    "science_worker.py: attach normalized actual return status, preserve raw engine evidence",
+    "tests/test_route_status.py:9 pure software regressions",
+    "foundation02.yml: branch-only reuse of registered manual workflow, same periodic02 execution, no main change"
+  ],
+  "secret_review": {
+    "files": 24,
+    "pattern_findings": [],
+    "manual_review": "All code/tests/specs/decisions read; public generic prototypes only, no private science data or credentials"
+  },
+  "selected_spec_sha256": "f761a72b6f4de6045001c41b159638178cc50796bd206e2e18af641e4a1943ec",
+  "science": "Only frozen2C diamond primitive cell a3.57Angstrom, Gamma RKS/PBE cc-pVDZ GDF/weigend BeckeL1; do not execute MgO, Ne, HF or strain",
+  "resources": {
+    "extra_purchases": 0,
+    "extra_swap_bytes": 0,
+    "numerical_threads": 1,
+    "science_memory_bytes": 1073741824,
+    "science_network": "none",
+    "scientific_cpu": 1,
+    "total_job_minutes": 15
+  },
+  "max_manual_jobs": 1,
+  "no_retry": true,
+  "dispatch_path": ".github/workflows/foundation02.yml at qw-periodic02 ref, inputs.round=2; new periodic02-once remains untriggered",
+  "after_Human_approval_only": {
+    "allowed_template_change": "Only authority field NOT_GRANTED -> GRANTED_FOR_QW_PERIODIC02_SINGLE_RUN, serialize JSON indent2+newline; frozen decision keeps NOT_GRANTED historical value untouched",
+    "authorized_template_byte_sha256": "9affa69cb9173c9964b8f30778faa28fe1ae8658c3c7fffcdffc5f826f5671aa",
+    "authorized_scope_canonical_sha256": "e15daee6b21033a4a5f47b74630c0a3d3f3d59f13c9500a146d3b02afecc747c"
+  },
+  "future_result_publication": "Individually reviewed model inputs, true construction/SCF/result-or-failure, versions/resource/logs, AI post-observation analysis, receipt and hashes. No private source/credentials or account metadata."
+}

@@ -1,0 +1,30 @@
+# PREPARED SOURCE ONLY — must not be published/dispatched without new P02 scope.
+name: QW PERIODIC02 one bounded periodic candidate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: periodic02-once
+  cancel-in-progress: false
+jobs:
+  bounded-periodic:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Build bounded isolated periodic environment without persistent cache
+        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f periodic02/Dockerfile -t qw-periodic02:once .
+      - name: Run at most one candidate in offline science container
+        run: python3 -B periodic02/host.py
+      - name: Preserve partial or complete raw evidence
+        if: always()
+        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/qw-periodic02-results"

@@ -1,0 +1,32 @@
+{
+  "authorship": "CURRENT_BCHAT_AI_IN_CURRENT_TURN",
+  "selection_policy": "Prefer one small periodic model with a physically extended covalent solid and a second physically distinct ionic solid. Request actual periodic SCF only after resource admission, and do not rank different compositions by their absolute total energies. Choose the lower-electron-count candidate first while treating this as a rough cost preference, not a physical discovery score.",
+  "why_not_molecular_repeat": "The World has already demonstrated bounded molecular quantum calculation and feedback. These candidates add distinct three-dimensional extended lattices with different bonding regimes; they are material construction requests, not prewritten per-material solver branches.",
+  "selected_first_candidate_id": "QW_P02_C_DIAMOND_2ATOM",
+  "candidates": [
+    {
+      "id": "QW_P02_C_DIAMOND_2ATOM",
+      "bravais": "fcc_primitive",
+      "lattice_a_angstrom": 3.57,
+      "basis": [
+        {"element": "C", "fractional": [0,0,0]},
+        {"element": "C", "fractional": [0.25,0.25,0.25]}
+      ],
+      "rationale": "Two-carbon diamond-structure covalent network: 12 electrons and a two-site periodic basis, different from the prior FCC-Ne rare-gas single-site test. The nominal cubic parameter is a proposed input, not an inferred equilibrium value. This is an accessible first general-material admission question, not an original crystal discovery.",
+      "prediction": "If admitted and genuinely converged, the periodic model should provide a finite PBE total energy per input primitive cell. Any later energy-versus-strain claim requires an AI decision after observing that actual result, preserving identical model and composition.",
+      "falsifier": "Failure to construct the real periodic cell, resource rejection or nonconverged SCF fails this bounded calculation attempt and cannot be reclassified as evidence for or against diamond stability. New numerical results must never be fabricated."
+    },
+    {
+      "id": "QW_P02_MGO_ROCKSALT_2ATOM",
+      "bravais": "fcc_primitive",
+      "lattice_a_angstrom": 4.21,
+      "basis": [
+        {"element": "Mg", "fractional": [0,0,0]},
+        {"element": "O", "fractional": [0.5,0.5,0.5]}
+      ],
+      "rationale": "Two-site rocksalt MgO ionic prototype (20 all-electrons) introduces a chemically distinct periodic composition and a noncovalent bonding regime relative to diamond C. FCC fractional [1/2,1/2,1/2] is equivalent modulo primitive translations to the usual nearest opposite-ion offset. The geometry is an input hypothesis, not a verified relaxed lattice.",
+      "prediction": "If this cell passes resource admission, its same-model periodic PBE SCF may yield a finite energy per primitive cell. It cannot be ranked against carbon's absolute energy. Any claim of ionic material stability would require a relevant comparative calculation and model error analysis.",
+      "falsifier": "SCF failure, unsupported basis or memory/time admission failure blocks numerical use. A raw total-energy number alone cannot validate material binding or synthetic feasibility, even if SCF converges."
+    }
+  ]
+}
