@@ -1,0 +1,25 @@
+{
+  "schema":"QW_CORRELATED_ELECTRONIC_MODEL_BRIDGE_01",
+  "scope":"Static nonrelativistic fixed-nuclei finite-basis Coulomb many-electron eigenstate",
+  "existing_WorldSpec":"Unchanged. physics.RHF explicitly labels the reference calculation only; correlation_model.FCI separately labels the returned wavefunction. GROUNDED legacy engine mode is not material validation.",
+  "physical_object":"Neutral singlet hydrogen assemblies, 2/4/6 atoms, STO-3G, all electrons and all orbitals, at most 400 determinants; actual authorized first object H4 only",
+  "new_freedom":"Determinant-superposition amplitudes and two-particle RDMs, not a two-state effective ket",
+  "parameter_provenance":{
+    "nuclei_geometry":"AI selected external control in angstrom, not measurement",
+    "charges_masses":"Electronic nuclear charges from specified elements; no nuclear dynamics/masses used",
+    "h1_eri":"PySCF 2.8.0 Gaussian integrals of actual electronic Coulomb Hamiltonian, Eh",
+    "basis":"STO-3G library basis assumption, not basis-converged material physics",
+    "reference_MOs":"Computed RHF full orbital span, not truncated active space",
+    "FCI":"Mature direct_spin0 singlet solver; complete determinant space only within this basis",
+    "Lowdin_partition":"Symmetric orthonormalization of AO overlap, one H1s function/site. Declared nonunique analysis convention",
+    "numerical_settings":"Frozen algorithmic tolerances, not fitted physical parameters"
+  },
+  "bridge":{"input":"Existing WorldSpec plus explicit frozen correlation envelope","output":"FCI coefficients in exported alpha/beta bitstring order, RHF MO coefficients, overlap, integrals, spin RDMs","units":"Energy Eh, positions angstrom, local occupations dimensionless, spin correlations hbar^2","MO_to_Lowdin":"U = S^(1/2) C; real full orthogonal square transformation","losses":"No continuum/relativity/basis convergence/nuclear motion/bath; finite basis is not exact molecule","complex_state":"Not admitted; present real Coulomb eigenstates only"},
+  "quality":{"RHF_convergence":1e-11,"FCI_conv_tol":1e-10,"Hamiltonian_residual_Eh_max":1e-8,"RDM_energy_consistency_Eh_max":1e-8,"trace_and_contraction_error_max":1e-8,"norm_error_max":1e-9,"S2_abs_max":1e-7,"site_spin_sum_error_max":1e-7,"occupation_bounds":[-1e-8,2.00000001],"variational_EFCI_minus_ERHF_max_Eh":1e-8},
+  "forecast_not_quality":"Correlation energy <-0.001 Eh and nonidempotency >0.05 are falsifiable forecasts. Numerically valid failure is scientific negative evidence, not execution failure.",
+  "observables":"Natural occupations; spin-summed nonidempotency; site populations, opposite-spin double occupancy, charge covariance, isotropic singlet spin correlations versus RHF Wick baseline",
+  "not_observed":"No dynamics, forces, energy conversion, bulk phase, Mott transition, experimental lifetime, entropy or useful energy density",
+  "runtime":"Parent never imports a solver; independent OS child, no RLIMIT_DATA/AS, outer cgroup remains 1CPU/1GiB/0extraSwap/networknone. Native failure preserves intent, parent state and raw files; no retry.",
+  "second_stage":"NOT_SELECTED_OR_PREAUTHORIZED. If fresh matching Human grant includes it, Work AI first reads actual state/quality, then freezes one existing DISPLACE_ATOM z-vector norm <=0.05angstrom or STOP. Source SHA, observation SHA, action SHA, first run id, prediction and falsifier required.",
+  "external_status":"NOT_PUBLISHED_NOT_EXECUTED; runtime resource limits and real engine compatibility pending actual Runner"
+}

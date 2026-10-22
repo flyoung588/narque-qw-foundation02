@@ -1,16 +1,16 @@
 # LOCAL PREPARATION ONLY: new Human scope required before publication/dispatch.
-name: QW STATE SPACE01 separately frozen electronic-effective dynamics stage
+name: QW PHYSICS FRONTIER01 bounded correlated-electron stage
 on:
   workflow_dispatch:
     inputs:
       round:
         type: choice
-        options: ['2']
+        options: ['1', '2']
         required: true
 permissions:
   contents: read
 concurrency:
-  group: state-space01-once
+  group: physics-frontier01-once
   cancel-in-progress: false
 jobs:
   bounded-periodic:
@@ -27,9 +27,13 @@ jobs:
         with:
           persist-credentials: false
       - name: Build bounded isolated periodic environment without persistent cache
-        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f state_space01/Dockerfile -t state-space01:once .
+        env:
+          REQUESTED_STAGE: ${{ inputs.round }}
+        run: |
+          python3 -c 'import json,os; r=json.load(open("frontier01/REQUEST.json")); assert str(r["stage"])==os.environ["REQUESTED_STAGE"]'
+          timeout --kill-after=5s 210s docker build --pull --no-cache -f frontier01/Dockerfile -t frontier01:once .
       - name: Run at most one candidate in offline science container
-        run: python3 -B state_space01/host.py
+        run: python3 -B frontier01/host.py
       - name: Preserve partial or complete raw evidence
         if: always()
-        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/state-space01-results"
+        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/frontier01-results"

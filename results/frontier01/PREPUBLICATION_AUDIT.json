@@ -1,0 +1,32 @@
+{
+  "allowed_delta": "Three explicit authority/request/publication fields enabled only; no scientific settings changed",
+  "cost_admission": "Current account zero-dollar Actions budget with Usage blocked verified locally; no billing details published",
+  "count": 17,
+  "delta_from_frozen_manifest": [
+    "frontier01/SCOPE.json"
+  ],
+  "historical_baseline": "576d44b12b242ac9589dc57fe5e95300062de101",
+  "license": "Own thin adapter; mature dependencies installed from pinned registry versions; no vendored new third-party source",
+  "science": "NOT_RUN_AT_THIS_AUDIT",
+  "sensitive_scan": "NO_FINDINGS",
+  "source_files": {
+    ".github/workflows/foundation02.yml": "94334196b0864ce06545f1a38e5be0160829c75306744e914cbf493039d03ce4",
+    "QW_PHYSICS_FRONTIER01_SELECTION.json": "8be23ccdc4bbee56c98f6ae74bb87c2559d628ab52ea929cdf0130ec6a66df7b",
+    "frontier01/Dockerfile": "fc13fd3584e629d32f80e582f61994b9cd681967c45779d303289e86709d9750",
+    "frontier01/PROTOCOL.json": "2fa579ae9c3472304be9f852acb1be1bb053781144f5801408268a58ffa8eb36",
+    "frontier01/REQUEST.json": "b8c271278c309045fc800a0e58bb3ff66870a681a90fdbfccfcf8323cf2b291f",
+    "frontier01/SCOPE.json": "58a976f6bc03662b95e4b7e3f53d7926ce78790ae85f0ce2bf2ddcc212d871c4",
+    "frontier01/__init__.py": "f96c1924cf512d1918d4c214090032e0e6fd166201474c0d8e66b22f8982b5bf",
+    "frontier01/cloud_run.py": "a1dbf2d2606792e5008abb5a5efd2b36afec135fad368fa5cd4189d525c37e2b",
+    "frontier01/contract.py": "6b7daf0b2f951ec2252768b6381ecf51f34f5b12fb09c1691f3c36ed93b9f40f",
+    "frontier01/host.py": "e39a0bd677009cd5230186904dc03a8c85aaf4f770ea6c5b5594a6f68a3215f9",
+    "frontier01/observables.py": "0fe25744a46a8a2cbc9259163c9d261344dede014a39ba061795d9a887eee1f7",
+    "frontier01/solver.py": "9f11129dd2ba3fc467c93c1ca5517770d788a5511f191639dbcebc9d631dcd8b",
+    "frontier01/solver_worker.py": "35a91998d09574d8d9a82accdb6a9b3be8bdbae3adf00c5aa350bd464bb450be",
+    "frontier01/state.py": "e1879a4ef3a07b10e08b765928f59cdb1e01cf1c44097138b684ae4327eb19e9",
+    "frontier01/test_software.py": "488ed5075311584985f5df01a8cb7feee8e0b6c8f92f3f4ffa32ea08df158ecc",
+    "frontier01/worker.py": "415b1260e056b2199c5887697a72c3350479032dee4c0b63cf1b506bc20a0764",
+    "frontier01/world_runtime.py": "5d6b53c4a1a56dc3ecbdc3aa19c2459d3afec089f526db11820adb77757c145b"
+  },
+  "status": "PASS_PREPUBLICATION_REVIEW"
+}
