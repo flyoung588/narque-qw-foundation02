@@ -1,0 +1,15 @@
+{
+  "bridge_type": "PYSCF_RHF_TDA_RESPONSE_DERIVED_EFFECTIVE_TWO_STATE",
+  "not": ["Exact molecular eigenstates", "KS orbitals as many-electron states", "Real-time TDHF or TDDFT", "Full material microscopic dynamics", "Independent W2 validation"],
+  "reference": "Fixed-nuclei neutral centrosymmetric molecule with closed-shell RHF/cc-pVDZ. Ground effective energy0; positive TDA excitation energy from the same calculation.",
+  "basis": "Reference effective label g, one computed isolated dipole-bright TDA singlet label e. This is an approximate response-derived basis, not exported exact many-electron wavefunctions.",
+  "dipole": "Length-gauge PySCF transition moment from int1e_r and spin-adapted X. Model root phase absorbs the electronic minus sign so projected physical dipole is positive. Diagonal moments vanish under explicitly required inversion/nondegenerate parity assumptions.",
+  "hamiltonian": "H(t)=diag(0,gap_Eh)-E_au(t) sum_a polarization_a mu_a, hbar=1; real sin-squared-envelope cosine field, frequency=carrier_ratio*computed_gap, physical time in atomic units.",
+  "controls": "Field strength, polarization, carrier ratio, phase and duration are externally specified experimental controls, NOT first-principles predictions. Electronic gap/dipole must come from actual PySCF, never synthetic defaults.",
+  "state": "Complex128 two-component normalized ket. Populations=|c_g|^2,|c_e|^2; coherence=rho_ge=c_g c_e*. Scientific arrays persisted as byte-hashed NPZ. Effective electronic labels do not imply exact electronic occupations.",
+  "operation_semantics": {"APPLY_EXTERNAL_FIELD": "Changes the effective Hamiltonian control only; no propagation", "PREPARE_ELECTRONIC_STATE": "Sets a supported basis ket as an explicit boundary condition, not a simulated physical preparation mechanism", "EVOLVE_QUANTUM_STATE": "QuTiP sesolve advances the existing ket and physical time under the selected control", "MEASURE_STATE_POPULATION": "Reads existing probabilities, no measurement collapse/backaction simulation"},
+  "truncation": "Only two states. Weak amplitude screens against computed level scales are necessary screens, NOT complete error bounds. Omitted levels, multiphoton pathways, continuum, nuclei, decoherence and exact molecular spectra remain unverified.",
+  "numerical_QA": "normalize_output=False. Norm/probability, explicit complex-array restore, zero-field analytic phase/constant-energy software check; single predeclared tighter ODE-tolerance replica. Driven-system energy is not required constant.",
+  "source": ["https://pyscf.org/user/tddft.html", "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/tdscf/rhf.py", "https://qutip.readthedocs.io/en/v5.2.1/apidoc/solver.html"],
+  "failure": "Persist completed electronic/primary-propagation arrays, parent states and isolated-worker failure receipt. No implicit model fallback, relaxed thresholds, extra roots or retry."
+}

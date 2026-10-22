@@ -1,5 +1,5 @@
 # LOCAL PREPARATION ONLY: new Human scope required before publication/dispatch.
-name: QW INTERACTIVE01 single separately frozen observation stage
+name: QW STATE SPACE01 separately frozen electronic-effective dynamics stage
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +10,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: interactive01-once
+  group: state-space01-once
   cancel-in-progress: false
 jobs:
   bounded-periodic:
@@ -27,9 +27,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Build bounded isolated periodic environment without persistent cache
-        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f interactive01/Dockerfile -t interactive01:once .
+        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f state_space01/Dockerfile -t state-space01:once .
       - name: Run at most one candidate in offline science container
-        run: python3 -B interactive01/host.py
+        run: python3 -B state_space01/host.py
       - name: Preserve partial or complete raw evidence
         if: always()
-        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/interactive01-results"
+        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/state-space01-results"

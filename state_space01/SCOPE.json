@@ -1,0 +1,14 @@
+{
+  "authority": "HUMAN_GRANTED_STATE_SPACE01",
+  "request_sha256": "314955bc691f6c5775fe04ccbf0b9fc58f4fc36be63bafb60d21f171d338efe0",
+  "max_sequential_jobs": 2,
+  "Job_minutes": 15,
+  "CPU": 1,
+  "threads": 1,
+  "memory_bytes": 1073741824,
+  "extra_swap": 0,
+  "network": "none",
+  "purchases": 0,
+  "no_retry": true,
+  "second_action": "NOT_SELECTED_PENDING_FIRST_REAL_OBSERVATION"
+}

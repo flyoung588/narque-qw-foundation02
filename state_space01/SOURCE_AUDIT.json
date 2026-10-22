@@ -1,0 +1,14 @@
+{
+  "Octopus": "Mature real-time alternative, no local binary/resource/precision benchmark; not installed or declared impossible. Deferred rather than fabricated integration.",
+  "exact_TDA_source_SHA256": "e487d6ad579931b68d2d48a570c3b895b4a4b5cf5c98581c9b931abc20917d6a",
+  "licensing": "PySCF fixed source Apache2 header retained in local audit; QuTiP BSD3 via release metadata; mature packages installed by package manager, not vendored into public increment.",
+  "sources": {
+    "Octopus": "https://www.octopus-code.org/documentation/16/manual/installation/",
+    "PySCF_TD": "https://pyscf.org/user/tddft.html",
+    "PySCF_exact_TDA_source": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/tdscf/rhf.py",
+    "QuTiP_dynamics": "https://qutip.readthedocs.io/en/stable/guide/guide-dynamics.html",
+    "QuTiP_exact_API": "https://qutip.readthedocs.io/en/v5.2.1/apidoc/solver.html",
+    "QuTiP_release": "https://pypi.org/pypi/qutip/5.2.1/json"
+  },
+  "verified_API": "tdscf.TDA, nstates/singlet/kernel/converged/e/xy/transition_dipole/gen_vind. TDA X normalization2XdaggerX=1; transition uses int1e_r. Qobj/QobjEvo/sesolve normalize_output=False and store_states/options actually called in local fixture."
+}

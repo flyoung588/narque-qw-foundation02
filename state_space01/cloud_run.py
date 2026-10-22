@@ -1,0 +1,21 @@
+"""Exact new-domain authorization and hard-admission checks, one science worker."""
+import importlib.metadata as md,json,os,pathlib,platform,resource,sys,time,traceback
+sys.path.insert(0,'/app')
+from interactive01.world import freeze
+from recovery02r.isolated_router import run_isolated
+from router import digest
+ROOT=pathlib.Path('/app');out=pathlib.Path('/out');start=time.monotonic()
+def cg():return {n:(pathlib.Path('/sys/fs/cgroup')/n).read_text().strip() for n in ['memory.max','memory.swap.max','memory.peak','memory.events','cpu.max','cpu.stat']}
+try:
+    request=json.loads((ROOT/'state_space01/REQUEST.json').read_text());scope=json.loads((ROOT/'state_space01/SCOPE.json').read_text())
+    if scope['authority']!='HUMAN_GRANTED_STATE_SPACE01' or scope['request_sha256']!=digest(request):raise ValueError('NEW_SCOPE_NOT_GRANTED')
+    c=cg();freeze(out/'admission.json',{'cgroup':c,'network':os.listdir('/sys/class/net'),'affinity':sorted(os.sched_getaffinity(0))})
+    assert c['memory.max']=='1073741824' and c['memory.swap.max']=='0' and c['cpu.max']=='100000 100000' and os.listdir('/sys/class/net')==['lo'] and len(os.sched_getaffinity(0))==1
+    versions={k:md.version(k) for k in ['numpy','scipy','ase','pyscf','qutip','jsonschema']};expected={'numpy':'2.2.6','scipy':'1.15.3','ase':'3.29.0','pyscf':'2.8.0','qutip':'5.2.1','jsonschema':'4.25.1'}
+    freeze(out/'environment.json',{'versions':versions,'Python':platform.python_version(),'source_sha':os.environ['GITHUB_SHA']});assert versions==expected and sys.version_info[:2]==(3,12)
+    freeze(out/'REQUEST.json',request)
+    result=run_isolated(request,out/'science',timeout=480,worker_path=ROOT/'state_space01/worker.py');freeze(out/'ACTUAL_RETURN.json',result)
+    if result.get('status')!='CALCULATED':raise RuntimeError('SCIENCE_FAILED_STOP_NO_RETRY')
+except BaseException as e:
+    freeze(out/'FAILURE.json',{'error':str(e),'type':type(e).__name__,'traceback':traceback.format_exc(),'no_retry':True});raise
+finally:freeze(out/'resources.json',{'wall_seconds':time.monotonic()-start,'cgroup':cg(),'self_rusage':list(resource.getrusage(resource.RUSAGE_SELF)),'children_rusage':list(resource.getrusage(resource.RUSAGE_CHILDREN))})
