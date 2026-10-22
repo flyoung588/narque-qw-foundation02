@@ -1,5 +1,5 @@
 # PREPARED SOURCE ONLY — must not be published/dispatched without new P02 scope.
-name: QW PERIODIC02 one bounded periodic candidate
+name: QW PERIODIC03 bounded KRKS sampling contrast
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +10,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: periodic02-once
+  group: periodic03-once
   cancel-in-progress: false
 jobs:
   bounded-periodic:
@@ -27,9 +27,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Build bounded isolated periodic environment without persistent cache
-        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f periodic02/Dockerfile -t qw-periodic02:once .
+        run: timeout --kill-after=5s 210s docker build --pull --no-cache -f periodic03/Dockerfile -t periodic03:once .
       - name: Run at most one candidate in offline science container
-        run: python3 -B periodic02/host.py
+        run: python3 -B periodic03/host.py
       - name: Preserve partial or complete raw evidence
         if: always()
-        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/qw-periodic02-results"
+        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/periodic03-results"

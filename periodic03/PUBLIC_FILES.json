@@ -1,0 +1,48 @@
+{
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-periodic03",
+  "base": "a3fdfc2751b0d4687a88193b950617ddf917705c",
+  "files": {
+    ".github/workflows/foundation02.yml": "17b245b4b8f7aaebdbe4142c9a082a0c6c5a1c8f7fefdf5e5c9dc3a316fdccdb",
+    "periodic03/API_RESOURCE_AUDIT.json": "cc004182f324f3474b0455183be4541d23a4b640ca0cd83be6342387f16c3530",
+    "periodic03/CAPABILITY_MAP.json": "e404b52de49e50cc47f747b068b6ac467064f2bcbcd37508c128a1bf26f59dd3",
+    "periodic03/Dockerfile": "80b859d3571fc42026ec22f49d61037e6fd6ac9a6d723a774a5b858c1396bea1",
+    "periodic03/KRKS_111.json": "2d238302db920e09f9562914a436be9a53cc9672a807693635ca8cca6212b00f",
+    "periodic03/KRKS_222.json": "96b78e95f5139adbf95c942dda8efa9b3a35b6d51f574c352342a757975ac148",
+    "periodic03/PLAN.json": "885cf3ea8e841ffbe1ea440dea3e89f33ebbbe8565b4ee273148caf63c36e5e6",
+    "periodic03/SCOPE.json": "c61d80a0c6169d84bfc4b8d84fd55cf8c02a470b11ad7da1f9b943395998384d",
+    "periodic03/WorldSpec.schema.json": "0a7af46342c5c6906e7d5892cda1cedeece35052738c84ea8971659b9de814db",
+    "periodic03/__init__.py": "0357af35ff2b7a39a97d16362def826f43db8f70e8a35a5034a5391ddcb3a632",
+    "periodic03/cloud_run.py": "6dc736758bc99f6ae7d68cd9d8a6a78e66ac4c37fa5541ae9e42591a8226d6a9",
+    "periodic03/contract.py": "df8ba78e2454acd905b30503ed4f2aad5757e7a5d3eef3d76597d963b7e549dc",
+    "periodic03/host.py": "86b5836afea23c32147a78cb2493194de1c316db81c20633691043b4b07fa872",
+    "periodic03/preflight.py": "de8add4aef24952aeea6887f6bd7b33be91708b01fb78e58dd7af3a01c509854",
+    "periodic03/quality.py": "27dfbb0f748360daeb8226316c1f1fba633b529f5bc6d5f4c7c12c1e8f1d66e9",
+    "periodic03/runtime.py": "e4ad0f7ac94baa54a96714b22117169b87d95a3cf1a426d51fb60f2d0757d2de",
+    "periodic03/test_software.py": "7afdfb07805d58c7532ef38f8bddc065700d4c952f197b8974ab75161dc07b1a",
+    "periodic03/worker.py": "2507d8dac599894aafbafe12dc7f51762acbe68055d856de27ad669704fd59a7"
+  },
+  "source_review": "All18 incremental code/schema/plan/test/workflow files reviewed; generic sampler/quality only, public2C geometry. No private data or credentials found. All historical scientific data/modules left unchanged.",
+  "science": "One predeclared controlled experiment: actual KRKS1x1x1 and then, only after first success and resource admission, Gamma-centered full KRKS2x2x2 on same frozen2C primitive cell a3.57Angstrom. Maximum2SCFs, no third mesh or automatic retry. Not adaptive second-run selection.",
+  "same_model": "PBE/cc-pVDZ/weigend/GDF/BeckeL1/precision1e-6/conv_tol1e-8/max80; no smearing/IBZ/shifted grids/metal/spin/force/stress extension",
+  "resources": {
+    "manual_jobs": 1,
+    "attempts": 1,
+    "total_Job_minutes": 15,
+    "science_CPU": 1,
+    "numerical_threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "science_network": "none",
+    "purchases": 0,
+    "retry": false
+  },
+  "dispatch": "Registered foundation02.yml on qw-periodic03 branch only, round=2. No main/historical workflow modifications.",
+  "after_approval_only": {
+    "allowed_change": "SCOPE.json authority NOT_GRANTED -> GRANTED_FOR_PERIODIC03_ONCE only; JSON indent2+newline. No plan/request/source changes.",
+    "authorized_scope_byte_sha256": "3c6f0ca935d345e8e086cfc1875fc8a77f34f2fc5df161ca80657c039f305558",
+    "authorized_scope_canonical_sha256": "ead9d48ab27657a0a6513e48ef4064fc545795fde34c24818c3ab6814e1d2176"
+  },
+  "result_publication": "Individually reviewed model requests, k coordinates/weights, Cell/stages/SCF/logs, raw DM/S/occupation/rho/grid NPZ, numerical quality, resources, actual failure receipts, bounded comparisons, AI post-observation decision, report/hash. Private workstation logs/account metadata excluded.",
+  "failure_rule": "Any control failure stops; resource/engine/nonconvergence failure stops; preserve partial data. No parameter change or alternate-state fallback. Whole container death may limit log recovery, no guarantee invented."
+}

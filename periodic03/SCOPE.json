@@ -1,0 +1,16 @@
+{
+  "Job_minutes": 15,
+  "authority": "GRANTED_FOR_PERIODIC03_ONCE",
+  "branch": "qw-periodic03",
+  "extra_swap": 0,
+  "max_SCFs": 2,
+  "max_jobs": 1,
+  "memory_bytes": 1073741824,
+  "network": "none",
+  "no_retry": true,
+  "plan_sha256": "75193b6b4323d423f85609e660554473eb4dd95b494cf09d8bd437ad85debaf0",
+  "purchases": 0,
+  "repository": "flyoung588/narque-qw-foundation02",
+  "science_CPU": 1,
+  "threads": 1
+}

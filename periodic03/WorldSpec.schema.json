@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Backward compatible bounded k-point WorldSpec; runtime domain checks mandatory",
+  "type": "object",
+  "required": [
+    "version",
+    "object_id",
+    "epistemic_mode",
+    "matter",
+    "physics"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "QW-WORLDSPEC-0.1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "epistemic_mode": {
+      "enum": [
+        "GROUNDED",
+        "EXTRAPOLATIVE",
+        "MODEL_CHALLENGE"
+      ]
+    },
+    "matter": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "atoms",
+            "charge",
+            "spin_2S",
+            "periodic"
+          ],
+          "properties": {
+            "type": {
+              "const": "molecule"
+            },
+            "atoms": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 16,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "element",
+                  "xyz_angstrom"
+                ],
+                "properties": {
+                  "element": {
+                    "enum": [
+                      "B",
+                      "Be",
+                      "C",
+                      "F",
+                      "H",
+                      "He",
+                      "Li",
+                      "N",
+                      "Ne",
+                      "O"
+                    ]
+                  },
+                  "xyz_angstrom": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "bonds": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "i",
+                  "j",
+                  "order"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "i": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "j": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "order": {
+                    "enum": [
+                      1,
+                      2,
+                      3,
+                      1.5
+                    ]
+                  }
+                }
+              }
+            },
+            "charge": {
+              "type": "integer",
+              "minimum": -3,
+              "maximum": 3
+            },
+            "spin_2S": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 16
+            },
+            "periodic": {
+              "const": false
+            },
+            "source": {
+              "type": "string",
+              "maxLength": 300
+            },
+            "smiles": {
+              "type": "string",
+              "maxLength": 250
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "atoms",
+            "charge",
+            "spin_2S",
+            "periodic",
+            "cell_angstrom"
+          ],
+          "properties": {
+            "type": {
+              "const": "periodic_cell"
+            },
+            "atoms": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "element",
+                  "xyz_angstrom"
+                ],
+                "properties": {
+                  "element": {
+                    "enum": [
+                      "H",
+                      "He",
+                      "Li",
+                      "Be",
+                      "B",
+                      "C",
+                      "N",
+                      "O",
+                      "F",
+                      "Ne",
+                      "Na",
+                      "Mg",
+                      "Al",
+                      "Si",
+                      "P",
+                      "S",
+                      "Cl",
+                      "Ar"
+                    ]
+                  },
+                  "xyz_angstrom": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "charge": {
+              "const": 0
+            },
+            "spin_2S": {
+              "const": 0
+            },
+            "periodic": {
+              "const": true
+            },
+            "source": {
+              "type": "string",
+              "maxLength": 300
+            },
+            "cell_angstrom": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "physics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "engine",
+        "method",
+        "observables"
+      ],
+      "properties": {
+        "engine": {
+          "enum": [
+            "rdkit",
+            "pyscf",
+            "ase-pyscf",
+            "psi4",
+            "pyscf-pbc"
+          ]
+        },
+        "method": {
+          "enum": [
+            "MMFF94",
+            "UFF",
+            "RHF",
+            "UHF",
+            "RKS",
+            "UKS",
+            "KRKS"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "xc": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "observables": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "energy",
+              "forces"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "k_sampling": {
+          "type": "object",
+          "required": [
+            "mesh",
+            "generator",
+            "with_gamma_point",
+            "wrap_around",
+            "symmetry_reduction",
+            "weights",
+            "coordinate_unit"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mesh": {
+              "enum": [
+                [
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  2,
+                  2
+                ]
+              ]
+            },
+            "generator": {
+              "const": "cell.make_kpts"
+            },
+            "with_gamma_point": {
+              "const": true
+            },
+            "wrap_around": {
+              "const": true
+            },
+            "symmetry_reduction": {
+              "const": false
+            },
+            "weights": {
+              "const": "uniform"
+            },
+            "coordinate_unit": {
+              "const": "1/Bohr"
+            }
+          }
+        },
+        "numerics": {
+          "const": {
+            "Becke_level": 1,
+            "cell_precision": 1e-06,
+            "conv_tol": 1e-08,
+            "max_cycle": 80
+          }
+        }
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "const": "single_point"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "matter": {
+            "properties": {
+              "type": {
+                "const": "periodic_cell"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "physics": {
+            "anyOf": [
+              {
+                "const": {
+                  "engine": "pyscf-pbc",
+                  "method": "RKS",
+                  "basis": "cc-pvdz",
+                  "xc": "PBE",
+                  "observables": [
+                    "energy"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "engine",
+                  "method",
+                  "basis",
+                  "xc",
+                  "observables",
+                  "k_sampling"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "engine": {
+                    "const": "pyscf-pbc"
+                  },
+                  "method": {
+                    "const": "KRKS"
+                  },
+                  "basis": {
+                    "const": "cc-pvdz"
+                  },
+                  "xc": {
+                    "const": "PBE"
+                  },
+                  "observables": {
+                    "const": [
+                      "energy"
+                    ]
+                  },
+                  "k_sampling": {
+                    "type": "object",
+                    "required": [
+                      "mesh",
+                      "generator",
+                      "with_gamma_point",
+                      "wrap_around",
+                      "symmetry_reduction",
+                      "weights",
+                      "coordinate_unit"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "mesh": {
+                        "enum": [
+                          [
+                            1,
+                            1,
+                            1
+                          ],
+                          [
+                            2,
+                            2,
+                            2
+                          ]
+                        ]
+                      },
+                      "generator": {
+                        "const": "cell.make_kpts"
+                      },
+                      "with_gamma_point": {
+                        "const": true
+                      },
+                      "wrap_around": {
+                        "const": true
+                      },
+                      "symmetry_reduction": {
+                        "const": false
+                      },
+                      "weights": {
+                        "const": "uniform"
+                      },
+                      "coordinate_unit": {
+                        "const": "1/Bohr"
+                      }
+                    }
+                  },
+                  "numerics": {
+                    "const": {
+                      "Becke_level": 1,
+                      "cell_precision": 1e-06,
+                      "conv_tol": 1e-08,
+                      "max_cycle": 80
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

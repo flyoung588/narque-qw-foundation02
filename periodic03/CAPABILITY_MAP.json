@@ -1,0 +1,15 @@
+{
+ "current_increment":"QW-PERIODIC03",
+ "K1":"IMPLEMENTED_SOFTWARE_TESTED; backward compatible legacyGamma request and explicit bounded KRKS1^3/2^3 sampling",
+ "K2":"IMPLEMENTED_SOFTWARE_TESTED; capability/availability/resource/completion/sensitivity/certification distinct, runtime availability unknown",
+ "K3":"NOT_STARTED; no new actual KRKS or multi-k observation",
+ "K4":"IMPLEMENTED_SOFTWARE_TESTED; three electron counts and SCF/grid/model provenance; new actual quality record pending",
+ "K5":"PREOBSERVATION_CONTROLLED_PLAN_FROZEN; post-observation decision NOT_STARTED",
+ "sampling_convergence":"NOT_CERTIFIED",
+ "physical_accuracy":"NOT_CERTIFIED",
+ "inherited":"W1/W3/P1/P2/Core01-03/Periodic02 original evidence unchanged",
+ "W2":"INCOMPLETE_SAME_PYSCF_FAMILY",
+ "out_of_scope":"Arbitrary meshes, shifted/IBZ weights, fractional smearing/metal extension, spin, bands, forces/stress/dynamics",
+ "resource":"One proposed standard free Ubuntu15minJob,1CPU/1thread/1GiB/0extraSwap/noNetwork; max2controlledSCFs, no retry",
+ "stop_rule":"Failure stops tranche. No indefinite carbon/kpoint refinement or automatic new direction. Further resource allocation requires actual information value and separate authority."
+}
