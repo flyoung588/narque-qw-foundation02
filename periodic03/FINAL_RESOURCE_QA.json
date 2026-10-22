@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "Docker_limits": true,
+    "affinity_one": true,
+    "all_text_no_private_patterns": true,
+    "cgroup_hard_limits": true,
+    "frozen_plan": true,
+    "network_none": true,
+    "no_OOM": true
+  },
+  "evidence": "Actual original cgroup, Docker and scope records; no new engine call",
+  "passed": 7
+}

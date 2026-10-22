@@ -1,0 +1,29 @@
+{
+  "GDF_path": "default _RSGDFBuilder / _RSNucBuilder, no FFTDF substitution",
+  "nkpts": 8,
+  "aux_AO_count": 98,
+  "estimated_meshes": {
+    "primary_default": [
+      7,
+      7,
+      7
+    ],
+    "nuclear_default": [
+      9,
+      9,
+      9
+    ],
+    "metric_conservative": [
+      9,
+      9,
+      9
+    ]
+  },
+  "all_ordered_kpair_complex3c_bytes": 40742912,
+  "3c_four_copy_allowance": 162971648,
+  "reciprocal_screen_bytes": 87899904,
+  "tmp_free_bytes": 536870912,
+  "estimate_ceiling": "Screening estimate only; compact/smooth/image and block overhead not rigorously bounded. cgroup authoritative; OOM can still happen. No manual mesh/precision relaxation.",
+  "actual_temp_peak": "NOT_YET_MEASURED",
+  "admission": "CONDITIONAL_ALLOW_UNDER_HARD_LIMITS"
+}

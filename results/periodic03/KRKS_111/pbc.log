@@ -1,0 +1,151 @@
+#INFO: **** input file is /app/periodic03/worker.py ****
+"""Independent mature KRKS worker. No extra DATA/AS limit."""
+import json,pathlib,resource,sys
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
+from router import save
+from periodic03.runtime import run
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+spec=json.loads(pathlib.Path(sys.argv[1]).read_text());out=pathlib.Path(sys.argv[2])
+result=run(spec,out)
+if not (out/'observation.json').exists():save(out/'observation.json',result)
+if result['status']!='CALCULATED':raise SystemExit(1)
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='ed766258d4af', release='6.17.0-1022-azure', version='#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026', machine='x86_64')  Threads 1
+Python 3.12.15 (main, Oct  6 2026, 02:02:31) [GCC 12.2.0]
+numpy 2.2.6  scipy 1.15.3  h5py 3.16.0
+Date: Thu Oct 22 10:16:22 2026
+PySCF version 2.8.0
+PySCF path  /usr/local/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 2
+[INPUT] num. electrons = 12
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 C      0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  2 C      0.892500000000   0.892500000000   0.892500000000 AA    1.686580566174   1.686580566174   1.686580566174 Bohr   0.0
+
+nuclear repulsion = -28.7452514096297
+number of shells = 10
+number of NR pGTOs = 52
+number of NR cGTOs = 28
+basis = cc-pvdz
+ecp = {}
+CPU time:         0.89
+lattice vectors  a1 [0.000000000, 3.373161132, 3.373161132]
+                 a2 [3.373161132, 0.000000000, 3.373161132]
+                 a3 [3.373161132, 3.373161132, 0.000000000]
+dimension = 3
+low_dim_ft_type = None
+Cell volume = 76.7611
+rcut = 17.88699257455659 (nimgs = [5 5 5])
+lattice sum = 831 cells
+precision = 1e-06
+pseudo = None
+ke_cutoff = 234719.32051775264
+    = [1043 1043 1043] mesh (1134626507 PWs)
+Drop 0 primitive fitting functions
+make aux basis, num shells = 30, num cGTOs = 98
+auxcell.rcut 12.952193779586874
+
+
+******** <class 'pyscf.pbc.df.df.GDF'> ********
+auxbasis = weigend
+exp_to_discard = None
+_cderi_to_save = /tmp/tmpdknqig5l
+len(kpts) = 1
+Drop 0 primitive fitting functions
+make aux basis, num shells = 30, num cGTOs = 98
+auxcell.rcut 12.952193779586874
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSGDFBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.878596615973333
+omega = 0.4799104823471887
+exclude_d_aux = True
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+tot grids = 9204
+cell vol = 76.7611121  sum(weights) = 77.5668556
+
+
+******** <class 'pyscf.pbc.dft.krks.KRKS'> ********
+method = KRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-08
+SCF conv_tol_grad = None
+SCF max_cycles = 80
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /tmp/tmpu2y2ckk1
+max_memory 400 MB (current use 131 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.6796091105973189
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -4.07765466358
+DF object = <pyscf.pbc.df.df.GDF object at 0x7f6c82174530>
+XC functionals = PBE
+small_rho_cutoff = 1e-07
+radial grids: 
+    Treutler-Ahlrichs [JCP 102, 346 (1995); DOI:10.1063/1.469408] (M4) radial grids
+    
+becke partition: Becke, JCP 88, 2547 (1988); DOI:10.1063/1.454033
+pruning grids: <function nwchem_prune at 0x7f6c85f168e0>
+grids dens level: 1
+symmetrized grids: False
+atomic radii adjust function: <function treutler_atomic_radii_adjust at 0x7f6c85f174c0>
+Set gradient conv threshold to 0.0001
+
+
+******** <class 'pyscf.pbc.df.rsdf_builder._RSNucBuilder'> ********
+mesh = [9 9 9] (729 PWs)
+ke_cutoff = 13.878596615973333
+omega = 0.5087916267216441
+exclude_d_aux = False
+exclude_dd_block = True
+j2c_eig_always = False
+has_long_range = True
+nelec by numeric integration = 12.034531948603815
+init E= -71.8853263818028
+HOMO = 0.328210134432  LUMO = 0.564773084041
+nelec by numeric integration = 12.005217481336166
+cycle= 1 E= -74.9210376374354  delta_E= -3.04  |g|= 0.806  |ddm|=  3.9
+HOMO = 0.625024178441  LUMO = 0.804877136942
+nelec by numeric integration = 12.011743450667133
+cycle= 2 E= -75.0447730614261  delta_E= -0.124  |g|= 0.155  |ddm|= 5.53
+HOMO = 0.572010177748  LUMO = 0.764612499949
+nelec by numeric integration = 12.01050091201947
+cycle= 3 E= -75.0494928512758  delta_E= -0.00472  |g|= 0.00186  |ddm|= 1.31
+HOMO = 0.572295192141  LUMO = 0.764724196164
+nelec by numeric integration = 12.010522046302697
+cycle= 4 E= -75.0494936338666  delta_E= -7.83e-07  |g|= 0.000471  |ddm|= 0.013
+HOMO = 0.572272470175  LUMO = 0.764705259814
+nelec by numeric integration = 12.010522055971768
+cycle= 5 E= -75.0494932986603  delta_E= 3.35e-07  |g|= 0.00125  |ddm|= 0.00195
+HOMO = 0.572264952595  LUMO = 0.764699069079
+nelec by numeric integration = 12.010522004912449
+cycle= 6 E= -75.0494936888755  delta_E= -3.9e-07  |g|= 4.43e-06  |ddm|= 0.00141
+HOMO = 0.572264692534  LUMO = 0.764699019286
+nelec by numeric integration = 12.01052199105467
+cycle= 7 E= -75.0494936888813  delta_E= -5.74e-12  |g|= 1.48e-06  |ddm|= 1.93e-05
+HOMO = 0.572264609829  LUMO = 0.764698988931
+nelec by numeric integration = 12.010521987369591
+Extra cycle  E= -75.0494936888816  delta_E= -3.55e-13  |g|= 9.65e-07  |ddm|= 7.67e-06
+converged SCF energy = -75.0494936888816

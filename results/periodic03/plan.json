@@ -1,0 +1,64 @@
+{
+  "adaptive_claim": "Both runs preplanned, no real-time model in container. Only actual post-run B-Work decision may claim evidence-conditioned judgment.",
+  "authorship": "BWORK_AI_PREOBSERVATION_CONTROLLED_DESIGN",
+  "controlled_pair": "KRKS1^3 then Gamma-centered full KRKS2^3 only if first succeeds and second resource screen passes",
+  "diagnostic_thresholds": {
+    "quadrature_abs_e": 0.001,
+    "role": "predeclared algebraic/quadrature warning screens only, not material accuracy or resource renewal gates",
+    "trace_abs_e": 1e-06
+  },
+  "differences": [
+    "Historical RKS vs KRKS1^3 is solver-path consistency, not assumed identical",
+    "KRKS1^3 vs2^3 measures bounded sampling sensitivity; self-consistent density/pruning and GDF builder numerical meshes can co-vary even with same declared numerical tolerances"
+  ],
+  "falsifiers": [
+    "API/resource failure blocks capability proof, not physical impossibility",
+    "Unconverged/missing nonfinite energy disallows sensitivity conclusion",
+    "Material difference or energy-reference mismatch disallows comparison",
+    "Actual kcoords inconsistent with stated grid fails sampling claim"
+  ],
+  "historical_observation_byte_sha256": "9c9da49915b917bb0cd9d68a8be61b01127be3a237688bb06f51ed7470a9c331",
+  "historical_observation_canonical_sha256": "0d7893cbb5262858f0b8fdbd2b9ab5efaa3d15b44943878166809371b3f592bb",
+  "historical_qualification": "UNCHANGED; W2 incomplete",
+  "historical_source": "results/periodic02/science_run/world_result.json; run39745610923",
+  "max_SCFs": 2,
+  "no_automatic_retry": true,
+  "no_third_mesh": true,
+  "prediction_before_run": "If admitted, both true KRKS paths can yield finite converged per-cell energies; sign/magnitude of k sampling difference UNKNOWN, not preselected. Algebraic occupation/Tr(DS) should remain12 within floating-point screening; real-space integration may remain offset even when SCF converges.",
+  "prior_actual_evidence": {
+    "energy_Eh_per_cell": -75.04949368888167,
+    "integrated_electron_count": 12.010521987369588,
+    "scope": "Original pbc.log read, not recomputed",
+    "theoretical_electrons": 12
+  },
+  "requests": {
+    "KRKS_111": {
+      "mesh": [
+        1,
+        1,
+        1
+      ],
+      "solver": "KRKS",
+      "worldspec_sha256": "ac88bd0c1b5ddd274beedb423b659c0fd4e4c84396d3ca5aec00aaee70cb34b2"
+    },
+    "KRKS_222": {
+      "mesh": [
+        2,
+        2,
+        2
+      ],
+      "solver": "KRKS",
+      "worldspec_sha256": "006fa899752a9cd7ac7f372d41115705da33a1394033e21e18321bfe948d2663"
+    }
+  },
+  "resource_policy": "One standard free Ubuntu Job15min, science1CPU/1thread/1GiB/0extraSwap/no network; no payment; stop at error/resource failure; no parameter relaxation",
+  "same_conditions": [
+    "2C diamond a3.57Angstrom",
+    "coordinates/composition/charge/spin",
+    "PBE/cc-pVDZ/weigend/GDF",
+    "Beckelevel1/precision1e-6/conv_tol1e-8/max80",
+    "energy_reference and periodic Ewald convention"
+  ],
+  "task": "QW-PERIODIC03",
+  "why_this_uncertainty": "The prior quadrature warning does not establish its cause. Build actual multiple-k capability and ask how much finite-k changes same-state energy and the three electron counts; do not claim quadrature isolated. Prefer a minimal pair over endless grid scans."
+}

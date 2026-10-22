@@ -1,0 +1,16 @@
+{
+ "K1":"Implemented, software-tested and actual bounded1^3/2^3 WorldSpec exercised; legacyGamma untouched",
+ "K2":"Bounded k-aware route and availability/resource distinctions implemented/tested; actualKRKS route and resource admission exercised",
+ "K3":"TRUE_MULTIK_KRKS_EXECUTION_PROVEN_WITHIN_TESTED_2C_DOMAIN",
+ "K4":"Three electron counts and numerical-quality provenance actually measured; bounded path sensitivity measured WITH_AUTO_GDF_COVARIATION, pure k attribution NOT_PROVEN",
+ "K5":"ACTUAL_POSTOBSERVATION_BWORK_DECISION_RECORDED; STOP_current_C_tranche, no autonomous extra job",
+ "k_convergence":"NOT_CERTIFIED",
+ "quadrature_cause_and_energy_error":"UNKNOWN",
+ "basis_model_accuracy":"NOT_CERTIFIED",
+ "independent_reference":"NOT_TESTED",
+ "W2":"INCOMPLETE_SAME_PYSCF_FAMILY",
+ "scope":"Neutral closed-shell<=4atoms/<=30electrons/H..Ar, explicit Gamma-centered full1^3/2^3, RKSlegacy/KRKS, PBE/cc-pVDZ/GDF/weigend/BeckeL1 energy only",
+ "not_supported":"Arbitrary meshes/IBZ/shifted weights/smearing/metal extension/spin/bands/force/stress/dynamics",
+ "next":"General k-aware world reuse and evaluate mature-engine structure-response/force capability for a real scientific question; recommendation only, not implemented or authorized here",
+ "history_and_Canonical":"UNCHANGED; this capability view is an artifact, not strategic state transition or independent scientific-review verdict"
+}

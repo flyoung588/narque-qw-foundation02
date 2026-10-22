@@ -1,0 +1,26 @@
+{
+  "status": "BOUNDED_KPOINT_SENSITIVITY_MEASURED",
+  "delta_Eh_per_cell": -0.9746420004382799,
+  "changed": {
+    "solver_paths": [
+      "KRKS",
+      "KRKS"
+    ],
+    "kmeshes": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  "grid_k_coupling": "Same nominal Becke setting, but self-consistent density and grid pruning can change; not pure isolated quadrature effect",
+  "KPOINT_CONVERGENCE_CERTIFIED": false,
+  "QUADRATURE_SENSITIVITY": "UNKNOWN",
+  "physical_accuracy": "NOT_CERTIFIED"
+}

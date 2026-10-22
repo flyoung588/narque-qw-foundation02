@@ -1,0 +1,33 @@
+{
+  "scope": {
+    "Job_minutes": 15,
+    "authority": "GRANTED_FOR_PERIODIC03_ONCE",
+    "branch": "qw-periodic03",
+    "extra_swap": 0,
+    "max_SCFs": 2,
+    "max_jobs": 1,
+    "memory_bytes": 1073741824,
+    "network": "none",
+    "no_retry": true,
+    "plan_sha256": "75193b6b4323d423f85609e660554473eb4dd95b494cf09d8bd437ad85debaf0",
+    "purchases": 0,
+    "repository": "flyoung588/narque-qw-foundation02",
+    "science_CPU": 1,
+    "threads": 1
+  },
+  "cgroup": {
+    "memory.max": "1073741824",
+    "memory.swap.max": "0",
+    "memory.peak": "17600512",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.oom.group": "0",
+    "cpu.max": "100000 100000",
+    "cpu.stat": "usage_usec 411650\nuser_usec 369584\nsystem_usec 42066\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 4\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+  },
+  "network": [
+    "lo"
+  ],
+  "affinity": [
+    0
+  ]
+}

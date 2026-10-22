@@ -1,0 +1,10 @@
+{
+  "stage": "SCF_ITERATION_4",
+  "UTC": "2026-10-22T10:16:32.640302+00:00",
+  "cycle": 4,
+  "energy_Eh": -75.04949329866027,
+  "delta_Eh": 3.352063231432112e-07,
+  "density_step_Frobenius": 0.0019531330944604465,
+  "orbital_gradient_norm": 0.0012535747730129348,
+  "PySCF_density_norm": 0.0019531330944604465
+}

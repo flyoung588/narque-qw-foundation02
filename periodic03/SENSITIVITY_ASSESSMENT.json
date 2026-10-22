@@ -1,0 +1,21 @@
+{
+  "actual_multi_k_and_Gamma_verified": true,
+  "basis_sensitivity": "UNKNOWN",
+  "delta_Eh_per_cell": -0.9746420004382799,
+  "historical_RKS_vs_KRKS111_delta_Eh": 2.842170943040401e-14,
+  "independent_reference": "NOT_TESTED",
+  "kpoint_convergence": "NOT_CERTIFIED",
+  "model_accuracy": "NOT_CERTIFIED",
+  "quadrature_sensitivity": "UNKNOWN",
+  "quadrature_warning_both": true,
+  "status": "BOUNDED_KPOINT_PATH_SENSITIVITY_MEASURED_WITH_AUTO_GDF_COVARIATION",
+  "strict_pure_k_attribution": "NOT_PROVEN",
+  "warnings": {
+    "SCF_extra_cycle_note": "Multi-k last extra gradient1.36e-4 exceeds initial1e-4 printed gradient threshold; actual SCF flag still true. Record actual residuals, do not infer exact stationarity or modify convergence criteria after result.",
+    "actual_realspace_weights_identical": true,
+    "grid_coordinates_exported": false,
+    "interpretation": "FALSE is a scientific comparison limitation, not silently converted to PASS. Declared target settings fixed, default GDF auto mesh/omega co-vary with k sampling; pure isolated k effect not proven.",
+    "realized_GDF_primary_mesh_identical": false,
+    "strict_all_realized_numerical_settings_identical": "NOT_ESTABLISHED"
+  }
+}

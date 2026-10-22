@@ -1,0 +1,193 @@
+{
+  "occupation_electrons": 12.0,
+  "density_overlap_trace_electrons": 11.999999999999996,
+  "trace_imaginary_abs": 3.642163571192394e-22,
+  "realspace_integrated_electrons": 12.009445111070463,
+  "definitions": "Uniform k-weight sum of spin-summed occupations and Tr(D_k S_k); independent finite realspace quadrature of same final density. A quadrature mismatch does not change actual electron number.",
+  "theoretical_electrons": 12,
+  "quadrature_minus_trace": 0.009445111070466083,
+  "occupation_minus_trace": 3.552713678800501e-15,
+  "integer_closed_shell_occupations": true,
+  "SCF_iterations": [
+    {
+      "cycle": 0,
+      "energy_Eh": -76.02164794893854,
+      "delta_Eh": null,
+      "density_step_Frobenius": null,
+      "orbital_gradient_norm": 0.3008874010593218,
+      "PySCF_density_norm": 6.0355118793803895
+    },
+    {
+      "cycle": 1,
+      "energy_Eh": -76.02399702870402,
+      "delta_Eh": -0.0023490797654801554,
+      "density_step_Frobenius": 1.0878304238590646,
+      "orbital_gradient_norm": 0.07265971753662596,
+      "PySCF_density_norm": 1.0878304238590646
+    },
+    {
+      "cycle": 2,
+      "energy_Eh": -76.02413566471887,
+      "delta_Eh": -0.0001386360148529775,
+      "density_step_Frobenius": 0.22519419679058786,
+      "orbital_gradient_norm": 0.001191412927254702,
+      "PySCF_density_norm": 0.22519419679058786
+    },
+    {
+      "cycle": 3,
+      "energy_Eh": -76.02413568978857,
+      "delta_Eh": -2.5069695652746304e-08,
+      "density_step_Frobenius": 0.003409799619114228,
+      "orbital_gradient_norm": 5.3418675041141273e-05,
+      "PySCF_density_norm": 0.003409799619114228
+    },
+    {
+      "cycle": 4,
+      "energy_Eh": -76.02413568971271,
+      "delta_Eh": 7.58575424697483e-11,
+      "density_step_Frobenius": 0.00020778035496487888,
+      "orbital_gradient_norm": 7.345924322139679e-05,
+      "PySCF_density_norm": 0.00020778035496487888
+    }
+  ],
+  "final_vs_last_callback_delta_Eh": 3.927880243281834e-10,
+  "final_vs_last_callback_density_Frobenius": 0.0003402637508615612,
+  "SCF_converged": true,
+  "k_sampling": {
+    "coordinate_unit": "1/Bohr",
+    "generator": "cell.make_kpts",
+    "mesh": [
+      2,
+      2,
+      2
+    ],
+    "symmetry_reduction": false,
+    "weights": "uniform",
+    "with_gamma_point": true,
+    "wrap_around": true,
+    "actual_kpts_absolute_1_per_Bohr": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.4656748566592181,
+        -0.4656748566592181,
+        0.4656748566592181
+      ],
+      [
+        -0.4656748566592181,
+        0.4656748566592181,
+        -0.4656748566592181
+      ],
+      [
+        -0.9313497133184362,
+        0.0,
+        0.0
+      ],
+      [
+        0.4656748566592181,
+        -0.4656748566592181,
+        -0.4656748566592181
+      ],
+      [
+        0.0,
+        -0.9313497133184362,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -0.9313497133184362
+      ],
+      [
+        -0.4656748566592181,
+        -0.4656748566592181,
+        -0.4656748566592181
+      ]
+    ],
+    "actual_fractional_reciprocal_kpts": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -7.345405671968915e-18,
+        -7.345405671968915e-18,
+        -0.5
+      ],
+      [
+        7.345405671968915e-18,
+        -0.5,
+        -7.345405671968915e-18
+      ],
+      [
+        0.0,
+        -0.5,
+        -0.5
+      ],
+      [
+        -0.5,
+        7.345405671968915e-18,
+        7.345405671968915e-18
+      ],
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      [
+        -0.5,
+        -0.5,
+        -0.5
+      ]
+    ],
+    "actual_weights": [
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+    ],
+    "Gamma_included": true,
+    "definition": "fractional coordinates multiply primitive reciprocal vectors including2pi; absolute rad/Bohr. Even2mesh uses fractions0,-1/2, not half-shifted Monkhorst-Pack. No IBZ/symmetry reduction."
+  },
+  "basis": "cc-pVDZ all-electron",
+  "aux_basis": "weigend",
+  "aux_AO_count": 98,
+  "Becke_level": 1,
+  "Becke_points": 9204,
+  "grid_weight_volume_Bohr3": 77.56685561879827,
+  "cell_volume_Bohr3": 76.76111210055933,
+  "cost": {
+    "scientific_wall_seconds": 18.214638085000004,
+    "temporary_3c_file_bytes": 4792232
+  },
+  "sensitivity_checks_performed": [],
+  "labels": [
+    "NUMERICAL_CONVERGENCE_OBSERVED",
+    "QUADRATURE_SENSITIVITY_UNKNOWN",
+    "KPOINT_SENSITIVITY_UNKNOWN",
+    "BASIS_SENSITIVITY_UNKNOWN",
+    "MODEL_ACCURACY_NOT_CERTIFIED",
+    "INDEPENDENT_REFERENCE_NOT_TESTED"
+  ],
+  "diagnostic_only_thresholds": {
+    "electron_trace_abs_1e_6": "screening algebraic identity, not material accuracy; no automatic resource allocation",
+    "quadrature_abs_1e_3": "warning only, not material accuracy or execution gate"
+  },
+  "physics_limits": "PBE, finite Gaussian basis, finite full k mesh; no independent reference; quadrature/momentum/basis errors distinct and coupled",
+  "warnings": [
+    "QUADRATURE_ELECTRON_SCREEN"
+  ]
+}

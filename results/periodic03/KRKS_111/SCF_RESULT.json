@@ -1,0 +1,136 @@
+{
+  "status": "CALCULATED",
+  "spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "C",
+          "xyz_angstrom": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "element": "C",
+          "xyz_angstrom": [
+            0.8925,
+            0.8925,
+            0.8925
+          ]
+        }
+      ],
+      "cell_angstrom": [
+        [
+          0.0,
+          1.785,
+          1.785
+        ],
+        [
+          1.785,
+          0.0,
+          1.785
+        ],
+        [
+          1.785,
+          1.785,
+          0.0
+        ]
+      ],
+      "charge": 0,
+      "periodic": true,
+      "source": "QW-PERIODIC02 AI-authored prototype; geometry is a proposal",
+      "spin_2S": 0,
+      "type": "periodic_cell"
+    },
+    "object_id": "QW_P02_C_DIAMOND_2ATOM_KRKS_111",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf-pbc",
+      "k_sampling": {
+        "coordinate_unit": "1/Bohr",
+        "generator": "cell.make_kpts",
+        "mesh": [
+          1,
+          1,
+          1
+        ],
+        "symmetry_reduction": false,
+        "weights": "uniform",
+        "with_gamma_point": true,
+        "wrap_around": true
+      },
+      "method": "KRKS",
+      "numerics": {
+        "Becke_level": 1,
+        "cell_precision": 1e-06,
+        "conv_tol": 1e-08,
+        "max_cycle": 80
+      },
+      "observables": [
+        "energy"
+      ],
+      "xc": "PBE"
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  },
+  "world_spec_sha256": "ac88bd0c1b5ddd274beedb423b659c0fd4e4c84396d3ca5aec00aaee70cb34b2",
+  "observation": {
+    "engine": "PySCF-PBC",
+    "solver": "KRKS",
+    "SCF_converged": true,
+    "energy_Eh_per_cell": -75.04949368888164,
+    "energy_unit": "Eh/cell",
+    "energy_zero": "neutral3D periodic all-electron BO/PBE total per primitive input cell with Ewald convention; NOT molecular HF absolute reference",
+    "method": "KRKS/PBE",
+    "basis": "cc-pvdz all-electron",
+    "density_fitting": "GDF weigend",
+    "integration": "Becke level1",
+    "sampling": {
+      "coordinate_unit": "1/Bohr",
+      "generator": "cell.make_kpts",
+      "mesh": [
+        1,
+        1,
+        1
+      ],
+      "symmetry_reduction": false,
+      "weights": "uniform",
+      "with_gamma_point": true,
+      "wrap_around": true,
+      "actual_kpts_absolute_1_per_Bohr": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_fractional_reciprocal_kpts": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "actual_weights": [
+        1.0
+      ],
+      "Gamma_included": true,
+      "definition": "fractional coordinates multiply primitive reciprocal vectors including2pi; absolute rad/Bohr. Even2mesh uses fractions0,-1/2, not half-shifted Monkhorst-Pack. No IBZ/symmetry reduction."
+    },
+    "numerics": {
+      "Becke_level": 1,
+      "cell_precision": 1e-06,
+      "conv_tol": 1e-08,
+      "max_cycle": 80
+    },
+    "forces_status": "NOT_IMPLEMENTED",
+    "stress_status": "NOT_IMPLEMENTED",
+    "physical_accuracy": "NOT_CERTIFIED"
+  },
+  "numerical_quality": "PENDING_POST_SCF_DIAGNOSTICS"
+}

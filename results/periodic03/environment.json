@@ -1,0 +1,11 @@
+{
+  "python": "3.12.15",
+  "versions": {
+    "pyscf": "2.8.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "ase": "3.29.0",
+    "jsonschema": "4.25.1"
+  },
+  "source_sha": "2fd52ed8a79c2a786ac7af5b605e01bd13dbd8e5"
+}

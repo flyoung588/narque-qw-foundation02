@@ -1,0 +1,99 @@
+{
+  "Job_seconds": 68.0,
+  "checks": {
+    "KRKS_111_actual_Gamma": true,
+    "KRKS_111_actual_KRKS": true,
+    "KRKS_111_actual_kcoords": true,
+    "KRKS_111_actual_weights": true,
+    "KRKS_111_counts_recomputed": true,
+    "KRKS_111_fixed_request": true,
+    "KRKS_111_hermitian_matrices": true,
+    "KRKS_111_integer_occupations": true,
+    "KRKS_111_log_energy": true,
+    "KRKS_111_nk_shape": true,
+    "KRKS_111_stage_bytes": true,
+    "KRKS_111_text_sensitive_scan": true,
+    "KRKS_222_actual_Gamma": true,
+    "KRKS_222_actual_KRKS": true,
+    "KRKS_222_actual_kcoords": true,
+    "KRKS_222_actual_weights": true,
+    "KRKS_222_counts_recomputed": true,
+    "KRKS_222_fixed_request": true,
+    "KRKS_222_hermitian_matrices": true,
+    "KRKS_222_integer_occupations": true,
+    "KRKS_222_log_energy": true,
+    "KRKS_222_nk_shape": true,
+    "KRKS_222_stage_bytes": true,
+    "KRKS_222_text_sensitive_scan": true,
+    "all_JSON_readable": true,
+    "all_original_hashes": true,
+    "only_two_solvers": true,
+    "same_matter": true,
+    "same_nominal_numerics": true,
+    "single_job_once": true
+  },
+  "comparison_limitations": {
+    "SCF_extra_cycle_note": "Multi-k last extra gradient1.36e-4 exceeds initial1e-4 printed gradient threshold; actual SCF flag still true. Record actual residuals, do not infer exact stationarity or modify convergence criteria after result.",
+    "actual_realspace_weights_identical": true,
+    "grid_coordinates_exported": false,
+    "interpretation": "FALSE is a scientific comparison limitation, not silently converted to PASS. Declared target settings fixed, default GDF auto mesh/omega co-vary with k sampling; pure isolated k effect not proven.",
+    "realized_GDF_primary_mesh_identical": false,
+    "strict_all_realized_numerical_settings_identical": "NOT_ESTABLISHED"
+  },
+  "offline_check_kind": "Alternate scalar-loop/compensated sums vs runtime NumPy einsum/dot; original NPZ only, not an independent physics engine or extra SCF",
+  "original_files_verified": 68,
+  "passed": 30,
+  "runs": {
+    "KRKS_111": {
+      "Becke_points": 9204,
+      "DM_file_SHA256": "ac43a1133865c57176042b81c365de206c2059416b1fcc62718a0d6a5d4ec656",
+      "GDF_actual_primary_mesh": [
+        9,
+        9,
+        9
+      ],
+      "SCF_converged": true,
+      "cderi_file_bytes": 326472,
+      "energy_Eh_per_cell": -75.04949368888164,
+      "last_callback_gradient": 1.4818786394683218e-06,
+      "last_extra_cycle_log": {
+        "delta_Eh": -3.55e-13,
+        "density_norm": 7.67e-06,
+        "gradient_norm": 9.65e-07
+      },
+      "obs_canonical_sha256": "6d9dda9f8f7161958ec0d2fa7fe4bf4c4cdc2aa95903790a2a59210145158545",
+      "occupation_electrons_recomputed": 12.0,
+      "quad_minus_trace": 0.010521987369591201,
+      "quadrature_electrons_recomputed": 12.01052198736959,
+      "science_wall_seconds": 11.042853134000012,
+      "trace_electrons_recomputed": 11.999999999999998,
+      "trace_imag_abs": 0.0
+    },
+    "KRKS_222": {
+      "Becke_points": 9204,
+      "DM_file_SHA256": "cbe18f2874bbde287298986ef89238aaa96fe0612daa1c33075ba1706ed03851",
+      "GDF_actual_primary_mesh": [
+        7,
+        7,
+        7
+      ],
+      "SCF_converged": true,
+      "cderi_file_bytes": 4792232,
+      "energy_Eh_per_cell": -76.02413568931992,
+      "last_callback_gradient": 7.345924322139679e-05,
+      "last_extra_cycle_log": {
+        "delta_Eh": 3.93e-10,
+        "density_norm": 0.00034,
+        "gradient_norm": 0.000136
+      },
+      "obs_canonical_sha256": "0faa312b2318053d07193b880c49dde7110588fae7515ace1a6b56d4f71ee71a",
+      "occupation_electrons_recomputed": 12.0,
+      "quad_minus_trace": 0.009445111070466083,
+      "quadrature_electrons_recomputed": 12.009445111070466,
+      "science_wall_seconds": 18.214638085000004,
+      "trace_electrons_recomputed": 12.0,
+      "trace_imag_abs": 3.641874671487472e-22
+    }
+  },
+  "total": 30
+}

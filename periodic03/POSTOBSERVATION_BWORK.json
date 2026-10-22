@@ -1,0 +1,38 @@
+{
+  "artifact": "QW_PERIODIC03_BWORK_POSTOBSERVATION_DECISION",
+  "authored_after_actual_reading_UTC": "2026-10-22T10:23:29.385570+00:00",
+  "authorship": "CURRENT_BWORK_AI_AFTER_READING_ORIGINAL_LOGS_AND_NPZ_AUDIT",
+  "basis": "Actual7+5main SCF cycles with extra checks; independent offline scalar sums of the two existing NPZ files; not a new simulation",
+  "conditional_next_check": "If a concrete subsequent material question depends on quantitative relative energies, a narrow same-state quadrature/GDF-control check is more interpretable than automatically increasing k; select it only for that scientific decision and with new authority. Do not make this a permanent world-entry gate.",
+  "critical_limit": "Auto GDF primary mesh/omega changed9^3/.47991048 to7^3/.36700959 under the same declared tolerance. Therefore pure isolated k attribution is NOT_PROVEN. Raw Becke weights match, but full grid coordinates were not exported; no grid-sensitivity experiment was made. Multi-k last extra-cycle gradient is1.36e-4 while SCF flag is true, so retain the actual residual and do not imply exact stationarity.",
+  "current_tranche": "STOP_NO_FURTHER_COMPUTATION",
+  "decision": "CHANGE_EXPLORATION_DIRECTION",
+  "input_observation_canonical_sha256": {
+    "KRKS111": "6d9dda9f8f7161958ec0d2fa7fe4bf4c4cdc2aa95903790a2a59210145158545",
+    "KRKS222": "0faa312b2318053d07193b880c49dde7110588fae7515ace1a6b56d4f71ee71a"
+  },
+  "next_world_capability_recommendation": "Return k-aware construction/routing and portable quality records to general world use. For next expansion, evaluate mature-engine atomic-force/controlled-structure-response support around a genuinely useful physical question, rather than more named-carbon k grids. Recommendation only, no implementation or compute started.",
+  "not_claimed": [
+    "KPOINT_CONVERGENCE_CERTIFIED",
+    "PHYSICAL_ACCURACY_CERTIFIED",
+    "W2_INDEPENDENT_ENGINE_PROVEN",
+    "FULLY_UNATTENDED_AUTONOMOUS_SCIENTIST_PROVEN",
+    "ORIGINAL_DISCOVERY_PROVEN"
+  ],
+  "observations": {
+    "E111_Eh_per_cell": -75.04949368888164,
+    "E222_Eh_per_cell": -76.02413568931992,
+    "RKS_vs_KRKS111_Eh": 2.842170943040401e-14,
+    "actual_kpoints": "1 and8, full uniform weights; Gamma verified from actual zero vector, not config name",
+    "delta_Eh_per_cell": -0.9746420004382799,
+    "occupation_and_trace_electrons": "Both12 within roundoff",
+    "quadrature_electrons": [
+      12.01052198736959,
+      12.009445111070463
+    ]
+  },
+  "scientific_update": "The new coupled multi-k route actually works within resource limits. The Gamma-only and finite-k execution paths give substantially different same-state model energies; Gamma must not be treated as automatically representative. Agreement of occupations and overlap-trace counts with12 separates the finite realspace quadrature offset from a change of model electron inventory. Neither observation establishes physical accuracy.",
+  "time_order": "Both SCFs were predeclared controls; only this decision is actual post-observation B-Work judgment. No realtime LLM in container, no new candidate run.",
+  "why_not_more_k_now": "A second mesh already tests whether the world can enter a previously unavailable coupled k-sampled state space. A third mesh would not alone remove quadrature, GDF-covariation, basis or PBE uncertainties, and no mission-relevant material comparison currently justifies an unbounded carbon convergence campaign. Spare compute budget does not create continuation authority.",
+  "why_not_new_model_now": "No independent model evidence here isolates PBE or basis error, so do not replace the model merely because the quadrature screen warns. No proof that the current method is physically false."
+}

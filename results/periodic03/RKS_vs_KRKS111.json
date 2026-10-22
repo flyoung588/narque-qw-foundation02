@@ -1,0 +1,26 @@
+{
+  "status": "SOLVER_PATH_CONSISTENCY_DIFFERENCE",
+  "delta_Eh_per_cell": 2.842170943040401e-14,
+  "changed": {
+    "solver_paths": [
+      "RKS",
+      "KRKS"
+    ],
+    "kmeshes": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  },
+  "grid_k_coupling": "Same nominal Becke setting, but self-consistent density and grid pruning can change; not pure isolated quadrature effect",
+  "KPOINT_CONVERGENCE_CERTIFIED": false,
+  "QUADRATURE_SENSITIVITY": "UNKNOWN",
+  "physical_accuracy": "NOT_CERTIFIED"
+}
