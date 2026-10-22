@@ -1,0 +1,90 @@
+#INFO: **** input file is /app/frontier01/solver_worker.py ****
+"""Engine child: engine crash cannot kill the world router."""
+import json,pathlib,resource,sys,traceback
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
+from interactive01.world import freeze
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+out=pathlib.Path(sys.argv[2]);out.mkdir(parents=True,exist_ok=True)
+try:
+    print('START',flush=True)
+    from frontier01.solver import solve
+    solve(json.loads(pathlib.Path(sys.argv[1]).read_text()),out)
+except BaseException as e:
+    freeze(out/'worker_failure.json',{'status':'UNVERIFIED','type':type(e).__name__,'error':str(e),'traceback':traceback.format_exc(),'no_retry':True});raise
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='7d4bfde72749', release='6.17.0-1022-azure', version='#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026', machine='x86_64')  Threads 1
+Python 3.12.15 (main, Oct  6 2026, 02:02:31) [GCC 12.2.0]
+numpy 2.2.6  scipy 1.15.3  h5py 3.16.0
+Date: Thu Oct 22 13:35:40 2026
+PySCF version 2.8.0
+PySCF path  /usr/local/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 4
+[INPUT] num. electrons = 4
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 H      0.000000000000   0.000000000000  -2.250000000000 AA    0.000000000000   0.000000000000  -4.251883780271 Bohr   0.0
+[INPUT]  2 H      0.000000000000   0.000000000000  -0.750000000000 AA    0.000000000000   0.000000000000  -1.417294593424 Bohr   0.0
+[INPUT]  3 H      0.000000000000   0.000000000000   0.750000000000 AA    0.000000000000   0.000000000000   1.417294593424 Bohr   0.0
+[INPUT]  4 H      0.000000000000   0.000000000000   2.250000000000 AA    0.000000000000   0.000000000000   4.251883780271 Bohr   0.0
+
+nuclear repulsion = 1.52873416488
+number of shells = 4
+number of NR pGTOs = 12
+number of NR cGTOs = 4
+basis = sto-3g
+ecp = {}
+CPU time:         0.83
+
+
+******** <class 'pyscf.scf.hf.RHF'> ********
+method = RHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-11
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /tmp/tmpmjrqpkmn
+max_memory 400 MB (current use 103 MB)
+Set gradient conv threshold to 3.16228e-06
+Initial guess from minao.
+init E= -1.23598584408805
+  HOMO = -0.19326648700867  LUMO = 0.0296818991378668
+cycle= 1 E= -1.82442482803664  delta_E= -0.588  |g|= 0.0595  |ddm|= 1.47
+  HOMO = -0.290819149179595  LUMO = 0.124060893407752
+cycle= 2 E= -1.828406351787  delta_E= -0.00398  |g|= 0.0231  |ddm|= 0.151
+  HOMO = -0.298076719814091  LUMO = 0.132900998715737
+cycle= 3 E= -1.8291319970882  delta_E= -0.000726  |g|= 0.00282  |ddm|= 0.089
+  HOMO = -0.298473012947212  LUMO = 0.132802225286049
+cycle= 4 E= -1.82913740821087  delta_E= -5.41e-06  |g|= 5.94e-05  |ddm|= 0.00703
+  HOMO = -0.298420710678297  LUMO = 0.132767953429274
+cycle= 5 E= -1.8291374111529  delta_E= -2.94e-09  |g|= 3.28e-05  |ddm|= 0.000103
+  HOMO = -0.298400693715039  LUMO = 0.132754849793448
+cycle= 6 E= -1.82913741182957  delta_E= -6.77e-10  |g|= 2.26e-05  |ddm|= 3.95e-05
+  HOMO = -0.298390129030728  LUMO = 0.132747937657161
+cycle= 7 E= -1.82913741208644  delta_E= -2.57e-10  |g|= 1.73e-05  |ddm|= 2.09e-05
+  HOMO = -0.298383604468845  LUMO = 0.13274367047298
+cycle= 8 E= -1.82913741221048  delta_E= -1.24e-10  |g|= 1.39e-05  |ddm|= 1.29e-05
+  HOMO = -0.298379176466654  LUMO = 0.132740775326451
+cycle= 9 E= -1.82913741227962  delta_E= -6.91e-11  |g|= 1.17e-05  |ddm|= 8.74e-06
+  HOMO = -0.298356075340954  LUMO = 0.132725651742132
+cycle= 10 E= -1.82913741244302  delta_E= -1.63e-10  |g|= 7.92e-08  |ddm|= 4.56e-05
+  HOMO = -0.298356216312397  LUMO = 0.13272578574948
+cycle= 11 E= -1.82913741244302  delta_E= -8.88e-15  |g|= 7.14e-11  |ddm|= 3.2e-07
+  HOMO = -0.298356216165927  LUMO = 0.132725785662095
+Extra cycle  E= -1.82913741244303  delta_E= -1.78e-15  |g|= 2.55e-11  |ddm|= 1.83e-10
+converged SCF energy = -1.82913741244303

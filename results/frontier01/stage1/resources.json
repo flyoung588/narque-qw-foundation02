@@ -1,0 +1,47 @@
+{
+  "cgroup": {
+    "cpu.max": "100000 100000",
+    "cpu.stat": "usage_usec 2224986\nuser_usec 1988200\nsystem_usec 236785\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 23\nnr_throttled 1\nthrottled_usec 766\nnr_bursts 0\nburst_usec 0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.max": "1073741824",
+    "memory.peak": "126005248",
+    "memory.swap.max": "0"
+  },
+  "children_rusage": [
+    1.6044109999999998,
+    0.182475,
+    114604,
+    0,
+    0,
+    0,
+    32430,
+    0,
+    0,
+    0,
+    216,
+    0,
+    0,
+    0,
+    66,
+    102
+  ],
+  "self_rusage": [
+    0.38447499999999996,
+    0.052474,
+    39256,
+    0,
+    0,
+    0,
+    7545,
+    0,
+    0,
+    0,
+    112,
+    0,
+    0,
+    0,
+    214,
+    70
+  ],
+  "wall_seconds": 1.8888499429999968
+}

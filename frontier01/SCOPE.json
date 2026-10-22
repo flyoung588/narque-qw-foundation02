@@ -1,1 +1,9 @@
-{"authority":"HUMAN_GRANTED_PHYSICS_FRONTIER01","request_sha256":"2afc8ff9037bc570820fba99b9206256436d98b6942dcac072af8a9c0a869773","max_jobs":2,"max_stages":2,"retry":false,"second_action":"Selected only after reading first actual result; one z displacement norm<=0.05 angstrom or STOP","publish_authority":"GRANTED"}
+{
+  "authority": "HUMAN_GRANTED_PHYSICS_FRONTIER01",
+  "max_jobs": 2,
+  "max_stages": 2,
+  "publish_authority": "GRANTED",
+  "request_sha256": "2f0571b095aa2deaf29f4d83874954569b4f97ba61aff7424597af62b58c488c",
+  "retry": false,
+  "second_action": "Selected only after reading first actual result; one z displacement norm<=0.05 angstrom or STOP"
+}

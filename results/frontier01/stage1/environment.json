@@ -1,0 +1,12 @@
+{
+  "Python": "3.12.15",
+  "source_sha": "debd856e57e4fdb6e389faa3730540a931798047",
+  "versions": {
+    "ase": "3.29.0",
+    "jsonschema": "4.25.1",
+    "numpy": "2.2.6",
+    "pyscf": "2.8.0",
+    "qutip": "5.2.1",
+    "scipy": "1.15.3"
+  }
+}

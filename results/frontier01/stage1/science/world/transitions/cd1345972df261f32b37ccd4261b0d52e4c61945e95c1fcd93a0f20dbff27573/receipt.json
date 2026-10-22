@@ -1,0 +1,11 @@
+{
+  "action": {
+    "type": "PREPARE_CORRELATED_STATE"
+  },
+  "new_state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+  "observation_sha256": "1bb4d59f2cd484120c9e3dcb181a9768620560499fcebd879095c466d352610f",
+  "request_sha256": "1bad9e84512b5d63d009640f2dba25c9f9b4fb68c4ba3cc3d1f9f6cd20e71cf5",
+  "scope": "Finite-basis correlated BO electronic state; not nuclear time evolution",
+  "source_state_sha256": "a8f55becdfa7cd6605532f8bfc744ce157c475f808f7d7fd176190d404c782c3",
+  "status": "CALCULATED_MODEL_ONLY"
+}

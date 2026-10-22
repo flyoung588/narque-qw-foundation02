@@ -1,0 +1,66 @@
+{
+  "world_spec": {
+    "version": "QW-WORLDSPEC-0.1",
+    "object_id": "H4-correlation-open-chain",
+    "epistemic_mode": "GROUNDED",
+    "matter": {
+      "type": "molecule",
+      "atoms": [
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            -2.25
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            -0.75
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            0.75
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0,
+            0,
+            2.25
+          ]
+        }
+      ],
+      "charge": 0,
+      "spin_2S": 0,
+      "periodic": false,
+      "source": "AI selected controlled geometry, not experimental measurement; GROUNDED is inherited executable engine mode, not a claim of material validation"
+    },
+    "physics": {
+      "engine": "pyscf",
+      "method": "RHF",
+      "basis": "sto-3g",
+      "observables": [
+        "energy"
+      ]
+    }
+  },
+  "correlation_model": {
+    "method": "FCI",
+    "solver": "direct_spin0",
+    "basis": "sto-3g",
+    "conv_tol": 1e-10,
+    "max_cycle": 100,
+    "max_memory_MB": 400,
+    "nroots": 1,
+    "partition": "SYMMETRIC_LOWDIN_AO"
+  }
+}

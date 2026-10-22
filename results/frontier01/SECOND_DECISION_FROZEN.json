@@ -1,0 +1,89 @@
+{
+  "action_sha256": "b494a1f120d294aee089d17aec4ea98cb0d268d83c890f4adb9ebc3171fc1daf",
+  "actual_reading": {
+    "ci_shape": [
+      6,
+      6
+    ],
+    "correlation_energy_Eh": -0.16701291307578403,
+    "double_occupancies": [
+      0.08295331744469661,
+      0.1069879415819872,
+      0.10698794158198702,
+      0.08295331744469707
+    ],
+    "energy_FCI_Eh": -1.9961503255188102,
+    "energy_RHF_Eh": -1.8291374124430262,
+    "natural_occupations": [
+      1.8220855000408074,
+      1.6545180680613327,
+      0.3513148018604296,
+      0.17208163003743382
+    ],
+    "nearest_neighbor_spin_hbar2": [
+      -0.5395883369257259,
+      -0.1541436291703252,
+      -0.539588336925725
+    ],
+    "nonidempotency": 1.78954021559707,
+    "numerical_quality": {
+      "FCI_converged": true,
+      "Hamiltonian_residual_Eh": 4.382717631453881e-16,
+      "RDM_energy_error_Eh": 8.881784197001252e-16,
+      "RHF_converged": true,
+      "S2_hbar2": 3.3306690738754696e-16,
+      "aa_contraction_error": 0.0,
+      "ab_contraction_error": 2.220446049250313e-16,
+      "bb_contraction_error": 1.1102230246251565e-16,
+      "multiplicity": 1.0000000000000007,
+      "norm_error": 0.0,
+      "occupation_max": 1.8220855000408074,
+      "occupation_min": 0.17208163003743382,
+      "site_spin_sum_error": 1.9984014443252818e-15,
+      "trace_alpha_error": 0.0,
+      "trace_beta_error": 2.220446049250313e-16
+    },
+    "same_partition_RHF_nearest_spin_hbar2": [
+      -0.3300860622810249,
+      -0.04491393579799584,
+      -0.3300860622810248
+    ]
+  },
+  "authorship": "Current B-Work AI read recovered actual JSON and NPZ before selecting this action. No runtime LLM, scripted geometry optimizer or independent-team review is claimed.",
+  "created_utc": "2026-10-22T13:37:52.714905+00:00",
+  "decision": "CONTINUE_ONCE_WITH_COMPETING_BOND_PERTURBATION",
+  "falsifier": "A numerically valid second result failing either directional threshold rejects this joint redistribution forecast; preserve it without changing action or thresholds. Solver/resource/quality failure instead leaves the physical forecast unresolved and stops.",
+  "first_job_run_id": "39788105394",
+  "forecast_thresholds": {
+    "delta_C01_hbar2_min": 0.001,
+    "delta_C12_hbar2_max": -0.001
+  },
+  "kind": "CURRENT_WORK_AI_DECISION_AFTER_REAL_OBSERVATION",
+  "limits": "Static correlated-state re-solve is not real-time nuclear motion. Lowdin orbitals change with geometry under the same convention; local correlations are partition-dependent. FCI is complete only within STO-3G; no UHF comparator, bulk order, experiment or originality claim.",
+  "new_question": "Will strengthening the central geometric contact while weakening its adjacent left contact redistribute singlet spin correlations, rather than simply preserving the initial end-pair pattern?",
+  "numerical_requirements": "Reuse unchanged solver, residual/RDM/spin/norm tolerances; changes must exceed those numerical scales. No extra basis scan or solver retry.",
+  "observation_sha256": "1bb4d59f2cd484120c9e3dcb181a9768620560499fcebd879095c466d352610f",
+  "physical_change": {
+    "atom": "atom-1",
+    "displacement_angstrom": [
+      0,
+      0,
+      0.05
+    ],
+    "new_nearest_distances_angstrom": [
+      1.55,
+      1.45,
+      1.5
+    ],
+    "new_z_angstrom": -0.7,
+    "old_z_angstrom": -0.75
+  },
+  "prediction": "C12=<S1.S2> will become more negative by >0.001 hbar^2, while C01=<S0.S1> becomes less negative by >0.001 hbar^2 versus the actual first observation. This is a conditional finite-basis Lowdin-partition response hypothesis; no energy-change sign is predicted.",
+  "raw_first_output_file_sha256": "273076480bd3be45504e3f0da0de0a1598ebc77722fb30dee314e11ac0d8b30d",
+  "raw_scientific_array_sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf",
+  "resource_reason": "First science used about2.23CPU seconds and126MB peak under the actual1CPU/1GiB/offline cgroup. A second single geometry is within the remaining authorized Job and adds a concrete correlation-response test. No third action will execute.",
+  "scientific_interpretation": "Equal nearest distances do not produce equal local spin correlations in this finite open singlet: strong end pairs and weaker center occur in the actual state. The FCI density is nonidempotent and double occupancy suppressed relative to same-partition RHF. Negative spin correlations themselves occur already in RHF, so their sign alone is not new many-body evidence. No bulk phase or material property is inferred.",
+  "source_commit": "debd856e57e4fdb6e389faa3730540a931798047",
+  "source_state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+  "why_this_action": "One allowed atom shift simultaneously shortens center1-2 and lengthens left0-1 with right2-3 unchanged; it discriminates a state-sensitive competing-contact response at fixed composition, electronic model and partition rule. A repeat energy-only solve would add less information."
+}
