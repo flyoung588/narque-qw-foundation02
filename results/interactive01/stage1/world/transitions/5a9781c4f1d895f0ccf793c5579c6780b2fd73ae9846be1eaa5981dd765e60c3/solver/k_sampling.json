@@ -1,0 +1,32 @@
+{
+  "coordinate_unit": "1/Bohr",
+  "generator": "cell.make_kpts",
+  "mesh": [
+    1,
+    1,
+    1
+  ],
+  "symmetry_reduction": false,
+  "weights": "uniform",
+  "with_gamma_point": true,
+  "wrap_around": true,
+  "actual_kpts_absolute_1_per_Bohr": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "actual_fractional_reciprocal_kpts": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "actual_weights": [
+    1.0
+  ],
+  "Gamma_included": true,
+  "definition": "fractional coordinates multiply primitive reciprocal vectors including2pi; absolute rad/Bohr. Even2mesh uses fractions0,-1/2, not half-shifted Monkhorst-Pack. No IBZ/symmetry reduction."
+}

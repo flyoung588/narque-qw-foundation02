@@ -1,0 +1,50 @@
+{
+  "action": {
+    "observables": [
+      "energy"
+    ],
+    "source_state_sha256": "dd76a5a013ef3ad37202bcc651c6a4e1ae73d4f0f6e82a3d133f3fc12a3f91cf",
+    "type": "MEASURE_OBSERVABLE"
+  },
+  "action_sha256": "48a92808e679ded43fe1a4b6948979ad08a2aaa832ff1d78034896aafd64ea25",
+  "candidate_state_sha256": "cf308626ab9924b29ab7e3308f30f76a0c73c1d0276eeec3a74fc2b5f384d305",
+  "candidate_structure_sha256": "02341cfe18121f4af17dde0046a562206664f45b38186639305d411b5f175955",
+  "created_utc": "2026-10-22T11:26:39.256107+00:00",
+  "model": {
+    "basis": "cc-pvdz",
+    "engine": "pyscf-pbc",
+    "k_sampling": {
+      "coordinate_unit": "1/Bohr",
+      "generator": "cell.make_kpts",
+      "mesh": [
+        1,
+        1,
+        1
+      ],
+      "symmetry_reduction": false,
+      "weights": "uniform",
+      "with_gamma_point": true,
+      "wrap_around": true
+    },
+    "method": "KRKS",
+    "numerics": {
+      "Becke_level": 1,
+      "cell_precision": 1e-06,
+      "conv_tol": 1e-08,
+      "max_cycle": 80
+    },
+    "observables": [
+      "energy"
+    ],
+    "xc": "PBE"
+  },
+  "new_state_sha256": "1667358db81b04b56f80873a851da30806465dc109a8004444723cadaead3c4e",
+  "physical_transition": "CALCULATED_MODEL_ONLY",
+  "resource_evidence": "solver/process_receipt.json; /out/admission.json; /out/resources.json",
+  "result_sha256": "8ee9365692be494aa7a835165d83cd5e64f35d490bd4cfed7168a6e39e52056f",
+  "scope": "Static finite-basis BO calculation; no dynamics/stability/novelty qualification",
+  "semantic_action": "APPLIED",
+  "source_state_sha256": "dd76a5a013ef3ad37202bcc651c6a4e1ae73d4f0f6e82a3d133f3fc12a3f91cf",
+  "status": "CALCULATED",
+  "synthetic": false
+}

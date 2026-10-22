@@ -1,0 +1,50 @@
+{
+  "stage": "ASE_PERIODIC_ATOMS_CONSTRUCTED",
+  "UTC": "2026-10-22T11:26:39.796195+00:00",
+  "cell_A": [
+    [
+      0.0,
+      2.105,
+      2.105
+    ],
+    [
+      2.105,
+      0.0,
+      2.105
+    ],
+    [
+      2.105,
+      2.105,
+      0.0
+    ]
+  ],
+  "positions_A": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      2.105,
+      2.105,
+      2.105
+    ]
+  ],
+  "pbc": [
+    true,
+    true,
+    true
+  ],
+  "nearest_neighbors": [
+    {
+      "atom": 0,
+      "distance_A": 2.105,
+      "count": 6
+    },
+    {
+      "atom": 1,
+      "distance_A": 2.105,
+      "count": 6
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "action": {
+    "observables": [
+      "energy"
+    ],
+    "source_state_sha256": "dd76a5a013ef3ad37202bcc651c6a4e1ae73d4f0f6e82a3d133f3fc12a3f91cf",
+    "type": "MEASURE_OBSERVABLE"
+  },
+  "ai_predecision": {
+    "after_first": "Work AI must read actual observations, residuals and realized GDF/Becke data, choose a bounded action or STOP, and freeze that request separately.",
+    "alternative": "Molecular analytic-force loop is mature but would not expand the periodic interaction space; no new molecular run allocated now.",
+    "authorship": "Current B-Work AI; no independent scientific reviewer",
+    "choice": "Unused two-atom MgO proposal adds a heteroelement periodic structural-response opportunity without a material-specific solver.",
+    "failure_conditions": [
+      "resource preflight blocked",
+      "SCF not converged",
+      "invalid geometry/model",
+      "missing diagnostics/finite energy"
+    ],
+    "novelty": "NOT_ESTABLISHED",
+    "prediction": "Conditional on admission and SCF convergence: finite energy with occupation/Tr(DS) near20; no certified absolute energy, force sign or equilibrium prediction.",
+    "question": "Can a persistent MgO structural state yield a traceable bounded KRKS energy and quality suitable for selecting one finite structural perturbation?",
+    "scope": "PBE finite Gaussian basis, Gamma-only static BO; not material accuracy/stability or dynamics",
+    "second_action": "NOT_SELECTED",
+    "unknown": "First state energy alone does not establish a preferred displacement/strain sign, force or stability. Structural response remains an open test."
+  },
+  "source_state": {
+    "payload": {
+      "atom_ids": [
+        "atom-0",
+        "atom-1"
+      ],
+      "interpretation": "SEPARATE_AI_DECISION_ONLY",
+      "numerical_quality": null,
+      "observation": null,
+      "parent_state_id": null,
+      "reason": "AI_FIRST_STATE_BEFORE_ANY_INTERACTIVE01_SCIENCE",
+      "schema": "QW_PHYSICAL_STATE_01",
+      "state_kind": "STATIC_BO_STRUCTURE_AND_OPTIONAL_SCF_OBSERVATION_NOT_TIME_WAVEFUNCTION",
+      "structure_sha256": "02341cfe18121f4af17dde0046a562206664f45b38186639305d411b5f175955",
+      "supported_operations": {
+        "actions": [
+          "DISPLACE_ATOM",
+          "MEASURE_OBSERVABLE",
+          "AFFINE_STRAIN_CELL"
+        ],
+        "availability": "RUNTIME_CHECK_REQUIRED",
+        "dynamics": "NOT_IMPLEMENTED",
+        "observables": [
+          "energy"
+        ],
+        "response_kind": "ENERGY_ONLY_STRUCTURAL_RESPONSE"
+      },
+      "world_spec": {
+        "epistemic_mode": "GROUNDED",
+        "experiment": {
+          "action": "single_point"
+        },
+        "matter": {
+          "atoms": [
+            {
+              "element": "Mg",
+              "xyz_angstrom": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "element": "O",
+              "xyz_angstrom": [
+                2.105,
+                2.105,
+                2.105
+              ]
+            }
+          ],
+          "cell_angstrom": [
+            [
+              0.0,
+              2.105,
+              2.105
+            ],
+            [
+              2.105,
+              0.0,
+              2.105
+            ],
+            [
+              2.105,
+              2.105,
+              0.0
+            ]
+          ],
+          "charge": 0,
+          "periodic": true,
+          "source": "Inherited unused MgO proposal; geometry input, not equilibrium or stability proof",
+          "spin_2S": 0,
+          "type": "periodic_cell"
+        },
+        "object_id": "QW_I01_MGO_INITIAL",
+        "physics": {
+          "basis": "cc-pvdz",
+          "engine": "pyscf-pbc",
+          "k_sampling": {
+            "coordinate_unit": "1/Bohr",
+            "generator": "cell.make_kpts",
+            "mesh": [
+              1,
+              1,
+              1
+            ],
+            "symmetry_reduction": false,
+            "weights": "uniform",
+            "with_gamma_point": true,
+            "wrap_around": true
+          },
+          "method": "KRKS",
+          "numerics": {
+            "Becke_level": 1,
+            "cell_precision": 1e-06,
+            "conv_tol": 1e-08,
+            "max_cycle": 80
+          },
+          "observables": [
+            "energy"
+          ],
+          "xc": "PBE"
+        },
+        "version": "QW-WORLDSPEC-0.1"
+      }
+    },
+    "sha256": "dd76a5a013ef3ad37202bcc651c6a4e1ae73d4f0f6e82a3d133f3fc12a3f91cf",
+    "state_id": "dd76a5a013ef3ad37202bcc651c6a4e1ae73d4f0f6e82a3d133f3fc12a3f91cf"
+  },
+  "stage": 1,
+  "state_creation": {
+    "reason": "AI_FIRST_STATE_BEFORE_ANY_INTERACTIVE01_SCIENCE",
+    "spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "Mg",
+            "xyz_angstrom": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "element": "O",
+            "xyz_angstrom": [
+              2.105,
+              2.105,
+              2.105
+            ]
+          }
+        ],
+        "cell_angstrom": [
+          [
+            0.0,
+            2.105,
+            2.105
+          ],
+          [
+            2.105,
+            0.0,
+            2.105
+          ],
+          [
+            2.105,
+            2.105,
+            0.0
+          ]
+        ],
+        "charge": 0,
+        "periodic": true,
+        "source": "Inherited unused MgO proposal; geometry input, not equilibrium or stability proof",
+        "spin_2S": 0,
+        "type": "periodic_cell"
+      },
+      "object_id": "QW_I01_MGO_INITIAL",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf-pbc",
+        "k_sampling": {
+          "coordinate_unit": "1/Bohr",
+          "generator": "cell.make_kpts",
+          "mesh": [
+            1,
+            1,
+            1
+          ],
+          "symmetry_reduction": false,
+          "weights": "uniform",
+          "with_gamma_point": true,
+          "wrap_around": true
+        },
+        "method": "KRKS",
+        "numerics": {
+          "Becke_level": 1,
+          "cell_precision": 1e-06,
+          "conv_tol": 1e-08,
+          "max_cycle": 80
+        },
+        "observables": [
+          "energy"
+        ],
+        "xc": "PBE"
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    }
+  }
+}

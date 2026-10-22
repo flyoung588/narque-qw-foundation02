@@ -1,6 +1,6 @@
 {
   "authority": "HUMAN_GRANTED_INTERACTIVE01",
-  "request_sha256": "fbd4ba121be36691598f9440f69bb564c8069bfbb334afa112ebd1214f950c8a",
+  "request_sha256": "9dd6d91d71a68ee375ef7917cc2fe9577243097531dd7a4a646612b7941d28c4",
   "max_sequential_jobs": 2,
   "max_SCF_per_job": 1,
   "job_minutes": 15,
@@ -11,5 +11,5 @@
   "network": "none",
   "purchases": 0,
   "auto_retry": false,
-  "second_action": "NOT_SELECTED_PENDING_ACTUAL_FIRST_OBSERVATION"
+  "second_action": "SELECTED_AFTER_RUN_39770558189_WITHIN_APPROVED_BOUNDARY"
 }
