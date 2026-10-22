@@ -1,0 +1,59 @@
+{
+  "ASE_forces": {
+    "source": "foundation01/pyscf_bridge.py ase_pyscf_calculator",
+    "status": "FACADE_TO_SAME_PYSCF_ENGINE_NOT_INDEPENDENT"
+  },
+  "FFTDF_gradient": {
+    "reason": "Some derivative implementations exist, but replacing GDF and/or all-electron model is outside this frozen response path.",
+    "status": "DESIGN_ONLY_NOT_TESTED_NOT_CONNECTED"
+  },
+  "PBC_RKS_KRKS_GDF_Becke_all_electron_analytic_force": {
+    "limit": "Static exact-source audit, not an executed gradient. No claim all periodic gradients or all PySCF versions impossible.",
+    "source_evidence": "GDF inherits AFTDFMixin; neither provides get_j_e1/get_jk_e1. krhf.GradientsBase.get_j invokes with_df.get_j_e1. Gamma rhf.grad_elec also requests pseudopotential derivative APIs absent in GDF. krhf.get_hcore all-electron branch raises NotImplementedError. krks.grid_response=True raises NotImplementedError.",
+    "status": "NOT_ADMITTED_UNIMPLEMENTED"
+  },
+  "engine_version": "PySCF2.8.0",
+  "finite_difference_force": {
+    "status": "NOT_IMPLEMENTED_NOT_AUTHORIZED_AS_EXTRA_SCF",
+    "warning": "One finite displacement energy difference is not a certified force."
+  },
+  "molecular_RHF_UHF_forces": {
+    "evidence": "foundation01/pyscf_bridge.py; results/qw_next/experiment/pyscf/observation.json; previous HeH+ finite differences; no new force calculation",
+    "status": "SUPPORTED_WITHIN_INHERITED_EXECUTED_DOMAIN"
+  },
+  "periodic_energy_response": {
+    "inherited_energy_solver": "periodic03/runtime.py",
+    "response_kind": "ENERGY_ONLY_STRUCTURAL_RESPONSE",
+    "status": "IMPLEMENTED_FOR_NEW_STATES_NOT_YET_PHYSICALLY_OBSERVED"
+  },
+  "sources": {
+    "aft.py": {
+      "sha256": "3cc3c45500e1a9c6bd22064771dab27dddee155b80035f4216f29eeaba0ded0f",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/df/aft.py"
+    },
+    "df.py": {
+      "sha256": "ec463907d3770a3b57d7e48c3cb4d36ef04f64feaa08c3514faba9227f1c9200",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/df/df.py"
+    },
+    "fft.py": {
+      "sha256": "a50f3ed1f5f45c71c3a0e991825897192775fffdd00bd6f1372913102f36801c",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/df/fft.py"
+    },
+    "krhf.py": {
+      "sha256": "df90c7da8025f2027129d1302488a0bdb1915804a957c6802e7904f0453b854d",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/grad/krhf.py"
+    },
+    "krks.py": {
+      "sha256": "9f4ffd988cd01c7e501a1f552f4c14ca189e8428d763a6a57775b79324560d52",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/grad/krks.py"
+    },
+    "rhf.py": {
+      "sha256": "cc1d0fd73dc59e0944b3c44c1456b8df72cbfb09533dea53bb8904d8a6946832",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/grad/rhf.py"
+    },
+    "rks.py": {
+      "sha256": "d103fecae0977abed9a2e107690e913216448027d54aa1159ca5ad3f608f2e10",
+      "url": "https://raw.githubusercontent.com/pyscf/pyscf/v2.8.0/pyscf/pbc/grad/rks.py"
+    }
+  }
+}
