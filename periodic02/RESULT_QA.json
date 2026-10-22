@@ -1,0 +1,30 @@
+{
+  "actual_volume_Bohr3": 76.76111210055933,
+  "checks": {
+    "actual_PBC_engine": true,
+    "actual_cell": true,
+    "all_JSON_parse": true,
+    "all_original_hashes": true,
+    "converged_finite": true,
+    "diamond_neighbors": true,
+    "hard_limits": true,
+    "input_matches_preobservation": true,
+    "log_energy_matches": true,
+    "no_OOM": true,
+    "no_sensitive_patterns": true,
+    "normalized_routing": true,
+    "one_job_once": true,
+    "only_carbon_observation": true,
+    "real_ASE_periodic": true,
+    "scope_matches_input": true,
+    "stage_files_match": true,
+    "units": true
+  },
+  "grid_weight_volume_sum_Bohr3": 77.5668556,
+  "integrated_electron_error": 0.010521987369587649,
+  "interpretation": "Same-run byte/semantic/numerical diagnostics only, not independent physical accuracy certification",
+  "last_integrated_electron_count": 12.010521987369588,
+  "passed": 18,
+  "source_files_verified": 37,
+  "total": 18
+}

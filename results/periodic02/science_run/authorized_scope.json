@@ -1,0 +1,27 @@
+{
+  "authority": "GRANTED_FOR_QW_PERIODIC02_SINGLE_RUN",
+  "base_ref": "qw-periodic01r",
+  "candidate_id": "QW_P02_C_DIAMOND_2ATOM",
+  "forbidden": [
+    "P3 scripted strain",
+    "MgO second science calculation",
+    "Ne demonstration rerun",
+    "HF repeat",
+    "independent-engine W2 claim",
+    "automatic parameter relaxation"
+  ],
+  "job_deadline_minutes": 15,
+  "max_jobs": 1,
+  "new_purchases": 0,
+  "no_automatic_retry": true,
+  "proposed_branch": "qw-periodic02",
+  "repo": "flyoung588/narque-qw-foundation02",
+  "scientific_container": {
+    "cpu_count": 1,
+    "memory_bytes": 1073741824,
+    "network": "none",
+    "swap_extra_bytes": 0,
+    "threads": 1
+  },
+  "worldspec_sha256": "f761a72b6f4de6045001c41b159638178cc50796bd206e2e18af641e4a1943ec"
+}

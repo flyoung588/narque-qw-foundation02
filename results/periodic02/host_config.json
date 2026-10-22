@@ -1,0 +1,8 @@
+{
+  "memory": 1073741824,
+  "memory_swap_total": 1073741824,
+  "cpu_quota_nano": 1000000000,
+  "network": "none",
+  "uid": "1001:1001",
+  "image": "sha256:fcdf009055eb4ac93a9c2a5e9399f7ce2db215db6265d9f745ab119ff1987077"
+}

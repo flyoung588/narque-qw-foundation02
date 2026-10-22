@@ -1,0 +1,14 @@
+{
+  "stage": "PERIODIC_SCF_STARTED",
+  "UTC": "2026-10-22T08:09:52.817065+00:00",
+  "XC": "PBE",
+  "kpt": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "Becke_level": 1,
+  "Becke_points": 9204,
+  "conv_tol": 1e-08,
+  "max_cycle": 80
+}

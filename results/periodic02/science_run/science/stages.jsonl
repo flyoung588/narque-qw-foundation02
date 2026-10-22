@@ -1,0 +1,16 @@
+{"stage": "WORLD_SPEC_VALIDATED", "UTC": "2026-10-22T08:09:44.094942+00:00", "spec": {"epistemic_mode": "GROUNDED", "experiment": {"action": "single_point"}, "matter": {"atoms": [{"element": "C", "xyz_angstrom": [0.0, 0.0, 0.0]}, {"element": "C", "xyz_angstrom": [0.8925, 0.8925, 0.8925]}], "cell_angstrom": [[0.0, 1.785, 1.785], [1.785, 0.0, 1.785], [1.785, 1.785, 0.0]], "charge": 0, "periodic": true, "source": "QW-PERIODIC02 AI-authored prototype; geometry is a proposal", "spin_2S": 0, "type": "periodic_cell"}, "object_id": "QW_P02_C_DIAMOND_2ATOM", "physics": {"basis": "cc-pvdz", "engine": "pyscf-pbc", "method": "RKS", "observables": ["energy"], "xc": "PBE"}, "version": "QW-WORLDSPEC-0.1"}, "validation": {"all_electron_count": 12, "cell_volume_A3": 11.374823249999999, "pbc": [true, true, true], "geometry_collision_check": "required actual ASE neighbor check at construction, not yet performed by stdlib validation"}}
+{"stage": "ASE_PERIODIC_ATOMS_CONSTRUCTED", "UTC": "2026-10-22T08:09:44.761624+00:00", "symbols": ["C", "C"], "positions_A": [[0.0, 0.0, 0.0], [0.8925, 0.8925, 0.8925]], "cell_A": [[0.0, 1.785, 1.785], [1.785, 0.0, 1.785], [1.785, 1.785, 0.0]], "volume_A3": 11.374823249999997, "pbc": [true, true, true], "neighbors": [{"atom": 0, "distance_A": 1.5458553457552229, "count": 4}, {"atom": 1, "distance_A": 1.5458553457552229, "count": 4}]}
+{"stage": "PYSCF_CELL_BUILT", "UTC": "2026-10-22T08:09:44.767208+00:00", "lattice_vectors_Bohr": [[0.0, 3.3731611323486352, 3.3731611323486352], [3.3731611323486352, 0.0, 3.3731611323486352], [3.3731611323486352, 3.3731611323486352, 0.0]], "atom_coords_Bohr": [[0.0, 0.0, 0.0], [1.6865805661743176, 1.6865805661743176, 1.6865805661743176]], "nelectron": 12, "AO_count": 28}
+{"stage": "CONSTRUCTION_EVIDENCE_SAVED", "UTC": "2026-10-22T08:09:44.768436+00:00", "path": "construction.json"}
+{"stage": "GDF_INITIALIZATION_STARTED", "UTC": "2026-10-22T08:09:44.775471+00:00"}
+{"stage": "GDF_INITIALIZATION_FINISHED", "UTC": "2026-10-22T08:09:52.627883+00:00", "aux_AO_count": 98}
+{"stage": "PERIODIC_SCF_STARTED", "UTC": "2026-10-22T08:09:52.817065+00:00", "XC": "PBE", "kpt": [0.0, 0.0, 0.0], "Becke_level": 1, "Becke_points": 9204, "conv_tol": 1e-08, "max_cycle": 80}
+{"stage": "SCF_ITERATION_0", "UTC": "2026-10-22T08:09:54.319928+00:00", "cycle": 0, "energy_Eh": -74.92103763743549}
+{"stage": "SCF_ITERATION_1", "UTC": "2026-10-22T08:09:54.497570+00:00", "cycle": 1, "energy_Eh": -75.04477306142608}
+{"stage": "SCF_ITERATION_2", "UTC": "2026-10-22T08:09:54.685914+00:00", "cycle": 2, "energy_Eh": -75.04949285127583}
+{"stage": "SCF_ITERATION_3", "UTC": "2026-10-22T08:09:54.864026+00:00", "cycle": 3, "energy_Eh": -75.04949363386656}
+{"stage": "SCF_ITERATION_4", "UTC": "2026-10-22T08:09:55.041205+00:00", "cycle": 4, "energy_Eh": -75.04949329866027}
+{"stage": "SCF_ITERATION_5", "UTC": "2026-10-22T08:09:55.220772+00:00", "cycle": 5, "energy_Eh": -75.04949368887554}
+{"stage": "SCF_ITERATION_6", "UTC": "2026-10-22T08:09:55.397942+00:00", "cycle": 6, "energy_Eh": -75.04949368888126}
+{"stage": "PERIODIC_SCF_FINISHED", "UTC": "2026-10-22T08:09:55.575251+00:00", "converged": true, "finite_energy": true, "energy_Eh": -75.04949368888167}
+{"stage": "OBSERVATION_SAVED", "UTC": "2026-10-22T08:09:55.576217+00:00", "converged": true, "path": "raw_observation.json"}

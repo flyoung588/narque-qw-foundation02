@@ -1,0 +1,14 @@
+{
+  "accuracy": "NOT_CERTIFIED",
+  "basis_sensitivity": "NOT_TESTED",
+  "energy_Eh_per_cell": -75.04949368888167,
+  "forces": "NOT_IMPLEMENTED",
+  "grid_sensitivity": "NOT_TESTED",
+  "kpoint_sensitivity": "NOT_TESTED",
+  "material_stability": "NOT_PROVEN",
+  "note": "Same-model energy exists; accuracy requires independent, justified numerical and reality checks.",
+  "original_discovery": "NOT_TESTED",
+  "scf_converged": true,
+  "status": "BOUNDED_CALCULATED",
+  "stress": "NOT_IMPLEMENTED"
+}

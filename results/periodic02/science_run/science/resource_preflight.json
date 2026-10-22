@@ -1,0 +1,33 @@
+{
+  "path": "PySCF2.8 default _RSGDFBuilder and _RSNucBuilder, not FFTDF",
+  "auxiliary": "weigend",
+  "aux_AO_count": 98,
+  "meshes": {
+    "GDF_default_estimate": [
+      9,
+      9,
+      9
+    ],
+    "nuclear_default_estimate": [
+      9,
+      9,
+      9
+    ],
+    "metric_conservative_estimate": [
+      11,
+      11,
+      11
+    ]
+  },
+  "largest_mesh_points": 1331,
+  "screen_workspace_bytes": 22147840,
+  "screen_definition": "2 complex buffers over max estimated grid times AO-pairs+aux+16; conservative screening estimate, not validated peak bound",
+  "packed3c_payload_bytes": 318304,
+  "3c_multiple_copy_allowance_bytes": 5092864,
+  "tmp_free_bytes": 536870912,
+  "tmpfs_counts_inside_1GiB": true,
+  "memory_floor_warning": "library max_memory includes 1000/2000MB floors; small AO/grid bounds do not prove total demand, cgroup remains authoritative",
+  "Becke": "level1 atom-centered, not cell.mesh uniform grid",
+  "model_or_precision_changed": false,
+  "admission": "CONDITIONAL_ALLOW_UNDER_HARD_CGROUP"
+}

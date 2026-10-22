@@ -1,0 +1,18 @@
+{
+  "artifact": "QW_PERIODIC02_POST_OBSERVATION_DECISION",
+  "authored_at_UTC": "2026-10-22T08:39:29.782939+00:00",
+  "autonomy_level": "HUMAN_AUTHORIZED_AI_WORKFLOW_NOT_UNATTENDED",
+  "decision": {
+    "AI_analysis_after_observation": "The frozen two-C periodic structure genuinely reached the generic PySCF-PBC route and converged at -75.04949368888167 Eh/cell, with four1.5458553458Angstrom neighbors per atom. This supports the bounded execution/constructor hypothesis, not a stability or novelty prediction. The last integrated electron count12.010521987369588 differs by0.010522 from12; Becke weight volume77.5668556 vs76.7611121Bohr3 is another quadrature diagnostic. The7main SCF cycles plus extra check converge the discretized model, not the integration/kpoint/basis error.",
+    "action": "stop",
+    "alternative_explanations": "The electron-count offset may reflect periodic atomic-grid quadrature/pruning/numerical integration; its source or energy impact is not isolated here. Gamma sampling, finite basis and PBE model error remain distinct. A finite total energy is not cohesive energy or material stability; do not compare its absolute value with Ne/MgO.",
+    "autonomy_claim": "B-Work AI reads actual evidence and makes an auditable bounded decision; no unattended model inside container or original discovery is proven.",
+    "based_on_observation_sha256": "0d7893cbb5262858f0b8fdbd2b9ab5efaa3d15b44943878166809371b3f592bb",
+    "decision_rationale": "Stop this authorized one-job tranche, do not promote MgO or a prechosen strain to an automatic second experiment. Prefer next a reusable periodic numerical-domain extension: explicit Brillouin-zone sampling and quadrature-quality provenance, with a single discriminating same-state question before interpreting material energy trends. This decision was made after reading this actual observation, not the frozen backup candidate.",
+    "next_question_not_executed": "Which limitation most changes the usable periodic physical domain: same-state quadrature sensitivity versus Brillouin-zone sampling? Any follow-on must define and separately authorize the discriminating run; no such run is made here.",
+    "recommended_next_capability": "Bounded k-point-aware periodic solver routing and recorded numerical-quality controls, reusing mature PySCF-PBC, not another named-material calculator."
+  },
+  "decision_does_not_trigger_science_job": true,
+  "prior_observation_sha256": "0d7893cbb5262858f0b8fdbd2b9ab5efaa3d15b44943878166809371b3f592bb",
+  "status": "FOLLOWUP_DECISION_ONLY_NOT_SCIENTIFIC_VERDICT"
+}

@@ -1,0 +1,27 @@
+{
+  "W2_independent_solver": "INCOMPLETE",
+  "actual_runtime_preflight": "REQUIRED_BEFORE_SCF",
+  "actual_solver_family": "PySCF",
+  "cost_screening": "SMALL_CELL_UNVERIFIED_COMPLEXITY",
+  "current_observables": [
+    "energy"
+  ],
+  "electron_count": 12,
+  "energy_reference": "periodic total energy Eh/cell (Ewald; not molecular total)",
+  "engine": "pyscf-pbc",
+  "grid_k_basis_convergence": "NOT_CERTIFIED",
+  "material_stability": "NOT_PROVEN",
+  "matter_type": "periodic_cell",
+  "method": "Gamma RKS/PBE cc-pVDZ GDF/weigend Becke level1",
+  "no_cross_composition_absolute_energy_ranking": true,
+  "note": "Only FCC-Ne has run successfully in this code domain. No cost or convergence guarantee for this new cell.",
+  "physical_calculation": false,
+  "physics_precision": "NOT_CERTIFIED",
+  "status": "ELIGIBLE_FOR_RESOURCE_PREFLIGHT",
+  "unavailable_observables": [
+    "forces",
+    "stress",
+    "phonons",
+    "dynamics"
+  ]
+}
