@@ -1,0 +1,163 @@
+{
+  "QA": {
+    "frozen_source_files_verified": 19,
+    "offline_alternative_checks": "Scalar/summed norm/population/coherence/H0/dipole/H(t), TDA-X normalization, exact inherited state/model, chronological decision hashes and actual resource metadata; no new solver or independent physical reference",
+    "original_output_files_SHA_verified": [
+      33,
+      37
+    ],
+    "software_tests_before_second": 77,
+    "software_tests_postapproval": 77
+  },
+  "S1": {
+    "scope": "Response-derived2state electronic effective ket, physical time/control/coherence, actual complex128 arrays and source-derived Hamiltonian. Not full many-electron states.",
+    "status": "NEW_PHYSICAL_STATE_DOMAIN_IMPLEMENTED_AND_EXERCISED"
+  },
+  "S2": {
+    "scope": "APPLY_EXTERNAL_FIELD andEVOLVE_QUANTUM_STATE used across two actual observations; explicit basis preparation and population-reading actions software-tested, no preparation apparatus or measurement-collapse claim.",
+    "status": "NEW_PHYSICAL_ACTION_REAL_EXECUTION"
+  },
+  "S3": {
+    "scope": "PySCF2.8 RHF+TDA source parameters; QuTiP5.2.1 QobjEvo/sesolve effective propagation. Different roles, not W2 cross-validation.",
+    "status": "MATURE_ENGINE_REAL_EXECUTION"
+  },
+  "S4": {
+    "scope": "Byte/SHA complex-array restore, exact first-final/second-initial equality, same model hash, physical units/times, norm and one predeclared tighter-tolerance replica per stage. Model/truncation accuracy not certified.",
+    "status": "STATE_CONTINUITY_AND_NUMERICAL_QUALITY_VERIFIED_WITH_LIMITATIONS"
+  },
+  "S5": {
+    "scope": "Current Work AI read actual computed source model/complex state/quality, selected and froze phase-sensitive control afterward, executed a separate authorized Job and read again. No prewritten offline AI policy, unattended scientist or novelty claim.",
+    "status": "ADAPTIVE_LOOP_PROVEN_BOUNDED"
+  },
+  "branch": "qw-state-space01",
+  "completion": "ReturnBChat for scientific adjudication; this receipt is a bounded execution claim, not Canonical strategic or scientific promotion. Stop now with both approved Jobs spent.",
+  "continuity": {
+    "actions_sha256": "1d88ee1ef070701cbd36369f68c45c9f293ee7d757859450d819f09a95a95791",
+    "chronology": "Job1 completed -> Work read actual results -> decision frozen -> second commit/Job2 -> second read",
+    "decision_sha256": "375079d528b0c99e603fef34b2dcafa7a4c8fe292cbe2f11eae1609ec174c0be",
+    "exact_first_final_to_second_initial_ket": true,
+    "exact_model_hash_reuse": true,
+    "physical_time": [
+      0,
+      400,
+      800
+    ],
+    "state_reset": false
+  },
+  "failure_records": "No new cloud failure occurred; original preparation issue/negative evidence and inherited historical failures retained. No false failures or successful replacements generated.",
+  "history": "ExistingW1/W3/P1/P2/PERIODIC/INTERACTIVE/Core01-03 qualifications and source evidence unchanged; W2INCOMPLETE; XREM Canonical untouched.",
+  "observations": {
+    "Pe_after_first": 0.01773531753308116,
+    "Pe_after_second": 7.286257432214648e-11,
+    "first_coherence_max": 0.1319877874845815,
+    "model_error": "UNKNOWN",
+    "norm_error_max_raw": [
+      3.8913317013111737e-13,
+      6.933342788784103e-13
+    ],
+    "state_sha256": [
+      "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+      "7373986b961f27a77ecc57d263b123fc9a122aefe01acfa69c3ff2dc01ae23bc"
+    ],
+    "time_au": [
+      0,
+      400,
+      800
+    ],
+    "time_fs": [
+      0,
+      9.6755373063456,
+      19.3510746126912
+    ],
+    "tolerance_population_difference_raw": [
+      2.224644080062177e-13,
+      1.1746159600534156e-13
+    ]
+  },
+  "predictions_supported": {
+    "first": true,
+    "second": true
+  },
+  "receipt": "QW_STATE_SPACE01_REAL_EXECUTION_RECEIPT",
+  "repository": "flyoung588/narque-qw-foundation02",
+  "resource": {
+    "Job_limit_minutes_each": 15,
+    "Job_seconds": [
+      41.0,
+      31.0
+    ],
+    "OOM": 0,
+    "artifact_cache_Packages_uploads": 0,
+    "attempts_each": 1,
+    "automatic_reruns": 0,
+    "free_condition_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "hard_science_limits": "1CPU/1numericalthread/1GiB/0extraSwap/networknone; setup outside science cgroup on standard Ubuntu runner",
+    "new_Jobs": 2,
+    "new_source_SCFs": 1,
+    "new_source_TDA_runs": 1,
+    "paid_runner_or_storage": false,
+    "peak_memory_bytes": [
+      126406656,
+      110854144
+    ],
+    "physical_control_propagations": 2,
+    "predeclared_tighter_replicas": 2,
+    "provider_total_tokens": "UNKNOWN",
+    "purchases": 0,
+    "science_CPU_seconds": [
+      2.511899,
+      1.655646
+    ],
+    "science_container_seconds": [
+      2.139080220000011,
+      1.3800079619999934
+    ]
+  },
+  "runs": [
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778032156",
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778773181"
+  ],
+  "second_control": {
+    "amplitude_au": 0.0010000001655025613,
+    "carrier_ratio": 1,
+    "duration_au": 400,
+    "envelope": "sin2",
+    "field_unit": "atomic_electric_field",
+    "phase_rad": 2.7050856471032496,
+    "polarization": [
+      0,
+      0,
+      1
+    ],
+    "time_unit": "atomic_time"
+  },
+  "second_control_reason": "Current Work AI used actual complex ratio in interaction frame. RWA scalar pulse-area/phase reasoning chose parameters; actual second propagation retained full cosine, not RWA.",
+  "source_commits": [
+    "dfbd7401595108fd78ed7451f03430ba36364459",
+    "f374e0918ea7e68adec5f6162e269db5dd0ad6e9"
+  ],
+  "source_model": {
+    "H_t": "H0-mu.E(t), atomic units hbar1, full cosine/sin\u00b2 pulses",
+    "SCF_energy_Eh": -1.128700093556442,
+    "TDA_selected_residual": 6.471408320277935e-16,
+    "computed_roots": 6,
+    "gap_Eh": 0.5172713569900522,
+    "model_sha256": "a824d31633e49250e4232a793a4c3340ff101a2ce88480236c386a3cb0381f5e",
+    "mu_z_au": 1.3357081258236245,
+    "permanent_dipoles": "Zero within explicit centrosymmetric/nondegenerate parity assumptions; actual ground dipole check passed",
+    "reference": "RHF/ccpVDZ ground effective level0, TDA singlet excitation gap, length-gauge transition moment",
+    "root_index": 0,
+    "source_type": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+    "system": "CenteredH2R0.74Angstrom, neutral spin0, fixed nuclei"
+  },
+  "state_effect": "NO_STATE_CHANGE",
+  "status": "ADAPTIVE_LOOP_PROVEN_BOUNDED_EFFECTIVE_QUANTUM_DOMAIN_SUBMITTED_FOR_REVIEW",
+  "unproven": [
+    "Full-electron real-time dynamics",
+    "Two-state truncation and excitation accuracy",
+    "Continuum/ionization/environment",
+    "Nuclear motion",
+    "General arbitrary-state/operator unitarity certification",
+    "Original physical discovery"
+  ]
+}

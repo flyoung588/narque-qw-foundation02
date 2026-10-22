@@ -1,0 +1,71 @@
+{
+  "stage": 2,
+  "source_state_sha256": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+  "actions": [
+    {
+      "type": "APPLY_EXTERNAL_FIELD",
+      "control": {
+        "amplitude_au": 0.0010000001655025613,
+        "polarization": [
+          0,
+          0,
+          1
+        ],
+        "duration_au": 400,
+        "carrier_ratio": 1,
+        "phase_rad": 2.7050856471032496,
+        "envelope": "sin2",
+        "time_unit": "atomic_time",
+        "field_unit": "atomic_electric_field"
+      }
+    },
+    {
+      "type": "EVOLVE_QUANTUM_STATE",
+      "duration_au": 400,
+      "time_unit": "atomic_time"
+    }
+  ],
+  "ai_decision": {
+    "kind": "CURRENT_WORK_AI_DECISION_AFTER_REAL_OBSERVATION",
+    "created_UTC": "2026-10-22T12:28:10.424191+00:00",
+    "authorship": "Current Work AI after actual source/ket/population/quality reading. No runtime LLM, prewritten optimizer or independently reviewed science claimed.",
+    "first_job_run_id": "39778032156",
+    "source_state_sha256": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+    "observation_sha256": "d59dee3f00dd61f75f9dc1670a0f1a4b61568f18d87e6bc805e51a16c9fddb6a",
+    "full_source_observation_sha256": "2aa3d839ad56450139f7056486768cd9b3d384286cd5953452313c806d9164cb",
+    "model_sha256": "a824d31633e49250e4232a793a4c3340ff101a2ce88480236c386a3cb0381f5e",
+    "actions_sha256": "1d88ee1ef070701cbd36369f68c45c9f293ee7d757859450d819f09a95a95791",
+    "decision": "CONTINUE_SAVED_COHERENT_KET_WITH_PHASE_REVERSED_RETURN_PULSE",
+    "actual_reading": {
+      "gap_Eh": 0.5172713569900522,
+      "dipole_z_au": 1.3357081258236245,
+      "final_Pe": 0.01773531753308116,
+      "ket_re_im": [
+        [
+          0.9910926688756263,
+          6.455631822263476e-05
+        ],
+        [
+          -0.05631071461425024,
+          0.12068314278603133
+        ]
+      ],
+      "interaction_picture_ratio_re_im": [
+        8.779044534053205e-06,
+        0.13437089774158528
+      ],
+      "norm_error_max": 3.8913317013111737e-13
+    },
+    "physical_question": "Can phase control of a second pulse reverse population transfer in the same computed two-state effective model, using its ACTUALLY saved coherent state rather than preparing a new ground state?",
+    "why_now": "First coherent excitation is finite and well resolved against integrator error, and saved complex phase is available. A phase-sensitive continuation tests a newly opened degree of freedom; merely doubling a prepared-state pulse would not test coherent state continuity as directly.",
+    "scalar_control_derivation": "Transform b/a into the resonant interaction picture using computed gap and current time400. Set global carrier phase=-pi/2-arg(b_I/a), convert to local pulse phase by adding gap*t0 and wrap to[-pi,pi]. Choose E2=4*atan2(|b|,|a|)/(mu_z*400) from observed rotation angle and sin\u00b2 pulse area. These are RWA control-design approximations only; actual propagation retains full cosine and existing QuTiP settings.",
+    "prediction": "After one further400atomic-time-unit pulse, Pe(t=800)<1e-4 and below Pe(t=400), while norm error<1e-7 and tolerance-population difference<1e-6. Counterrotating terms may leave a small residual; no exact zero or full molecular return claimed.",
+    "falsifier": "Pe>=1e-4 fails the bounded return-pulse forecast; no decrease also challenges the selected control phase/model mapping. Numerical failure stops with raw evidence, not phase correction or retry.",
+    "limits": "Source levels/dipole are finite-basis RHF/TDA response parameters. Two-state truncation, continuum, omitted couplings, ionization, nuclei and real experimental preparation remain unqualified. No exact molecular dynamics or novel physics claim.",
+    "resource_reason": "Second and last approved Job reuses the exact source model and saved ket; one evolution plus one declared tighter-tolerance replica, no new electronic solve or scan.",
+    "stop_after": "Read second actual observation, compare, submit B-Chat and STOP. No third run or automatic rerun."
+  },
+  "first_model_sha256": "a824d31633e49250e4232a793a4c3340ff101a2ce88480236c386a3cb0381f5e",
+  "second_model": "EXACT_REUSE_NO_SCF_TDA",
+  "no_reset": true
+}

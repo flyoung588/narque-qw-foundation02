@@ -1,0 +1,26 @@
+{
+  "actual_feedback": "First actual coherent amplitude/phase and numerical quality motivated phase-sensitive continuation rather than a fresh ground-state amplitude ladder. Current Work AI froze the phase/amplitude after reading; second Job reused the exact model and first final ket without reset.",
+  "created_UTC": "2026-10-22T12:35:06.172236+00:00",
+  "decision": "STOP_CURRENT_AUTHORIZED_TRANCHE",
+  "first_prediction": "Supported within computed effective model: finite excitation and coherence, norm and ODE-tolerance checks below frozen bounds.",
+  "kind": "CURRENT_WORK_AI_FINAL_POSTOBSERVATION_DECISION",
+  "new_engine_not_W2": "PySCF computes frequency-domain response; QuTiP propagates a projected effective Hamiltonian. They do not independently solve the same physical result, so W2 staysINCOMPLETE.",
+  "next_frontier_recommendation_only": "A separately grounded density-matrix/environment domain could open decoherence and dissipative-control questions, but only after defining actual source parameters and scientific purpose; no automatic work now.",
+  "not_claimed": [
+    "Full-electron real-time TDHF/TDDFT",
+    "Exact H2 field response",
+    "Real laser experiment or state preparation apparatus",
+    "Original physical discovery",
+    "General autonomous scientist",
+    "W2 independent physical validation"
+  ],
+  "physical_limit": "The response exists in a two-state model parameterized by finite-basis RHF/TDA, not a certified reduction of full H2. Gap/transition error, omitted states, continuum, nuclei, ionization and environment remain unknown; tiny numerical Pe residual is not a claim of experimental molecular restoration.",
+  "read_observation_sha256": [
+    "2aa3d839ad56450139f7056486768cd9b3d384286cd5953452313c806d9164cb",
+    "2d3fce155d99a8b376d56144dff5331b30573aecd9b2e708495b82abe97bf212"
+  ],
+  "scientific_adjudication": "SUBMIT_BCHAT_REVIEW_NOT_CANONICAL_PROMOTION",
+  "scientific_update": "The unified world can represent and restore source-derived effective electronic amplitudes, change a classical control Hamiltonian, propagate physical model time, and observe a response after Work-selected phase control. This is new executable state freedom, not a renamed structural snapshot.",
+  "second_prediction": "Supported within same model: continuing the actually saved ket under a phase-selected return pulse reduced final Pe to7.286257432214648e-11, below1e-4 and below the first final population0.01773531753308116.",
+  "why_stop": "Both authorized information stages completed. No extra pulse, detuning scan, refinement campaign or larger molecular example is needed to show this bounded new interaction domain."
+}

@@ -1,0 +1,78 @@
+{
+  "current_runs": [
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778032156",
+    "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778773181"
+  ],
+  "dimensions": [
+    {
+      "actions": "Construction/displacement/affine strain",
+      "cost": "Small",
+      "domain": "STATIC_STRUCTURE",
+      "engine": "ASE constructors and existing domain validators",
+      "objects": "Bounded molecules and3Dperiodic cells",
+      "observables": "Geometry/metadata, not dynamics",
+      "state": "Immutable geometry/charge/spin/cell",
+      "time_space": "Static Angstrom structural coordinates",
+      "verification": "INHERITED_REAL_CONSTRUCTION; displacement real; strain software only"
+    },
+    {
+      "actions": "Single-point energy, supported molecular gradients, bounded k-sampling",
+      "cost": "1CPU1GiB prior actual runs",
+      "domain": "STATIC_ELECTRONIC_STRUCTURE",
+      "engine": "PySCF2.8/ASE facade",
+      "objects": "Bounded molecular RHF/UHF; periodicPBE RKS/KRKS",
+      "observables": "Energy; molecular forces; periodic numerical counts/quality",
+      "state": "Static finite-basis SCF observations, not time-kets",
+      "time_space": "Fixed nuclei finite Gaussian basis, Gamma or admitted1/2mesh",
+      "verification": "INHERITED_PHYSICALLY_CALCULATED_WITH_LIMITATIONS; W2 INCOMPLETE"
+    },
+    {
+      "actions": "Compute up to6roots and select isolated longitudinal bright root",
+      "cost": "One new SCF/TDA, resource admission pending",
+      "domain": "EXCITED_STATE_MODEL",
+      "engine": "PySCF2.8 TDA thin adapter",
+      "objects": "New centered inversion-symmetric neutral closed-shell small molecule",
+      "observables": "Excitation energies/transition moments/TDA residuals",
+      "state": "RHF TDA singlet response-derived effective labels",
+      "time_space": "Frequency-domain response; NOT real-time TDDFT",
+      "verification": "REAL_ENGINE_EXECUTED: PySCF2.8 RHF+6singletTDAroots for frozenH2; positive bright isolated root and actual residual/transition arrays saved. Exact spectrum accuracy not certified."
+    },
+    {
+      "actions": "APPLY_EXTERNAL_FIELD amplitude/polarization/carrier/phase/envelope",
+      "cost": "2x2 numerical model",
+      "domain": "EXTERNAL_FIELD_RESPONSE",
+      "engine": "QuTiP5.2.1 QobjEvo",
+      "objects": "Explicit2state response-derived model, not full molecule Hamiltonian",
+      "observables": "Effective dipole/population/coherence",
+      "state": "Classical control added to an effective Hamiltonian",
+      "time_space": "Atomic field/time units;400au first control proposed",
+      "verification": "REAL_SOURCE_DERIVED_EFFECTIVE_FIELD_RESPONSE: two QuTiP stages, classical pulse-phase control from actual observation. Not full microscopic molecular response."
+    },
+    {
+      "actions": "Prepare basis boundary, evolve existing ket, read population",
+      "cost": "One propagation plus exactly one tighter-tolerance replica each stage",
+      "domain": "TIME_DEPENDENT_QUANTUM_STATE",
+      "engine": "QuTiP5.2.1 sesolve",
+      "objects": "Declared closed truncated two-state ket",
+      "observables": "Time series/coherence/norm/H0 andH(t) expectations",
+      "state": "Complex128 amplitudes with physical time and immutableNPZ hash",
+      "time_space": "10..800atomic-time-unit operation; not nuclear motion or full-electron density",
+      "verification": "PHYSICAL_STATE_EVOLVED_IN_BOUNDED_EFFECTIVE_MODEL: actual ket0->400->800atomic_time, exact state/model restore, norms/tolerance checks, actual Work-read adaptive second control. Not exact molecular electronic dynamics."
+    },
+    {
+      "actions": "NOT_IMPLEMENTED",
+      "cost": "UNKNOWN",
+      "domain": "OPEN_SYSTEM_STATE",
+      "engine": "QuTiP mesolve available in mature library but not integrated/tested here",
+      "objects": "No accepted dissipative physical model",
+      "observables": "NOT_IMPLEMENTED",
+      "state": "NOT_IMPLEMENTED",
+      "time_space": "NOT_IMPLEMENTED",
+      "verification": "NOT_IMPLEMENTED"
+    }
+  ],
+  "new_W2": "INCOMPLETE_NOT_INDEPENDENT_VALIDATION",
+  "old_qualifications": "UNCHANGED",
+  "original_discovery": "NOT_ESTABLISHED",
+  "scientific_review": "BCHAT_PENDING"
+}

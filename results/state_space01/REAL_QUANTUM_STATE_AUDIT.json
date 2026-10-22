@@ -1,0 +1,228 @@
+{
+  "claimed_scope": "Computed response-derived2state unitary model and tested controls only; no exact molecular dynamics, independent engine cross-validation or scientific novelty.",
+  "continuity": {
+    "actions_sha256": "1d88ee1ef070701cbd36369f68c45c9f293ee7d757859450d819f09a95a95791",
+    "chronology": "Job1 completed -> Work read actual results -> decision frozen -> second commit/Job2 -> second read",
+    "decision_sha256": "375079d528b0c99e603fef34b2dcafa7a4c8fe292cbe2f11eae1609ec174c0be",
+    "exact_first_final_to_second_initial_ket": true,
+    "exact_model_hash_reuse": true,
+    "physical_time": [
+      0,
+      400,
+      800
+    ],
+    "state_reset": false
+  },
+  "first_prediction_supported": true,
+  "kind": "OFFLINE_ALGEBRA_AND_EVIDENCE_AUDIT_NOT_INDEPENDENT_PHYSICS",
+  "no_new_engine_calls_in_audit": true,
+  "not_verified": [
+    "Two-state truncation error",
+    "Exact experimental excitation energies",
+    "Continuum/ionization",
+    "Nuclear evolution",
+    "Open-system environment",
+    "All initial-state/operator unitarity beyond tested trajectories"
+  ],
+  "population_suppression_factor": 243407780.99148953,
+  "second_prediction_supported": true,
+  "source_model": {
+    "H0_Eh": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0.5172713569900522
+      ]
+    ],
+    "diagonal_dipoles": "Zero by centrosymmetric parity-state assumption, not fitted excited-state moments. Selected root required isolated among computed roots.",
+    "dipole_au": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          1.3357081258236245
+        ],
+        [
+          1.3357081258236245,
+          0.0
+        ]
+      ]
+    ],
+    "dipole_sign": "PySCF length transition uses electronic position; chosen effective root phase absorbs overall electronic minus sign, and dipole projection is positive. Recorded coherence is in this declared gauge.",
+    "energy_zero": "RHF-reference effective level set0; excitation relative to that reference",
+    "engine": "PySCF",
+    "engine_version": "2.8.0",
+    "model_space": "Reference+one isolated bright TDA singlet, phase fixed by positive projected moment",
+    "omissions": [
+      "all other electronic levels and continuum",
+      "excited-excited dipoles",
+      "nuclear motion",
+      "ionization",
+      "relativity",
+      "decoherence/dissipation",
+      "self-consistent real-time electron density"
+    ],
+    "selected": {
+      "effective_root_phase_relative_to_PySCF_X": -1,
+      "gap_Eh": 0.5172713569900522,
+      "nearest_computed_omitted_root_separation_Eh": 0.27117774493564073,
+      "phase_convention": "physical dipole projection positive; electronic minus sign absorbed in root phase",
+      "root_index": 0,
+      "transition_dipole_au": [
+        0.0,
+        0.0,
+        1.3357081258236245
+      ]
+    },
+    "source_SCF_energy_Eh": -1.128700093556442,
+    "source_TDA_residual": 6.471408320277935e-16,
+    "source_files_sha256": {
+      "SCF.json": "00d8db8300c7331f6682a73bd5853c1633d3ac1a45810edb93d6b0f3017cb366",
+      "TDA.json": "f251302282cba3f60e6aaf4f166676beba6067b29cf062337fb5902e990bc26e",
+      "electronic_response.npz": "d735e4d737951dde23ae14bfd933b906efbe6ee23a352d5690683fe04078c3fb"
+    },
+    "source_type": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+    "truncation_validity": "Weak coupling screens against computed gaps only; uncomputed roots/multiphoton/ionization errors UNKNOWN. Not a certified low-energy reduction.",
+    "world_spec_sha256": "d22e5761582e43d875211c62f6121cd2e7c4eb2c96c6824ca2b7ca8d607a552c"
+  },
+  "stages": [
+    {
+      "coherence_max": 0.1319877874845815,
+      "control": {
+        "amplitude_au": 0.001,
+        "carrier_ratio": 1,
+        "duration_au": 400,
+        "envelope": "sin2",
+        "field_unit": "atomic_electric_field",
+        "phase_rad": 0,
+        "polarization": [
+          0,
+          0,
+          1
+        ],
+        "time_unit": "atomic_time"
+      },
+      "control_origin_au": 0.0,
+      "declared_tighter_replicas": 1,
+      "full_observation_sha256": "2aa3d839ad56450139f7056486768cd9b3d384286cd5953452313c806d9164cb",
+      "model_sha256": "a824d31633e49250e4232a793a4c3340ff101a2ce88480236c386a3cb0381f5e",
+      "model_source": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+      "new_physical_propagations": 1,
+      "norm_error_max_offline": 3.888001032237298e-13,
+      "population_final": 0.01773531753308116,
+      "population_max": 0.01773531753308116,
+      "population_tolerance_difference_offline": 2.2246093855926574e-13,
+      "request_sha256": "314955bc691f6c5775fe04ccbf0b9fc58f4fc36be63bafb60d21f171d338efe0",
+      "resource": {
+        "OOM": 0,
+        "container_CPU_seconds": 2.511899,
+        "container_seconds": 2.139080220000011,
+        "extra_swap": 0,
+        "hard_CPU": 1,
+        "hard_memory_bytes": 1073741824,
+        "job_seconds": 41.0,
+        "memory_peak_bytes": 126406656,
+        "network": "lo only",
+        "numerical_threads": 1
+      },
+      "run_id": 39778032156,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778032156",
+      "source_SCFs": 1,
+      "source_TDA_runs": 1,
+      "source_commit": "dfbd7401595108fd78ed7451f03430ba36364459",
+      "stage": 1,
+      "state_observation_sha256": "d59dee3f00dd61f75f9dc1670a0f1a4b61568f18d87e6bc805e51a16c9fddb6a",
+      "state_sha256": "26b32e981c24681a4ddc143a8357acb5fdd55060aa66bb85ada33216774f6e24",
+      "state_snapshots": 4,
+      "time_au": [
+        0.0,
+        400.0
+      ],
+      "time_fs": [
+        0.0,
+        9.6755373063456
+      ],
+      "worker_exit_code": 0
+    },
+    {
+      "coherence_max": 0.1319877874845815,
+      "control": {
+        "amplitude_au": 0.0010000001655025613,
+        "carrier_ratio": 1,
+        "duration_au": 400,
+        "envelope": "sin2",
+        "field_unit": "atomic_electric_field",
+        "phase_rad": 2.7050856471032496,
+        "polarization": [
+          0,
+          0,
+          1
+        ],
+        "time_unit": "atomic_time"
+      },
+      "control_origin_au": 400.0,
+      "declared_tighter_replicas": 1,
+      "full_observation_sha256": "2d3fce155d99a8b376d56144dff5331b30573aecd9b2e708495b82abe97bf212",
+      "model_sha256": "a824d31633e49250e4232a793a4c3340ff101a2ce88480236c386a3cb0381f5e",
+      "model_source": "PYSCF_RHF_TDA_RESPONSE_DERIVED",
+      "new_physical_propagations": 1,
+      "norm_error_max_offline": 6.932232565759477e-13,
+      "population_final": 7.286257432214648e-11,
+      "population_max": 0.01773531753308116,
+      "population_tolerance_difference_offline": 1.1746159600534156e-13,
+      "request_sha256": "22369f7b544927c9239791c00f7b724b3fa2a7d4f3fb943ed6f199a154f3a6df",
+      "resource": {
+        "OOM": 0,
+        "container_CPU_seconds": 1.655646,
+        "container_seconds": 1.3800079619999934,
+        "extra_swap": 0,
+        "hard_CPU": 1,
+        "hard_memory_bytes": 1073741824,
+        "job_seconds": 31.0,
+        "memory_peak_bytes": 110854144,
+        "network": "lo only",
+        "numerical_threads": 1
+      },
+      "run_id": 39778773181,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39778773181",
+      "source_SCFs": 0,
+      "source_TDA_runs": 0,
+      "source_commit": "f374e0918ea7e68adec5f6162e269db5dd0ad6e9",
+      "stage": 2,
+      "state_observation_sha256": "ceb8c5aa311531f3d818db3f728781c180a6010a88e84b60f3f724de8ffc2823",
+      "state_sha256": "7373986b961f27a77ecc57d263b123fc9a122aefe01acfa69c3ff2dc01ae23bc",
+      "state_snapshots": 6,
+      "time_au": [
+        400.0,
+        800.0
+      ],
+      "time_fs": [
+        9.6755373063456,
+        19.3510746126912
+      ],
+      "worker_exit_code": 0
+    }
+  ]
+}
