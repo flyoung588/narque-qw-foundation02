@@ -1,0 +1,81 @@
+{
+  "action": {
+    "atom_id": "atom-1",
+    "source_state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+    "type": "DISPLACE_ATOM",
+    "unit": "angstrom",
+    "vector": [
+      0,
+      0,
+      0.05
+    ]
+  },
+  "parent": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+  "request": {
+    "correlation_model": {
+      "basis": "sto-3g",
+      "conv_tol": 1e-10,
+      "max_cycle": 100,
+      "max_memory_MB": 400,
+      "method": "FCI",
+      "nroots": 1,
+      "partition": "SYMMETRIC_LOWDIN_AO",
+      "solver": "direct_spin0"
+    },
+    "world_spec": {
+      "epistemic_mode": "GROUNDED",
+      "matter": {
+        "atoms": [
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              -2.25
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.0,
+              0.0,
+              -0.7
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              0.75
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0,
+              0,
+              2.25
+            ]
+          }
+        ],
+        "charge": 0,
+        "periodic": false,
+        "source": "AI selected controlled geometry, not experimental measurement; GROUNDED is inherited executable engine mode, not a claim of material validation",
+        "spin_2S": 0,
+        "type": "molecule"
+      },
+      "object_id": "H4-correlation-open-chain",
+      "physics": {
+        "basis": "sto-3g",
+        "engine": "pyscf",
+        "method": "RHF",
+        "observables": [
+          "energy"
+        ]
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    }
+  },
+  "request_sha256": "d54491398607d3b3e46d573d91601de3d461b1563f1e7268fb0a722262898ba1"
+}

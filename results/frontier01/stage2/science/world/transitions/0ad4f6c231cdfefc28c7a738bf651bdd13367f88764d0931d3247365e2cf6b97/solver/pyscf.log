@@ -1,0 +1,82 @@
+#INFO: **** input file is /app/frontier01/solver_worker.py ****
+"""Engine child: engine crash cannot kill the world router."""
+import json,pathlib,resource,sys,traceback
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
+from interactive01.world import freeze
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+out=pathlib.Path(sys.argv[2]);out.mkdir(parents=True,exist_ok=True)
+try:
+    print('START',flush=True)
+    from frontier01.solver import solve
+    solve(json.loads(pathlib.Path(sys.argv[1]).read_text()),out)
+except BaseException as e:
+    freeze(out/'worker_failure.json',{'status':'UNVERIFIED','type':type(e).__name__,'error':str(e),'traceback':traceback.format_exc(),'no_retry':True});raise
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='3032c8b9e82b', release='7.0.0-1017-azure', version='#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026', machine='x86_64')  Threads 1
+Python 3.12.15 (main, Oct  6 2026, 02:02:31) [GCC 12.2.0]
+numpy 2.2.6  scipy 1.15.3  h5py 3.16.0
+Date: Thu Oct 22 13:39:46 2026
+PySCF version 2.8.0
+PySCF path  /usr/local/lib/python3.12/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 4
+[INPUT] num. electrons = 4
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = Angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 H      0.000000000000   0.000000000000  -2.250000000000 AA    0.000000000000   0.000000000000  -4.251883780271 Bohr   0.0
+[INPUT]  2 H      0.000000000000   0.000000000000  -0.700000000000 AA    0.000000000000   0.000000000000  -1.322808287196 Bohr   0.0
+[INPUT]  3 H      0.000000000000   0.000000000000   0.750000000000 AA    0.000000000000   0.000000000000   1.417294593424 Bohr   0.0
+[INPUT]  4 H      0.000000000000   0.000000000000   2.250000000000 AA    0.000000000000   0.000000000000   4.251883780271 Bohr   0.0
+
+nuclear repulsion = 1.53250870491754
+number of shells = 4
+number of NR pGTOs = 12
+number of NR cGTOs = 4
+basis = sto-3g
+ecp = {}
+CPU time:         0.83
+
+
+******** <class 'pyscf.scf.hf.RHF'> ********
+method = RHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-11
+SCF conv_tol_grad = None
+SCF max_cycles = 100
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /tmp/tmpy316oxel
+max_memory 400 MB (current use 116 MB)
+Set gradient conv threshold to 3.16228e-06
+Initial guess from minao.
+init E= -1.2367062128136
+  HOMO = -0.184661893185512  LUMO = 0.0194179323257057
+cycle= 1 E= -1.8121057967458  delta_E= -0.575  |g|= 0.0598  |ddm|= 1.48
+  HOMO = -0.279682689483194  LUMO = 0.110991574815918
+cycle= 2 E= -1.81619866674397  delta_E= -0.00409  |g|= 0.024  |ddm|= 0.154
+  HOMO = -0.28732654012644  LUMO = 0.119955912177504
+cycle= 3 E= -1.81700980477386  delta_E= -0.000811  |g|= 0.00346  |ddm|= 0.0944
+  HOMO = -0.287843627788218  LUMO = 0.120047042937505
+cycle= 4 E= -1.81701848558213  delta_E= -8.68e-06  |g|= 7.29e-05  |ddm|= 0.0094
+  HOMO = -0.287702969695577  LUMO = 0.119959864187861
+cycle= 5 E= -1.81701849186539  delta_E= -6.28e-09  |g|= 5.16e-06  |ddm|= 0.000302
+  HOMO = -0.287708290813926  LUMO = 0.119962754006254
+cycle= 6 E= -1.81701849189368  delta_E= -2.83e-11  |g|= 6.28e-07  |ddm|= 1.57e-05
+  HOMO = -0.287708707413897  LUMO = 0.119963023027507
+cycle= 7 E= -1.81701849189397  delta_E= -2.82e-13  |g|= 3.99e-07  |ddm|= 9.07e-07
+  HOMO = -0.287709395381954  LUMO = 0.119963434182287
+Extra cycle  E= -1.81701849189413  delta_E= -1.64e-13  |g|= 1.45e-07  |ddm|= 1.06e-06
+converged SCF energy = -1.81701849189413

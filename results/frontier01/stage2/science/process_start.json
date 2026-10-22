@@ -1,0 +1,8 @@
+{
+  "parent_pid": 1,
+  "solver_pid": 7,
+  "engine": null,
+  "input_sha256": "2f0571b095aa2deaf29f4d83874954569b4f97ba61aff7424597af62b58c488c",
+  "timeout_seconds": 480,
+  "synthetic": false
+}

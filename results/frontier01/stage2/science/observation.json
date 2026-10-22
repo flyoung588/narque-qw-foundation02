@@ -1,0 +1,499 @@
+{
+  "observation": {
+    "FCI_observables": {
+      "connected_charge_covariance": [
+        [
+          0.14256978751223026,
+          -0.1297291912617502,
+          -0.0037747151197216056,
+          -0.009065881130759346
+        ],
+        [
+          -0.1297291912617502,
+          0.21535682846603554,
+          -0.08061775463281673,
+          -0.005009882571468172
+        ],
+        [
+          -0.0037747151197216056,
+          -0.08061775463281673,
+          0.22753692736051334,
+          -0.14314445760797634
+        ],
+        [
+          -0.009065881130759346,
+          -0.005009882571468172,
+          -0.14314445760797634,
+          0.1572202213102032
+        ]
+      ],
+      "natural_occupations": [
+        1.8255861763290566,
+        1.6040826650022568,
+        0.40000157152740573,
+        0.17032958714128285
+      ],
+      "nonidempotency": 1.905140491155402,
+      "partition": "SYMMETRIC_LOWDIN_AO; not unique atomic partition",
+      "site_double_occupancy": [
+        0.07239294195455187,
+        0.106484011762067,
+        0.11254823159339099,
+        0.07992845907186089
+      ],
+      "site_population": [
+        1.0022112069606508,
+        0.997605461242236,
+        0.9975535507121508,
+        1.0026297810849636
+      ],
+      "spin_dot_matrix_hbar2": [
+        [
+          0.6430689922886603,
+          -0.5178154258818257,
+          0.12549362827675659,
+          -0.2507471946835906
+        ],
+        [
+          -0.5178154258818257,
+          0.5884780782885766,
+          -0.1970833219025959,
+          0.12642066949584452
+        ],
+        [
+          0.12549362827675659,
+          -0.1970833219025959,
+          0.5793428156440267,
+          -0.5077531220181867
+        ],
+        [
+          -0.2507471946835905,
+          0.12642066949584452,
+          -0.5077531220181867,
+          0.6320796472059313
+        ]
+      ],
+      "total_spin_square_from_sites": -5.551115123125783e-16
+    },
+    "RHF_same_partition_observables": {
+      "connected_charge_covariance": [
+        [
+          0.4999999821224117,
+          -0.42647605973421987,
+          -5.2853556975485105e-08,
+          -0.07352386953463563
+        ],
+        [
+          -0.42647605973421987,
+          0.4999999527065708,
+          -0.07352389217930289,
+          -7.93048071656699e-10
+        ],
+        [
+          -5.2853556975485105e-08,
+          -0.07352389217930289,
+          0.499999836745335,
+          -0.42647589171247546
+        ],
+        [
+          -0.07352386953463563,
+          -7.93048071656699e-10,
+          -0.42647589171247546,
+          0.49999976204015817
+        ]
+      ],
+      "natural_occupations": [
+        2.000000000000002,
+        1.9999999999999996,
+        1.682691629010308e-16,
+        -1.6479971594907719e-16
+      ],
+      "nonidempotency": -3.5457747848965984e-15,
+      "partition": "SYMMETRIC_LOWDIN_AO; not unique atomic partition",
+      "site_double_occupancy": [
+        0.25009455413455856,
+        0.2498462487638744,
+        0.24971437665270782,
+        0.25034505364162174
+      ],
+      "site_population": [
+        1.0001890903915291,
+        0.9996924502343196,
+        0.9994285900507506,
+        1.0006898693234019
+      ],
+      "spin_dot_matrix_hbar2": [
+        [
+          0.374999986591809,
+          -0.3198570448006648,
+          -3.96401676483471e-08,
+          -0.055142902150976725
+        ],
+        [
+          -0.3198570448006648,
+          0.3749999645299282,
+          -0.055142919134477164,
+          -5.947860537425242e-10
+        ],
+        [
+          -3.96401676483471e-08,
+          -0.055142919134477164,
+          0.3749998775590012,
+          -0.3198569187843566
+        ],
+        [
+          -0.055142902150976725,
+          -5.947860537425242e-10,
+          -0.3198569187843566,
+          0.3749998215301188
+        ]
+      ],
+      "total_spin_square_from_sites": -8.326672684688674e-16
+    },
+    "actual_model": "Singlet full CI over all STO-3G molecular orbitals; RHF is reference only",
+    "correlation_energy_vs_RHF_Eh": -0.1737974017388213,
+    "energy_FCI_Eh": -1.990815893632951,
+    "energy_RHF_Eh": -1.8170184918941297,
+    "engine": "PySCF",
+    "engine_version": "2.8.0",
+    "limits": [
+      "Finite basis not converged; no material accuracy",
+      "Local spin/charge partition is defined, not unique",
+      "Static correlated electronic eigenstate, not dynamics",
+      "Negative pair correlation alone is not beyond-RHF evidence",
+      "No unrestricted-HF comparison or novelty claim"
+    ],
+    "prediction_supported": true,
+    "quality": {
+      "FCI_converged": true,
+      "Hamiltonian_residual_Eh": 1.2565431743443175e-15,
+      "RDM_energy_error_Eh": 1.3322676295501878e-15,
+      "RHF_converged": true,
+      "S2_hbar2": 2.220446049250313e-16,
+      "aa_contraction_error": 0.0,
+      "ab_contraction_error": 2.220446049250313e-16,
+      "bb_contraction_error": 2.220446049250313e-16,
+      "multiplicity": 1.0000000000000004,
+      "norm_error": 2.220446049250313e-16,
+      "occupation_max": 1.8255861763290566,
+      "occupation_min": 0.17032958714128285,
+      "site_spin_sum_error": 7.771561172376096e-16,
+      "trace_alpha_error": 4.440892098500626e-16,
+      "trace_beta_error": 0.0
+    },
+    "request_sha256": "d54491398607d3b3e46d573d91601de3d461b1563f1e7268fb0a722262898ba1",
+    "status": "CALCULATED",
+    "world_spec_sha256": "461980b654602f65072b2ca6930ff1ff3b8efffd83751648120908bc48a93a82"
+  },
+  "request_sha256": "2f0571b095aa2deaf29f4d83874954569b4f97ba61aff7424597af62b58c488c",
+  "state": {
+    "payload": {
+      "arrays": {
+        "format": "NPZ_COMPLEX128_FLOAT64",
+        "keys": [
+          "MO_to_Lowdin",
+          "ci",
+          "dm1a_MO",
+          "dm1b_MO",
+          "dm2aa_MO",
+          "dm2ab_MO",
+          "dm2bb_MO",
+          "eri_Eh",
+          "h1_Eh",
+          "mo_coeff",
+          "overlap",
+          "strings_alpha",
+          "strings_beta"
+        ],
+        "path": "arrays/92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb.npz",
+        "sha256": "92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb"
+      },
+      "atom_ids": [
+        "atom-0",
+        "atom-1",
+        "atom-2",
+        "atom-3"
+      ],
+      "correlation_model": {
+        "basis": "sto-3g",
+        "conv_tol": 1e-10,
+        "max_cycle": 100,
+        "max_memory_MB": 400,
+        "method": "FCI",
+        "nroots": 1,
+        "partition": "SYMMETRIC_LOWDIN_AO",
+        "solver": "direct_spin0"
+      },
+      "observation": {
+        "FCI_observables": {
+          "connected_charge_covariance": [
+            [
+              0.14256978751223026,
+              -0.1297291912617502,
+              -0.0037747151197216056,
+              -0.009065881130759346
+            ],
+            [
+              -0.1297291912617502,
+              0.21535682846603554,
+              -0.08061775463281673,
+              -0.005009882571468172
+            ],
+            [
+              -0.0037747151197216056,
+              -0.08061775463281673,
+              0.22753692736051334,
+              -0.14314445760797634
+            ],
+            [
+              -0.009065881130759346,
+              -0.005009882571468172,
+              -0.14314445760797634,
+              0.1572202213102032
+            ]
+          ],
+          "natural_occupations": [
+            1.8255861763290566,
+            1.6040826650022568,
+            0.40000157152740573,
+            0.17032958714128285
+          ],
+          "nonidempotency": 1.905140491155402,
+          "partition": "SYMMETRIC_LOWDIN_AO; not unique atomic partition",
+          "site_double_occupancy": [
+            0.07239294195455187,
+            0.106484011762067,
+            0.11254823159339099,
+            0.07992845907186089
+          ],
+          "site_population": [
+            1.0022112069606508,
+            0.997605461242236,
+            0.9975535507121508,
+            1.0026297810849636
+          ],
+          "spin_dot_matrix_hbar2": [
+            [
+              0.6430689922886603,
+              -0.5178154258818257,
+              0.12549362827675659,
+              -0.2507471946835906
+            ],
+            [
+              -0.5178154258818257,
+              0.5884780782885766,
+              -0.1970833219025959,
+              0.12642066949584452
+            ],
+            [
+              0.12549362827675659,
+              -0.1970833219025959,
+              0.5793428156440267,
+              -0.5077531220181867
+            ],
+            [
+              -0.2507471946835905,
+              0.12642066949584452,
+              -0.5077531220181867,
+              0.6320796472059313
+            ]
+          ],
+          "total_spin_square_from_sites": -5.551115123125783e-16
+        },
+        "RHF_same_partition_observables": {
+          "connected_charge_covariance": [
+            [
+              0.4999999821224117,
+              -0.42647605973421987,
+              -5.2853556975485105e-08,
+              -0.07352386953463563
+            ],
+            [
+              -0.42647605973421987,
+              0.4999999527065708,
+              -0.07352389217930289,
+              -7.93048071656699e-10
+            ],
+            [
+              -5.2853556975485105e-08,
+              -0.07352389217930289,
+              0.499999836745335,
+              -0.42647589171247546
+            ],
+            [
+              -0.07352386953463563,
+              -7.93048071656699e-10,
+              -0.42647589171247546,
+              0.49999976204015817
+            ]
+          ],
+          "natural_occupations": [
+            2.000000000000002,
+            1.9999999999999996,
+            1.682691629010308e-16,
+            -1.6479971594907719e-16
+          ],
+          "nonidempotency": -3.5457747848965984e-15,
+          "partition": "SYMMETRIC_LOWDIN_AO; not unique atomic partition",
+          "site_double_occupancy": [
+            0.25009455413455856,
+            0.2498462487638744,
+            0.24971437665270782,
+            0.25034505364162174
+          ],
+          "site_population": [
+            1.0001890903915291,
+            0.9996924502343196,
+            0.9994285900507506,
+            1.0006898693234019
+          ],
+          "spin_dot_matrix_hbar2": [
+            [
+              0.374999986591809,
+              -0.3198570448006648,
+              -3.96401676483471e-08,
+              -0.055142902150976725
+            ],
+            [
+              -0.3198570448006648,
+              0.3749999645299282,
+              -0.055142919134477164,
+              -5.947860537425242e-10
+            ],
+            [
+              -3.96401676483471e-08,
+              -0.055142919134477164,
+              0.3749998775590012,
+              -0.3198569187843566
+            ],
+            [
+              -0.055142902150976725,
+              -5.947860537425242e-10,
+              -0.3198569187843566,
+              0.3749998215301188
+            ]
+          ],
+          "total_spin_square_from_sites": -8.326672684688674e-16
+        },
+        "actual_model": "Singlet full CI over all STO-3G molecular orbitals; RHF is reference only",
+        "correlation_energy_vs_RHF_Eh": -0.1737974017388213,
+        "energy_FCI_Eh": -1.990815893632951,
+        "energy_RHF_Eh": -1.8170184918941297,
+        "engine": "PySCF",
+        "engine_version": "2.8.0",
+        "limits": [
+          "Finite basis not converged; no material accuracy",
+          "Local spin/charge partition is defined, not unique",
+          "Static correlated electronic eigenstate, not dynamics",
+          "Negative pair correlation alone is not beyond-RHF evidence",
+          "No unrestricted-HF comparison or novelty claim"
+        ],
+        "prediction_supported": true,
+        "quality": {
+          "FCI_converged": true,
+          "Hamiltonian_residual_Eh": 1.2565431743443175e-15,
+          "RDM_energy_error_Eh": 1.3322676295501878e-15,
+          "RHF_converged": true,
+          "S2_hbar2": 2.220446049250313e-16,
+          "aa_contraction_error": 0.0,
+          "ab_contraction_error": 2.220446049250313e-16,
+          "bb_contraction_error": 2.220446049250313e-16,
+          "multiplicity": 1.0000000000000004,
+          "norm_error": 2.220446049250313e-16,
+          "occupation_max": 1.8255861763290566,
+          "occupation_min": 0.17032958714128285,
+          "site_spin_sum_error": 7.771561172376096e-16,
+          "trace_alpha_error": 4.440892098500626e-16,
+          "trace_beta_error": 0.0
+        },
+        "request_sha256": "d54491398607d3b3e46d573d91601de3d461b1563f1e7268fb0a722262898ba1",
+        "status": "CALCULATED",
+        "world_spec_sha256": "461980b654602f65072b2ca6930ff1ff3b8efffd83751648120908bc48a93a82"
+      },
+      "parent_state_id": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+      "schema": "QW_CORRELATED_ELECTRONIC_STATE_01",
+      "scope": "Fixed-nuclei finite-basis correlated eigenstate; not time propagation",
+      "state_kind": "FINITE_BASIS_SINGLET_FCI",
+      "supported_operations": [
+        "DISPLACE_ATOM",
+        "OBSERVE_CORRELATIONS"
+      ],
+      "world_spec": {
+        "epistemic_mode": "GROUNDED",
+        "matter": {
+          "atoms": [
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0,
+                0,
+                -2.25
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0.0,
+                0.0,
+                -0.7
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0,
+                0,
+                0.75
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0,
+                0,
+                2.25
+              ]
+            }
+          ],
+          "charge": 0,
+          "periodic": false,
+          "source": "AI selected controlled geometry, not experimental measurement; GROUNDED is inherited executable engine mode, not a claim of material validation",
+          "spin_2S": 0,
+          "type": "molecule"
+        },
+        "object_id": "H4-correlation-open-chain",
+        "physics": {
+          "basis": "sto-3g",
+          "engine": "pyscf",
+          "method": "RHF",
+          "observables": [
+            "energy"
+          ]
+        },
+        "version": "QW-WORLDSPEC-0.1"
+      }
+    },
+    "sha256": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb",
+    "state_id": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb"
+  },
+  "status": "CALCULATED",
+  "transition": {
+    "action": {
+      "atom_id": "atom-1",
+      "source_state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+      "type": "DISPLACE_ATOM",
+      "unit": "angstrom",
+      "vector": [
+        0,
+        0,
+        0.05
+      ]
+    },
+    "new_state_sha256": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb",
+    "observation_sha256": "33ad0eec9ce54ca28472c78d3793ce60ed48e90d534248998c57485021999cca",
+    "request_sha256": "d54491398607d3b3e46d573d91601de3d461b1563f1e7268fb0a722262898ba1",
+    "scope": "Finite-basis correlated BO electronic state; not nuclear time evolution",
+    "source_state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+    "status": "CALCULATED_MODEL_ONLY"
+  }
+}

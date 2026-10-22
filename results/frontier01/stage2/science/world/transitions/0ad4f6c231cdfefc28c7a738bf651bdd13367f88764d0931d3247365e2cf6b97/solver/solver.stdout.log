@@ -1,0 +1,8 @@
+START
+IMPORT
+MOLECULE_BUILD
+output file: /out/science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/pyscf.log
+SCF_START
+SCF_END
+FCI_START
+FCI_END

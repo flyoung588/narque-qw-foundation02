@@ -1,0 +1,43 @@
+{
+  "delta_C01_hbar2": 0.021772911043900223,
+  "delta_C12_hbar2": -0.04293969273227069,
+  "delta_C23_hbar2": 0.03183521490753838,
+  "delta_FCI_Eh": 0.005334431885859248,
+  "first_FCI_Eh": -1.9961503255188102,
+  "first_RHF_Eh": -1.8291374124430262,
+  "first_nearest_spin_hbar2": [
+    -0.5395883369257259,
+    -0.1541436291703252,
+    -0.539588336925725
+  ],
+  "first_nonidempotency": 1.78954021559707,
+  "forecast_joint_supported": true,
+  "forecast_thresholds_frozen": {
+    "delta_C01_hbar2_min": 0.001,
+    "delta_C12_hbar2_max": -0.001
+  },
+  "geometry_change_only": "atom-1 z:-0.75 -> -0.70angstrom; adjacent distances1.55,1.45,1.50angstrom",
+  "interpretation": "Geometry-induced redistribution occurs in the finite-basis correlated singlet under the declared site convention. The center strengthens and left weakens as forecast, but total energy increases. Correlation enhancement is NOT stability improvement. Same-distance end and center contacts differ initially; the unchanged right distance also acquires a changed site correlation after perturbation. This is not a universal pair-only law, unique real-space atomic observable or bulk ordering result.",
+  "limits": [
+    "STO-3G finite-basis, fixed nuclei, nonrelativistic Coulomb model",
+    "Lowdin local orbitals are partition-dependent and change under geometry using the same rule",
+    "RHF is a restricted comparator; no UHF result",
+    "Static ground-state re-solve is not nuclear time dynamics",
+    "No basis convergence, external experiment or independent-engine W2",
+    "No novelty search/claim or energy-storage conclusion"
+  ],
+  "ordering_verified": {
+    "current_Work_decision_frozen": "2026-10-22T13:37:52.714905+00:00",
+    "first_job_completed": "2026-10-22T13:35:43Z",
+    "second_dispatch_intent": "2026-10-22T13:39:03.176831+00:00"
+  },
+  "second_FCI_Eh": -1.990815893632951,
+  "second_RHF_Eh": -1.8170184918941297,
+  "second_nearest_spin_hbar2": [
+    -0.5178154258818257,
+    -0.1970833219025959,
+    -0.5077531220181867
+  ],
+  "second_nonidempotency": 1.905140491155402,
+  "status": "NUMERICALLY_VALID_FORECAST_SUPPORTED"
+}

@@ -1,0 +1,21 @@
+{
+  "BCHAT_scientific_review": "PENDING",
+  "F1": "FRONTIER_SELECTION_COMPLETED",
+  "F2": "REAL_CORRELATED_ELECTRONIC_STATE_AND_OPERATION_DEMONSTRATED_BOUNDED",
+  "F3": "REAL_ENGINE_EXECUTED_TWO_GEOMETRIES",
+  "F4": "PROVENANCE_AND_NUMERICAL_QUALITY_CHECKED_FINITE_BASIS_ONLY",
+  "F5": "ADAPTIVE_LOOP_PROVEN_BOUNDED_SUBMITTED_TO_BCHAT",
+  "W2": "INCOMPLETE_UNCHANGED",
+  "claim_ceiling": "Current Work AI observation-conditioned experiment; not a fully unattended scientist, general quantum world, original discovery, material precision or W2",
+  "inherited_baseline": "576d44b12b242ac9589dc57fe5e95300062de101",
+  "interface": "frontier01.world_runtime.prepare/act + immutable inherited Store/state/NPZ/Transition/Observation mechanisms",
+  "mature_engine": "PySCF2.8.0 singlet full CI; no new eigensolver",
+  "new_observations": [
+    "Natural occupations/nonidempotency",
+    "Two-particle RDM and Lowdin double occupancy",
+    "Local spin correlations/connected charge covariance versus same-partition RHF"
+  ],
+  "new_physical_operation": "Existing bounded nuclear displacement followed by actual correlated electronic re-solve; no time propagation",
+  "new_state": "Finite-basis spin-singlet many-determinant electronic wavefunction in exported RHF orbital/bitstring convention",
+  "tested_real_objects": "H4 only, two geometries; generic2/4/6H validator is an implementation domain not all experimentally tested systems"
+}

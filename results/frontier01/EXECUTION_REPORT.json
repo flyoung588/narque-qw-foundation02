@@ -1,0 +1,523 @@
+{
+  "AI_feedback": {
+    "decision": "STOP_NO_THIRD_ACTION",
+    "kind": "CURRENT_WORK_AI_ACTUAL_POST_SECOND_OBSERVATION",
+    "learned": "The actual contact perturbation redistributes finite-basis local spin/charge correlations and increases nonidempotency. It raises total energy, ruling out the simplistic interpretation that enhanced central correlation is automatically energetically beneficial.",
+    "not_supported": "No global stability, true material accuracy, useful energy-density advantage, physical dynamics or fully unattended scientist claim",
+    "possible_future_question_not_executed": "Which part of this local response persists under a different defensible spatial partition? Scientific judgment and any fresh allocation belong to B-Chat/Human, not automatic solver continuation.",
+    "read_observation_sha256": [
+      "1bb4d59f2cd484120c9e3dcb181a9768620560499fcebd879095c466d352610f",
+      "33ad0eec9ce54ca28472c78d3793ce60ed48e90d534248998c57485021999cca"
+    ],
+    "read_real_runs": [
+      "39788105394",
+      "39788716668"
+    ],
+    "read_state_sha256": [
+      "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+      "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb"
+    ],
+    "reason": "Two authorized jobs used; bounded correlation-state/observation/action capability and a discriminating response were obtained. Do not automatically turn remaining model limitations into additional allocations.",
+    "supported": "Both first multiconfigurational forecast and second directional redistribution forecast hold within this model; conditional observations, not novel physical laws",
+    "unresolved": "Orbital-partition sensitivity, finite-basis errors, UHF comparison, applicability to larger objects and experimentally preparable systems"
+  },
+  "BCHAT": "Scientific review requested after evidence publication",
+  "capability_delta": "Actual finite-basis CI state and2particle observations; current Work AI reads first state and executes a new bounded structure operation through the same interface",
+  "capability_verdict": {
+    "BCHAT_scientific_review": "PENDING",
+    "F1": "FRONTIER_SELECTION_COMPLETED",
+    "F2": "REAL_CORRELATED_ELECTRONIC_STATE_AND_OPERATION_DEMONSTRATED_BOUNDED",
+    "F3": "REAL_ENGINE_EXECUTED_TWO_GEOMETRIES",
+    "F4": "PROVENANCE_AND_NUMERICAL_QUALITY_CHECKED_FINITE_BASIS_ONLY",
+    "F5": "ADAPTIVE_LOOP_PROVEN_BOUNDED_SUBMITTED_TO_BCHAT",
+    "W2": "INCOMPLETE_UNCHANGED",
+    "claim_ceiling": "Current Work AI observation-conditioned experiment; not a fully unattended scientist, general quantum world, original discovery, material precision or W2",
+    "inherited_baseline": "576d44b12b242ac9589dc57fe5e95300062de101",
+    "interface": "frontier01.world_runtime.prepare/act + immutable inherited Store/state/NPZ/Transition/Observation mechanisms",
+    "mature_engine": "PySCF2.8.0 singlet full CI; no new eigensolver",
+    "new_observations": [
+      "Natural occupations/nonidempotency",
+      "Two-particle RDM and Lowdin double occupancy",
+      "Local spin correlations/connected charge covariance versus same-partition RHF"
+    ],
+    "new_physical_operation": "Existing bounded nuclear displacement followed by actual correlated electronic re-solve; no time propagation",
+    "new_state": "Finite-basis spin-singlet many-determinant electronic wavefunction in exported RHF orbital/bitstring convention",
+    "tested_real_objects": "H4 only, two geometries; generic2/4/6H validator is an implementation domain not all experimentally tested systems"
+  },
+  "historical_status": "W1/W2/W3/Core scientific history and Canonical unchanged; old failed receipts retained",
+  "independent_array_arithmetic": {
+    "additional_SCF_or_FCI_calls": 0,
+    "checks": [
+      {
+        "CI_norm": 0.9999999999999999,
+        "Lowdin_transformed_CI_norm": 1.0000000000000029,
+        "PASSED": true,
+        "S2_from_direct_local_operators": -1.1102230246251565e-16,
+        "array_sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf",
+        "direct_Si_dot_Sj_vs_saved_max_error_hbar2": 1.7763568394002505e-15,
+        "direct_double_occupancy_max_error": 1.8041124150158794e-16,
+        "independent_Fock_RDM_max_error": 1.1102230246251565e-16,
+        "stage": 1,
+        "state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f"
+      },
+      {
+        "CI_norm": 1.0,
+        "Lowdin_transformed_CI_norm": 1.0000000000000004,
+        "PASSED": true,
+        "S2_from_direct_local_operators": -4.440892098500626e-16,
+        "array_sha256": "92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb",
+        "direct_Si_dot_Sj_vs_saved_max_error_hbar2": 8.881784197001252e-16,
+        "direct_double_occupancy_max_error": 9.71445146547012e-17,
+        "independent_Fock_RDM_max_error": 2.220446049250313e-16,
+        "stage": 2,
+        "state_sha256": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb"
+      }
+    ],
+    "cpu_threads_requested": 1,
+    "physics_engines_executed": 0,
+    "scope": "Independent implementation of expectation values on existing actual CI arrays only; not independent physical validation, basis convergence, or W2",
+    "status": "PASS_SAVED_WAVEFUNCTION_OPERATOR_AUDIT"
+  },
+  "method_and_RSI": "No controlled method comparison; no method superiority or RSI promotion",
+  "physical_comparison": {
+    "delta_C01_hbar2": 0.021772911043900223,
+    "delta_C12_hbar2": -0.04293969273227069,
+    "delta_C23_hbar2": 0.03183521490753838,
+    "delta_FCI_Eh": 0.005334431885859248,
+    "first_FCI_Eh": -1.9961503255188102,
+    "first_RHF_Eh": -1.8291374124430262,
+    "first_nearest_spin_hbar2": [
+      -0.5395883369257259,
+      -0.1541436291703252,
+      -0.539588336925725
+    ],
+    "first_nonidempotency": 1.78954021559707,
+    "forecast_joint_supported": true,
+    "forecast_thresholds_frozen": {
+      "delta_C01_hbar2_min": 0.001,
+      "delta_C12_hbar2_max": -0.001
+    },
+    "geometry_change_only": "atom-1 z:-0.75 -> -0.70angstrom; adjacent distances1.55,1.45,1.50angstrom",
+    "interpretation": "Geometry-induced redistribution occurs in the finite-basis correlated singlet under the declared site convention. The center strengthens and left weakens as forecast, but total energy increases. Correlation enhancement is NOT stability improvement. Same-distance end and center contacts differ initially; the unchanged right distance also acquires a changed site correlation after perturbation. This is not a universal pair-only law, unique real-space atomic observable or bulk ordering result.",
+    "limits": [
+      "STO-3G finite-basis, fixed nuclei, nonrelativistic Coulomb model",
+      "Lowdin local orbitals are partition-dependent and change under geometry using the same rule",
+      "RHF is a restricted comparator; no UHF result",
+      "Static ground-state re-solve is not nuclear time dynamics",
+      "No basis convergence, external experiment or independent-engine W2",
+      "No novelty search/claim or energy-storage conclusion"
+    ],
+    "ordering_verified": {
+      "current_Work_decision_frozen": "2026-10-22T13:37:52.714905+00:00",
+      "first_job_completed": "2026-10-22T13:35:43Z",
+      "second_dispatch_intent": "2026-10-22T13:39:03.176831+00:00"
+    },
+    "second_FCI_Eh": -1.990815893632951,
+    "second_RHF_Eh": -1.8170184918941297,
+    "second_nearest_spin_hbar2": [
+      -0.5178154258818257,
+      -0.1970833219025959,
+      -0.5077531220181867
+    ],
+    "second_nonidempotency": 1.905140491155402,
+    "status": "NUMERICALLY_VALID_FORECAST_SUPPORTED"
+  },
+  "resource_decision": "STOP. No third Job, scan, basis expansion or follow-up science automatically authorized",
+  "resources": {
+    "FCI_calls": 2,
+    "SCF_calls": 2,
+    "automatic_retries": 0,
+    "cost_basis": "Normal account billing UI shows current billed0 and existing Actions0-dollar budget Usage blocked, unchanged; public standard Runner and no artifacts/cache/Packages; billing settlement latency not an independently measured final invoice",
+    "job_duration_seconds_sum": 80.0,
+    "jobs": 2,
+    "new_purchase": 0,
+    "provider_token_total": "NOT_EXPOSED_NOT_ESTIMATED",
+    "science_cgroup_CPU_seconds_sum": 4.411713,
+    "science_envelope_wall_seconds_sum": 3.7274311059999903
+  },
+  "runs": [
+    {
+      "actual_limits": "1CPU, one affinity CPU, single numerical thread environment, 1GiB memory, 0extraSwap, onlylo network",
+      "array_sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf",
+      "cgroup_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "conclusion": "success",
+      "environment": {
+        "Python": "3.12.15",
+        "source_sha": "debd856e57e4fdb6e389faa3730540a931798047",
+        "versions": {
+          "ase": "3.29.0",
+          "jsonschema": "4.25.1",
+          "numpy": "2.2.6",
+          "pyscf": "2.8.0",
+          "qutip": "5.2.1",
+          "scipy": "1.15.3"
+        }
+      },
+      "job_duration_seconds": 40.0,
+      "raw_recovery_sha256": {
+        "files": [
+          {
+            "bytes": 15145,
+            "path": "ACTUAL_RETURN.json",
+            "sha256": "273076480bd3be45504e3f0da0de0a1598ebc77722fb30dee314e11ac0d8b30d"
+          },
+          {
+            "bytes": 1521,
+            "path": "REQUEST.json",
+            "sha256": "4689aad1cba09ec80faa657f68d6ecabffa0bb74c766e44010815ac669aa0853"
+          },
+          {
+            "bytes": 474,
+            "path": "admission.json",
+            "sha256": "7a42f33dfb81efb7c4d305f0e38b09e274949ca89a62d80de9f7bd4295b9b3ae"
+          },
+          {
+            "bytes": 244,
+            "path": "environment.json",
+            "sha256": "37e86c1d8823b85c95d7f94b15eaf1ede2229257e62076604904a97320bd4a24"
+          },
+          {
+            "bytes": 2113,
+            "path": "host_config.json",
+            "sha256": "69e652e22cbc8c65ab0803d49c407dfa174bb8b0137f02d875fc239417aec758"
+          },
+          {
+            "bytes": 812,
+            "path": "resources.json",
+            "sha256": "7205a3f2f0320879280618c41439b20b579fd62382e4b3bbd677fe09251318b9"
+          },
+          {
+            "bytes": 1521,
+            "path": "science/input.json",
+            "sha256": "babeae8ee09b3bf420300c5fa9829c68e2014f6d35e69ccd8261078a31aad119"
+          },
+          {
+            "bytes": 15145,
+            "path": "science/observation.json",
+            "sha256": "273076480bd3be45504e3f0da0de0a1598ebc77722fb30dee314e11ac0d8b30d"
+          },
+          {
+            "bytes": 631,
+            "path": "science/process_receipt.json",
+            "sha256": "8d5fea9f7052ef071d7732b5c5648ac684513f7eb8f071c2a460a2691e1f1826"
+          },
+          {
+            "bytes": 193,
+            "path": "science/process_start.json",
+            "sha256": "e5f481bbb902ed89caf7a900db02f893a383bd41b38fcc56c6f419dac98543d7"
+          },
+          {
+            "bytes": 0,
+            "path": "science/solver.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 0,
+            "path": "science/solver.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 5913,
+            "path": "science/world/arrays/dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf.npz",
+            "sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf"
+          },
+          {
+            "bytes": 8432,
+            "path": "science/world/states/8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f.json",
+            "sha256": "201337456115882c6dda809cda810647e1743e485b0462f848debf7b7187ceb9"
+          },
+          {
+            "bytes": 2217,
+            "path": "science/world/states/a8f55becdfa7cd6605532f8bfc744ce157c475f808f7d7fd176190d404c782c3.json",
+            "sha256": "e975c60d237480e4389781760f5e37449ec20e6a8f686511d3e4642942a22b19"
+          },
+          {
+            "bytes": 1727,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/intent.json",
+            "sha256": "96b4a412c9c0fdebf9d046726c626faa60b1c4d84307bdb919820214a0d7ce58"
+          },
+          {
+            "bytes": 547,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/receipt.json",
+            "sha256": "7ab0ed26c730dd5ee5127aed1d073866c2d87a9b7d2e2c402c40220f34d704d3"
+          },
+          {
+            "bytes": 838,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/ci_raw.npz",
+            "sha256": "7cb3b74248d1047c352cd4c27f621cab96bd20277efbbd2fbb03e529b861d649"
+          },
+          {
+            "bytes": 1354,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/input.json",
+            "sha256": "6a3801298007210e4dfee2cc7ff2bf13214e698052063d914ce8313304af4d63"
+          },
+          {
+            "bytes": 1615,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/integrals.npz",
+            "sha256": "27f13a804c7b714f6475e17cf26300833fc2b3e81c8171601db09d90b59ef16b"
+          },
+          {
+            "bytes": 5034,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/observation.json",
+            "sha256": "63264ae6eed97a23603105c34e3cc26e62cf7e6c48a16225cfdb1955a68dd2ed"
+          },
+          {
+            "bytes": 631,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/process_receipt.json",
+            "sha256": "fc2215cf219ea3e1d9add724398a009dd3d2d167c9a41fa852af4db2217dc141"
+          },
+          {
+            "bytes": 193,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/process_start.json",
+            "sha256": "e9da4bebdd22ff6b1b71086fd040ceeb908adb2580cebbb6f6eb3fa2ae2617fb"
+          },
+          {
+            "bytes": 4352,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/pyscf.log",
+            "sha256": "1c4b581e2982cb288b69f49261ecd57f6dc09cf57c633e74747e717365ce03a3"
+          },
+          {
+            "bytes": 188,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/rhf_reference.json",
+            "sha256": "57ef74dbfd4afe1f83e12bcd80df55780c9b3e1a878aff12031557479a5f918c"
+          },
+          {
+            "bytes": 5907,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/scientific_arrays.npz",
+            "sha256": "0dc0afaa286806fc3bc39064ccc1871a9f65d2e2b1135b13ec0469c07922e7d1"
+          },
+          {
+            "bytes": 0,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/solver.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 190,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/solver.stdout.log",
+            "sha256": "e28740cfe19f0768995db37fb7fab6b7bfd15bcb14a9909a3073317a7b45970f"
+          },
+          {
+            "bytes": 5034,
+            "path": "science/world/transitions/cd1345972df261f32b37ccd4261b0d52e4c61945e95c1fcd93a0f20dbff27573/solver/world_return.json",
+            "sha256": "63264ae6eed97a23603105c34e3cc26e62cf7e6c48a16225cfdb1955a68dd2ed"
+          },
+          {
+            "bytes": 15145,
+            "path": "science/world_return.json",
+            "sha256": "273076480bd3be45504e3f0da0de0a1598ebc77722fb30dee314e11ac0d8b30d"
+          }
+        ],
+        "original_log_zip_sha256": "a6fc64c40db2b4279ca8d8b6fcca409ac0ebfe047b2508a84f9ee50e8c6c7ecc",
+        "run_id": "39788105394"
+      },
+      "run_attempt": 1,
+      "run_id": "39788105394",
+      "science_cgroup_CPU_seconds": 2.224986,
+      "science_cgroup_peak_memory_bytes": 126005248,
+      "science_envelope_wall_seconds": 1.8888499429999968,
+      "source_commit": "debd856e57e4fdb6e389faa3730540a931798047",
+      "stage": 1,
+      "state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f",
+      "url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39788105394"
+    },
+    {
+      "actual_limits": "1CPU, one affinity CPU, single numerical thread environment, 1GiB memory, 0extraSwap, onlylo network",
+      "array_sha256": "92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb",
+      "cgroup_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "conclusion": "success",
+      "environment": {
+        "Python": "3.12.15",
+        "source_sha": "00220afb84508579ee6d519fd9d403713d623340",
+        "versions": {
+          "ase": "3.29.0",
+          "jsonschema": "4.25.1",
+          "numpy": "2.2.6",
+          "pyscf": "2.8.0",
+          "qutip": "5.2.1",
+          "scipy": "1.15.3"
+        }
+      },
+      "job_duration_seconds": 40.0,
+      "raw_recovery_sha256": {
+        "files": [
+          {
+            "bytes": 15381,
+            "path": "ACTUAL_RETURN.json",
+            "sha256": "b76437af4639d3c35a46176205a92730985da9d0141e874ea5012fda9ee43a84"
+          },
+          {
+            "bytes": 5537,
+            "path": "REQUEST.json",
+            "sha256": "2defc066c7bfe8b1e7204429a8977d806452c91b9c9e15bf8bc9ad5de26b2e50"
+          },
+          {
+            "bytes": 492,
+            "path": "admission.json",
+            "sha256": "9a4de4cccd8e156c0192663b27bb8ef05d988fa7649dd548e88bb426c07e74fd"
+          },
+          {
+            "bytes": 244,
+            "path": "environment.json",
+            "sha256": "2478967f1d1ae93e47b8d66497ba2361c28cc07b2f70125f4edea809fc15017d"
+          },
+          {
+            "bytes": 2113,
+            "path": "host_config.json",
+            "sha256": "69e652e22cbc8c65ab0803d49c407dfa174bb8b0137f02d875fc239417aec758"
+          },
+          {
+            "bytes": 816,
+            "path": "resources.json",
+            "sha256": "69003361a5ec1be324d0b604f5ea7055449ef4ae54327d7b9db2a0b43abdcb0f"
+          },
+          {
+            "bytes": 5537,
+            "path": "science/input.json",
+            "sha256": "2defc066c7bfe8b1e7204429a8977d806452c91b9c9e15bf8bc9ad5de26b2e50"
+          },
+          {
+            "bytes": 15381,
+            "path": "science/observation.json",
+            "sha256": "b76437af4639d3c35a46176205a92730985da9d0141e874ea5012fda9ee43a84"
+          },
+          {
+            "bytes": 666,
+            "path": "science/process_receipt.json",
+            "sha256": "421ca489109ba0d4f9d11c9797338dcd21e6422c7b92e2ad707051a51f2a9f75"
+          },
+          {
+            "bytes": 193,
+            "path": "science/process_start.json",
+            "sha256": "0feffc09e84ffe07549ece4a0f077dddc2a1bc31d18f1f05180b9606b28067d4"
+          },
+          {
+            "bytes": 0,
+            "path": "science/solver.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 0,
+            "path": "science/solver.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 6190,
+            "path": "science/world/arrays/92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb.npz",
+            "sha256": "92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb"
+          },
+          {
+            "bytes": 5913,
+            "path": "science/world/arrays/dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf.npz",
+            "sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf"
+          },
+          {
+            "bytes": 8432,
+            "path": "science/world/states/8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f.json",
+            "sha256": "201337456115882c6dda809cda810647e1743e485b0462f848debf7b7187ceb9"
+          },
+          {
+            "bytes": 2217,
+            "path": "science/world/states/a8f55becdfa7cd6605532f8bfc744ce157c475f808f7d7fd176190d404c782c3.json",
+            "sha256": "e975c60d237480e4389781760f5e37449ec20e6a8f686511d3e4642942a22b19"
+          },
+          {
+            "bytes": 8451,
+            "path": "science/world/states/bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb.json",
+            "sha256": "bbd14a83ae579ef5f0b70f0f331762285b6cf80f7d4d2343373bbb9499a4141f"
+          },
+          {
+            "bytes": 1915,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/intent.json",
+            "sha256": "c930ab716d4a4ba1b3c5f0bd5398f745427b60d2d35b35a90142abb75b6b7a3d"
+          },
+          {
+            "bytes": 732,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/receipt.json",
+            "sha256": "3b527db9cc3b53e2c722aa3a520ef42dd5d65f6634f76dddee23920bb907a93f"
+          },
+          {
+            "bytes": 837,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/ci_raw.npz",
+            "sha256": "c0ba1f8bca8690d5c96e1b7546fd03f411951fee475c91666b4b802e33d35326"
+          },
+          {
+            "bytes": 1357,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/input.json",
+            "sha256": "59478b7c6dc95e06575a1f9b61423b4a41390463fd9e58e4a591bdd33fb4d984"
+          },
+          {
+            "bytes": 1796,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/integrals.npz",
+            "sha256": "37ee432dc4466420725496f2b8129cf73d01d4ea533c7a92f9a96dded47924e0"
+          },
+          {
+            "bytes": 5050,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/observation.json",
+            "sha256": "8676682d1b3cc39ba7860e91df0d2897408876b989b811f1eb41b4e8860ad1eb"
+          },
+          {
+            "bytes": 667,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/process_receipt.json",
+            "sha256": "227eb1181dde6870817892425d343684e9650051c7530bcdc994865cb99dc512"
+          },
+          {
+            "bytes": 193,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/process_start.json",
+            "sha256": "599d2f125bb4539aad1ae7272522ca553cc8807c8296a9dd55d43fdf4d282d07"
+          },
+          {
+            "bytes": 3828,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/pyscf.log",
+            "sha256": "9f5b6edff0a70ae1b10f493c00c66875359a80166f8f909d15f1984adb0dce9a"
+          },
+          {
+            "bytes": 188,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/rhf_reference.json",
+            "sha256": "45335610f8c341287cbda6c4a0c95447fe7b9164f7591e62ee8102344710571c"
+          },
+          {
+            "bytes": 6186,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/scientific_arrays.npz",
+            "sha256": "03a64fa9c2e15087eadfbe3b772bc1943347ede8d83730ec058c8822f78b5f95"
+          },
+          {
+            "bytes": 0,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/solver.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 190,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/solver.stdout.log",
+            "sha256": "f62d252726b78466824c45a0c9cb23db8ad2589006ed6b858b4451a5e6ab471a"
+          },
+          {
+            "bytes": 5050,
+            "path": "science/world/transitions/0ad4f6c231cdfefc28c7a738bf651bdd13367f88764d0931d3247365e2cf6b97/solver/world_return.json",
+            "sha256": "8676682d1b3cc39ba7860e91df0d2897408876b989b811f1eb41b4e8860ad1eb"
+          },
+          {
+            "bytes": 15381,
+            "path": "science/world_return.json",
+            "sha256": "b76437af4639d3c35a46176205a92730985da9d0141e874ea5012fda9ee43a84"
+          }
+        ],
+        "original_log_zip_sha256": "fb18414f47cb73902604f1f587f627ed154f0ef000304d9ed7c3cd70a30d3dce",
+        "run_id": "39788716668"
+      },
+      "run_attempt": 1,
+      "run_id": "39788716668",
+      "science_cgroup_CPU_seconds": 2.186727,
+      "science_cgroup_peak_memory_bytes": 120598528,
+      "science_envelope_wall_seconds": 1.8385811629999935,
+      "source_commit": "00220afb84508579ee6d519fd9d403713d623340",
+      "stage": 2,
+      "state_sha256": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb",
+      "url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/39788716668"
+    }
+  ],
+  "scientific_delta": "New computed H4 finite-basis data test actual multiconfigurational and contact-response hypotheses. Known-method capability extension and model-conditioned information; human-unknown novelty not established.",
+  "selected_frontier": "E: correlated many-electron states and local spin/charge response",
+  "status": "TWO_REAL_CALCULATIONS_COMPLETED_AND_STOPPED",
+  "sync": "Local producer completion reporting required separately; no central ACK implied",
+  "task": "QW-PHYSICS-FRONTIER-01"
+}

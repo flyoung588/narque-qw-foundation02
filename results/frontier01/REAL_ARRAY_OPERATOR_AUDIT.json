@@ -1,0 +1,33 @@
+{
+  "additional_SCF_or_FCI_calls": 0,
+  "checks": [
+    {
+      "CI_norm": 0.9999999999999999,
+      "Lowdin_transformed_CI_norm": 1.0000000000000029,
+      "PASSED": true,
+      "S2_from_direct_local_operators": -1.1102230246251565e-16,
+      "array_sha256": "dedc071b65543fe44fc4c4c3840b30b9378be2b1931a5874e26f447eb17deabf",
+      "direct_Si_dot_Sj_vs_saved_max_error_hbar2": 1.7763568394002505e-15,
+      "direct_double_occupancy_max_error": 1.8041124150158794e-16,
+      "independent_Fock_RDM_max_error": 1.1102230246251565e-16,
+      "stage": 1,
+      "state_sha256": "8c842cadd13251ad982f022b0dd2735451eebade6d1dfbc71599b8e10e538f4f"
+    },
+    {
+      "CI_norm": 1.0,
+      "Lowdin_transformed_CI_norm": 1.0000000000000004,
+      "PASSED": true,
+      "S2_from_direct_local_operators": -4.440892098500626e-16,
+      "array_sha256": "92b95c63a5366a7787ce1b4edfedb2664c8b8b972a5e1e45bbb4bf9633c0aecb",
+      "direct_Si_dot_Sj_vs_saved_max_error_hbar2": 8.881784197001252e-16,
+      "direct_double_occupancy_max_error": 9.71445146547012e-17,
+      "independent_Fock_RDM_max_error": 2.220446049250313e-16,
+      "stage": 2,
+      "state_sha256": "bb2adadabd64fc8ddb86dce1f71c44a4c89f03b2214f09e5623bc561141fe7cb"
+    }
+  ],
+  "cpu_threads_requested": 1,
+  "physics_engines_executed": 0,
+  "scope": "Independent implementation of expectation values on existing actual CI arrays only; not independent physical validation, basis convergence, or W2",
+  "status": "PASS_SAVED_WAVEFUNCTION_OPERATOR_AUDIT"
+}
