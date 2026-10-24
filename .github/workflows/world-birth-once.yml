@@ -1,0 +1,14 @@
+# PROPOSAL ONLY: requires explicit authorization to add this one file on main.
+# Dispatching against qw-world-birth01 uses that branch's frozen real workflow.
+name: WB E01 manual entry registration
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  no-default-branch-computation:
+    if: ${{ false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    steps:
+      - run: exit 1
