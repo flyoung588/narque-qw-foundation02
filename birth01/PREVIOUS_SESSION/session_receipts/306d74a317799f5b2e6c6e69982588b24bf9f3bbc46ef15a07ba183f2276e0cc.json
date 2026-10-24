@@ -1,0 +1,10 @@
+{
+  "new_scientific_execution": false,
+  "observation_sha256": "a7312e41751eb5def50720923767992e17284f96aac7d1dcafaf66b76708805f",
+  "operation": "observe",
+  "reason_code": "ORIGINAL_PHYSICS_STATUS_PRESERVED",
+  "schema": "QW_SESSION_RECEIPT_01",
+  "source_state_hash": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
+  "status": "STRUCTURE_ONLY_NOT_CALCULATED",
+  "time_utc": "2026-10-24T08:28:46.772456+00:00"
+}

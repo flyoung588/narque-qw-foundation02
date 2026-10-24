@@ -1,0 +1,13 @@
+{
+  "authority": {
+    "external_writes": false,
+    "new_science_jobs": 0,
+    "purchases": 0
+  },
+  "physical_execution": "DISABLED_IN_THIS_BUILD",
+  "research_goal": "Offline world integration",
+  "resource_envelope": "Light offline read/replay/fixture only",
+  "schema": "QW_WORLD_SESSION_01",
+  "source_commit": "8da0cf05192585039ba51689e6328ec4f49bcc0d",
+  "state_storage": "Inherited CorrelatedStore/QuantumStore/Store; unchanged legacy hashes"
+}

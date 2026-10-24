@@ -1,80 +1,77 @@
 {
-  "historical_source_file": "results/state_space01/stage1/science/world/states/60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5.json",
+  "historical_source_file": null,
   "operation_request": {
-    "source_state_hash": "60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5",
+    "source_state_hash": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
     "world_spec": {
       "version": "QW-WORLDSPEC-0.1",
-      "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+      "object_id": "QW_WBE01_AI_NE_FCC_A448",
       "epistemic_mode": "GROUNDED",
       "matter": {
-        "type": "molecule",
-        "periodic": false,
-        "charge": 1,
+        "type": "periodic_cell",
+        "periodic": true,
+        "charge": 0,
         "spin_2S": 0,
         "atoms": [
           {
-            "element": "H",
+            "element": "Ne",
             "xyz_angstrom": [
-              -0.5,
-              -0.28867513459481287,
-              0.0
-            ]
-          },
-          {
-            "element": "H",
-            "xyz_angstrom": [
-              0.5,
-              -0.28867513459481287,
-              0.0
-            ]
-          },
-          {
-            "element": "H",
-            "xyz_angstrom": [
-              0.0,
-              0.5773502691896257,
-              0.0
+              0,
+              0,
+              0
             ]
           }
+        ],
+        "cell_angstrom": [
+          [
+            0,
+            2.24,
+            2.24
+          ],
+          [
+            2.24,
+            0,
+            2.24
+          ],
+          [
+            2.24,
+            2.24,
+            0
+          ]
         ]
       },
       "physics": {
-        "engine": "pyscf",
-        "method": "RHF",
+        "engine": "pyscf-pbc",
+        "method": "RKS",
         "basis": "cc-pvdz",
+        "xc": "PBE",
         "observables": [
-          "energy",
-          "forces"
+          "energy"
         ]
       },
       "experiment": {
         "action": "single_point",
-        "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+        "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
       }
     },
     "action": "CHANGE_OBJECT",
-    "prediction": "For this planar C3-symmetric singlet H3+ RHF/cc-pVDZ input, a converged finite total BO energy and3x3 analytic force array are expected. Force sum should be within1e-5 Eh/bohr; equivalent nuclei should have symmetry-related in-plane forces. The radial force sign and energy are deliberately unknown before calculation.",
-    "falsifier": "Nonconvergence, native/resource failure, nonfinite/wrong-shape forces, force sum beyond1e-5 Eh/bohr, invalid source/model/input binding; preserve and STOP, never retry. Symmetry discrepancies are numerical/model diagnostics, not new physics.",
-    "information_goal": "Determine the actual available force response in a generic AI-constructed charged3-center object, and whether another same-object question or a distinct periodic energy-only observation is worth the remaining single slot.",
+    "prediction": "The admitted small neutral cell should produce a finite converged Gamma-only RKS/PBE per-cell BO energy with10electrons/14AOs, or an explicit bounded failure; forces/stress are unavailable. A molecular/periodic absolute-energy ranking must be rejected. No numeric energy is prefilled.",
+    "falsifier": "Input/parent binding failure, nonconvergence/native/resource error, unsupported observable silently accepted or molecular total energy ranked against periodic energy. Preserve failed evidence and STOP; no thirdJob or parameter relaxation.",
+    "information_goal": "The first physical result is finite/converged and satisfies symmetry; there is no numerical emergency or need to repeat a local H3+ geometry curve. The remaining orthogonal information is whether the same stored Session can carry the real observed parent context into a different boundary/model/observable domain through the mature PBC worker. This remains informative despite the already known generic observe-label defect; no full World Birth PASS is presumed.",
     "candidate_reasons": [
       {
-        "candidate": "H3+ equilateral R=1.00Angstrom RHF/cc-pVDZ",
-        "reason": "Selected: generic three-nucleus charged singlet,2electrons/15AOs, inexpensive; tests charge/electron bookkeeping and vector-force semantics without dedicated molecule code."
+        "candidate": "Shrink H3+ equilateral geometry",
+        "reason": "The actual inward force gives a legitimate local directional hypothesis, but another same-model point primarily repeats a molecular path and offers less world-interoperability information."
       },
       {
-        "candidate": "H2O RHF/cc-pVDZ",
-        "reason": "Eligible3nuclei10electrons24AOs but larger mean-field problem; offers less additional contract discrimination per resource than the selected charged3-center case."
-      },
-      {
-        "candidate": "FCC Ne periodic RKS/PBE",
-        "reason": "Eligible and potentially valuable to test distinct periodic energy-only semantics; not selected as first because molecular vector forces expose a richer initial result for an actual subsequent choice. Not precommitted as second."
+        "candidate": "FCC Ne,a=4.48Angstrom",
+        "reason": "Within frozen4.40-4.52 range,14AO; asks a distinct boundary/energy-only handoff question. Slightly different from archived4.46 input, but not a material-discovery or direct old-energy comparator."
       },
       {
         "candidate": "STOP",
-        "reason": "Always lawful if admission fails or the first observation shows no justified additional experiment."
+        "reason": "Valid because the label defect limits world acceptance; however native evidence is independently preserved/bound and one inexpensive, distinct PBC route still has nonredundant information value. Stop immediately if this second attempt fails; never allocate a third."
       }
     ],
-    "prior_observation_hash": null,
+    "prior_observation_hash": "6fe4a52ddf4302efe5985821173706d8125ce43923aa38f10b3210c466f0e10c",
     "actor": "B_WORK_AI_DECISION_REQUIRES_TRANSCRIPT_REVIEW"
   }
 }
