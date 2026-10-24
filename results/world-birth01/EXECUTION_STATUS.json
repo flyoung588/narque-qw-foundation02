@@ -1,0 +1,19 @@
+{
+  "status": "BLOCKED_BEFORE_FIRST_JOB",
+  "experiment": "QW-WB-E01-CROSS-DOMAIN-01",
+  "updated_utc": "2026-10-24T08:16:16.676173+00:00",
+  "source_commit": "53f93888700daa8959208918569f881fa604be04",
+  "source_branch": "qw-world-birth01",
+  "Human_authority": "GRANTED_FOR_THIS_BRANCH_AND_UP_TO_2_JOBS",
+  "fee_admission": "PASS_FOR_PUBLIC_STANDARD_RUNNER_AND_LOG_ONLY_STORAGE",
+  "workflow_registration": "MISSING_ON_DEFAULT_BRANCH",
+  "dispatch_HTTP_status": 404,
+  "new_jobs_created": 0,
+  "new_science_calls": 0,
+  "physical_results": "NOT_RUN",
+  "remaining_authorized_job_cap": 2,
+  "automatic_retry": false,
+  "next_scope_needed": "Separate permission to register one manual-only disabled placeholder file on main. Current authorization does not grant main writes.",
+  "history": "UNCHANGED; W2/A2/discovery not promoted",
+  "official_rule": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch"
+}
