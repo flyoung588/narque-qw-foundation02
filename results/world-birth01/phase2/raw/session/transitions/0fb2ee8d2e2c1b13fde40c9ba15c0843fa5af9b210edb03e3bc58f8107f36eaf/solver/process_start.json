@@ -1,0 +1,8 @@
+{
+  "parent_pid": 1,
+  "solver_pid": 7,
+  "engine": "pyscf",
+  "input_sha256": "ab809d7f7b56b54acb903f990d5f9ae34e579a5d8f58c397806ec8766c540a5c",
+  "timeout_seconds": 600,
+  "synthetic": false
+}

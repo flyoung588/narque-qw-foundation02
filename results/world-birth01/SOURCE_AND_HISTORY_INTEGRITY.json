@@ -1,0 +1,20 @@
+{
+  "frozen_execution_files_verified": 716,
+  "unchanged": true,
+  "historical_baseline_files": 682,
+  "historical_baseline_unchanged": true,
+  "prereg_sha256": "0f043b08ea7dd2d774d4427b1cbe9e8526f4f71f6357548fb5dacc40f424c73a",
+  "no_runtime_code_or_threshold_fixes": true,
+  "main_only_change": {
+    "commit": "57902f57ac13711398d52691237f73b9efcfb82d",
+    "parent": "77d13f167856881df9ffd6b9e4b0582c1b950d3e",
+    "file": ".github/workflows/world-birth-once.yml",
+    "file_sha256": "80274e329634bbaafa01be193c64178168f0f6a5e1d90ad90164e53d621ac688",
+    "effect": "Manual registration with always-disabled main job, no scientific code"
+  },
+  "preserved_first_session_in_second": "PASS",
+  "source_commits": [
+    "146df173e1c5868bf19537514358f3725feaeb06",
+    "3d35b2dec0e004f1ac4f8d3867231e8cf9269238"
+  ]
+}

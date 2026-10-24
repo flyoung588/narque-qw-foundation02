@@ -1,0 +1,128 @@
+{
+  "actual_log_export_files": 30,
+  "all_exported_sha256_match": true,
+  "files": {
+    "host_config.json": {
+      "sha256": "89dbf506df7d3975006cd404b8d89f48e832a5d14a7c527934e99d0a1ab1f97a",
+      "bytes": 6606
+    },
+    "job_budget.json": {
+      "sha256": "e6f0c4842f3a87cbf051fb48b3526e4fad6a63159d96058ec442ec433d2aaf4b",
+      "bytes": 94
+    },
+    "session/SESSION_SHA256.json": {
+      "sha256": "1b6f7f9bb5f8471e4cc13eaad4e086920542e959709d2d1275b21da6d722208c",
+      "bytes": 4361
+    },
+    "session/birth/attempts/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a/authorization.json": {
+      "sha256": "0dfc32487bca0052fe1b42b583b10bf2b7ac2696dd6c5ae6afbf4376d647d3ab",
+      "bytes": 651
+    },
+    "session/birth/attempts/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a/input.json": {
+      "sha256": "a069b9aaddbf5f82ebf65a054239654460534038413376d008373a77d23ce46a",
+      "bytes": 4028
+    },
+    "session/birth/attempts/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a/return.json": {
+      "sha256": "a7d4ea610fc6377478361b3a4190fe21e8c35905a7db9ab095e8cf43be36d335",
+      "bytes": 5644
+    },
+    "session/birth/contract.json": {
+      "sha256": "f407aad01385284fd5bef2c4c5008e96766c8fcc3d1758ee60654f1079008a7a",
+      "bytes": 417
+    },
+    "session/birth/intents/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a.json": {
+      "sha256": "a069b9aaddbf5f82ebf65a054239654460534038413376d008373a77d23ce46a",
+      "bytes": 4028
+    },
+    "session/birth/physical_returns/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a.json": {
+      "sha256": "a7d4ea610fc6377478361b3a4190fe21e8c35905a7db9ab095e8cf43be36d335",
+      "bytes": 5644
+    },
+    "session/birth/resource_admission/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a.json": {
+      "sha256": "68b448652557356dc0e70ea93463d469402176e3787d375b3efa441694d0fa3b",
+      "bytes": 463
+    },
+    "session/references/43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865.json": {
+      "sha256": "03b2b5b5a361b5d50517929199cb5ccbb0072994f37680b08da40f395e1e0e41",
+      "bytes": 525
+    },
+    "session/references/60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5.json": {
+      "sha256": "fa8dd6e433c984a8e0103b51fdbb169c14de6ae33a26fbd7e753b5d25dccb2be",
+      "bytes": 326
+    },
+    "session/references/bd7007bfe9c1455070af9783873c043a2cde3024dbcffb0543bd15eeb39c6518.json": {
+      "sha256": "fdb3294c3b56b3323a0b4b8d02b9f37d79232b3cad7da573c8399936926795f3",
+      "bytes": 157
+    },
+    "session/session.json": {
+      "sha256": "4c102c892d741dc681010474609edb1a8bf642482cf1009c6879b0504d63618b",
+      "bytes": 454
+    },
+    "session/states/43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865.json": {
+      "sha256": "c79d3e8fa0f717b258b7a3196cafa03cdd6cb2a3102aa027201201f5374321c0",
+      "bytes": 5972
+    },
+    "session/states/60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5.json": {
+      "sha256": "704beffc406adc237f3558304562f4370bcd2572a29cafffd6e6f43438b92ceb",
+      "bytes": 1809
+    },
+    "session/states/b2460610386bf103f0f141f594081280d572e3f64a5a8dac0dce345d615b5ff5.json": {
+      "sha256": "a94223191fdf9aa3d8eec0d665275a4b6938e783932c743a08208e806791da0d",
+      "bytes": 2210
+    },
+    "session/states/bd7007bfe9c1455070af9783873c043a2cde3024dbcffb0543bd15eeb39c6518.json": {
+      "sha256": "a1640cca673868152dad9cc3b3564ded5bdd5094fdcd4aa16f9675105a0f2a35",
+      "bytes": 2152
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/intent.json": {
+      "sha256": "f515f0acc38ba39e303e78cd13131a83ecb898ac6fc0b78894c309095d54af4c",
+      "bytes": 660
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/receipt.json": {
+      "sha256": "cdc9c021d7afb37ae33842c4e3f1ba37fff0b5eae9a50c1ef4be2ba126aeb8be",
+      "bytes": 1279
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/return.json": {
+      "sha256": "a88c3f9d1122e16fbe76216a0836ff51fad925168d212828c0b38e128cbe1521",
+      "bytes": 3266
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/input.json": {
+      "sha256": "d8150b9233e4f8284124736c304503255c68f5c026ab1f1877ff586ce4604dc0",
+      "bytes": 966
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/observation.json": {
+      "sha256": "a2fdcb15df39c36f5b6025278c2fab79f0334c44982d1ca863c89eeacedae8df",
+      "bytes": 3266
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/process_receipt.json": {
+      "sha256": "d3cdb00672ae7892ac4375397bfeb3fadec72719a3e23a373689f3697c846f37",
+      "bytes": 631
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/process_start.json": {
+      "sha256": "20c60e6e28e95340eced01d76db189e38189f8d851ec407777f8190c2a78c60c",
+      "bytes": 196
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/solver.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/solver.stdout.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/stages.jsonl": {
+      "sha256": "f1ebb5bac4e14a9b79dbe1676deb35762b861d4d1caf77a841a88c485711b8b5",
+      "bytes": 1291
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/worker_limits.json": {
+      "sha256": "9b3ebb1239249bd46371f4114f7078a2ae4779f715626ca62dc8513f6847e674",
+      "bytes": 121
+    },
+    "session/transitions/0fb2ee8d2e2c1b13fde40c9ba15c0843fa5af9b210edb03e3bc58f8107f36eaf/solver/world_return.json": {
+      "sha256": "a2fdcb15df39c36f5b6025278c2fab79f0334c44982d1ca863c89eeacedae8df",
+      "bytes": 3266
+    }
+  },
+  "raw_log_sha256": "10dd604a95097477493520fdce056b5d90d23e4dff2ff1c8f7f0de90c8efad08",
+  "not_new_science": true
+}

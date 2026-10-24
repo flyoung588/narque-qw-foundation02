@@ -1,0 +1,93 @@
+{
+  "status": "CALCULATED",
+  "spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point",
+      "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "Ne",
+          "xyz_angstrom": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "cell_angstrom": [
+        [
+          0,
+          2.24,
+          2.24
+        ],
+        [
+          2.24,
+          0,
+          2.24
+        ],
+        [
+          2.24,
+          2.24,
+          0
+        ]
+      ],
+      "charge": 0,
+      "periodic": true,
+      "spin_2S": 0,
+      "type": "periodic_cell"
+    },
+    "object_id": "QW_WBE01_AI_NE_FCC_A448",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf-pbc",
+      "method": "RKS",
+      "observables": [
+        "energy"
+      ],
+      "xc": "PBE"
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  },
+  "observation": {
+    "engine": "PySCF-PBC",
+    "engine_version": "2.8.0",
+    "ASE_version": "3.29.0",
+    "ASE_Atoms_constructed": true,
+    "method": "Gamma-only RKS/PBE",
+    "basis": "cc-pvdz all-electron",
+    "density_fitting": "GDF weigend auxiliary basis",
+    "integration": "Becke level1, NOT convergence certified",
+    "kmesh": [
+      1,
+      1,
+      1
+    ],
+    "cell_precision": 1e-06,
+    "AO_count": 14,
+    "energy_Eh_per_cell": -128.7524560633064,
+    "energy_unit": "Eh/cell",
+    "energy_zero": "neutral3D periodic all-electron BO/PBE total per primitive input cell with Ewald convention; NOT molecular HF absolute reference",
+    "SCF_converged": true,
+    "forces": null,
+    "forces_status": "NOT_IMPLEMENTED",
+    "stress_status": "NOT_IMPLEMENTED",
+    "basis_kmesh_grid_convergence": "NOT_TESTED",
+    "physical_precision": "NOT_CERTIFIED",
+    "construction": {
+      "all_electron_count": 10,
+      "cell_volume_A3": 22.478848000000006,
+      "pbc": [
+        true,
+        true,
+        true
+      ],
+      "geometry_collision_check": "required actual ASE neighbor check at construction, not yet performed by stdlib validation"
+    },
+    "scope": "periodic scalar ground-state density/energy only, not atomistic dynamics or full many-body wavefunction"
+  },
+  "world_spec_sha256": "b31eea975aa583441475f6d4b8cdb1f588f42bc9b53d1bd40ea87a985b372f97",
+  "wall_seconds": 0.594701864000001
+}

@@ -1,0 +1,15 @@
+{
+  "action": {
+    "observables": [
+      "energy"
+    ],
+    "source_state_sha256": "c48f1df76e13f730ac8beaabc1e6fd783a267a72283717f5be249bcd15c2adfd",
+    "type": "MEASURE_OBSERVABLE"
+  },
+  "action_sha256": "8606de835b07731d73001f7b1fd796153f5c4b5ce41e2adf568b1863e3b4136a",
+  "candidate_state_sha256": "08274588126cd0681af96734b8df36bbe105d49aa75a515a0f3d09ad64132322",
+  "candidate_structure_sha256": "1e8468b4648109dc4dc2b8ce55cb841481d9d4e214f336f364b2d61015dc3fc3",
+  "created_utc": "2026-10-24T08:36:38.409096+00:00",
+  "source_state_sha256": "c48f1df76e13f730ac8beaabc1e6fd783a267a72283717f5be249bcd15c2adfd",
+  "synthetic": false
+}

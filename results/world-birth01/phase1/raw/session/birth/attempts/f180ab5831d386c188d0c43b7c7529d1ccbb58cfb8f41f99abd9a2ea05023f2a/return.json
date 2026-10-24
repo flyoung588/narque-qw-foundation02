@@ -1,0 +1,182 @@
+{
+  "W2": "INCOMPLETE",
+  "created_utc": "2026-10-24T08:23:01.826083+00:00",
+  "intent": "f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a",
+  "new_physical_execution": true,
+  "parent_context_hash": "60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5",
+  "schema": "WB_E01_PHYSICAL_RETURN_01",
+  "source_model": {
+    "basis": "cc-pvdz",
+    "engine": "pyscf",
+    "method": "RHF",
+    "observables": [
+      "energy",
+      "forces"
+    ]
+  },
+  "source_state_hash": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
+  "status": "SIMULATION_OBSERVATION_MODEL_ONLY",
+  "transition": {
+    "action": {
+      "observables": [
+        "energy",
+        "forces"
+      ],
+      "source_state_sha256": "bd7007bfe9c1455070af9783873c043a2cde3024dbcffb0543bd15eeb39c6518",
+      "type": "MEASURE_OBSERVABLE"
+    },
+    "action_sha256": "5a9cade4cae24976d7f65843ac255fe420ad8d598120aa361fcbff3a856dc401",
+    "candidate_state_sha256": "b2460610386bf103f0f141f594081280d572e3f64a5a8dac0dce345d615b5ff5",
+    "candidate_structure_sha256": "036b1981b7e2dce49bf7c41d262fa24e82a9697aa1bc1ca8cf7a3f882e72fd03",
+    "created_utc": "2026-10-24T08:23:00.751986+00:00",
+    "model": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf",
+      "method": "RHF",
+      "observables": [
+        "energy",
+        "forces"
+      ]
+    },
+    "new_state_sha256": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
+    "physical_transition": "CALCULATED_MODEL_ONLY",
+    "resource_evidence": "solver/process_receipt.json; /out/admission.json; /out/resources.json",
+    "result_sha256": "3ba98b765aa42c2c5452b053f3d97f4a955fdb7ea6d18fdff73091e63bc5e0b8",
+    "scope": "Static finite-basis BO calculation; no dynamics/stability/novelty qualification",
+    "semantic_action": "APPLIED",
+    "source_state_sha256": "bd7007bfe9c1455070af9783873c043a2cde3024dbcffb0543bd15eeb39c6518",
+    "status": "CALCULATED",
+    "synthetic": false
+  },
+  "units": "Original worker units retained",
+  "values": {
+    "observation": {
+      "SCF_convergence_threshold_Eh": 1e-10,
+      "SCF_max_iterations": 80,
+      "basis": "cc-pvdz",
+      "comparison_scope": "same composition/charge/spin/method/basis and geometry branch only",
+      "converged": true,
+      "electronic_structure_solved": true,
+      "electrons": 2,
+      "energy": -1.2849928193828906,
+      "energy_Eh": -1.2849928193828906,
+      "energy_eV": -34.96643593154893,
+      "energy_unit": "Eh",
+      "energy_zero": "total BO electronic-structure energy including nuclear repulsion",
+      "engine": "PySCF",
+      "engine_version": "2.8.0",
+      "forces_Eh_per_bohr": [
+        [
+          0.038750020687200626,
+          0.02237233487485868,
+          -3.894104774859605e-19
+        ],
+        [
+          -0.038750020687200515,
+          0.022372334874858624,
+          1.9943764424051527e-19
+        ],
+        [
+          9.051747001513499e-17,
+          -0.044744669749718136,
+          1.899728332454518e-19
+        ]
+      ],
+      "forces_eV_per_angstrom": [
+        [
+          1.9926061784862543,
+          1.1504317135379418,
+          -2.0024291849271342e-17
+        ],
+        [
+          -1.992606178486249,
+          1.150431713537939,
+          1.0255495999455253e-17
+        ],
+        [
+          4.654595450904577e-15,
+          -2.3008634270759236,
+          9.768795849816429e-18
+        ]
+      ],
+      "gradient_Eh_per_bohr": [
+        [
+          -0.038750020687200626,
+          -0.02237233487485868,
+          3.894104774859605e-19
+        ],
+        [
+          0.038750020687200515,
+          -0.022372334874858624,
+          -1.9943764424051527e-19
+        ],
+        [
+          -9.051747001513499e-17,
+          0.044744669749718136,
+          -1.899728332454518e-19
+        ]
+      ],
+      "method": "RHF",
+      "nuclear_repulsion_Eh": 1.58753163276,
+      "numerical_threads": 1,
+      "orbital_basis_size": 15,
+      "physics_limit": "nonrelativistic fixed-nuclei Born-Oppenheimer; no nuclear dynamics, no correlated many-electron accuracy claim",
+      "solver_equation": "single-determinant mean-field electronic Hamiltonian; approximate finite-basis solution",
+      "spin_2S": 0
+    },
+    "precision_qualified": false,
+    "spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point",
+        "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              -0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.0,
+              0.5773502691896257,
+              0.0
+            ]
+          }
+        ],
+        "charge": 1,
+        "periodic": false,
+        "spin_2S": 0,
+        "type": "molecule"
+      },
+      "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf",
+        "method": "RHF",
+        "observables": [
+          "energy",
+          "forces"
+        ]
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    },
+    "status": "CALCULATED",
+    "world_spec_sha256": "ab809d7f7b56b54acb903f990d5f9ae34e579a5d8f58c397806ec8766c540a5c"
+  },
+  "world_spec_hash": "ab809d7f7b56b54acb903f990d5f9ae34e579a5d8f58c397806ec8766c540a5c"
+}

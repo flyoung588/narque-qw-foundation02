@@ -1,0 +1,18 @@
+{
+  "code_manifest_sha256": "4067fe57237445a5a64cfed8a15e6a657f727b17646ca37bc9239a498e8ea694",
+  "human_approval_reference": "Human approval in current task,2026-10-24,flyoung588/narque-qw-foundation02:qw-world-birth01,36files and audited inputs/results,max2Jobs/no-retry",
+  "limits": {
+    "CPU": 1,
+    "extra_swap": 0,
+    "max_jobs": 2,
+    "memory_bytes": 1073741824,
+    "network": "none",
+    "no_retry": true,
+    "per_job_wall_seconds": 900,
+    "purchases": 0,
+    "threads": 1,
+    "worker_wall_seconds": 600
+  },
+  "prereg_sha256": "0f043b08ea7dd2d774d4427b1cbe9e8526f4f71f6357548fb5dacc40f424c73a",
+  "status": "HUMAN_GRANTED_WB_E01"
+}

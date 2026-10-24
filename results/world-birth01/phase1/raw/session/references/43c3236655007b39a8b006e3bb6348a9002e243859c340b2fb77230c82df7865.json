@@ -1,0 +1,8 @@
+{
+  "authorization_sha256": "a480b2697758d1f5c68cd4c77ccd28d0ee5344e0691bd2d608a948bc8d1a4811",
+  "intent": "f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a",
+  "mode": "NEW_SCIENTIFIC_EXECUTION",
+  "raw_byte_sha256": "c79d3e8fa0f717b258b7a3196cafa03cdd6cb2a3102aa027201201f5374321c0",
+  "source_file": "/out/session/birth/attempts/f180ab5831d386c188d0c43b7c7529d1ccbb58cfb8f41f99abd9a2ea05023f2a/input.json",
+  "transition_receipt_hash": "ca23f4be074ed11bebbedfc73d03bd6188a4ef29c37ce77e534030c260c68eb6"
+}

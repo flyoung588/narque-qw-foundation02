@@ -1,0 +1,129 @@
+{
+  "observation": {
+    "SCF_convergence_threshold_Eh": 1e-10,
+    "SCF_max_iterations": 80,
+    "basis": "cc-pvdz",
+    "comparison_scope": "same composition/charge/spin/method/basis and geometry branch only",
+    "converged": true,
+    "electronic_structure_solved": true,
+    "electrons": 2,
+    "energy": -1.2849928193828906,
+    "energy_Eh": -1.2849928193828906,
+    "energy_eV": -34.96643593154893,
+    "energy_unit": "Eh",
+    "energy_zero": "total BO electronic-structure energy including nuclear repulsion",
+    "engine": "PySCF",
+    "engine_version": "2.8.0",
+    "forces_Eh_per_bohr": [
+      [
+        0.038750020687200626,
+        0.02237233487485868,
+        -3.894104774859605e-19
+      ],
+      [
+        -0.038750020687200515,
+        0.022372334874858624,
+        1.9943764424051527e-19
+      ],
+      [
+        9.051747001513499e-17,
+        -0.044744669749718136,
+        1.899728332454518e-19
+      ]
+    ],
+    "forces_eV_per_angstrom": [
+      [
+        1.9926061784862543,
+        1.1504317135379418,
+        -2.0024291849271342e-17
+      ],
+      [
+        -1.992606178486249,
+        1.150431713537939,
+        1.0255495999455253e-17
+      ],
+      [
+        4.654595450904577e-15,
+        -2.3008634270759236,
+        9.768795849816429e-18
+      ]
+    ],
+    "gradient_Eh_per_bohr": [
+      [
+        -0.038750020687200626,
+        -0.02237233487485868,
+        3.894104774859605e-19
+      ],
+      [
+        0.038750020687200515,
+        -0.022372334874858624,
+        -1.9943764424051527e-19
+      ],
+      [
+        -9.051747001513499e-17,
+        0.044744669749718136,
+        -1.899728332454518e-19
+      ]
+    ],
+    "method": "RHF",
+    "nuclear_repulsion_Eh": 1.58753163276,
+    "numerical_threads": 1,
+    "orbital_basis_size": 15,
+    "physics_limit": "nonrelativistic fixed-nuclei Born-Oppenheimer; no nuclear dynamics, no correlated many-electron accuracy claim",
+    "solver_equation": "single-determinant mean-field electronic Hamiltonian; approximate finite-basis solution",
+    "spin_2S": 0
+  },
+  "precision_qualified": false,
+  "spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point",
+      "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            -0.5,
+            -0.28867513459481287,
+            0.0
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0.5,
+            -0.28867513459481287,
+            0.0
+          ]
+        },
+        {
+          "element": "H",
+          "xyz_angstrom": [
+            0.0,
+            0.5773502691896257,
+            0.0
+          ]
+        }
+      ],
+      "charge": 1,
+      "periodic": false,
+      "spin_2S": 0,
+      "type": "molecule"
+    },
+    "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf",
+      "method": "RHF",
+      "observables": [
+        "energy",
+        "forces"
+      ]
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  },
+  "status": "CALCULATED",
+  "world_spec_sha256": "ab809d7f7b56b54acb903f990d5f9ae34e579a5d8f58c397806ec8766c540a5c"
+}

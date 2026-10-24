@@ -1,0 +1,6 @@
+{
+  "mode": "HISTORICAL_REPLAY",
+  "raw_byte_sha256": "704beffc406adc237f3558304562f4370bcd2572a29cafffd6e6f43438b92ceb",
+  "source_commit": "8da0cf05192585039ba51689e6328ec4f49bcc0d",
+  "source_file": "results/state_space01/stage1/science/world/states/60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5.json"
+}

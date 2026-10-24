@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-10-24T08:23:00.703796+00:00",
+  "request": {
+    "action": "CHANGE_OBJECT",
+    "actor": "B_WORK_AI_DECISION_REQUIRES_TRANSCRIPT_REVIEW",
+    "candidate_reasons": [
+      {
+        "candidate": "H3+ equilateral R=1.00Angstrom RHF/cc-pVDZ",
+        "reason": "Selected: generic three-nucleus charged singlet,2electrons/15AOs, inexpensive; tests charge/electron bookkeeping and vector-force semantics without dedicated molecule code."
+      },
+      {
+        "candidate": "H2O RHF/cc-pVDZ",
+        "reason": "Eligible3nuclei10electrons24AOs but larger mean-field problem; offers less additional contract discrimination per resource than the selected charged3-center case."
+      },
+      {
+        "candidate": "FCC Ne periodic RKS/PBE",
+        "reason": "Eligible and potentially valuable to test distinct periodic energy-only semantics; not selected as first because molecular vector forces expose a richer initial result for an actual subsequent choice. Not precommitted as second."
+      },
+      {
+        "candidate": "STOP",
+        "reason": "Always lawful if admission fails or the first observation shows no justified additional experiment."
+      }
+    ],
+    "falsifier": "Nonconvergence, native/resource failure, nonfinite/wrong-shape forces, force sum beyond1e-5 Eh/bohr, invalid source/model/input binding; preserve and STOP, never retry. Symmetry discrepancies are numerical/model diagnostics, not new physics.",
+    "information_goal": "Determine the actual available force response in a generic AI-constructed charged3-center object, and whether another same-object question or a distinct periodic energy-only observation is worth the remaining single slot.",
+    "prediction": "For this planar C3-symmetric singlet H3+ RHF/cc-pVDZ input, a converged finite total BO energy and3x3 analytic force array are expected. Force sum should be within1e-5 Eh/bohr; equivalent nuclei should have symmetry-related in-plane forces. The radial force sign and energy are deliberately unknown before calculation.",
+    "prior_observation_hash": null,
+    "source_state_hash": "60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5",
+    "world_spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point",
+        "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              -0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.0,
+              0.5773502691896257,
+              0.0
+            ]
+          }
+        ],
+        "charge": 1,
+        "periodic": false,
+        "spin_2S": 0,
+        "type": "molecule"
+      },
+      "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf",
+        "method": "RHF",
+        "observables": [
+          "energy",
+          "forces"
+        ]
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    }
+  },
+  "resource_limits": {
+    "CPU": 1,
+    "extra_swap": 0,
+    "max_jobs": 2,
+    "memory_bytes": 1073741824,
+    "network": "none",
+    "no_retry": true,
+    "per_job_wall_seconds": 900,
+    "purchases": 0,
+    "threads": 1,
+    "worker_wall_seconds": 600
+  },
+  "route": {
+    "AO_upper": 15,
+    "domain": "molecular",
+    "method": "RHF",
+    "observables": [
+      "energy",
+      "forces"
+    ],
+    "worker": "qw_next/native_worker.py"
+  },
+  "source_model_hash": "b59b9eef1aedd0e060b32e87c85fc518974a048da49f41105498db94a28d30c4",
+  "source_raw_hash": "704beffc406adc237f3558304562f4370bcd2572a29cafffd6e6f43438b92ceb",
+  "status": "INTENT_FROZEN_NOT_EXECUTED"
+}

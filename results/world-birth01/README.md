@@ -1,11 +1,49 @@
-# WB-E01 execution status
+# WB-E01 实际执行回执 / B-Chat 审议包
 
-The approved code and first AI-selected input are published on qw-world-birth01. The first object is an equilateral H3+ cation at1.00Angstrom, singlet RHF/cc-pVDZ, generic mature molecular worker,2electrons and15AOs. Forecast and alternatives were frozen before any E01 physical observation.
+**执行完成；世界验收建议 PARTIAL；已 STOP。** 两个真实电子结构计算完成，并实际发生了读回→AI选择不同对象/模型→再次求解。完整统一世界资格不自动通过。
 
-No physical result exists. The manual workflow GET and one dispatch POST returned404, and a readback showed0runs on this branch. The workflow is absent on default main. GitHub requires default-branch workflow registration before workflow_dispatch; see [official documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch).
+## 实际结果
 
-Only writes to qw-world-birth01 were approved. No main write, default-branch change, old experimental workflow substitution or purchase was performed. A separate one-file main registration permission is needed; existing compute authorization is preserved and is not being requested again.
+|阶段|对象与模型|真实总能量|SCF|Job/原生进程墙钟|
+|---|---|---|---|---|
+|1|等边H₃⁺，边长1.00Å；RHF/cc-pVDZ，2电子/15AO|−1.2849928193828906 Eh|收敛|33s /1.068120081s|
+|2|FCC Ne原胞，常规参数4.48Å；Gamma RKS/PBE/cc-pVDZ，10电子/14AO|−128.7524560633064 Eh/原胞|收敛|26s /0.766644774s|
 
-Incremental-fee admission: repository public; standardubuntu-24.04; no larger/self-hosted Runner; no artifact/cache/Packages upload, ordinary logs only. See [GitHub billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions). This does not assert the account has no pre-existing charges. Actual scientific cgroup/network/version admission remains unexecuted.
+两种能量的组成、边界和参考不同，**不相减、不排序**。H₃⁺每核径向力约−0.04474466975 Eh/bohr，指向中心；合力最大分量8.33×10⁻¹⁶ Eh/bohr，切向残差约1.28×10⁻¹⁶，支持本次输入的内部对称性检查。不能由此确定平衡键长、有限步长能量下降、寿命或材料稳定性。Ne只返回周期能量，力/应力未实现；基组、积分网格、k点及PBE材料精度未认证。
 
-0scientific Jobs,0SCF calls,0reruns,0new purchases. No numeric data or success verdict fabricated. Frozen first choice remains intact. No second action selected without an actual observation.
+## 真实反馈与动作
+
+第一轮由Work AI在通用候选域选H₃⁺，预测/反证先于首轮结果冻结。原有H₂状态只作会话上下文，不是H₂变为H₃⁺的反应。
+
+读到真实H₃⁺收敛、向内且对称的力后，AI实际比较了：缩小H₃⁺几何、改测周期对象、STOP。没有重复沿同一分子势能曲线续算；选择Ne4.48Å，理由是它增加边界、近似及energy-only语义的交接信息。第二输入仅在首轮观察读回后才产生，真实父态43c323...与观察digest6fe4a5...被绑定进第二请求。改变对象是研究上下文切换，不是H₃⁺核态变换成Ne。
+
+第二轮读取后明确STOP：两次额度耗尽，且统一内核存在语义缺口；没有第三次、重跑或改参数救结果。
+
+## 分层判定
+
+- **真实模型求解：完成。** 既有成熟PySCF及PBC worker、独立子进程和原Store复用；没有对象专用求解器/能量表/经验力场替代。
+- **会话证据连续：通过已执行的字节/哈希检查。** 首轮会话文件在第二轮保留，第二请求绑定实际第一观察；输入、Intent、SCF返回、父/子态、AI选择及STOP可回查。
+- **有界Work-AI反馈：有实际A1候选证据，待B-Chat审议。** 不是脚本预设第二参数，不代表A2/A3或完全自主科学家。
+- **完整World Birth：PARTIAL。** 通用`observe`把真实NEW_SCIENTIFIC_EXECUTION仍错标STRUCTURE_ONLY_NOT_CALCULATED；通用`compare`把新实算来源误归为synthetic。原生数据/有权限broker返回保持CALCULATED_MODEL_ONLY，但统一普通入口不能完整消费它们。
+- **物理比较保护：有正面证据。** Scoped broker对分子/周期跨组成能量比较返回INCOMPARABLE；Ne force请求返回FORCE_NOT_AVAILABLE，没有输出排名或伪造受力。
+- **W2/独立物理验证：未通过。** 同PySCF家族、不同对象/近似不能互相认证。
+- **原创发现、现实材料及M1能源突破：未证明。** 本轮是成熟理论内的真实计算与世界互操作试验。
+
+接口缺陷在首轮已记录，没有修冻结代码或掩盖问题。第二次仍有独立PBC路由/交接信息价值，因此在已知claim ceiling下执行；不是为修该缺陷自动追加第三笔资源。建议以后仅离线修正新来源的观察/比较映射，复用这两次真实数据回放；不因软件字段问题重跑物理，本轮不实施该后续建议。
+
+## 真实资源和费用边界
+
+两次run_attempt均1、各1个标准Ubuntu Job，顺序执行，分别33s及26s，小于各15分钟。Docker及容器内实际证据均为1CPU配额/1CPU affinity、1GiB硬限、0额外swap、lo-only禁网、数值线程配置1，无OOM计数增加。内存峰值和累计CPU未记录，不能由44MB的准入瞬时值或墙钟推算。
+
+CPython3.12.15（实际镜像ENV）、NumPy2.2.6、SciPy1.15.3、jsonschema4.25.1、ASE3.29.0、PySCF2.8.0；原始安装/阶段日志保留。Mac仅轻量只读核查及数据处理，未在Mac/Hetzner运行SCF。
+
+仓库公开，使用已核实免费标准Runner和普通日志导出，无artifact/cache/Packages上传、无新增购买；不声明账户原有总账单为0。
+
+## 运行与版本
+
+- [H₃⁺实际运行](https://github.com/flyoung588/narque-qw-foundation02/actions/runs/40077782322)：source146df173e1c5868bf19537514358f3725feaeb06。
+- [Ne实际运行](https://github.com/flyoung588/narque-qw-foundation02/actions/runs/40078681406)：source3d35b2dec0e004f1ac4f8d3867231e8cf9269238。
+- main仅新增获批禁用手动登记文件，commit57902f57ac13711398d52691237f73b9efcfb82d；科学代码仍在qw-world-birth01。
+- 两轮恢复30及73个日志导出文件，全部原始SHA匹配。冻结执行源码716文件及682个历史基准文件未变；不倒写旧科学裁决/Canonical。
+
+**已停止。** 请B-Chat分别审议真实模型结果、有界A1轨迹及PARTIAL世界语义验收。中央同步另列，不以OUTBOX或ACK替代科学审议或新增权限。

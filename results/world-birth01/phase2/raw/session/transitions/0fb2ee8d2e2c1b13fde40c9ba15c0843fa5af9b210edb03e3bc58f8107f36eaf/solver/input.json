@@ -1,0 +1,50 @@
+{
+  "epistemic_mode": "GROUNDED",
+  "experiment": {
+    "action": "single_point",
+    "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+  },
+  "matter": {
+    "atoms": [
+      {
+        "element": "H",
+        "xyz_angstrom": [
+          -0.5,
+          -0.28867513459481287,
+          0.0
+        ]
+      },
+      {
+        "element": "H",
+        "xyz_angstrom": [
+          0.5,
+          -0.28867513459481287,
+          0.0
+        ]
+      },
+      {
+        "element": "H",
+        "xyz_angstrom": [
+          0.0,
+          0.5773502691896257,
+          0.0
+        ]
+      }
+    ],
+    "charge": 1,
+    "periodic": false,
+    "spin_2S": 0,
+    "type": "molecule"
+  },
+  "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+  "physics": {
+    "basis": "cc-pvdz",
+    "engine": "pyscf",
+    "method": "RHF",
+    "observables": [
+      "energy",
+      "forces"
+    ]
+  },
+  "version": "QW-WORLDSPEC-0.1"
+}

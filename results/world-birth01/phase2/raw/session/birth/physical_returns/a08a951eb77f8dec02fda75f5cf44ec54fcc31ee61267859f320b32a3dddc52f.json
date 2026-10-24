@@ -1,0 +1,145 @@
+{
+  "W2": "INCOMPLETE",
+  "created_utc": "2026-10-24T08:36:39.179644+00:00",
+  "intent": "a08a951eb77f8dec02fda75f5cf44ec54fcc31ee61267859f320b32a3dddc52f",
+  "new_physical_execution": true,
+  "parent_context_hash": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
+  "schema": "WB_E01_PHYSICAL_RETURN_01",
+  "source_model": {
+    "basis": "cc-pvdz",
+    "engine": "pyscf-pbc",
+    "method": "RKS",
+    "observables": [
+      "energy"
+    ],
+    "xc": "PBE"
+  },
+  "source_state_hash": "d83908cf6558cbfe48787c84fc8ed3cbbcb3578ae44dea375914427177549694",
+  "status": "SIMULATION_OBSERVATION_MODEL_ONLY",
+  "transition": {
+    "action": {
+      "observables": [
+        "energy"
+      ],
+      "source_state_sha256": "c48f1df76e13f730ac8beaabc1e6fd783a267a72283717f5be249bcd15c2adfd",
+      "type": "MEASURE_OBSERVABLE"
+    },
+    "action_sha256": "8606de835b07731d73001f7b1fd796153f5c4b5ce41e2adf568b1863e3b4136a",
+    "candidate_state_sha256": "08274588126cd0681af96734b8df36bbe105d49aa75a515a0f3d09ad64132322",
+    "candidate_structure_sha256": "1e8468b4648109dc4dc2b8ce55cb841481d9d4e214f336f364b2d61015dc3fc3",
+    "created_utc": "2026-10-24T08:36:38.409096+00:00",
+    "model": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf-pbc",
+      "method": "RKS",
+      "observables": [
+        "energy"
+      ],
+      "xc": "PBE"
+    },
+    "new_state_sha256": "d83908cf6558cbfe48787c84fc8ed3cbbcb3578ae44dea375914427177549694",
+    "physical_transition": "CALCULATED_MODEL_ONLY",
+    "resource_evidence": "solver/process_receipt.json; /out/admission.json; /out/resources.json",
+    "result_sha256": "85de410f88cdb246c520994e8a559431c03fce12150a18110e910eaf99b6e2aa",
+    "scope": "Static finite-basis BO calculation; no dynamics/stability/novelty qualification",
+    "semantic_action": "APPLIED",
+    "source_state_sha256": "c48f1df76e13f730ac8beaabc1e6fd783a267a72283717f5be249bcd15c2adfd",
+    "status": "CALCULATED",
+    "synthetic": false
+  },
+  "units": "Original worker units retained",
+  "values": {
+    "observation": {
+      "AO_count": 14,
+      "ASE_Atoms_constructed": true,
+      "ASE_version": "3.29.0",
+      "SCF_converged": true,
+      "basis": "cc-pvdz all-electron",
+      "basis_kmesh_grid_convergence": "NOT_TESTED",
+      "cell_precision": 1e-06,
+      "construction": {
+        "all_electron_count": 10,
+        "cell_volume_A3": 22.478848000000006,
+        "geometry_collision_check": "required actual ASE neighbor check at construction, not yet performed by stdlib validation",
+        "pbc": [
+          true,
+          true,
+          true
+        ]
+      },
+      "density_fitting": "GDF weigend auxiliary basis",
+      "energy_Eh_per_cell": -128.7524560633064,
+      "energy_unit": "Eh/cell",
+      "energy_zero": "neutral3D periodic all-electron BO/PBE total per primitive input cell with Ewald convention; NOT molecular HF absolute reference",
+      "engine": "PySCF-PBC",
+      "engine_version": "2.8.0",
+      "forces": null,
+      "forces_status": "NOT_IMPLEMENTED",
+      "integration": "Becke level1, NOT convergence certified",
+      "kmesh": [
+        1,
+        1,
+        1
+      ],
+      "method": "Gamma-only RKS/PBE",
+      "physical_precision": "NOT_CERTIFIED",
+      "scope": "periodic scalar ground-state density/energy only, not atomistic dynamics or full many-body wavefunction",
+      "stress_status": "NOT_IMPLEMENTED"
+    },
+    "spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point",
+        "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "Ne",
+            "xyz_angstrom": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "cell_angstrom": [
+          [
+            0,
+            2.24,
+            2.24
+          ],
+          [
+            2.24,
+            0,
+            2.24
+          ],
+          [
+            2.24,
+            2.24,
+            0
+          ]
+        ],
+        "charge": 0,
+        "periodic": true,
+        "spin_2S": 0,
+        "type": "periodic_cell"
+      },
+      "object_id": "QW_WBE01_AI_NE_FCC_A448",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf-pbc",
+        "method": "RKS",
+        "observables": [
+          "energy"
+        ],
+        "xc": "PBE"
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    },
+    "status": "CALCULATED",
+    "wall_seconds": 0.594701864000001,
+    "world_spec_sha256": "b31eea975aa583441475f6d4b8cdb1f588f42bc9b53d1bd40ea87a985b372f97"
+  },
+  "world_spec_hash": "b31eea975aa583441475f6d4b8cdb1f588f42bc9b53d1bd40ea87a985b372f97"
+}

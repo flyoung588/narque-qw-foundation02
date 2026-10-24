@@ -1,13 +1,32 @@
 {
-  "status": "FIRST_PHYSICAL_RETURN_READ_SECOND_ACTION_FROZEN",
-  "first_run": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/40077782322",
-  "first_state": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
-  "H3plus_RHF_energy_Eh": -1.2849928193828906,
-  "first_SCF_converged": true,
-  "next": "AI-selected FCC Ne,a4.48Angstrom,GammaRKS/PBE/cc-pVDZ,energyonly",
-  "actual_new_jobs_so_far": 1,
-  "second_dispatched": false,
-  "known_integration_limitation": "Core observe mislabels NEW_SCIENTIFIC_EXECUTION as STRUCTURE_ONLY_NOT_CALCULATED; scoped broker preserves CALCULATED_MODEL_ONLY return. No unqualified world acceptance.",
-  "new_purchases": 0,
-  "automatic_retry": false
+  "status": "STOPPED_AFTER_TWO_REAL_MODEL_RUNS",
+  "world_birth": "PARTIAL_PENDING_BCHAT",
+  "jobs": 2,
+  "run_attempts": [
+    1,
+    1
+  ],
+  "results": [
+    {
+      "object": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+      "energy": -1.2849928193828906,
+      "unit": "Eh",
+      "run": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/40077782322"
+    },
+    {
+      "object": "QW_WBE01_AI_NE_FCC_A448",
+      "energy": -128.7524560633064,
+      "unit": "Eh/cell",
+      "run": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/40078681406"
+    }
+  ],
+  "no_cross_composition_energy_ranking": true,
+  "integration_issues": [
+    "NEW_SCIENTIFIC_EXECUTION state is incorrectly labeled STRUCTURE_ONLY_NOT_CALCULATED by generic observe",
+    "Generic compare treats nonhistorical real calculated provenance as synthetic, although scoped broker correctly rejects the physical comparison as INCOMPARABLE"
+  ],
+  "A2": "NOT_PROVEN",
+  "W2": "INCOMPLETE",
+  "original_discovery": "NOT_PROVEN",
+  "no_more_computation_authorized_in_this_tranche": true
 }

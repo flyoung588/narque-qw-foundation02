@@ -1,0 +1,62 @@
+{
+  "status": "PARTIAL",
+  "numeric_model_checks": "Both SCFs converged; molecular symmetry checks pass; no independent precision certification",
+  "actual_hash_and_binding_checks": "PASS",
+  "same_session_continuity": "All first session files except aggregate SHA manifest preserved byte-for-byte in second session; real observation hash bound into second AI input",
+  "changed_first_session_files": [],
+  "intent_count_in_final_session": 2,
+  "native_route_changes": "Molecular RHF to periodic RKS/PBE via existing workers; context change only, not physical transmutation",
+  "illegal_periodic_force_request": {
+    "schema": "QW_SESSION_RECEIPT_01",
+    "operation": "observe",
+    "status": "REJECTED",
+    "reason_code": "FORCE_NOT_AVAILABLE",
+    "source_state_hash": "d83908cf6558cbfe48787c84fc8ed3cbbcb3578ae44dea375914427177549694",
+    "time_utc": "2026-10-24T08:44:59.061095+00:00",
+    "new_scientific_execution": false,
+    "detail": "",
+    "receipt_sha256": "14e748c2f03a7a998af57d9e4816edf836c0951b2d0c7c5227597e4bf83cf238"
+  },
+  "illegal_cross_domain_broker_comparison": {
+    "schema": "QW_SESSION_RECEIPT_01",
+    "operation": "cross_domain_physical_compare",
+    "status": "REJECTED",
+    "reason_code": "INCOMPARABLE",
+    "source_state_hash": "43c3236655007b39a8b006e3bb6348a9002e243859c340b2fb77230c82df7865",
+    "time_utc": "2026-10-24T08:44:59.063097+00:00",
+    "new_scientific_execution": false,
+    "detail": "Boundary/charge/spin mismatch",
+    "receipt_sha256": "632e970c48bc1721611885b3fbffeed49a88a74756bbc3e23c949b103ec51e33"
+  },
+  "generic_core_compare": {
+    "schema": "QW_SESSION_RECEIPT_01",
+    "operation": "compare",
+    "status": "REJECTED",
+    "reason_code": "SYNTHETIC_MISLABEL_BLOCKED",
+    "source_state_hash": null,
+    "time_utc": "2026-10-24T08:44:59.064083+00:00",
+    "new_scientific_execution": false,
+    "detail": "",
+    "receipt_sha256": "dd2f5227436dc83acec8e0ad90592ccd8337e0c8cecf6505698d9523164bc440"
+  },
+  "core_observe_statuses": {
+    "H3plus": {
+      "envelope_status": "STRUCTURE_ONLY_NOT_CALCULATED",
+      "original_status": "CALCULATED"
+    },
+    "Ne": {
+      "envelope_status": "STRUCTURE_ONLY_NOT_CALCULATED",
+      "original_status": "CALCULATED"
+    }
+  },
+  "integration_failures": [
+    "NEW_SCIENTIFIC_EXECUTION state is incorrectly labeled STRUCTURE_ONLY_NOT_CALCULATED by generic observe",
+    "Generic compare treats nonhistorical real calculated provenance as synthetic, although scoped broker correctly rejects the physical comparison as INCOMPARABLE"
+  ],
+  "scope": "Readonly arithmetic/contract checks on recovered actual data, no new quantum solves or code repair",
+  "new_scientific_qualification": "NONE; partial new bounded-interoperability evidence only",
+  "A1": "ACTUAL_WORK_AI_FEEDBACK_TRACE_PRESENT_PENDING_BCHAT",
+  "A2": "NOT_PROVEN",
+  "W2": "INCOMPLETE",
+  "original_discovery": "NOT_PROVEN"
+}

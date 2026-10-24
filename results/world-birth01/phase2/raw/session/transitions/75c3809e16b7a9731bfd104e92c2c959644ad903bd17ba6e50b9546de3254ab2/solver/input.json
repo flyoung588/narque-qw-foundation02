@@ -1,0 +1,51 @@
+{
+  "epistemic_mode": "GROUNDED",
+  "experiment": {
+    "action": "single_point",
+    "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
+  },
+  "matter": {
+    "atoms": [
+      {
+        "element": "Ne",
+        "xyz_angstrom": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "cell_angstrom": [
+      [
+        0,
+        2.24,
+        2.24
+      ],
+      [
+        2.24,
+        0,
+        2.24
+      ],
+      [
+        2.24,
+        2.24,
+        0
+      ]
+    ],
+    "charge": 0,
+    "periodic": true,
+    "spin_2S": 0,
+    "type": "periodic_cell"
+  },
+  "object_id": "QW_WBE01_AI_NE_FCC_A448",
+  "physics": {
+    "basis": "cc-pvdz",
+    "engine": "pyscf-pbc",
+    "method": "RKS",
+    "observables": [
+      "energy"
+    ],
+    "xc": "PBE"
+  },
+  "version": "QW-WORLDSPEC-0.1"
+}

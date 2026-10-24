@@ -1,0 +1,11 @@
+{
+  "Python": "3.12.15 from actual Docker image Config.Env",
+  "NumPy": "2.2.6",
+  "SciPy": "1.15.3",
+  "jsonschema": "4.25.1",
+  "ASE": "3.29.0",
+  "PySCF": "2.8.0",
+  "version_evidence": "Actual two Docker install-success logs; worker observation directly records PySCF2.8.0 and PBC ASE3.29.0",
+  "method_precision": "NOT_CERTIFIED",
+  "transitive_dependencies": "Full install lines retained in raw logs; not an independently audited all-dependency wheel-hash lock"
+}

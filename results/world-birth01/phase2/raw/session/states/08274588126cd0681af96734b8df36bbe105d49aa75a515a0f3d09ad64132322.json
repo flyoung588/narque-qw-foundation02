@@ -1,0 +1,81 @@
+{
+  "payload": {
+    "atom_ids": [
+      "atom-0"
+    ],
+    "interpretation": "SEPARATE_AI_DECISION_ONLY",
+    "numerical_quality": null,
+    "observation": null,
+    "parent_state_id": "c48f1df76e13f730ac8beaabc1e6fd783a267a72283717f5be249bcd15c2adfd",
+    "reason": "ACTION_SEMANTICS_APPLIED",
+    "schema": "QW_PHYSICAL_STATE_01",
+    "state_kind": "STATIC_BO_STRUCTURE_AND_OPTIONAL_SCF_OBSERVATION_NOT_TIME_WAVEFUNCTION",
+    "structure_sha256": "1e8468b4648109dc4dc2b8ce55cb841481d9d4e214f336f364b2d61015dc3fc3",
+    "supported_operations": {
+      "actions": [
+        "DISPLACE_ATOM",
+        "MEASURE_OBSERVABLE",
+        "AFFINE_STRAIN_CELL"
+      ],
+      "availability": "RUNTIME_CHECK_REQUIRED",
+      "dynamics": "NOT_IMPLEMENTED",
+      "observables": [
+        "energy"
+      ],
+      "response_kind": "ENERGY_ONLY_STRUCTURAL_RESPONSE"
+    },
+    "world_spec": {
+      "epistemic_mode": "GROUNDED",
+      "experiment": {
+        "action": "single_point",
+        "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
+      },
+      "matter": {
+        "atoms": [
+          {
+            "element": "Ne",
+            "xyz_angstrom": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "cell_angstrom": [
+          [
+            0,
+            2.24,
+            2.24
+          ],
+          [
+            2.24,
+            0,
+            2.24
+          ],
+          [
+            2.24,
+            2.24,
+            0
+          ]
+        ],
+        "charge": 0,
+        "periodic": true,
+        "spin_2S": 0,
+        "type": "periodic_cell"
+      },
+      "object_id": "QW_WBE01_AI_NE_FCC_A448",
+      "physics": {
+        "basis": "cc-pvdz",
+        "engine": "pyscf-pbc",
+        "method": "RKS",
+        "observables": [
+          "energy"
+        ],
+        "xc": "PBE"
+      },
+      "version": "QW-WORLDSPEC-0.1"
+    }
+  },
+  "sha256": "08274588126cd0681af96734b8df36bbe105d49aa75a515a0f3d09ad64132322",
+  "state_id": "08274588126cd0681af96734b8df36bbe105d49aa75a515a0f3d09ad64132322"
+}

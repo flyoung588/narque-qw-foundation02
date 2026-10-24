@@ -1,0 +1,17 @@
+{
+  "autonomy_target": "A1_WORK_AI_NOT_A2",
+  "limits": {
+    "CPU": 1,
+    "extra_swap": 0,
+    "max_jobs": 2,
+    "memory_bytes": 1073741824,
+    "network": "none",
+    "no_retry": true,
+    "per_job_wall_seconds": 900,
+    "purchases": 0,
+    "threads": 1,
+    "worker_wall_seconds": 600
+  },
+  "model_policy": "No preprogrammed second action",
+  "science_execution": "REQUIRES_MATCHING_HUMAN_APPROVAL_ARTIFACT"
+}

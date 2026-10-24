@@ -1,0 +1,152 @@
+{
+  "spec": {
+    "epistemic_mode": "GROUNDED",
+    "experiment": {
+      "action": "single_point",
+      "description": "Observation-conditioned choice of a distinct periodic energy-only domain; not a physical H3+ to Ne transformation"
+    },
+    "matter": {
+      "atoms": [
+        {
+          "element": "Ne",
+          "xyz_angstrom": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "cell_angstrom": [
+        [
+          0,
+          2.24,
+          2.24
+        ],
+        [
+          2.24,
+          0,
+          2.24
+        ],
+        [
+          2.24,
+          2.24,
+          0
+        ]
+      ],
+      "charge": 0,
+      "periodic": true,
+      "spin_2S": 0,
+      "type": "periodic_cell"
+    },
+    "object_id": "QW_WBE01_AI_NE_FCC_A448",
+    "physics": {
+      "basis": "cc-pvdz",
+      "engine": "pyscf-pbc",
+      "method": "RKS",
+      "observables": [
+        "energy"
+      ],
+      "xc": "PBE"
+    },
+    "version": "QW-WORLDSPEC-0.1"
+  },
+  "ASE": {
+    "symbols": [
+      "Ne"
+    ],
+    "positions_A": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "cell_A": [
+      [
+        0.0,
+        2.24,
+        2.24
+      ],
+      [
+        2.24,
+        0.0,
+        2.24
+      ],
+      [
+        2.24,
+        2.24,
+        0.0
+      ]
+    ],
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "volume_A3": 22.478848000000003,
+    "nearest_neighbor": [
+      {
+        "atom": 0,
+        "distance_A": 3.1678383797157332,
+        "count": 12
+      }
+    ]
+  },
+  "PySCF_Cell": {
+    "input_a": [
+      [
+        0.0,
+        2.24,
+        2.24
+      ],
+      [
+        2.24,
+        0.0,
+        2.24
+      ],
+      [
+        2.24,
+        2.24,
+        0.0
+      ]
+    ],
+    "input_unit": "Angstrom",
+    "lattice_vectors_Bohr": [
+      [
+        0.0,
+        4.232986519025739,
+        4.232986519025739
+      ],
+      [
+        4.232986519025739,
+        0.0,
+        4.232986519025739
+      ],
+      [
+        4.232986519025739,
+        4.232986519025739,
+        0.0
+      ]
+    ],
+    "atom_coords_Bohr": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "volume_Bohr3": 151.69478534265892,
+    "nelectron": 10,
+    "spin": 0,
+    "dimension": 3,
+    "AO_count": 14,
+    "default_mesh_not_allocated": [
+      2211,
+      2211,
+      2211
+    ],
+    "precision": 1e-06,
+    "max_memory_MB_advisory": 400
+  },
+  "unit_checks": "PASS; original/ASE Angstrom vs actual PySCF Bohr explicitly converted"
+}
