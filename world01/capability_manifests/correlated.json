@@ -1,0 +1,50 @@
+{
+  "schema": "QW_CAPABILITY_MANIFEST_01",
+  "id": "correlated",
+  "domain": "Neutral singlet 2/4/6H STO-3G <=400 determinants; real-run evidence H4 only",
+  "representation": "FCI alpha/beta determinant tensor,1/2RDM",
+  "Hamiltonian_approximation": "Fixed-nuclei finite-basis singlet full Coulomb FCI, RHF reference separately labeled",
+  "supported_operations": [
+    "DISPLACE_ATOM",
+    "OBSERVE_CORRELATIONS"
+  ],
+  "supported_observables": [
+    "energy",
+    "natural_occupations",
+    "double_occupancy",
+    "spin_correlations",
+    "charge_covariance"
+  ],
+  "unavailable_observables": [
+    "forces",
+    "material_magnetism",
+    "real_time_dynamics"
+  ],
+  "units_reference": "Eh total BO; spin hbar^2; occupation dimensionless; Lowdin convention",
+  "numerical_quality_requirements": "Retain original convergence flags/residuals/actual settings; no inherited material accuracy",
+  "dependencies": {
+    "cloud": "Python3.12/NumPy2.2.6/SciPy1.15.3/PySCF2.8.0/ASE3.29.0; effective domain additionally QuTiP5.2.1",
+    "local_engine_availability": "UNKNOWN_NOT_REQUIRED_FOR_E00"
+  },
+  "evidence_level": "HISTORICAL_REAL_EXECUTION_WITH_BOUNDED_SCOPE",
+  "evidence": "results/frontier01/EXECUTION_REPORT.json",
+  "physical_qualification": "MODEL_ONLY_NOT_MATERIAL_CERTIFIED",
+  "independent_validation": "W2_INCOMPLETE; same PySCF family not independent",
+  "resource_envelope": {
+    "science_CPU": 1,
+    "threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "network": "none",
+    "job_minutes_max": 15,
+    "current_E00_science_jobs": 0,
+    "new_cost": 0
+  },
+  "model_limitations": [
+    "Lowdin partition nonunique",
+    "Static eigenstate not time dynamics",
+    "No basis/UHF/material certification"
+  ],
+  "existing_adapter": "frontier01.world_runtime.act",
+  "schema_is_not_installation_proof": true
+}

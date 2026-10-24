@@ -1,0 +1,52 @@
+{
+  "schema": "QW_CAPABILITY_MANIFEST_01",
+  "id": "effective",
+  "domain": "Declared two-state response-derived electronic model",
+  "representation": "Complex2ket with physical time",
+  "Hamiltonian_approximation": "H(t)=diag(0,gap)-E(t)mu, closed sesolve effective model",
+  "supported_operations": [
+    "APPLY_EXTERNAL_FIELD",
+    "PREPARE_ELECTRONIC_STATE",
+    "EVOLVE_QUANTUM_STATE",
+    "MEASURE_STATE_POPULATION"
+  ],
+  "supported_observables": [
+    "population",
+    "norm",
+    "time",
+    "model"
+  ],
+  "unavailable_observables": [
+    "full_electron_density",
+    "ionization",
+    "bath_rate"
+  ],
+  "units_reference": "Atomic time/field/dipole, relative ground label E0=0; not molecular absolute energy",
+  "numerical_quality_requirements": "Retain original convergence flags/residuals/actual settings; no inherited material accuracy",
+  "dependencies": {
+    "cloud": "Python3.12/NumPy2.2.6/SciPy1.15.3/PySCF2.8.0/ASE3.29.0; effective domain additionally QuTiP5.2.1",
+    "local_engine_availability": "UNKNOWN_NOT_REQUIRED_FOR_E00"
+  },
+  "evidence_level": "HISTORICAL_REAL_EXECUTION_WITH_BOUNDED_SCOPE",
+  "evidence": "results/state_space01/EXECUTION_REPORT.json; state_space01/MODEL_BRIDGE.json",
+  "physical_qualification": "MODEL_ONLY_NOT_MATERIAL_CERTIFIED",
+  "independent_validation": "W2_INCOMPLETE; same PySCF family not independent",
+  "resource_envelope": {
+    "science_CPU": 1,
+    "threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "network": "none",
+    "job_minutes_max": 15,
+    "current_E00_science_jobs": 0,
+    "new_cost": 0
+  },
+  "model_limitations": [
+    "Two-state truncation",
+    "TDA labels not exact eigenstates",
+    "No continuum/nuclei/bath",
+    "Root phase and length gauge retained"
+  ],
+  "existing_adapter": "state_space01.world_runtime.act",
+  "schema_is_not_installation_proof": true
+}

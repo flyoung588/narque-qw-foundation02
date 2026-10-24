@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "id",
+    "domain",
+    "representation",
+    "Hamiltonian_approximation",
+    "supported_operations",
+    "supported_observables",
+    "unavailable_observables",
+    "units_reference",
+    "evidence",
+    "physical_qualification",
+    "independent_validation",
+    "resource_envelope",
+    "model_limitations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "QW_CAPABILITY_MANIFEST_01"
+    },
+    "supported_operations": {
+      "type": "array",
+      "minItems": 1
+    },
+    "supported_observables": {
+      "type": "array",
+      "minItems": 1
+    },
+    "resource_envelope": {
+      "type": "object",
+      "properties": {
+        "current_E00_science_jobs": {
+          "const": 0
+        }
+      }
+    }
+  }
+}

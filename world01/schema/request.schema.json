@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "action",
+    "source_state_hash",
+    "parameters",
+    "mode",
+    "budget_id"
+  ],
+  "properties": {
+    "action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_state_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "mode": {
+      "const": "OFFLINE"
+    },
+    "budget_id": {
+      "const": "E00_ZERO_NEW_SCIENCE"
+    }
+  }
+}

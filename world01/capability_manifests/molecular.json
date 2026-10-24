@@ -1,0 +1,47 @@
+{
+  "schema": "QW_CAPABILITY_MANIFEST_01",
+  "id": "molecular",
+  "domain": "Nonperiodic H..Ne <=8atoms <=30electrons, RHF/UHF STO-3G/cc-pVDZ",
+  "representation": "Geometry plus SCF observation",
+  "Hamiltonian_approximation": "Fixed-nuclei nonrelativistic Coulomb mean field",
+  "supported_operations": [
+    "DISPLACE_ATOM",
+    "MEASURE_OBSERVABLE"
+  ],
+  "supported_observables": [
+    "energy",
+    "forces"
+  ],
+  "unavailable_observables": [
+    "lifetime",
+    "nuclear_dynamics",
+    "reaction_rate"
+  ],
+  "units_reference": "Molecular total BO energy Eh; forces per original result units",
+  "numerical_quality_requirements": "Retain original convergence flags/residuals/actual settings; no inherited material accuracy",
+  "dependencies": {
+    "cloud": "Python3.12/NumPy2.2.6/SciPy1.15.3/PySCF2.8.0/ASE3.29.0; effective domain additionally QuTiP5.2.1",
+    "local_engine_availability": "UNKNOWN_NOT_REQUIRED_FOR_E00"
+  },
+  "evidence_level": "HISTORICAL_REAL_EXECUTION_WITH_BOUNDED_SCOPE",
+  "evidence": "Existing molecular observations; results/frontier01 RHF reference and W1 historical source",
+  "physical_qualification": "MODEL_ONLY_NOT_MATERIAL_CERTIFIED",
+  "independent_validation": "W2_INCOMPLETE; same PySCF family not independent",
+  "resource_envelope": {
+    "science_CPU": 1,
+    "threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "network": "none",
+    "job_minutes_max": 15,
+    "current_E00_science_jobs": 0,
+    "new_cost": 0
+  },
+  "model_limitations": [
+    "Finite-basis/method error",
+    "No arbitrary matter",
+    "Analytic molecular force only when actually exported"
+  ],
+  "existing_adapter": "state_space01.world_runtime.act",
+  "schema_is_not_installation_proof": true
+}

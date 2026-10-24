@@ -1,0 +1,32 @@
+{
+  "phase": 1,
+  "created_utc": "2026-10-24T08:09:39.815907+00:00",
+  "author": "Current B-Work AI after Human approval, before any E01 physical observation",
+  "approval_received": "2026-10-24 Human message authorizes36files,branchqw-world-birth01,<=2sequential Jobs; no repeats",
+  "candidate_choice": [
+    {
+      "candidate": "H3+ equilateral R=1.00Angstrom RHF/cc-pVDZ",
+      "reason": "Selected: generic three-nucleus charged singlet,2electrons/15AOs, inexpensive; tests charge/electron bookkeeping and vector-force semantics without dedicated molecule code."
+    },
+    {
+      "candidate": "H2O RHF/cc-pVDZ",
+      "reason": "Eligible3nuclei10electrons24AOs but larger mean-field problem; offers less additional contract discrimination per resource than the selected charged3-center case."
+    },
+    {
+      "candidate": "FCC Ne periodic RKS/PBE",
+      "reason": "Eligible and potentially valuable to test distinct periodic energy-only semantics; not selected as first because molecular vector forces expose a richer initial result for an actual subsequent choice. Not precommitted as second."
+    },
+    {
+      "candidate": "STOP",
+      "reason": "Always lawful if admission fails or the first observation shows no justified additional experiment."
+    }
+  ],
+  "selected_spec_sha256": "ab809d7f7b56b54acb903f990d5f9ae34e579a5d8f58c397806ec8766c540a5c",
+  "request_sha256": "54dc6b5407fa57cf0cb4bc0e7703c5ce5dfcdbab5d54e07c66ce69e3e9336f8e",
+  "source_state_hash": "60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5",
+  "source_raw_file_sha256": "704beffc406adc237f3558304562f4370bcd2572a29cafffd6e6f43438b92ceb",
+  "source_usage": "HistoricalH2 reference is Session context only; CHANGE_OBJECT is not an H2->H3+ physical reaction or preparation claim.",
+  "model_scope": "Fixed nuclei nonrelativistic BO/RHF finite basis; no free energy, lifetime, material/discovery claim",
+  "knowledge_exposure": "Author has prior project history; not blind and no first-ever novelty claim. No new E01 quantum output read yet.",
+  "future_action": "Not frozen; actual first output must be read and alternatives compared. No optimizer or scripted second geometry."
+}

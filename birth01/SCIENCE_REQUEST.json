@@ -1,0 +1,80 @@
+{
+  "historical_source_file": "results/state_space01/stage1/science/world/states/60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5.json",
+  "operation_request": {
+    "source_state_hash": "60265d9ffe1e8c69352ab71b59b6e867f8f9b05c9d7e6d9a5cbba928a1e1faf5",
+    "world_spec": {
+      "version": "QW-WORLDSPEC-0.1",
+      "object_id": "QW_WBE01_AI_H3PLUS_TRIANGLE_R100",
+      "epistemic_mode": "GROUNDED",
+      "matter": {
+        "type": "molecule",
+        "periodic": false,
+        "charge": 1,
+        "spin_2S": 0,
+        "atoms": [
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              -0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.5,
+              -0.28867513459481287,
+              0.0
+            ]
+          },
+          {
+            "element": "H",
+            "xyz_angstrom": [
+              0.0,
+              0.5773502691896257,
+              0.0
+            ]
+          }
+        ]
+      },
+      "physics": {
+        "engine": "pyscf",
+        "method": "RHF",
+        "basis": "cc-pvdz",
+        "observables": [
+          "energy",
+          "forces"
+        ]
+      },
+      "experiment": {
+        "action": "single_point",
+        "description": "AI-selected three-center closed-shell cation; generic bounded molecular engine, not dynamics"
+      }
+    },
+    "action": "CHANGE_OBJECT",
+    "prediction": "For this planar C3-symmetric singlet H3+ RHF/cc-pVDZ input, a converged finite total BO energy and3x3 analytic force array are expected. Force sum should be within1e-5 Eh/bohr; equivalent nuclei should have symmetry-related in-plane forces. The radial force sign and energy are deliberately unknown before calculation.",
+    "falsifier": "Nonconvergence, native/resource failure, nonfinite/wrong-shape forces, force sum beyond1e-5 Eh/bohr, invalid source/model/input binding; preserve and STOP, never retry. Symmetry discrepancies are numerical/model diagnostics, not new physics.",
+    "information_goal": "Determine the actual available force response in a generic AI-constructed charged3-center object, and whether another same-object question or a distinct periodic energy-only observation is worth the remaining single slot.",
+    "candidate_reasons": [
+      {
+        "candidate": "H3+ equilateral R=1.00Angstrom RHF/cc-pVDZ",
+        "reason": "Selected: generic three-nucleus charged singlet,2electrons/15AOs, inexpensive; tests charge/electron bookkeeping and vector-force semantics without dedicated molecule code."
+      },
+      {
+        "candidate": "H2O RHF/cc-pVDZ",
+        "reason": "Eligible3nuclei10electrons24AOs but larger mean-field problem; offers less additional contract discrimination per resource than the selected charged3-center case."
+      },
+      {
+        "candidate": "FCC Ne periodic RKS/PBE",
+        "reason": "Eligible and potentially valuable to test distinct periodic energy-only semantics; not selected as first because molecular vector forces expose a richer initial result for an actual subsequent choice. Not precommitted as second."
+      },
+      {
+        "candidate": "STOP",
+        "reason": "Always lawful if admission fails or the first observation shows no justified additional experiment."
+      }
+    ],
+    "prior_observation_hash": null,
+    "actor": "B_WORK_AI_DECISION_REQUIRES_TRANSCRIPT_REVIEW"
+  }
+}

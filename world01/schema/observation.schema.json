@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_state_hash",
+    "status",
+    "values",
+    "provenance",
+    "new_physics_run"
+  ],
+  "properties": {
+    "schema": {
+      "const": "QW_OBSERVATION_ENVELOPE_01"
+    },
+    "source_state_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "new_physics_run": {
+      "const": false
+    },
+    "values": {
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "HISTORICAL_OBSERVATION_READ",
+        "SOFTWARE_FIXTURE_ONLY",
+        "STRUCTURE_ONLY_NOT_CALCULATED"
+      ]
+    }
+  }
+}

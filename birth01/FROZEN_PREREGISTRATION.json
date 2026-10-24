@@ -1,0 +1,141 @@
+{
+  "experiment_id": "QW-WB-E01-CROSS-DOMAIN-01",
+  "version": "0.1.0_CANDIDATE_NOT_AUTHORIZED",
+  "created_at_client_timezone": "2026-10-24 Asia/Shanghai",
+  "frozen_parent_commit": "8da0cf05192585039ba51689e6328ec4f49bcc0d",
+  "audit_status": "Original E00 PARTIAL; isolated repaired E00 PASS subject Human review",
+  "main_question": "Can actual Work AI use one persistent Session, select a lawful object/model, receive real engine output, then choose a new legal experiment or STOP?",
+  "scientific_question": "For an AI-selected bounded object, what model-defined energy/force information is available, and what additional measurement is worth the remaining budget? No discovery claim is prespecified.",
+  "baseline": "Three historical StateKinds plus mature molecular/PBC/effective/FCI worker assets; unified API is offline validated, not a proven in-session autonomous scientist.",
+  "route_selected": "A: adaptive cross-object molecular/periodic Session with typed energy/force semantics",
+  "not_a_new_physical_engine": "Mature PySCF mean-field and PBC paths; no custom molecular solver",
+  "object_space": {
+    "molecular": {
+      "elements": "H..Ne",
+      "atoms_max": 3,
+      "electrons_max": 12,
+      "spin_2S": 0,
+      "charge": "existing WorldSpec range, parity validated",
+      "AO_max": 24,
+      "basis": "cc-pvdz",
+      "method": "RHF",
+      "engine": "pyscf",
+      "outputs": [
+        "energy",
+        "analytic_forces"
+      ],
+      "static_screen": "Reuse foundation01 validator; no collision<0.35Angstrom; no new molecular-specific branch"
+    },
+    "periodic": {
+      "object": "One-atom neutral FCC Ne primitive cell, fixed conventional orientation",
+      "lattice_parameter_A": [
+        4.4,
+        4.52
+      ],
+      "basis": "cc-pvdz",
+      "method": "Gamma-only RKS/PBE",
+      "GDF": "weigend",
+      "Becke_level": 1,
+      "cell_precision": 1e-06,
+      "conv_tol": 1e-08,
+      "SCF_max_cycle": 80,
+      "outputs": [
+        "total_BO_energy_per_primitive_cell"
+      ],
+      "no_force_stress_dynamics": true,
+      "AO_max": 14
+    }
+  },
+  "StateKind": "QW_PHYSICAL_STATE_01 only for both BO branches; two different observable/boundary/model semantics. Do NOT claim two wavefunction types were evolved.",
+  "first_choice": "After a Human domain approval, actual B-Work AI picks object, model and coordinates within envelope; records>=2 candidates incl STOP and reasons, prior information, prediction/falsifier before first run. This candidate does not invent that future decision.",
+  "first_information_goal": "Determine whether typed source->request->native worker->bounded Observation->Session round trip works with real numerical uncertainty, and whether returned quantities change next resource choice.",
+  "predictions_frozen_now": [
+    "Allowed objects must route to the applicable mature worker, without claiming missing observables",
+    "Converged mean-field returns finite energy in declared reference and molecular force vectors only where actually computed",
+    "Cross-domain absolute energy ranking and missing force requests must be rejected"
+  ],
+  "hypothesis_before_first_observation": "The specific AI-selected physical question and any directional/numeric forecast must be frozen in the first request before solver launch; inability to do so is INCOMPLETE, not filled retrospectively.",
+  "second_actions": [
+    "CHANGE_OBJECT within approved same/cross domain envelope, may change molecular geometry by constructing a new WorldSpec",
+    "MEASURE_OBSERVABLE on an unchanged eligible WorldSpec only if a distinct justified information question remains",
+    "STOP",
+    "ABANDON",
+    "SWITCH_MODEL only as a recorded stop/nomination unless within already approved molecular/PBC combinations"
+  ],
+  "second_action_policy": "Not scripted. Requires real phase1 returned Observation hash, read trace, model limits,>=2 competing actions and rationales; no solver failure creates entitlement to second Job.",
+  "translations": {
+    "allowed": [
+      "WorldSpec to mature worker input",
+      "Explicit geometry-only projection with electronic-state information loss",
+      "Same composition/model/reference numerical comparison under explicit contract"
+    ],
+    "forbidden": [
+      "FCI to two-state ket",
+      "cross-composition or cross-PBC/molecule absolute energy ranking",
+      "energy-only response to force/stability/dynamics",
+      "same PySCF family to W2"
+    ]
+  },
+  "numerical_checks": {
+    "molecular": [
+      "SCF converged at inherited1e-10 threshold, max80 cycles",
+      "finite total BO energy and N-by3 analytic forces",
+      "report force sum as translational consistency screen at1e-5 Eh/bohr; screen failure -> UNVERIFIED, no retries",
+      "finite basis and RHF model error remain uncertified"
+    ],
+    "periodic": [
+      "SCF converged at1e-8, max80 cycles",
+      "finite per-cell energy; actual cell/electron/AO/model metadata",
+      "actual GDF/grid settings and unit/energy zero retained; no pure k or basis convergence claim",
+      "No new independent high-accuracy material benchmark this experiment"
+    ],
+    "error_taxonomy": [
+      "numerical solver convergence",
+      "finite basis/grid/k sampling",
+      "mean-field/PBE model omission",
+      "reality/material extrapolation"
+    ],
+    "forbidden_threshold_change": true
+  },
+  "independence": "W2 INCOMPLETE; two PySCF paths are not independent physical engines. No physical accuracy certification from SCF flags.",
+  "autonomy_target": "A1 Work-AI observation-conditioned choice. A2 and A3 remain NOT_PROVEN; a string actor or non-empty transcript path is not proof of AI authorship.",
+  "ai_authorship_test": [
+    "Retain actual model-generated decision transcript and hashes, prior read event, competing candidates, frozen request before dispatch",
+    "Evaluator checks the second decision was generated after actual first Observation and is justified by concrete values/uncertainties",
+    "No hidden optimizer, prewritten second input, human-selected second action or fixture may count as AI exploration",
+    "Software verifies binding and ordering only; semantic/authorship acceptance requires B-Chat/Human trace review"
+  ],
+  "classification": {
+    "PASS": "Both domains actually calculated through one Session; two observable semantics preserved; actual feedback-conditioned second decision/action or scientifically justified STOP; full evidence and trace review accepted. If only one domain calculated, no full cross-domain Birth PASS.",
+    "VALID_STOP": "AI reads a real first result then justified STOP; valid bounded decision evidence but cross-domain World Birth remains INCOMPLETE if second domain never calculated. Not an execution failure by itself.",
+    "PARTIAL": "Valid local observations/feedback but both-domain or trace/uncertainty evidence incomplete",
+    "FAIL": "Unauthorized execution, semantic invalidity, fabricated/rewritten physical evidence, invalid binding, or concealment of fixture/scripted actor",
+    "INCOMPLETE": "Admission blocked, native failure, nonconvergence, timeout/OOM or missing trace; keep all completed results. Failed physical forecast is separate from software/world-capability verdict."
+  },
+  "maximum_budget": {
+    "new_jobs": 2,
+    "SCF_max": 2,
+    "per_job_seconds": 900,
+    "total_job_seconds": 1800,
+    "CPU": 1,
+    "numerical_threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "science_network": "none",
+    "new_purchase": 0,
+    "automatic_retry": false
+  },
+  "resource_precheck": "Static molecular AO/ERI scale and prior Ne runtime only support plausibility. Actual Docker/cgroup/network/versions and current public-standard-free conditions remain launch admission.",
+  "failure_policy": "Persist intent/parent/solver logs/partial return; stop after any native/scientific failure. No timeout/OOM/SIGSEGV auto rerun or changing thresholds.",
+  "engineering_fix_scope": "Before scientific authorization: isolated software/schema/host fixes with QA and new frozen source hash. After attempt consumed: evidence collection/reporting only; another scientific try needs separate decision and is not granted here.",
+  "human_gate": [
+    "Accept/reject repaired E00 audit separately from original frozen PASS",
+    "Approve publication source manifest and dynamic non-sensitive requests/results on proposed independent branch",
+    "Approve domain envelope and up to2 sequential public standard Ubuntu Jobs with above exact limits",
+    "Authorize actual Work AI to choose within envelope and choose STOP; do not preselect second coordinates",
+    "Require runtime/free-cost check and stop if not proved"
+  ],
+  "external_authority": "NOT_AUTHORIZED",
+  "central_sync": "No central ACK inferred; reporting status recorded separately",
+  "stop_after": "This preparation stops at Human Review. A future authorized experiment stops after<=2 attempts; no next Foundation/Core/mission change."
+}

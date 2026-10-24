@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "operation",
+    "status",
+    "reason_code",
+    "time_utc",
+    "new_scientific_execution"
+  ],
+  "properties": {
+    "schema": {
+      "const": "QW_SESSION_RECEIPT_01"
+    },
+    "operation": {
+      "type": "string"
+    },
+    "reason_code": {
+      "type": "string",
+      "minLength": 1
+    },
+    "new_scientific_execution": {
+      "const": false
+    }
+  }
+}

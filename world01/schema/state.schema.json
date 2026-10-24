@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "state_kind",
+    "source_state_hash",
+    "model_hash",
+    "representation",
+    "units",
+    "provenance",
+    "actual_model",
+    "qualification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "QW_SCIENTIFIC_STATE_ENVELOPE_01"
+    },
+    "source_state_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "model_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "state_kind": {
+      "enum": [
+        "QW_PHYSICAL_STATE_01",
+        "QW_EFFECTIVE_QUANTUM_STATE_01",
+        "QW_CORRELATED_ELECTRONIC_STATE_01"
+      ]
+    },
+    "units": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "qualification": {
+      "type": "object",
+      "properties": {
+        "new_physical_execution": {
+          "const": false
+        }
+      }
+    }
+  }
+}

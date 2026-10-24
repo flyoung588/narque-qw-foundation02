@@ -1,0 +1,48 @@
+{
+  "schema": "QW_CAPABILITY_MANIFEST_01",
+  "id": "periodic",
+  "domain": "Neutral closed-shell <=4atoms <=30electrons3DPBC, PBE cc-pVDZ",
+  "representation": "Periodic SCF observation",
+  "Hamiltonian_approximation": "PBC RKS/KRKS/PBE GDF,weigend; Gamma or1/8 admitted k points",
+  "supported_operations": [
+    "DISPLACE_ATOM",
+    "AFFINE_STRAIN_CELL",
+    "MEASURE_OBSERVABLE"
+  ],
+  "supported_observables": [
+    "energy"
+  ],
+  "unavailable_observables": [
+    "forces",
+    "stress",
+    "stability",
+    "dynamics"
+  ],
+  "units_reference": "Eh per primitive input cell, Ewald convention, no cross-composition ranking",
+  "numerical_quality_requirements": "Retain original convergence flags/residuals/actual settings; no inherited material accuracy",
+  "dependencies": {
+    "cloud": "Python3.12/NumPy2.2.6/SciPy1.15.3/PySCF2.8.0/ASE3.29.0; effective domain additionally QuTiP5.2.1",
+    "local_engine_availability": "UNKNOWN_NOT_REQUIRED_FOR_E00"
+  },
+  "evidence_level": "HISTORICAL_REAL_EXECUTION_WITH_BOUNDED_SCOPE",
+  "evidence": "results/interactive01/EXECUTION_REPORT.json; periodic03/EXECUTION_REPORT.json",
+  "physical_qualification": "MODEL_ONLY_NOT_MATERIAL_CERTIFIED",
+  "independent_validation": "W2_INCOMPLETE; same PySCF family not independent",
+  "resource_envelope": {
+    "science_CPU": 1,
+    "threads": 1,
+    "memory_bytes": 1073741824,
+    "extra_swap": 0,
+    "network": "none",
+    "job_minutes_max": 15,
+    "current_E00_science_jobs": 0,
+    "new_cost": 0
+  },
+  "model_limitations": [
+    "Actual GDF/grid co-variation",
+    "Not pure k convergence",
+    "No force from finite differences"
+  ],
+  "existing_adapter": "state_space01.world_runtime.act",
+  "schema_is_not_installation_proof": true
+}

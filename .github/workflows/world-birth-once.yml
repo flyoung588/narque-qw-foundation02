@@ -1,0 +1,34 @@
+# PREPARATION ONLY. No remote publication or dispatch authorized.
+name: WB E01 one approved step
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: wb-e01-one-step
+  cancel-in-progress: false
+jobs:
+  one-step:
+    if: github.event.repository.private == false && github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check scoped Human approval before preparation
+        run: python3 -c 'from birth01.authority import approval_check; approval_check()'
+      - name: Prepare fixed environment, no persistent cache
+        run: timeout --kill-after=5s 180s docker build --no-cache -f birth01/Dockerfile -t qw-world-e01:once .
+      - name: One admitted offline scientific step
+        run: python3 -B -m birth01.host
+      - name: Preserve complete or failed evidence in ordinary logs
+        if: always()
+        run: python3 -B cloud/export_logs.py "$RUNNER_TEMP/wb-e01"

@@ -1,0 +1,7 @@
+.git
+**/__pycache__
+**/*.pyc
+.env
+**/.env
+**/id_rsa
+**/id_ed25519
