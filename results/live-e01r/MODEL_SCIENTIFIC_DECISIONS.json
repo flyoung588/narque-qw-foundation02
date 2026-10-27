@@ -1,0 +1,226 @@
+{
+  "call03": {
+    "schema": "QW_EXPLORER_DECISION_01",
+    "request_hash": "115f3a1a2a0b7398214fba676322777a3136c27734d6aafc3b167c20eff48623",
+    "goal_interpretation": "Establish actual baseline energy and forces before choosing one bounded O–H perturbation to test local force prediction and cross-bond response.",
+    "candidates": [
+      {
+        "id": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+        "kind": "RESEARCH",
+        "question": "What are the energy and atomic forces at the frozen asymmetric water geometry under the specified RHF/cc-pVDZ settings?",
+        "information_value": "Necessary baseline for selecting and predicting the permitted subsequent displacement.",
+        "cost_and_limits": "One of two available science jobs; execution requires independently verified pinned authorization and runtime admission.",
+        "why_not_selected": ": Selected for its prerequisite information value."
+      },
+      {
+        "id": "stop",
+        "kind": "STOP",
+        "question": "Terminate without a baseline calculation?",
+        "information_value": "Avoids further resource use but leaves the scientific goal untested.",
+        "cost_and_limits": "No science job.",
+        "why_not_selected": "The baseline is applicable and informative within the supplied two-job budget, subject to independent authorization."
+      }
+    ],
+    "selected": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+    "action": "CONTINUE",
+    "operation": {
+      "name": "PROPOSE_EXPERIMENT",
+      "source": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+      "other": null,
+      "parameters": {
+        "intent": {
+          "research_session": "f0fef5d193ff87ed003bdafcba455884ff202bb5285f38cb406ec47e4f469fad",
+          "world_session": "638013e818758614001966e5bb55aa90a5c5943df8b4050947a996630bf588df",
+          "goal": "Measure the frozen asymmetric-water baseline for a subsequent bounded force-response test.",
+          "candidate": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+          "input_state": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+          "prediction": "Model proposal: for a converged isolated planar RHF solution, out-of-plane forces and the net force should be zero within numerical accuracy. No numerical energy or in-plane force prediction is asserted.",
+          "falsifier": "A converged result with out-of-plane or net force exceeding documented numerical accuracy would contradict the symmetry or translational-invariance prediction and require investigation.",
+          "resource_ref": "ac0af17335bf7d86e8a40210281a694e3b7248eed26c900e510d6c380932b24d",
+          "authorization_ref": "bbd897f288d7009b98452ab6490b9f3f7ca70bef298b6269e7437dd6e2d3d8a3",
+          "stop_condition": "Do not execute without independent pinned-grant verification and runtime admission. Preserve geometry, composition, charge, spin, RHF/cc-pVDZ and original numerical settings. Return energy, actual force units and numerical-quality metadata; reassess after this return. Stop on failed convergence or unavailable forces; at most two science returns and no third solve.",
+          "experiment_ref": "6dac571cf45f352c13a77e0927881da86970f459175bdc3ef0a7748849f6e836",
+          "model": "molecular",
+          "operation": {
+            "type": "MEASURE_OBSERVABLE",
+            "source_state_sha256": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+            "observables": [
+              "energy",
+              "forces"
+            ]
+          },
+          "observables": [
+            "energy",
+            "forces"
+          ],
+          "mode": "NEW_SCIENTIFIC_EXECUTION"
+        }
+      }
+    },
+    "observation_refs": [],
+    "interpretation": "No scientific observation has returned. The proposed baseline is not a measurement or an authorization grant.",
+    "limitations": "Finite-basis mean-field static Born–Oppenheimer results cannot establish molecular dynamics, physical stability or precision molecular accuracy. Independent validation remains incomplete.",
+    "competing_explanations": [
+      "Unexpected force residuals could reflect incomplete convergence, export conventions or numerical implementation rather than physical effects.",
+      "Nonzero in-plane forces can reflect the nonstationary input geometry."
+    ],
+    "prediction": "For a converged planar isolated solution, out-of-plane forces and total force should vanish within documented numerical accuracy; numerical values remain unknown.",
+    "falsifier": "Significant symmetry or total-force residuals beyond documented numerical uncertainty would challenge this baseline prediction.",
+    "resource_reason": "Two current science jobs remain; the first establishes the baseline required to make the second scientifically interpretable. Historical E00 budgets confer no current authority.",
+    "negative_evidence_response": "The previous transport failure supplies no negative scientific evidence and no baseline observation; do not infer a completed calculation or propose displacement yet.",
+    "memory_updates": [
+      {
+        "kind": "ResearchDecision",
+        "content": "Propose baseline energy and force measurement only, conditional on independent authorization and runtime admission; no displacement selected before its actual return.",
+        "evidence_refs": []
+      }
+    ]
+  },
+  "call04": {
+    "schema": "QW_EXPLORER_DECISION_01",
+    "request_hash": "d9b88a904645e360d659ea87521472125892fd7cdd71381477e89c5e264b9c21",
+    "goal_interpretation": "Test a finite O–H contraction against the observed local force prediction and measure the other bond's force response within static RHF/cc-pVDZ.",
+    "candidates": [
+      {
+        "id": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+        "kind": "RESEARCH",
+        "question": "How does contracting the longer O–H bond by 0.02 angstrom change energy and all atomic forces?",
+        "information_value": "Tests finite-step departure from the baseline tangent prediction and probes cross-bond coupling with the one remaining solve.",
+        "cost_and_limits": "One remaining science job; a single one-sided displacement cannot establish convergence, a full Hessian or stability.",
+        "why_not_selected": "Selected."
+      },
+      {
+        "id": "05684acd86b274f49df7deb8fe3524e9f096e906fcaa48f5619ba6a04b6c002f",
+        "kind": "STOP",
+        "question": "Terminate with only the recovered baseline?",
+        "information_value": "Preserves the baseline but leaves finite-displacement response untested.",
+        "cost_and_limits": "No additional science job.",
+        "why_not_selected": "The converged baseline and remaining job support an informative bounded perturbation, conditional on runtime authorization."
+      }
+    ],
+    "selected": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+    "action": "CONTINUE",
+    "operation": {
+      "name": "PROPOSE_EXPERIMENT",
+      "source": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+      "other": null,
+      "parameters": {
+        "intent": {
+          "research_session": "f0fef5d193ff87ed003bdafcba455884ff202bb5285f38cb406ec47e4f469fad",
+          "world_session": "638013e818758614001966e5bb55aa90a5c5943df8b4050947a996630bf588df",
+          "goal": "Test the local force prediction for a 0.02 angstrom contraction of atom-1's O–H bond and measure cross-bond force response.",
+          "candidate": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+          "input_state": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+          "prediction": "Using baseline observation 21fd00cbf8939ddd4ad8955cfba2a0c898a34082e3cab22a368f0d3c06eef628, displace atom-1 by (0,0,-0.02) angstrom. The local tangent prediction is delta E = -F_1 dot delta R = -(-3.4791510069802967 eV/angstrom)(-0.02 angstrom) = -0.06958302013960594 eV, approximately -0.00255712 Eh. This is first order only, with an unknown O(|delta R|^2) correction, not an error bound. Hypothesis: positive bond-direction curvature makes the actual energy decrease smaller in magnitude. Measure the change in atom-2 force projected along its unchanged O–H direction; its sign and magnitude are not predicted from the baseline alone.",
+          "falsifier": "A converged energy change greater than zero beyond numerical uncertainty falsifies the proposed downhill finite-step outcome. An energy change more negative than the tangent prediction beyond numerical uncertainty contradicts the proposed positive-curvature remainder for this step. A cross-bond projected force change unresolved above numerical uncertainty provides no resolved cross-bond response.",
+          "resource_ref": "ac0af17335bf7d86e8a40210281a694e3b7248eed26c900e510d6c380932b24d",
+          "authorization_ref": "e63733e0dc8766d0241300fbff6b0e4d8daad844289935f8fe9116491b099858",
+          "stop_condition": "Execute only after independent pinned-grant verification and runtime admission. Change only atom-1 by the specified vector. Preserve composition, charge 0, spin_2S 0, RHF/cc-pVDZ, SCF threshold 1e-10 Eh, maximum 80 iterations, one numerical thread and all other original settings. Return energy, all forces, units and convergence metadata. After this second science return, interpret and terminate; no third solve or retry.",
+          "experiment_ref": "6dac571cf45f352c13a77e0927881da86970f459175bdc3ef0a7748849f6e836",
+          "model": "molecular",
+          "operation": {
+            "type": "DISPLACE_ATOM",
+            "source_state_sha256": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+            "atom_id": "atom-1",
+            "vector": [
+              0,
+              0,
+              -0.02
+            ],
+            "unit": "angstrom"
+          },
+          "observables": [
+            "energy",
+            "forces"
+          ],
+          "mode": "NEW_SCIENTIFIC_EXECUTION"
+        }
+      }
+    },
+    "observation_refs": [
+      "21fd00cbf8939ddd4ad8955cfba2a0c898a34082e3cab22a368f0d3c06eef628"
+    ],
+    "interpretation": "The recovered baseline reports converged energy -76.02136357842232 Eh and an inward atom-1 bond force. It supports selecting a contraction, but no displaced result exists yet. Out-of-plane baseline forces are near floating-point zero.",
+    "limitations": "The tangent estimate is derived from the supplied observation, not a new solve. One finite step cannot separate higher-order terms, establish a complete Hessian, certify physical stability or describe nuclear/effective dynamics. SCF energy tolerance is not a force-error bound; independent validation remains incomplete.",
+    "competing_explanations": [
+      "A finite-step energy residual can reflect BO curvature and higher-order terms, or numerical error.",
+      "A force change on the unmoved hydrogen reflects coupled electronic and nuclear BO contributions, not uniquely an electronic mechanism."
+    ],
+    "prediction": "For atom-1 displacement (0,0,-0.02) angstrom, delta E_linear = -0.06958302013960594 eV, approximately -0.00255712 Eh. Propose a smaller-magnitude actual energy decrease from positive local curvature; cross-bond response remains an open measurement.",
+    "falsifier": "An actual energy increase challenges the downhill finite-step proposal; a resolved negative remainder delta E_actual - delta E_linear challenges the positive-curvature proposal. Neither outcome alone invalidates the analytic derivative.",
+    "resource_reason": "One current science job remains and directly addresses the untested finite-displacement goal. Execution authority must be independently checked; historical capability budgets provide none.",
+    "negative_evidence_response": "Retain the earlier transport/intake failures as engineering evidence. The supplied recovered observation supports using the original successful calculation without repeating it; it does not supply independent scientific certification.",
+    "memory_updates": [
+      {
+        "kind": "ResearchDecision",
+        "content": "Select a 0.02 angstrom inward displacement of atom-1 from the recovered baseline state; compare actual energy change with the explicit tangent estimate and inspect atom-2 projected force change. Terminate after the second science return.",
+        "evidence_refs": [
+          "21fd00cbf8939ddd4ad8955cfba2a0c898a34082e3cab22a368f0d3c06eef628"
+        ]
+      }
+    ]
+  },
+  "call05": {
+    "schema": "QW_EXPLORER_DECISION_01",
+    "request_hash": "7b5f2b56bb8d07b931f785a469be8421cf46528965763c12ceec181167b4f60e",
+    "goal_interpretation": "Interpret the completed two-point static RHF/cc-pVDZ force-response test and terminate.",
+    "candidates": [
+      {
+        "id": "d7939075a28b96b5e75af837ac2f429b928c22cf16228d7f5f4146275e8ed2e7",
+        "kind": "STOP",
+        "question": "Terminate after interpreting the baseline and contracted-geometry results?",
+        "information_value": "The two returned observations resolve the bounded finite-step comparison and show a cross-bond force response.",
+        "cost_and_limits": "No further solve; two-job limit reached.",
+        "why_not_selected": "Selected."
+      },
+      {
+        "id": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+        "kind": "RESEARCH",
+        "question": "Would additional displacement points resolve higher-order response and numerical uncertainty?",
+        "information_value": "Could improve derivative and curvature characterization in a separately authorized study.",
+        "cost_and_limits": "Requires a prohibited third solve; no science jobs remain.",
+        "why_not_selected": "Outside the current execution envelope."
+      }
+    ],
+    "selected": "d7939075a28b96b5e75af837ac2f429b928c22cf16228d7f5f4146275e8ed2e7",
+    "action": "STOP",
+    "operation": {
+      "name": "STOP",
+      "source": "d7939075a28b96b5e75af837ac2f429b928c22cf16228d7f5f4146275e8ed2e7",
+      "other": null,
+      "parameters": {}
+    },
+    "observation_refs": [
+      "21fd00cbf8939ddd4ad8955cfba2a0c898a34082e3cab22a368f0d3c06eef628",
+      "51d9d52111d004d4ca59bc2f4c032aaad14e5e4b23e5e6d965c12dcbe12e0c98"
+    ],
+    "interpretation": "Arithmetic comparison of the supplied returns, not a new electronic-structure calculation: contracting atom-1's O–H bond from 1.02 to 1.00 angstrom lowered energy by approximately 0.00227862349 Eh (0.062004504 eV). The prior tangent prediction was -0.069583020 eV; actual minus predicted is +0.007578516 eV, about 10.9% of the predicted decrease. Thus the downhill and positive-remainder proposals are consistent with these results. Atom-1's z force became less inward, from -3.479151 to -2.702745 eV/angstrom. The unmoved atom-2 force changed by approximately (-0.016639,0,-0.025517) eV/angstrom; projection along its unchanged outward O–H direction changed by approximately -0.00972 eV/angstrom. This is a reported cross-bond BO force response, without a quantified force-error bound.",
+    "limitations": "Both SCF results report convergence with matching specified settings, but SCF energy tolerance does not bound force error. One finite step does not establish asymptotic scaling, a full Hessian, equilibrium or physical stability. Results remain finite-basis mean-field model evidence, not independent certification, nuclear dynamics or effective time evolution.",
+    "competing_explanations": [
+      "The positive energy remainder is consistent with positive path-averaged curvature, with higher-order contributions unresolved.",
+      "Cross-bond force changes combine electronic and nuclear-repulsion contributions; these returns do not isolate a uniquely electronic mechanism.",
+      "Numerical contributions cannot be rigorously bounded from convergence flags alone."
+    ],
+    "prediction": "The preregistered first-order prediction was delta E = -F_1 dot delta R = -0.069583020 eV for (0,0,-0.02) angstrom. The proposed smaller-magnitude energy decrease occurred in the supplied model returns; no further prediction is dispatched.",
+    "falsifier": "An energy increase or negative actual-minus-tangent remainder would have contradicted the respective finite-step proposals; neither occurs in the supplied values. Formal uncertainty-qualified confirmation remains unavailable.",
+    "resource_reason": "Two science returns are complete, zero new science jobs remain, and the explicit study boundary prohibits a third solve.",
+    "negative_evidence_response": "Retain the earlier transport and intake failures as engineering history, not scientific disproof. The recovered baseline and second return support this bounded comparison without implying uninterrupted execution or independent validation.",
+    "memory_updates": [
+      {
+        "kind": "ModelKnowledge",
+        "content": "The supplied two-point RHF/cc-pVDZ results show a downhill 0.02 angstrom O–H contraction, a positive approximately 0.00758 eV remainder relative to the baseline tangent, and a changed force on the unmoved hydrogen. No stability or dynamics claim follows.",
+        "evidence_refs": [
+          "21fd00cbf8939ddd4ad8955cfba2a0c898a34082e3cab22a368f0d3c06eef628",
+          "51d9d52111d004d4ca59bc2f4c032aaad14e5e4b23e5e6d965c12dcbe12e0c98"
+        ]
+      },
+      {
+        "kind": "ResearchDecision",
+        "content": "Terminate the bounded study after two science returns; no third solve.",
+        "evidence_refs": [
+          "51d9d52111d004d4ca59bc2f4c032aaad14e5e4b23e5e6d965c12dcbe12e0c98"
+        ]
+      }
+    ]
+  }
+}

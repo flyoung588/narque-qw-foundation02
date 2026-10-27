@@ -1,0 +1,43 @@
+{
+  "energy_first_Eh": -76.02136357842232,
+  "energy_second_Eh": -76.02364220191087,
+  "delta_energy_Eh": -0.0022786234885501244,
+  "delta_energy_eV": -0.062004503855860094,
+  "linear_prediction_Eh": -0.0025571288250654705,
+  "linear_prediction_eV": -0.06958302013960599,
+  "actual_minus_linear_Eh": 0.00027850533651534604,
+  "relative_linear_decrease_difference": 0.10891329908191678,
+  "displacement_angstrom": [
+    0.0,
+    0.0,
+    -0.020000000000000018
+  ],
+  "unmoved_H_force_change_eV_per_angstrom": [
+    -0.016638645819167186,
+    1.2959896662193641e-14,
+    -0.025517173485566758
+  ],
+  "unmoved_H_projected_force_change_eV_per_angstrom": -0.009719675688139692,
+  "net_forces_Eh_per_bohr": [
+    [
+      2.609024107869118e-15,
+      3.944304526105059e-30,
+      4.107825191113079e-15
+    ],
+    [
+      2.0816681711721685e-16,
+      4.930380657631324e-32,
+      1.6653345369377348e-15
+    ]
+  ],
+  "max_abs_out_of_plane_force_Eh_per_bohr": [
+    1.036580996586689e-16,
+    1.6093545182438805e-16
+  ],
+  "limits": "Same-model arithmetic only. SCF tolerance is not force uncertainty; no curvature certification, basis convergence, independent engine, dynamics or stability claim.",
+  "frozen_prediction_Eh": -0.002557128826704376,
+  "frozen_prediction_recompute_Eh": -0.002557128826704376,
+  "cross_unit_prediction_difference_Eh": -1.6389055911003592e-12,
+  "exact_cross_unit_equality_check": "FAIL_AT_ORIGINAL_1e-12_CHECK; differing declared conversion constants, retained not hidden",
+  "conversion_discrepancy_report": "FINAL_QA_CONVERSION_DISCREPANCY.json"
+}

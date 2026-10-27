@@ -1,0 +1,422 @@
+[
+  {
+    "payload": {
+      "atom_ids": [
+        "atom-0",
+        "atom-1",
+        "atom-2"
+      ],
+      "interpretation": "SEPARATE_AI_DECISION_ONLY",
+      "numerical_quality": null,
+      "observation": {
+        "observation": {
+          "SCF_convergence_threshold_Eh": 1e-10,
+          "SCF_max_iterations": 80,
+          "basis": "cc-pvdz",
+          "comparison_scope": "same composition/charge/spin/method/basis and geometry branch only",
+          "converged": true,
+          "electronic_structure_solved": true,
+          "electrons": 10,
+          "energy": -76.02136357842232,
+          "energy_Eh": -76.02136357842232,
+          "energy_eV": -2068.6466872791343,
+          "energy_unit": "Eh",
+          "energy_zero": "total BO electronic-structure energy including nuclear repulsion",
+          "engine": "PySCF",
+          "engine_version": "2.8.0",
+          "forces_Eh_per_bohr": [
+            [
+              0.021049680309015883,
+              1.036580996586689e-16,
+              0.05881828284838431
+            ],
+            [
+              0.0025257977557435196,
+              -1.2563687686537553e-17,
+              -0.06765871497839049
+            ],
+            [
+              -0.023575478064756794,
+              -9.10944119721274e-17,
+              0.00884043213001029
+            ]
+          ],
+          "forces_eV_per_angstrom": [
+            [
+              1.0824180812053033,
+              5.3303137951157856e-15,
+              3.0245577094712397
+            ],
+            [
+              0.12988174262739577,
+              -6.460507959686187e-16,
+              -3.4791510069802967
+            ],
+            [
+              -1.2122998238325648,
+              -4.684262999146964e-15,
+              0.45459329750926847
+            ]
+          ],
+          "gradient_Eh_per_bohr": [
+            [
+              -0.021049680309015883,
+              -1.036580996586689e-16,
+              -0.05881828284838431
+            ],
+            [
+              -0.0025257977557435196,
+              1.2563687686537553e-17,
+              0.06765871497839049
+            ],
+            [
+              0.023575478064756794,
+              9.10944119721274e-17,
+              -0.00884043213001029
+            ]
+          ],
+          "method": "RHF",
+          "nuclear_repulsion_Eh": 8.851005757359411,
+          "numerical_threads": 1,
+          "orbital_basis_size": 24,
+          "physics_limit": "nonrelativistic fixed-nuclei Born-Oppenheimer; no nuclear dynamics, no correlated many-electron accuracy claim",
+          "solver_equation": "single-determinant mean-field electronic Hamiltonian; approximate finite-basis solution",
+          "spin_2S": 0
+        },
+        "precision_qualified": false,
+        "spec": {
+          "epistemic_mode": "GROUNDED",
+          "experiment": {
+            "action": "single_point",
+            "description": "Uncomputed asymmetric water geometry; future bounded force-response experiment, not a precision molecular claim"
+          },
+          "matter": {
+            "atoms": [
+              {
+                "element": "O",
+                "xyz_angstrom": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "element": "H",
+                "xyz_angstrom": [
+                  0,
+                  0,
+                  1.02
+                ]
+              },
+              {
+                "element": "H",
+                "xyz_angstrom": [
+                  0.9391032111667645,
+                  0,
+                  -0.24286860393280812
+                ]
+              }
+            ],
+            "charge": 0,
+            "periodic": false,
+            "spin_2S": 0,
+            "type": "molecule"
+          },
+          "object_id": "QW_LIVE_FABRIC_WATER_ASYMMETRIC_BOND_RESPONSE",
+          "physics": {
+            "basis": "cc-pvdz",
+            "engine": "pyscf",
+            "method": "RHF",
+            "observables": [
+              "energy",
+              "forces"
+            ]
+          },
+          "version": "QW-WORLDSPEC-0.1"
+        },
+        "status": "CALCULATED",
+        "world_spec_sha256": "66733c96094580ce3550d446e49010b5231375128ab541735d4c8bceab25b524"
+      },
+      "parent_state_id": "3728b48bbe2e80bb0934232016868192fe06d1d91a5ab6037d8792449051b6bc",
+      "reason": "SOLVER_RETURN",
+      "schema": "QW_PHYSICAL_STATE_01",
+      "state_kind": "STATIC_BO_STRUCTURE_AND_OPTIONAL_SCF_OBSERVATION_NOT_TIME_WAVEFUNCTION",
+      "structure_sha256": "a7073fa8eb5fac34376198b137de1279a417e82b03ea7db4088951b7c6c7bcd1",
+      "supported_operations": {
+        "actions": [
+          "DISPLACE_ATOM",
+          "MEASURE_OBSERVABLE"
+        ],
+        "availability": "RUNTIME_CHECK_REQUIRED",
+        "dynamics": "NOT_IMPLEMENTED",
+        "observables": [
+          "energy",
+          "forces"
+        ],
+        "response_kind": "ANALYTIC_FORCE"
+      },
+      "world_spec": {
+        "epistemic_mode": "GROUNDED",
+        "experiment": {
+          "action": "single_point",
+          "description": "Uncomputed asymmetric water geometry; future bounded force-response experiment, not a precision molecular claim"
+        },
+        "matter": {
+          "atoms": [
+            {
+              "element": "O",
+              "xyz_angstrom": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0,
+                0,
+                1.02
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0.9391032111667645,
+                0,
+                -0.24286860393280812
+              ]
+            }
+          ],
+          "charge": 0,
+          "periodic": false,
+          "spin_2S": 0,
+          "type": "molecule"
+        },
+        "object_id": "QW_LIVE_FABRIC_WATER_ASYMMETRIC_BOND_RESPONSE",
+        "physics": {
+          "basis": "cc-pvdz",
+          "engine": "pyscf",
+          "method": "RHF",
+          "observables": [
+            "energy",
+            "forces"
+          ]
+        },
+        "version": "QW-WORLDSPEC-0.1"
+      }
+    },
+    "sha256": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952",
+    "state_id": "6a4a04d599316800a89013bb1b365c45e01319fa03fd633da43be8244cfbd952"
+  },
+  {
+    "payload": {
+      "atom_ids": [
+        "atom-0",
+        "atom-1",
+        "atom-2"
+      ],
+      "interpretation": "SEPARATE_AI_DECISION_ONLY",
+      "numerical_quality": null,
+      "observation": {
+        "observation": {
+          "SCF_convergence_threshold_Eh": 1e-10,
+          "SCF_max_iterations": 80,
+          "basis": "cc-pvdz",
+          "comparison_scope": "same composition/charge/spin/method/basis and geometry branch only",
+          "converged": true,
+          "electronic_structure_solved": true,
+          "electrons": 10,
+          "energy": -76.02364220191087,
+          "energy_Eh": -76.02364220191087,
+          "energy_eV": -2068.70869178299,
+          "energy_unit": "Eh",
+          "energy_zero": "total BO electronic-structure energy including nuclear repulsion",
+          "engine": "PySCF",
+          "engine_version": "2.8.0",
+          "forces_Eh_per_bohr": [
+            [
+              0.02186731962980959,
+              -3.7937557922732837e-17,
+              0.044215813363210454
+            ],
+            [
+              0.002031728579746192,
+              -1.2299789390165517e-16,
+              -0.05256001547490419
+            ],
+            [
+              -0.023899048209555573,
+              1.6093545182438805e-16,
+              0.008344202111695398
+            ]
+          ],
+          "forces_eV_per_angstrom": [
+            [
+              1.1244627855304543,
+              -1.9508276633897896e-15,
+              2.2736685382836397
+            ],
+            [
+              0.10447568412128845,
+              -6.3248059996568844e-15,
+              -2.7027446623072557
+            ],
+            [
+              -1.228938469651732,
+              8.275633663046676e-15,
+              0.4290761240237017
+            ]
+          ],
+          "gradient_Eh_per_bohr": [
+            [
+              -0.02186731962980959,
+              3.7937557922732837e-17,
+              -0.044215813363210454
+            ],
+            [
+              -0.002031728579746192,
+              1.2299789390165517e-16,
+              0.05256001547490419
+            ],
+            [
+              0.023899048209555573,
+              -1.6093545182438805e-16,
+              -0.008344202111695398
+            ]
+          ],
+          "method": "RHF",
+          "nuclear_repulsion_Eh": 8.937468290310287,
+          "numerical_threads": 1,
+          "orbital_basis_size": 24,
+          "physics_limit": "nonrelativistic fixed-nuclei Born-Oppenheimer; no nuclear dynamics, no correlated many-electron accuracy claim",
+          "solver_equation": "single-determinant mean-field electronic Hamiltonian; approximate finite-basis solution",
+          "spin_2S": 0
+        },
+        "precision_qualified": false,
+        "spec": {
+          "epistemic_mode": "GROUNDED",
+          "experiment": {
+            "action": "single_point",
+            "description": "Uncomputed asymmetric water geometry; future bounded force-response experiment, not a precision molecular claim"
+          },
+          "matter": {
+            "atoms": [
+              {
+                "element": "O",
+                "xyz_angstrom": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "element": "H",
+                "xyz_angstrom": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "element": "H",
+                "xyz_angstrom": [
+                  0.9391032111667645,
+                  0,
+                  -0.24286860393280812
+                ]
+              }
+            ],
+            "charge": 0,
+            "periodic": false,
+            "spin_2S": 0,
+            "type": "molecule"
+          },
+          "object_id": "QW_LIVE_FABRIC_WATER_ASYMMETRIC_BOND_RESPONSE",
+          "physics": {
+            "basis": "cc-pvdz",
+            "engine": "pyscf",
+            "method": "RHF",
+            "observables": [
+              "energy",
+              "forces"
+            ]
+          },
+          "version": "QW-WORLDSPEC-0.1"
+        },
+        "status": "CALCULATED",
+        "world_spec_sha256": "f439f896bb2ec09d0e2c6eb7094c89b671a171dde257e8a571d5edec9cb7c7cb"
+      },
+      "parent_state_id": "f767c5c45606f3735a72b36a58a25a35338415ca5df65f3d56825731d5505e94",
+      "reason": "SOLVER_RETURN",
+      "schema": "QW_PHYSICAL_STATE_01",
+      "state_kind": "STATIC_BO_STRUCTURE_AND_OPTIONAL_SCF_OBSERVATION_NOT_TIME_WAVEFUNCTION",
+      "structure_sha256": "9017ece1e723f4834c8b7c62bf6af9faf57031cbeef258898c11729440ac6b62",
+      "supported_operations": {
+        "actions": [
+          "DISPLACE_ATOM",
+          "MEASURE_OBSERVABLE"
+        ],
+        "availability": "RUNTIME_CHECK_REQUIRED",
+        "dynamics": "NOT_IMPLEMENTED",
+        "observables": [
+          "energy",
+          "forces"
+        ],
+        "response_kind": "ANALYTIC_FORCE"
+      },
+      "world_spec": {
+        "epistemic_mode": "GROUNDED",
+        "experiment": {
+          "action": "single_point",
+          "description": "Uncomputed asymmetric water geometry; future bounded force-response experiment, not a precision molecular claim"
+        },
+        "matter": {
+          "atoms": [
+            {
+              "element": "O",
+              "xyz_angstrom": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "element": "H",
+              "xyz_angstrom": [
+                0.9391032111667645,
+                0,
+                -0.24286860393280812
+              ]
+            }
+          ],
+          "charge": 0,
+          "periodic": false,
+          "spin_2S": 0,
+          "type": "molecule"
+        },
+        "object_id": "QW_LIVE_FABRIC_WATER_ASYMMETRIC_BOND_RESPONSE",
+        "physics": {
+          "basis": "cc-pvdz",
+          "engine": "pyscf",
+          "method": "RHF",
+          "observables": [
+            "energy",
+            "forces"
+          ]
+        },
+        "version": "QW-WORLDSPEC-0.1"
+      }
+    },
+    "sha256": "d7939075a28b96b5e75af837ac2f429b928c22cf16228d7f5f4146275e8ed2e7",
+    "state_id": "d7939075a28b96b5e75af837ac2f429b928c22cf16228d7f5f4146275e8ed2e7"
+  }
+]
