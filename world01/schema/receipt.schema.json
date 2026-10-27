@@ -22,6 +22,9 @@
     },
     "new_scientific_execution": {
       "const": false
+    },
+    "new_scientific_executions": {
+      "const": 0
     }
   }
 }

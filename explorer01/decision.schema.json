@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "QW_EXPLORER_DECISION_01"
+    },
+    "request_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "goal_interpretation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "information_value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "cost_and_limits": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "why_not_selected": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "question",
+          "information_value",
+          "cost_and_limits",
+          "why_not_selected"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "selected": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "action": {
+      "enum": [
+        "CONTINUE",
+        "FORK",
+        "CHANGE_OBJECT",
+        "CHANGE_MODEL",
+        "CHANGE_PHYSICAL_DOMAIN",
+        "REQUEST_VALIDATION",
+        "ABANDON",
+        "STOP"
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "OBSERVE",
+            "COMPARE",
+            "TRANSLATE",
+            "FORK",
+            "PROPOSE_EXPERIMENT",
+            "STOP"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "other": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "source",
+        "other",
+        "parameters"
+      ],
+      "additionalProperties": false
+    },
+    "observation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "uniqueItems": true
+    },
+    "interpretation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "competing_explanations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 12000
+      }
+    },
+    "prediction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "falsifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "resource_reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "negative_evidence_response": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "memory_updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "ModelKnowledge",
+              "Hypothesis",
+              "CandidateFrontier",
+              "FailedPath",
+              "OpenQuestion",
+              "ResearchDecision"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "content",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "request_hash",
+    "goal_interpretation",
+    "candidates",
+    "selected",
+    "action",
+    "operation",
+    "observation_refs",
+    "interpretation",
+    "limitations",
+    "competing_explanations",
+    "prediction",
+    "falsifier",
+    "resource_reason",
+    "negative_evidence_response",
+    "memory_updates"
+  ],
+  "additionalProperties": false
+}

@@ -63,10 +63,12 @@ def _energy(state,method=None):
     if o.get('synthetic'):raise WorldError('SYNTHETIC_MISLABEL_BLOCKED')
     if p['schema']=='QW_CORRELATED_ELECTRONIC_STATE_01':
         if o.get('status')!='CALCULATED':raise WorldError('UNVERIFIED')
+        observation_values(state)
         return o['energy_RHF_Eh' if method=='RHF' else 'energy_FCI_Eh'],'MOLECULAR_BO_TOTAL_Eh',o.get('quality',{})
     if p['schema']!='QW_PHYSICAL_STATE_01':raise WorldError('INCOMPARABLE','Relative effective energy not molecular total')
     if o.get('status')!='CALCULATED':raise WorldError('UNVERIFIED')
-    v=o['observation'];e=v.get('energy_Eh_per_cell',v.get('energy'))
+    values=observation_values(state)
+    v=o['observation'];e=values['energy']['value']
     if e is None or not math.isfinite(e):raise WorldError('UNVERIFIED_ENERGY')
     ref=v.get('energy_zero')
     if not ref:raise WorldError('ENERGY_REFERENCE_UNKNOWN')
@@ -78,6 +80,8 @@ def compare(a,b,contract=None):
     if [x['element'] for x in sa['matter']['atoms']]!=[x['element'] for x in sb['matter']['atoms']]:raise WorldError('INCOMPARABLE','Chemical composition mismatch; no ranking')
     if contract.get('independent_W2'):raise WorldError('INDEPENDENCE_INSUFFICIENT','Same PySCF family; no W2 upgrade')
     if contract.get('pure_k_convergence'):raise WorldError('NUMERICAL_SETTING_COVARIATION','Actual GDF settings changed; not isolated k convergence')
+    if contract.get('kind') not in (None,'SAME_MODEL_IDENTITY','SAME_MODEL_GEOMETRY_PATH','RHF_FCI_SAME_STATE'):raise WorldError('COMPARISON_CONTRACT_UNSUPPORTED')
+    if contract.get('kind')=='SAME_MODEL_IDENTITY' and a['sha256']!=b['sha256']:raise WorldError('INCOMPARABLE','Identity contract requires the same state')
     internal=contract.get('kind')=='RHF_FCI_SAME_STATE'
     if internal:
         if a['sha256']!=b['sha256'] or pa['schema']!='QW_CORRELATED_ELECTRONIC_STATE_01':raise WorldError('INCOMPARABLE','Explicit same correlated state required')
@@ -89,8 +93,28 @@ def compare(a,b,contract=None):
     if ra!=rb:raise WorldError('INCOMPARABLE','Energy zero mismatch')
     if digest(qa)!=digest(qb) and sa['matter']['periodic']:
         if not contract.get('allow_realized_numerical_covariation'):raise WorldError('NUMERICAL_SETTING_COVARIATION')
-    return {'status':status,'delta_energy_Eh':eb-ea,'units':'Eh/cell' if sa['matter']['periodic'] else 'Eh','reference':ra,'numerical_details':[qa,qb],'interpretation':'Finite-model path only; not force, stability, convergence certification or W2'}
+    return {'status':status,'delta_energy_Eh':eb-ea,'units':'Eh/cell' if sa['matter']['periodic'] else 'Eh','reference':ra,'numerical_details':[qa,qb],'interpretation':'Finite-model path only; not force, stability, convergence certification or W2','checked_semantics':{'composition_charge_spin_boundary':'Explicit input equality checked','Hamiltonian_approximation_basis':'Same declared physics/correlation model, or explicit same-state RHF/FCI contract','state_representation':pa['schema'],'units':'Eh/cell' if sa['matter']['periodic'] else 'Eh','energy_zero':ra,'time_gauge_environment':'Not applicable to these static BO comparisons; effective dynamic-state absolute energies are rejected','declared_numerical_settings':sa['physics'].get('numerics','INHERITED_MODEL_DEFAULTS'),'unreported_realized_settings':'UNKNOWN; not inferred equal, not a numerical-precision certificate','comparison_contract':contract.get('kind','INHERITED_FINITE_MODEL_PATH')}}
 def validate_claim(kind,**kwargs):
     codes={'periodic_force':'FORCE_NOT_AVAILABLE','independent_RHF_FCI':'INDEPENDENCE_INSUFFICIENT','pure_k_convergence':'NUMERICAL_SETTING_COVARIATION','unique_atomic_lowdin':'PARTITION_DEPENDENT_CLAIM_BLOCKED','fixture_calculated':'SYNTHETIC_MISLABEL_BLOCKED','historical_verdict_rewrite':'HISTORICAL_VERDICT_CONFLICT','implicit_retry':'NO_IMPLICIT_RETRY','new_science':'AUTHORITY_MISSING','static_to_dynamics':'TRANSLATION_FORBIDDEN','full_electron_from_two_state':'TRANSLATION_FORBIDDEN'}
     if kind in codes:raise WorldError(codes[kind])
     raise WorldError('UNSUPPORTED_CLAIM','No default scientific promotion')
+
+def observation_values(state):
+    """Available computed values, with explicit schema-defined units/references."""
+    p=state['payload'];o=p.get('observation') or {};out={}
+    def scalar(v):return type(v) in (int,float) and math.isfinite(v)
+    if p['schema']=='QW_PHYSICAL_STATE_01':
+        data=o['observation'];e=data.get('energy_Eh_per_cell',data.get('energy'));expected='Eh/cell' if p['world_spec']['matter']['periodic'] else 'Eh'
+        if not scalar(e) or data.get('energy_unit')!=expected or not data.get('energy_zero'):raise WorldError('INVALID_OBSERVATION_UNITS_OR_REFERENCE')
+        if data.get('SCF_converged',data.get('converged')) is not True:raise WorldError('SCF_RESULT_UNVERIFIED')
+        out['energy']={'value':e,'unit':expected,'reference':data['energy_zero'],'definition':'Original total BO energy including nuclear terms, within the declared approximation'}
+        if not p['world_spec']['matter']['periodic'] and 'forces_Eh_per_bohr' in data:
+            f=data['forces_Eh_per_bohr'];n=len(p['world_spec']['matter']['atoms'])
+            if not isinstance(f,list) or len(f)!=n or any(not isinstance(v,list) or len(v)!=3 or not all(scalar(x) for x in v) for v in f):raise WorldError('INVALID_FORCE_OBSERVATION')
+            out['forces']={'value':f,'unit':'Eh/bohr','definition':'Negative analytic BO nuclear gradient in input atom order'}
+    elif p['schema']=='QW_CORRELATED_ELECTRONIC_STATE_01':
+        if not all(scalar(o[k]) for k in ('energy_RHF_Eh','energy_FCI_Eh')):raise WorldError('INVALID_ENERGY_OBSERVATION')
+        out['energy']={'value':o['energy_FCI_Eh'],'unit':'Eh','reference':'MOLECULAR_BO_TOTAL_Eh','definition':'Finite-basis FCI total BO energy; RHF stored separately'}
+        for k,key,unit in [('natural_occupations','natural_occupations','dimensionless'),('double_occupancy','site_double_occupancy','dimensionless'),('spin_correlations','spin_dot_matrix_hbar2','hbar^2'),('charge_covariance','connected_charge_covariance','dimensionless')]:
+            if key in o.get('FCI_observables',{}):out[k]={'value':o['FCI_observables'][key],'unit':unit,'definition':'Original symmetric Lowdin partition, not unique atomic measurement'}
+    return out

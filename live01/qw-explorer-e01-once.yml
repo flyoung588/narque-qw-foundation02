@@ -1,0 +1,48 @@
+name: QW Explorer E01 gated single step
+run-name: QWE01-${{ inputs.intent_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      enabled:
+        type: boolean
+        default: false
+        required: true
+      intent_id:
+        type: string
+        required: true
+      request_b64:
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: qw-explorer-e01
+  cancel-in-progress: false
+jobs:
+  science:
+    if: inputs.enabled && github.event.repository.private == false && github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Scoped approval before install or compute
+        run: python3 -c 'import json; a=json.load(open("live01/REMOTE_APPROVAL.json")); assert a["scope"]=="QW-EXPLORER-E01" and a["status"]=="HUMAN_GRANTED_E01" and a["human_approval_reference"]'
+      - name: Locked environment without persistent cache
+        run: timeout --kill-after=5s 210s docker build --no-cache -f live01/Dockerfile -t qw-explorer-e01:once .
+      - name: One bounded offline science process
+        env:
+          E01_INTENT_ID: ${{ inputs.intent_id }}
+          E01_REQUEST_B64: ${{ inputs.request_b64 }}
+        run: python3 -B -m live01.host
+      - name: Preserve full or partial evidence in ordinary logs
+        if: always()
+        run: python3 -B -m live01.host --export

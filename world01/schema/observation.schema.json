@@ -20,6 +20,25 @@
     "new_physics_run": {
       "const": false
     },
+    "new_scientific_executions": {
+      "const": 0
+    },
+    "source_execution_kind": {
+      "enum": [
+        "HISTORICAL_REPLAY",
+        "NEW_SCIENTIFIC_EXECUTION",
+        "SYNTHETIC",
+        "NEW_STRUCTURE_NOT_CALCULATED",
+        "UNKNOWN",
+        "UNVERIFIED"
+      ]
+    },
+    "source_execution_status": {
+      "type": "string"
+    },
+    "observables": {
+      "type": "object"
+    },
     "values": {
       "type": "object"
     },
@@ -27,7 +46,10 @@
       "enum": [
         "HISTORICAL_OBSERVATION_READ",
         "SOFTWARE_FIXTURE_ONLY",
-        "STRUCTURE_ONLY_NOT_CALCULATED"
+        "STRUCTURE_ONLY_NOT_CALCULATED",
+        "SCIENTIFIC_OBSERVATION_READ",
+        "UNVERIFIED",
+        "MODEL_STATE_READ_NOT_CALCULATED"
       ]
     }
   }

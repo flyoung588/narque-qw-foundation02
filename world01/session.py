@@ -11,7 +11,8 @@ from router import digest
 from interactive01.world import freeze,verify,apply
 from frontier01.state import CorrelatedStore
 from .contracts import WorldError,OperationRequest,envelope,KIND
-from . import fabric
+from . import fabric,provenance as origin
+from types import MappingProxyType
 def filehash(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def publish_bytes(p,raw):
     p.parent.mkdir(parents=True,exist_ok=True);fd,tmp=tempfile.mkstemp(dir=p.parent)
@@ -23,9 +24,15 @@ def publish_bytes(p,raw):
     finally:os.unlink(tmp)
 class WorldSession:
     def __init__(self,root,baseline_root,source_manifest,goal='Offline world integration'):
-        self.root=pathlib.Path(root);self.baseline=pathlib.Path(baseline_root).resolve();self.manifest=source_manifest['files'];self.store=CorrelatedStore(self.root)
+        self.root=pathlib.Path(root);self.baseline=pathlib.Path(baseline_root).resolve();self.manifest=MappingProxyType(copy.deepcopy(source_manifest['files']));self.source_snapshot_commit=source_manifest['local_base'];self.store=CorrelatedStore(self.root)
         self.metadata={'schema':'QW_WORLD_SESSION_01','research_goal':goal,'source_commit':source_manifest['local_base'],'authority':{'new_science_jobs':0,'external_writes':False,'purchases':0},'resource_envelope':'Light offline read/replay/fixture only','state_storage':'Inherited CorrelatedStore/QuantumStore/Store; unchanged legacy hashes','physical_execution':'DISABLED_IN_THIS_BUILD'}
-        freeze(self.root/'session.json',self.metadata)
+        if (self.root/'session.json').exists():
+            legacy=json.loads((self.root/'session.json').read_text())
+            if legacy.get('schema')!='QW_WORLD_SESSION_01':raise WorldError('SESSION_SCHEMA_INVALID')
+            self.metadata=legacy # preserve old immutable metadata, not a new execution grant
+        else:freeze(self.root/'session.json',self.metadata)
+        freeze(self.root/'source_anchor.json',{'snapshot_commit':self.source_snapshot_commit,'source_manifest_sha256':digest(dict(self.manifest)),'trust':'Pinned intake records, not independent physical or Human-signature certification'})
+        self._anchor_sha256=filehash(self.root/'source_anchor.json')
     def call(self,operation,**kwargs):
         allowed={'create','reference','load','observe','act','fork','compare','translate','claim','replay','stop'}
         if operation not in allowed:return self.reject(operation,'UNSUPPORTED_OPERATION')
@@ -35,13 +42,15 @@ class WorldSession:
     def _open(self):
         if (self.root/'STOP.json').exists():raise WorldError('SESSION_STOPPED')
     def _source(self,relative):
+        if filehash(self.root/'source_anchor.json')!=self._anchor_sha256:raise WorldError('TRUST_ANCHOR_TAMPERED')
         rel=pathlib.PurePosixPath(relative)
         if rel.is_absolute() or '..' in rel.parts or str(rel) not in self.manifest:raise WorldError('SOURCE_NOT_BOUND')
         p=self.baseline/str(rel)
         if p.is_symlink() or not p.is_file() or filehash(p)!=self.manifest[str(rel)]:raise WorldError('SOURCE_HASH_MISMATCH')
         return p
     def receipt(self,operation,status,code,source=None,**fields):
-        v={'schema':'QW_SESSION_RECEIPT_01','operation':operation,'status':status,'reason_code':code,'source_state_hash':source,'time_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'new_scientific_execution':False,**fields}
+        if fields.get('new_scientific_execution') or fields.get('new_scientific_executions',0):raise WorldError('READONLY_RECEIPT_CANNOT_CLAIM_EXECUTION')
+        v={'schema':'QW_SESSION_RECEIPT_01','operation':operation,'status':status,'reason_code':code,'source_state_hash':source,'time_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'new_scientific_execution':False,'new_scientific_executions':0,**fields}
         h=digest(v);freeze(self.root/'session_receipts'/f'{h}.json',v);return {**v,'receipt_sha256':h}
     def reject(self,operation,code,source=None,detail=''):return self.receipt(operation,'REJECTED',code,source,detail=detail)
     def reference(self,relative,_seen=None):
@@ -61,16 +70,8 @@ class WorldSession:
             if filehash(a)!=ref['sha256']:raise WorldError('ARRAY_HASH_MISMATCH')
             publish_bytes(self.root/ref['path'],a.read_bytes())
         publish_bytes(self.root/'states'/p.name,p.read_bytes())
-        provenance={'mode':'HISTORICAL_REPLAY','source_file':relative,'raw_byte_sha256':filehash(p),'source_commit':self.metadata['source_commit']}
-        canonical=self.root/'references'/f"{s['sha256']}.json"
-        if canonical.exists():
-            previous=json.loads(canonical.read_text())
-            if previous['raw_byte_sha256']!=provenance['raw_byte_sha256'] or previous['mode']!=provenance['mode']:
-                raise WorldError('IMMUTABLE_CONFLICT')
-            freeze(self.root/'reference_aliases'/f'{digest(provenance)}.json',provenance)
-            provenance=previous
-        else:freeze(canonical,provenance)
-        self._validate_state(s);return envelope(s,provenance)
+        origin.bind(self,relative,s)
+        return self.load(s['sha256'])
     def _validate_state(self,s):
         verify(s);p=s['payload'];fabric.validate_object(p['world_spec'])
         if p['schema'] not in KIND:raise WorldError('UNSUPPORTED_STATE_KIND')
@@ -93,31 +94,38 @@ class WorldSession:
         except (ValueError,KeyError,OSError) as e:raise WorldError('STATE_UNAVAILABLE_OR_CORRUPT',str(e)) from e
         self._validate_state(s);p=self.root/'references'/f'{ident}.json'
         if not p.exists():raise WorldError('PROVENANCE_MISSING')
-        return envelope(s,json.loads(p.read_text()))
+        provenance=json.loads(p.read_text());trust=origin.classify(self,s,provenance)
+        if not trust['verified']:raise WorldError('UNVERIFIED_PROVENANCE',trust.get('reason_code','UNKNOWN'))
+        return envelope(s,provenance,trust)
     def create(self,spec,*,synthetic=False):
         self._open();fabric.validate_object(spec);s=self.store.create(spec,'SYNTHETIC_STRUCTURE_ONLY' if synthetic else 'NEW_STRUCTURE_ONLY_NO_SOLVER')
         prov={'mode':'SYNTHETIC' if synthetic else 'NEW_STRUCTURE_NOT_CALCULATED','source_file':None,'raw_byte_sha256':filehash(self.root/'states'/f"{s['sha256']}.json")}
-        freeze(self.root/'references'/f"{s['sha256']}.json",prov);return envelope(s,prov)
+        freeze(self.root/'references'/f"{s['sha256']}.json",prov)
+        freeze(self.root/'local_origins'/f"{s['sha256']}.json",{'mode':prov['mode'],'raw_byte_sha256':prov['raw_byte_sha256'],'provenance_digest':digest(prov)})
+        return self.load(s['sha256'])
     def observe(self,ident,requested=()):
-        env=self.load(ident);s=self.store.load(ident);m=fabric.select(s)
-        if set(requested)-set(m['supported_observables']):raise WorldError('FORCE_NOT_AVAILABLE' if 'forces' in requested else 'UNSUPPORTED_OBSERVABLE')
-        p=s['payload'];raw=p.get('observation');values={'original_observation':copy.deepcopy(raw)}
-        available=[]
-        if raw and raw.get('status')=='CALCULATED':
-            if p['schema']=='QW_CORRELATED_ELECTRONIC_STATE_01':
-                available=[k for k,key in [('energy','energy_FCI_Eh'),('natural_occupations','natural_occupations'),('double_occupancy','double_occupancy'),('spin_correlations','spin_correlations'),('charge_covariance','charge_covariance')] if key in raw]
-            else:
-                data=raw.get('observation',{})
-                if 'energy' in data or 'energy_Eh_per_cell' in data:available.append('energy')
-                if 'forces_Eh_per_bohr' in data or 'forces_eV_per_angstrom' in data:available.append('forces')
-        if p['schema']=='QW_EFFECTIVE_QUANTUM_STATE_01':available=['population','norm','time','model']
-        if set(requested)-set(available):raise WorldError('OBSERVABLE_NOT_AVAILABLE','Requested values absent from this state; manifest support is not a completed measurement')
-        values['available_observables']=available
+        env=self.load(ident);s=self.store.load(ident);m=fabric.select(s);trust=env['source_execution']
+        if set(requested)-set(m['supported_observables']):
+            raise WorldError('FORCE_NOT_AVAILABLE' if 'forces' in requested else 'STRESS_NOT_AVAILABLE' if 'stress' in requested else 'UNSUPPORTED_OBSERVABLE')
+        p=s['payload'];raw=p.get('observation');values={'original_observation':copy.deepcopy(raw)};available={}
+        if trust['real_calculated']:
+            available=fabric.observation_values(s)
         if p['schema']=='QW_EFFECTIVE_QUANTUM_STATE_01':
             a=self.store.arrays(s);values.update(population=(np.abs(a['ket'])**2).tolist(),norm=float(np.vdot(a['ket'],a['ket']).real),time_au=p['time_au'],model=p['model'])
-        status='HISTORICAL_OBSERVATION_READ' if env['provenance']['mode']=='HISTORICAL_REPLAY' else 'SOFTWARE_FIXTURE_ONLY' if env['provenance']['mode']=='SYNTHETIC' else 'STRUCTURE_ONLY_NOT_CALCULATED'
-        v={'schema':'QW_OBSERVATION_ENVELOPE_01','source_state_hash':ident,'status':status,'values':values,'original_status':(raw or {}).get('status'),'units':env['units'],'measurement_definition':m['supported_observables'],'model_hash':env['model_hash'],'model_domain':m['domain'],'error_uncertainty':m['model_limitations'],'raw_sha256':digest(raw),'provenance':env['provenance'],'new_physics_run':False}
-        rec=self.receipt('observe',status,'ORIGINAL_PHYSICS_STATUS_PRESERVED',ident,observation_sha256=digest(v));return {**v,'read_receipt_sha256':rec['receipt_sha256']}
+            for k in ('population','norm','time','model'):available[k]={'value':values['time_au'] if k=='time' else values[k],'unit':{'time':'atomic_time','model':'declared_Hamiltonian','population':'dimensionless','norm':'dimensionless'}[k]}
+        if set(requested)-set(available):raise WorldError('OBSERVABLE_NOT_AVAILABLE','Requested value absent or not established by this state')
+        if p['schema']=='QW_PHYSICAL_STATE_01' and raw:
+            data=raw.get('observation',{});flag=data.get('SCF_converged',data.get('converged'))
+            if flag is not None:values['SCF_converged']=flag
+        kind=trust['source_execution_kind']
+        if kind=='SYNTHETIC':status='SOFTWARE_FIXTURE_ONLY'
+        elif trust['real_calculated']:status='SCIENTIFIC_OBSERVATION_READ' if kind=='NEW_SCIENTIFIC_EXECUTION' else 'HISTORICAL_OBSERVATION_READ'
+        elif raw:status='UNVERIFIED'
+        else:status='STRUCTURE_ONLY_NOT_CALCULATED' if p['schema']=='QW_PHYSICAL_STATE_01' else 'MODEL_STATE_READ_NOT_CALCULATED'
+        values['available_observables']=list(available)
+        v={'schema':'QW_OBSERVATION_ENVELOPE_01','source_state_hash':ident,'status':status,'observation_read_status':'READ_COMPLETED','values':values,'observables':available,'original_status':(raw or {}).get('status'),'source_execution_kind':kind,'source_execution_status':trust['source_execution_status'],'source_evidence_status':trust['source_evidence_status'],'model_qualification':trust['model_qualification'],'unavailable_observables':m['unavailable_observables'],'units':env['units'],'measurement_definition':m['supported_observables'],'model_hash':env['model_hash'],'model_domain':m['domain'],'error_uncertainty':m['model_limitations'],'raw_sha256':digest(raw),'provenance':env['provenance'],'new_physics_run':False,'new_scientific_executions':0}
+        rec=self.receipt('observe',status,'ORIGINAL_PHYSICS_STATUS_PRESERVED',ident,observation_sha256=digest(v),source_execution_kind=kind,source_execution_status=trust['source_execution_status'],operation_kind='READ_ONLY')
+        return {**v,'read_receipt_sha256':rec['receipt_sha256']}
     def fork(self,ident,reason):
         self._open();self.load(ident)
         if not reason:raise WorldError('FORK_REASON_REQUIRED')
@@ -125,7 +133,8 @@ class WorldSession:
     def compare(self,a,b,contract=None):
         for ident in (a,b):
             env=self.load(ident)
-            if env['provenance']['mode']!='HISTORICAL_REPLAY':raise WorldError('SYNTHETIC_MISLABEL_BLOCKED')
+            if env['source_execution']['source_execution_kind']=='SYNTHETIC':raise WorldError('SYNTHETIC_MISLABEL_BLOCKED')
+            if not env['source_execution']['real_calculated']:raise WorldError('UNVERIFIED_SCIENTIFIC_RESULT')
         result=fabric.compare(self.store.load(a),self.store.load(b),contract)
         return self.receipt('compare','COMPARISON_VALIDATED',result['status'],a,result=result,other_state=b)
     def translate(self,ident,target):
