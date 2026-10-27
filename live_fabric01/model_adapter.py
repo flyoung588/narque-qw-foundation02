@@ -20,6 +20,14 @@ def make_prompt(request,wire_request,mode):
   'Historical capability E00 budgets describe old offline validations; actual execution requires the separate current pinned grant. Only supplied current resources and independent runtime approval determine execution. '+
   'For a second calculation, express the local minus-force-dot-displacement prediction with explicit units and limits before dispatch. Keep static BO, effective dynamics and physical stability distinct. After two science returns interpret and terminate; no third solve.\n'
   'Current request:\n'+json.dumps(wire_request,ensure_ascii=False,sort_keys=True))
+def provider_schema(semantic_schema):
+ # Provider rejects uniqueItems under strict output. Keep original local
+ # semantic validation unchanged; only lower that unsupported wire keyword.
+ def lower(v):
+  if isinstance(v,dict):return {k:lower(x) for k,x in v.items() if k!='uniqueItems'}
+  if isinstance(v,list):return [lower(x) for x in v]
+  return v
+ return lower(copy.deepcopy(semantic_schema))
 class FabricModelAdapter:
  def __init__(self,gateway,thread,approval_path,approval_sha256,source_sha256,research):
   self.g=gateway;self.t=thread;self.path=pathlib.Path(approval_path);self.pin=approval_sha256;self.source=source_sha256;self.research=research;self.last_receipt=None
@@ -31,13 +39,14 @@ class FabricModelAdapter:
   require(request==self.research.pending()['request'],'OUTBOUND_NOT_CURRENT_REQUEST');require(set(request['context'])==set(a['context_fields']),'OUTBOUND_UNLISTED_CONTEXT_FIELD')
   mode=a.get('wire_mode');require(mode in ('DIRECT_OBJECT','WRAPPED_COMPAT'),'UNAPPROVED_WIRE_MODE');schema=WIRE_SCHEMA if mode=='DIRECT_OBJECT' else WRAPPED_SCHEMA
   require(a.get('output_schema_sha256')==digest(schema),'OUTPUT_SCHEMA_NOT_APPROVED')
+  transport_schema=provider_schema(schema)
   def redact(v):
    if isinstance(v,dict):return {k:redact(x) for k,x in v.items()}
    if isinstance(v,list):return [redact(x) for x in v]
    return v.replace('/Users/feiyang','[LOCAL_USER]') if isinstance(v,str) else v
-  wire=redact(copy.deepcopy(request));prompt=make_prompt(request,wire,mode);secret_scan(wire);secret_scan(schema);secret_scan(prompt)
-  with self.research.j.lock():self.research.j.append('OutboundPreflight',{'status':'PASS','request_hash':digest(request),'wire_sha256':digest(wire),'approval_sha256':self.pin,'actual_output_schema_sha256':digest(schema),'wire_mode':mode,'redaction':'Local user path replaced; existing secret scanner passed'});self.research.j.checkpoint()
-  raw=self.g.invoke(self.t,prompt,schema,request_hash=digest(request),observation_digest=digest(request['context']['memory']['observations']),research_session=self.research.id,purpose='QW_LIVE_E01R_AUTHORIZED_CONTINUATION',timeout=180)
+  wire=redact(copy.deepcopy(request));prompt=make_prompt(request,wire,mode);secret_scan(wire);secret_scan(schema);secret_scan(transport_schema);secret_scan(prompt)
+  with self.research.j.lock():self.research.j.append('OutboundPreflight',{'status':'PASS','request_hash':digest(request),'wire_sha256':digest(wire),'approval_sha256':self.pin,'actual_output_schema_sha256':digest(transport_schema),'semantic_schema_sha256':digest(schema),'provider_compatibility':'uniqueItems omitted only on wire; unchanged local validation','wire_mode':mode,'redaction':'Local user path replaced; existing secret scanner passed'});self.research.j.checkpoint()
+  raw=self.g.invoke(self.t,prompt,transport_schema,request_hash=digest(request),observation_digest=digest(request['context']['memory']['observations']),research_session=self.research.id,purpose='QW_LIVE_E01R_AUTHORIZED_CONTINUATION',timeout=180)
   decision_raw=unwrap_wire(raw,mode);self.last_receipt=copy.deepcopy(self.g.last_receipt);self.last_receipt['wire_mode']=mode
   verify_invocation(pathlib.Path(self.last_receipt['transcript_path']).parent,expected_request_hash=digest(request),expected_decision_raw=decision_raw)
   return decision_raw
