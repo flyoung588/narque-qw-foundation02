@@ -10,6 +10,18 @@ class FabricExplorer(ExplorerRuntime):
  def __init__(self,*args,execution,model_budget=None,**kwargs):
   self.execution=execution;self.model_budget=model_budget;super().__init__(*args,**kwargs)
   for e in self.j.query('FabricStateRegistered'):self.catalog[e['data']['state']]={'path':'fabric:'+e['data']['state'],'domain':e['data']['domain']}
+ def _open(self):
+  # A prior local intake failure is kept, not erased. Only authenticated read-only
+  # recovery can release that system stop; scientific/model STOP remains final.
+  import datetime
+  es=self.j.events();recoveries=self.j.query('EngineeringReadbackRecovered')
+  for event in (e for e in es if e['kind']=='Stopped'):
+   matching=[v['data'] for v in recoveries if v['data'].get('system_stop_event')==event['sha256']]
+   require(event['data'].get('reason')=='SYSTEM_SCIENCE_FAILURE_NO_RETRY_NOT_MODEL_STOP' and len(matching)==1,'RESEARCH_STOPPED')
+   rec=matching[0];returns=[x['data'] for x in self.execution.j.query('ExecutionReturned') if x['data'].get('intent_hash')==rec['intent_hash'] and x['data'].get('state')==rec['state'] and x['data'].get('recovered_readback') is True]
+   require(len(returns)==1,'RECOVERY_WITHOUT_AUTHENTICATED_RETURN')
+  elapsed=(datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(es[0]['time_utc'])).total_seconds()
+  require(elapsed<=es[0]['data']['wall_seconds'],'RESEARCH_WALL_LIMIT');return es
  def decode_decision(self,raw):
   from .decision_contract import decode_with_audit
   d,record=decode_with_audit(raw)

@@ -116,7 +116,11 @@ class ExecutionFabric:
     from .transport import DockerTransport
     from .github_transport import GithubFabricTransport
     require(type(self.transport) in (DockerTransport,GithubFabricTransport),'UNTRUSTED_EXECUTION_TRANSPORT')
-    package=self.transport.execute(i,self.world,attempt,self.grant_path,self.grant_sha256,self.source_hash)
+    try:package=self.transport.execute(i,self.world,attempt,self.grant_path,self.grant_sha256,self.source_hash)
+    except WorldError as transport_error:
+     if transport_error.code!='REMOTE_PACKAGE_MISSING':raise
+     # Read the same completed success from authenticated raw job logs, never dispatch again.
+     package=self.read_completed_return(i,attempt,json.loads(self.grant_path.read_text()))
     # Admission and result ingestion remain broker-owned, never model-owned.
     result=self.world.ingest_worker(package,i,h,attempt)
    freeze(attempt/'result.json',result)
@@ -127,6 +131,29 @@ class ExecutionFabric:
    freeze(attempt/'failure.json',failure)
    with self.j.lock():self.j.append('ExecutionFailed',{'intent_hash':h,**failure});self.j.checkpoint()
    raise
+
+ def read_completed_return(self,i,attempt,source_grant):
+  """Read-only recovery of an already successful Job. Never consumes/releases a Job slot."""
+  import base64,zlib
+  from .github_transport import GithubFabricTransport
+  from world01.session import publish_bytes
+  require(type(self.transport) is GithubFabricTransport,'UNTRUSTED_EXECUTION_TRANSPORT')
+  repo=source_grant['repository'];branch=source_grant['branch'];ident=digest(i)
+  listing=json.loads(self.transport.gh('api',f'repos/{repo}/actions/workflows/qw-live-fabric01-once.yml/runs?branch={branch}&per_page=100'))
+  runs=[v for v in listing['workflow_runs'] if v.get('display_title')=='QWLF01-'+ident];require(len(runs)==1,'ORIGINAL_RUN_NOT_UNIQUE');run=runs[0]
+  require(run['status']=='completed' and run['conclusion']=='success' and run['run_attempt']==1 and run['head_sha']==source_grant['code_commit'],'ORIGINAL_RUN_NOT_VERIFIED_SUCCESS')
+  jobs=json.loads(self.transport.gh('api',f'repos/{repo}/actions/runs/{run["id"]}/jobs'))['jobs'];require(len(jobs)==1 and jobs[0]['conclusion']=='success','ORIGINAL_JOB_NOT_VERIFIED_SUCCESS')
+  log=self.transport.gh('api',f'repos/{repo}/actions/jobs/{jobs[0]["id"]}/logs');folder=attempt/'raw_job_readback';folder.mkdir(parents=True,exist_ok=False);(folder/'job.log').write_text(log)
+  records=[line.split('QWLF_PACKAGE=',1)[1].strip() for line in log.splitlines() if 'QWLF_PACKAGE=' in line];require(len(records)==1,'ORIGINAL_RAW_PACKAGE_MISSING')
+  data=json.loads(zlib.decompress(base64.b64decode(records[0])));require(data['intent_hash']==ident and data['source_sha256']==source_grant['source_sha256'],'ORIGINAL_PACKAGE_BINDING_MISMATCH')
+  io=folder/'io';io.mkdir()
+  for rel,raw in data['files'].items():
+   p=pathlib.PurePosixPath(rel);require(not p.is_absolute() and '..' not in p.parts,'REMOTE_PACKAGE_PATH_INVALID');publish_bytes(io/rel,zlib.decompress(base64.b64decode(raw)))
+  require(json.loads((io/'grant.json').read_text())==source_grant and filehash(io/'grant.json')==data['grant_sha256']==i['authorization_ref'],'ORIGINAL_AUTHORITY_CHANGED')
+  result=json.loads((io/'worker_result.json').read_text());require(result['intent_hash']==ident,'ORIGINAL_RESULT_INTENT_MISMATCH')
+  package={'world_root':str(io/'world'),'result_path':str(io/'worker_result.json'),'state':result['state'],'files':{str(p.relative_to(io)):filehash(p) for p in io.rglob('*') if p.is_file()},'io':str(io),'run':{k:run[k] for k in ('id','head_sha','head_branch','run_attempt','conclusion')},'log_sha256':__import__('hashlib').sha256(log.encode()).hexdigest(),'recovered_read_only':True}
+  self.transport._packages[digest(package)]=package
+  return package
 
 class FabricWorldSession(WorldSession):
  """Original E00 methods stay closed; only explicit execute_physics uses this bridge."""
@@ -154,7 +181,17 @@ class FabricWorldSession(WorldSession):
   from world01.session import publish_bytes
   for p in (pathlib.Path(package['world_root'])/'states').glob('*.json'):publish_bytes(self.root/'states'/p.name,p.read_bytes())
   for p in (pathlib.Path(package['world_root'])/'arrays').glob('*.npz'):publish_bytes(self.root/'arrays'/p.name,p.read_bytes())
-  s=self.store.load(package['state']);self._validate_state(s);require(s['payload']['parent_state_id']==i['input_state'],'LIVE_PHYSICAL_PARENT_MISMATCH')
+  s=self.store.load(package['state']);self._validate_state(s)
+  native_return=json.loads(pathlib.Path(package['result_path']).read_text());receipt=native_return['receipt']
+  require(native_return['intent_hash']==digest(i) and receipt['source_state_sha256']==i['input_state'] and receipt['new_state_sha256']==s['sha256'],'LIVE_INTENT_OR_TRANSITION_MISMATCH')
+  require(receipt['action']==i['operation'],'LIVE_ACTION_MISMATCH')
+  if s['payload']['parent_state_id']!=i['input_state']:
+   # Molecular transition preserves structural candidate -> solver observation.
+   candidate=self.store.load(s['payload']['parent_state_id'])
+   require(candidate['sha256']==receipt.get('candidate_state_sha256') and candidate['payload']['parent_state_id']==i['input_state'],'LIVE_PHYSICAL_PARENT_MISMATCH')
+   from interactive01.world import apply
+   require(candidate['payload']['world_spec']==apply(self.store.load(i['input_state']),i['operation'])==s['payload']['world_spec'],'LIVE_PHYSICAL_TRANSITION_MISMATCH')
+  require(receipt.get('result_sha256',digest(s['payload']['observation']))==digest(s['payload']['observation']),'LIVE_OBSERVATION_RECEIPT_MISMATCH')
   require(semantics.select(s)['id']==i['model'],'LIVE_MODEL_MISMATCH')
   # Observe after broker journal has recorded its returned state; pending intake cannot be used.
   native=semantics.observation_values(s)
