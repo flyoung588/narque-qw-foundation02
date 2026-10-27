@@ -24,8 +24,8 @@ def require(ok,code):
  if not ok:raise WorldError(code)
 
 class ExecutionFabric:
- def __init__(self,root,world,*,grant_path=None,grant_sha256=None,source_hash=None,transport=None):
-  self.root=pathlib.Path(root);self.world=world;self.j=Journal(self.root/'execution');self.grant_path=pathlib.Path(grant_path) if grant_path else None;self.grant_sha256=grant_sha256;self.source_hash=source_hash;self.transport=transport
+ def __init__(self,root,world,*,grant_path=None,grant_sha256=None,source_hash=None,transport=None,model_budget=None):
+  self.root=pathlib.Path(root);self.world=world;self.j=Journal(self.root/'execution');self.grant_path=pathlib.Path(grant_path) if grant_path else None;self.grant_sha256=grant_sha256;self.source_hash=source_hash;self.transport=transport;self.model_budget=model_budget
   with self.j.lock():
    events=self.j.events();done={x['data']['intent_hash'] for x in events if x['kind'] in ('ExecutionReturned','ExecutionFailed')}
    for x in events:
@@ -35,7 +35,7 @@ class ExecutionFabric:
  def authorize(self,intent,provider_record=None,raw_decision=None):
   require(self.grant_path is not None and self.grant_sha256 is not None,'NEW_SCIENCE_NOT_AUTHORIZED')
   require(filehash(self.grant_path)==self.grant_sha256,'GRANT_PIN_MISMATCH')
-  g=json.loads(self.grant_path.read_text());require(g.get('scope')==SCOPE and g.get('status')=='HUMAN_GRANTED' and bool(g.get('human_reference')),'NEW_SCIENCE_NOT_AUTHORIZED')
+  g=json.loads(self.grant_path.read_text());require(g.get('release')=='LIVE-E01R' and g.get('scope')==SCOPE and g.get('status')=='HUMAN_GRANTED' and bool(g.get('human_reference')),'NEW_SCIENCE_NOT_AUTHORIZED')
   require(g.get('source_sha256')==self.source_hash and g.get('limits')==LIMITS,'GRANT_SOURCE_OR_RESOURCE_MISMATCH')
   require(intent['authorization_ref']==self.grant_sha256 and intent['resource_ref']==digest(LIMITS),'INTENT_AUTHORITY_BINDING_MISMATCH')
   require(intent['model'] in g.get('domains',[]) and intent['experiment_ref']==g.get('preregistration_sha256'),'EXPERIMENT_SCOPE_NOT_AUTHORIZED')
@@ -64,6 +64,9 @@ class ExecutionFabric:
    require(float(np.linalg.norm(intent['operation']['vector']))<=g.get('max_displacement_angstrom',0),'DISPLACEMENT_NOT_AUTHORIZED')
   require(intent['operation']['type'] in g.get('operations',[]),'OPERATION_NOT_AUTHORIZED')
   require(g.get('model_transfer_authorized') is True,'MODEL_TRANSFER_NOT_AUTHORIZED')
+  require(self.model_budget is not None,'SHARED_MODEL_BUDGET_REQUIRED')
+  ledger=self.model_budget.j.events();remaining=ledger[0]['data']['max_calls']-len(self.model_budget.j.query('CallReserved'))
+  require(remaining>=1,'POSTOBSERVATION_MODEL_BUDGET_REQUIRED')
   return g
  def resolve(self,i):
   fields=('research_session','world_session','goal','candidate','model','operation','input_state','prediction','falsifier','observables','resource_ref','authorization_ref','stop_condition','mode')
@@ -97,14 +100,14 @@ class ExecutionFabric:
    if new:require(sum(x['data']['new_science'] for x in old)<LIMITS['max_jobs'],'SCIENTIFIC_JOB_LIMIT')
    self.j.append('ExecutionReserved',{'intent_hash':h,'fingerprint':fingerprint,'new_science':new,'intent':i,'route':route});self.j.checkpoint()
   attempt=self.root/'attempts'/h;attempt.mkdir(parents=True,exist_ok=False);freeze(attempt/'intent.json',i)
-  if new and i['operation']['type']=='DISPLACE_ATOM':
-   # Frozen before dispatch, independently derived from the first saved force.
-   state=self.world.store.load(i['input_state']);forces=semantics.observation_values(state)['forces'];index=state['payload']['atom_ids'].index(i['operation']['atom_id'])
-   # Exact conversion constant already used by the inherited ASE/PySCF bridge.
-   bohr_angstrom=0.5291772105638411
-   linear=-sum(f*d/bohr_angstrom for f,d in zip(forces['value'][index],i['operation']['vector']))
-   freeze(attempt/'PREEXEC_LINEAR_PREDICTION.json',{'delta_energy_linear_Eh':linear,'force_source_state':i['input_state'],'force_unit':forces['unit'],'displacement_angstrom':i['operation']['vector'],'bohr_angstrom':bohr_angstrom,'definition':'minus first analytic force dot displacement; finite-step higher-order terms unknown','model_prediction_verbatim':i['prediction'],'falsifier_verbatim':i['falsifier']})
   try:
+   if new and i['operation']['type']=='DISPLACE_ATOM':
+    # Frozen before dispatch, independently derived from the first saved force.
+    state=self.world.store.load(i['input_state']);forces=semantics.observation_values(state)['forces'];index=state['payload']['atom_ids'].index(i['operation']['atom_id'])
+    # Exact conversion constant already used by the inherited ASE/PySCF bridge.
+    bohr_angstrom=0.5291772105638411
+    linear=-sum(f*d/bohr_angstrom for f,d in zip(forces['value'][index],i['operation']['vector']))
+    freeze(attempt/'PREEXEC_LINEAR_PREDICTION.json',{'delta_energy_linear_Eh':linear,'force_source_state':i['input_state'],'force_unit':forces['unit'],'displacement_angstrom':i['operation']['vector'],'bohr_angstrom':bohr_angstrom,'definition':'minus first analytic force dot displacement; finite-step higher-order terms unknown','model_prediction_verbatim':i['prediction'],'falsifier_verbatim':i['falsifier']})
    if not new:
     r=self.world.replay(i['receipt_path']);require(r['status']=='HISTORICAL_REPLAY_VALIDATED','HISTORICAL_REPLAY_FAILED');o=r['observation'];state=o['source_state_hash']
     require(self.world.load(state)['source_execution']['real_calculated'],'SYNTHETIC_NOT_REAL_EVIDENCE')

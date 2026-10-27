@@ -87,6 +87,7 @@ class ExplorerRuntime:
   if name=='OBSERVE' and d['action'] not in ('CONTINUE','CHANGE_OBJECT','CHANGE_MODEL','CHANGE_PHYSICAL_DOMAIN','REQUEST_VALIDATION'):raise WorldError('ACTION_OPERATION_MISMATCH')
   failed=[e['data']['operation'] for e in self.j.events() if e['kind']=='OperationResult' and e['data'].get('status')=='REJECTED' and 'operation' in e['data']]
   if name=='PROPOSE_EXPERIMENT' and any(digest(x)==digest(op) for x in failed):raise WorldError('REPEATED_FAILED_EXPERIMENT_NO_NEW_AUTHORITY')
+ def decode_decision(self,raw):return decode(raw)
  def submit(self,raw,*,transport='WORK_FILE_EXCHANGE',provider_record=None):
   with self.j.lock():
    self._open();req=self.pending()
@@ -94,7 +95,7 @@ class ExplorerRuntime:
    # Store raw output before parse/dispatch. Label transport, never grant model identity by self-report.
    record={'request_hash':req['hash'],'raw_response':raw,'raw_response_sha256':hashlib.sha256(raw.encode()).hexdigest(),'transport':transport,'provider_record':provider_record,'provider_attestation':'UNVERIFIED' if provider_record is None else 'SUPPLIED_NOT_AUTOMATICALLY_TRUSTED','time_utc':now()}
    self.j.append('ModelResponse',record)
-   try:d=decode(raw);self._validate(d,req)
+   try:d=self.decode_decision(raw);self._validate(d,req)
    except Exception as e:
     out={'request_hash':req['hash'],'status':'REJECTED','reason_code':getattr(e,'code',type(e).__name__),'detail':str(e)};self.j.append('ModelFailure',out);self.j.checkpoint();return out
    event=self.j.append('DecisionAccepted',{'request_hash':req['hash'],'decision':d,'response_sha256':record['raw_response_sha256'],'physical_execution_permission':False})

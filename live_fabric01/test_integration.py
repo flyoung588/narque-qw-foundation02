@@ -123,11 +123,14 @@ class Integration(unittest.TestCase):
   # Engineering-only admission stub: no solver or real authority is asserted.
   from .transport import DockerTransport
   self.b.transport=DockerTransport(P,'synthetic@sha256:'+'0'*64)
+  # This live precondition was added in E01: displacement needs an actual prior force.
+  # Replay an existing measured parent; still no new scientific calculation.
+  self.w.replay(EX['molecular']['receipt_path'])
   with patch.object(self.b,'authorize',return_value={'fixture':'NO_REAL_AUTHORITY'}):
    for n in range(2):
-    i=self.intent();i.update(mode='NEW_SCIENTIFIC_EXECUTION',stop_condition=f'Synthetic failure {n}');i['operation']={'type':'DISPLACE_ATOM','source_state_sha256':i['input_state'],'atom_id':'atom-0','vector':[0,0,.001*(n+1)],'unit':'angstrom'}
+    i=self.intent();i['input_state']=EX['molecular']['target_state'];i.update(mode='NEW_SCIENTIFIC_EXECUTION',stop_condition=f'Synthetic failure {n}');i['operation']={'type':'DISPLACE_ATOM','source_state_sha256':i['input_state'],'atom_id':'atom-0','vector':[0,0,.001*(n+1)],'unit':'angstrom'}
     self.reject('RUNTIME_TRANSPORT_DISABLED',lambda:self.b.execute(i))
-   i=self.intent();i.update(mode='NEW_SCIENTIFIC_EXECUTION',stop_condition='third synthetic request');i['operation']={'type':'DISPLACE_ATOM','source_state_sha256':i['input_state'],'atom_id':'atom-0','vector':[0,0,.003],'unit':'angstrom'}
+   i=self.intent();i['input_state']=EX['molecular']['target_state'];i.update(mode='NEW_SCIENTIFIC_EXECUTION',stop_condition='third synthetic request');i['operation']={'type':'DISPLACE_ATOM','source_state_sha256':i['input_state'],'atom_id':'atom-0','vector':[0,0,.003],'unit':'angstrom'}
    self.reject('SCIENTIFIC_JOB_LIMIT',lambda:self.b.execute(i))
   self.assertEqual(sum(e['data']['new_science'] for e in self.b.j.query('ExecutionReserved')),2);self.assertFalse(self.b.j.query('ExecutionReturned'))
  def test_34_transport_never_accepts_arbitrary_return(self):

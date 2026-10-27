@@ -1,0 +1,473 @@
+{
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "QW_EXPLORER_DECISION_01"
+    },
+    "request_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "goal_interpretation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "kind": {
+            "enum": [
+              "RESEARCH",
+              "STOP"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "information_value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "cost_and_limits": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "why_not_selected": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "question",
+          "information_value",
+          "cost_and_limits",
+          "why_not_selected"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "selected": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "action": {
+      "enum": [
+        "CONTINUE",
+        "FORK",
+        "CHANGE_OBJECT",
+        "CHANGE_MODEL",
+        "CHANGE_PHYSICAL_DOMAIN",
+        "REQUEST_VALIDATION",
+        "ABANDON",
+        "STOP"
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "OBSERVE",
+            "COMPARE",
+            "TRANSLATE",
+            "FORK",
+            "PROPOSE_EXPERIMENT",
+            "STOP"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "other": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameters": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "intent": {
+                  "type": "object",
+                  "properties": {
+                    "research_session": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "world_session": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "goal": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "candidate": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "input_state": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "prediction": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "falsifier": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "resource_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "authorization_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "stop_condition": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "experiment_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 12000
+                    },
+                    "model": {
+                      "const": "molecular"
+                    },
+                    "operation": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "const": "MEASURE_OBSERVABLE"
+                            },
+                            "source_state_sha256": {
+                              "type": "string",
+                              "pattern": "^[0-9a-f]{64}$"
+                            },
+                            "observables": {
+                              "type": "array",
+                              "items": {
+                                "enum": [
+                                  "energy",
+                                  "forces"
+                                ]
+                              },
+                              "minItems": 1
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "source_state_sha256",
+                            "observables"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "const": "DISPLACE_ATOM"
+                            },
+                            "source_state_sha256": {
+                              "type": "string",
+                              "pattern": "^[0-9a-f]{64}$"
+                            },
+                            "atom_id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 12000
+                            },
+                            "vector": {
+                              "type": "array",
+                              "items": {
+                                "type": "number"
+                              },
+                              "minItems": 3,
+                              "maxItems": 3
+                            },
+                            "unit": {
+                              "const": "angstrom"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "source_state_sha256",
+                            "atom_id",
+                            "vector",
+                            "unit"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    },
+                    "observables": {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "energy",
+                          "forces"
+                        ]
+                      },
+                      "minItems": 1
+                    },
+                    "mode": {
+                      "const": "NEW_SCIENTIFIC_EXECUTION"
+                    }
+                  },
+                  "required": [
+                    "research_session",
+                    "world_session",
+                    "goal",
+                    "candidate",
+                    "input_state",
+                    "prediction",
+                    "falsifier",
+                    "resource_ref",
+                    "authorization_ref",
+                    "stop_condition",
+                    "experiment_ref",
+                    "model",
+                    "operation",
+                    "observables",
+                    "mode"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "intent"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 12000
+                }
+              },
+              "required": [
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 12000
+                }
+              },
+              "required": [
+                "target"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "candidate_status": {
+                  "enum": [
+                    "PARKED",
+                    "ABANDONED"
+                  ]
+                },
+                "candidate_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 12000
+                }
+              },
+              "required": [
+                "candidate_status",
+                "candidate_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "contract": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "SAME_MODEL_IDENTITY",
+                        "SAME_MODEL_GEOMETRY_PATH"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "contract"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "source",
+        "other",
+        "parameters"
+      ],
+      "additionalProperties": false
+    },
+    "observation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "uniqueItems": true
+    },
+    "interpretation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "competing_explanations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 12000
+      }
+    },
+    "prediction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "falsifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "resource_reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "negative_evidence_response": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "memory_updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "ModelKnowledge",
+              "Hypothesis",
+              "CandidateFrontier",
+              "FailedPath",
+              "OpenQuestion",
+              "ResearchDecision"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12000
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "content",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "request_hash",
+    "goal_interpretation",
+    "candidates",
+    "selected",
+    "action",
+    "operation",
+    "observation_refs",
+    "interpretation",
+    "limitations",
+    "competing_explanations",
+    "prediction",
+    "falsifier",
+    "resource_reason",
+    "negative_evidence_response",
+    "memory_updates"
+  ],
+  "additionalProperties": false
+}

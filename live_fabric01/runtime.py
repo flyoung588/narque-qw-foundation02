@@ -7,20 +7,48 @@ from world01 import fabric
 from world01.contracts import WorldError
 from .fabric import require,LIMITS,WORKERS
 class FabricExplorer(ExplorerRuntime):
- def __init__(self,*args,execution,**kwargs):
-  self.execution=execution;super().__init__(*args,**kwargs)
+ def __init__(self,*args,execution,model_budget=None,**kwargs):
+  self.execution=execution;self.model_budget=model_budget;super().__init__(*args,**kwargs)
   for e in self.j.query('FabricStateRegistered'):self.catalog[e['data']['state']]={'path':'fabric:'+e['data']['state'],'domain':e['data']['domain']}
+ def decode_decision(self,raw):
+  from .decision_contract import decode_with_audit
+  d,record=decode_with_audit(raw)
+  responses=self.j.query('ModelResponse');proof=responses[-1]['data'].get('provider_record') if responses else None
+  if (proof or {}).get('wire_mode')=='DIRECT_OBJECT':
+   from jsonschema import Draft202012Validator
+   from .decision_contract import WIRE_SCHEMA
+   Draft202012Validator(WIRE_SCHEMA).validate(d)
+  self.j.append('DecisionFormatAudit',record)
+  return d
+ def remaining_model_calls(self):
+  if self.model_budget is None:return None
+  es=self.model_budget.j.events();return max(0,es[0]['data']['max_calls']-len(self.model_budget.j.query('CallReserved')))
+ def request(self,identity):
+  remaining=self.remaining_model_calls()
+  if remaining is not None:require(remaining>0,'MODEL_CALL_BUDGET_EXHAUSTED_BEFORE_REQUEST')
+  require(len(self.j.query('ModelFailure'))<2,'DECISION_CLARIFICATION_LIMIT')
+  return super().request(identity)
  def context(self):
   c=super().context();used=sum(e['data']['new_science'] for e in self.execution.j.query('ExecutionReserved'))
-  c['resources'].update(new_science_jobs=0 if self.execution.grant_path is None else max(0,LIMITS['max_jobs']-used),scientific_jobs_consumed=used,execution_authority='PINNED_EXTERNAL_GRANT_REQUIRED_NOT_GRANTED_BY_CONTEXT')
+  grant={}
+  if self.execution.grant_path is not None:
+   from world01.session import filehash
+   if filehash(self.execution.grant_path)==self.execution.grant_sha256:grant=json.loads(self.execution.grant_path.read_text())
+  granted=grant.get('status')=='HUMAN_GRANTED' and grant.get('release')=='LIVE-E01R'
+  c['resources'].update(new_science_jobs=max(0,LIMITS['max_jobs']-used) if granted else 0,scientific_jobs_consumed=used,execution_authority='PINNED_EXTERNAL_GRANT_REQUIRED_NOT_GRANTED_BY_CONTEXT')
   c['rules']=[x for x in c['rules'] if 'Only cite' in x or 'Same ResearchSession' in x or 'composition' in x]
   c['rules']+=['PROPOSE_EXPERIMENT parameters.intent dispatches through Fabric; mode must explicitly identify historical replay vs new science.','No model field grants authority. Separate source-owned grant and cgroup runtime admission required.','Archive replays are not new science. Candidate failure may PARK; STOP is always valid.','CHANGE_PHYSICAL_DOMAIN is a research switch, never a physical conversion.','New-science model outputs require real invocation evidence; offline QA decisions are labeled synthetic.']
   c['world_session']=digest(str(self.world.root.resolve()));c['connected_workers']=copy.deepcopy(WORKERS)
-  c['physical_inputs']={h:{'world_spec':self.world.store.load(h)['payload']['world_spec'],'representation':self.world.store.load(h)['payload']['schema'],'atom_ids':self.world.store.load(h)['payload']['atom_ids']} for h in self.catalog if (self.world.root/'states'/f'{h}.json').exists()}
+  c['physical_inputs']={h:{'world_spec':self.world.store.load(h)['payload']['world_spec'],'representation':self.world.store.load(h)['payload']['schema'],'atom_ids':self.world.store.load(h)['payload'].get('atom_ids')} for h in self.catalog if (self.world.root/'states'/f'{h}.json').exists()}
   c['execution_intent_fields']=['research_session','world_session','goal','candidate','model','operation','input_state','prediction','falsifier','observables','resource_ref','authorization_ref','stop_condition','mode','experiment_ref']
   c['execution_refs']={'resource_ref':digest(LIMITS),'authorization_ref':self.execution.grant_sha256,'experiment_ref':None}
   if self.execution.grant_path is not None:
    g=json.loads(self.execution.grant_path.read_text());c['execution_refs']['experiment_ref']=g.get('preregistration_sha256');c['execution_refs']['allowed_operations']=g.get('operations',[]);c['execution_refs']['max_displacement_angstrom']=g.get('max_displacement_angstrom',0)
+  remaining=self.remaining_model_calls()
+  if remaining is not None:
+   c['resources']['model_requests_remaining']=remaining;c['resources']['model_budget_timing']='BEFORE_CURRENT_CALL_RESERVATION_INCLUDES_IDENTITY_AND_CLARIFICATION'
+  c['decision_relation_rules']=list(__import__('live_fabric01.decision_contract',fromlist=['RELATION_RULES']).RELATION_RULES)
+  c['clarification_remaining']=max(0,1-len(self.j.query('ModelFailure')))
   c['execution_failures']=[e['data'] for e in self.execution.j.query('ExecutionFailed')];c['candidate_status']=[e['data'] for e in self.j.query('CandidateStatus')]
   return c
  def _observe(self,ident):
