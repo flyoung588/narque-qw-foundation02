@@ -1,0 +1,105 @@
+{
+  "mode": "FINITE_MODEL_LOCAL_DYNAMICAL_INFORMATION",
+  "rows": [
+    {
+      "event_sha256": "1adc669c25922a80a20f2dc7020f15832af7705cf92b96c6619ee72b53c3e817",
+      "observation_hash": "80543d5fb87ca539670db02dbaf2bd4cee4f89403a39da292dda2cd113788493",
+      "state": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+      "evidence_role": "HISTORICAL_REAL_EVIDENCE_REPLAY",
+      "physical_time_au": 0.0,
+      "physical_time_fs": 0.0,
+      "norm": 1.0000000000000013,
+      "absorbed": 0.0,
+      "probability_balance": 1.0000000000000013,
+      "balance_defect": 1.3322676295501878e-15,
+      "boundary_mass": 3.57582197343525e-09,
+      "energy_Eh": -0.14212497898531404,
+      "survival_conditioned_energy_change_from_initial_Eh": 0.0,
+      "interaction_region": 8.480741446300038e-05,
+      "product_region": 5.707091779612427e-16,
+      "reactant_region": 0.9999151925854535,
+      "interaction_plus_product": 8.480741446357109e-05,
+      "momentum_hbar_per_bohr": [
+        -3.6736185474138106,
+        -7.347237094830643
+      ],
+      "mean_positions_bohr": [
+        1.448350352885244,
+        5.275824823557378
+      ],
+      "npz_sha256": "238420577a937ec59c64b1987971fa5b541798c55f01ed17c18b395ca448c593"
+    },
+    {
+      "event_sha256": "3945ed92e9c3dcde5d6f32a2ba582954d2d0754d32012a246bf7a277871bdb5f",
+      "observation_hash": "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe",
+      "state": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "evidence_role": "NEW_SCIENTIFIC_EXECUTION",
+      "physical_time_au": 1000.0,
+      "physical_time_fs": 24.188843265857003,
+      "norm": 0.9999999999974463,
+      "absorbed": 2.6382686628146516e-12,
+      "probability_balance": 1.0000000000000846,
+      "balance_defect": 8.459899447643693e-14,
+      "boundary_mass": 6.8008805571935844e-09,
+      "energy_Eh": -0.1421249787839045,
+      "survival_conditioned_energy_change_from_initial_Eh": 2.0140952794456268e-10,
+      "interaction_region": 0.5948674270768561,
+      "product_region": 0.3427048102691904,
+      "reactant_region": 0.06242776264533296,
+      "interaction_plus_product": 0.9375722373460466,
+      "momentum_hbar_per_bohr": [
+        4.552888462230848,
+        2.526401932838156
+      ],
+      "mean_positions_bohr": [
+        2.692946347971237,
+        1.7426887960448763
+      ],
+      "npz_sha256": "15f042f47b03b0e98a09141154d00d49fb142e1cda5b334a8c5b20bfee4e1eb7"
+    },
+    {
+      "event_sha256": "4f578efce8fa91b1b08a06bd5f8a961d39b60164f1f67a300fd87ce2b9c4bdb7",
+      "observation_hash": "5b9d14e6f2a2168d5de9ec0a827aad61fe4d1f4337cfb70366ec3eeb31e7ae03",
+      "state": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+      "evidence_role": "NEW_SCIENTIFIC_EXECUTION",
+      "physical_time_au": 1400.0,
+      "physical_time_fs": 33.8643805721998,
+      "norm": 0.99999999857355,
+      "absorbed": 1.4265075493408379e-09,
+      "probability_balance": 1.0000000000000575,
+      "balance_defect": 5.750955267558311e-14,
+      "boundary_mass": 1.0387410751672209e-08,
+      "energy_Eh": -0.14212499476953602,
+      "survival_conditioned_energy_change_from_initial_Eh": -1.578422198500462e-08,
+      "interaction_region": 0.11248536509734908,
+      "product_region": 0.7577638629959711,
+      "reactant_region": 0.12975077047372122,
+      "interaction_plus_product": 0.8702492280933202,
+      "momentum_hbar_per_bohr": [
+        5.515222642077219,
+        3.2375486104781275
+      ],
+      "mean_positions_bohr": [
+        4.285064373094313,
+        1.9656838825078378
+      ],
+      "npz_sha256": "d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556"
+    }
+  ],
+  "frozen_directional_prediction": {
+    "original_intent_hash": "88922133659d615c408018b1c9a1a4b5cb5137a65daff570b3ff0cd78c33e30e",
+    "initial_interaction_plus_product": 8.480741446357109e-05,
+    "first_endpoint_interaction_plus_product": 0.9375722373460466,
+    "increase": 0.937487429931583,
+    "direction_supported_within_fixed_model": true
+  },
+  "quality_interpretation": {
+    "norm_plus_CAP_balance": "calculated, not material/PES accuracy certification",
+    "boundary": "reported finite-box mass diagnostic; no asymptotic yield interpretation",
+    "energy": "Re<T+V>/surviving norm; CAP-conditioned; change is not independent precision certificate",
+    "dt_grid_convergence": "NOT_ESTABLISHED_BY_THIS_SINGLE_FIRST_TRAJECTORY",
+    "independent_physics_engine": "NOT_PERFORMED",
+    "novelty": "NOT_ESTABLISHED"
+  },
+  "original_prediction_and_falsifier_unchanged": true
+}

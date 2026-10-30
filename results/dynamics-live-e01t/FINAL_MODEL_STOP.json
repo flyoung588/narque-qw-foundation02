@@ -1,0 +1,62 @@
+{
+  "schema": "QW_EXPLORER_DECISION_01",
+  "request_hash": "f0e5ed222b0826cdb62ec52a423358bd406f1974119c096aa577815ce736fe95",
+  "goal_interpretation": "Interpret the completed continuous follow-up within the finite collinear H3 LSTH nuclear model and stop at the exhausted science budget.",
+  "candidates": [
+    {
+      "id": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+      "kind": "STOP",
+      "question": "Stop after interpreting the actual t=1400 observation?",
+      "information_value": "Closes the preregistered finite-time redistribution test using the returned observation.",
+      "cost_and_limits": "No further execution; asymptotic behavior and numerical convergence remain unresolved.",
+      "why_not_selected": "Selected."
+    },
+    {
+      "id": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "kind": "RESEARCH",
+      "question": "Could additional temporal or convergence tests establish the robustness of the observed redistribution?",
+      "information_value": "Could distinguish later recrossing and numerical sensitivity.",
+      "cost_and_limits": "Requires additional independently authorized science jobs; none remain.",
+      "why_not_selected": "Science budget is exhausted and the bounded follow-up is complete."
+    }
+  ],
+  "selected": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+  "action": "STOP",
+  "operation": {
+    "name": "STOP",
+    "source": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+    "other": null,
+    "parameters": {}
+  },
+  "observation_refs": [
+    "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe",
+    "5b9d14e6f2a2168d5de9ec0a827aad61fe4d1f4337cfb70366ec3eeb31e7ae03"
+  ],
+  "interpretation": "The predicted product-region increase is supported: raw population rises from 0.3427048102691904 at t=1000 to 0.7577638629959711 at t=1400 atomic time. Interaction-region population falls from 0.5948674270768561 to 0.11248536509734908. Reported norm plus absorbed mass is 1.0000000000000575, and boundary mass is 1.0387410751672209e-08. These observations establish continuing finite-time regional redistribution, not an asymptotic reaction yield. The latest saved array hash is d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556 under unchanged Hamiltonian model hash 877551366930a8c64e5017fe2b3b56eb2bbace2055d7f009780f89e380192e1e.",
+  "limitations": "Single-surface collinear ground-doublet BO LSTH nuclear dynamics only. Probability balance and small boundary mass do not certify timestep/grid convergence, absence of boundary artifacts, material accuracy, or asymptotic S-matrix probabilities. No momentum-kick experiment was performed.",
+  "competing_explanations": [
+    "The observed increase is consistent with outgoing packet redistribution.",
+    "Later recrossing or coherent redistribution remains possible; two finite-time observations do not establish a plateau."
+  ],
+  "prediction": "Completed prediction: product-region population at t=1400 exceeds 0.3427048102691904. The supplied result supports it; no new prediction is dispatched.",
+  "falsifier": "The preregistered falsifier was product-region population at t=1400 no greater than 0.3427048102691904; it is not met.",
+  "resource_reason": "Two science jobs have been consumed and zero remain. Interpret and STOP without further dispatch.",
+  "negative_evidence_response": "Preserve the earlier frontier-competition rejection as procedural evidence, not a physical falsification. Retain unresolved convergence and asymptotic questions without reruns or stronger claims.",
+  "memory_updates": [
+    {
+      "kind": "ModelKnowledge",
+      "content": "The actual t=1400 observation supports the predicted finite-time product-region increase while reported norm-plus-absorption remains near unity; no asymptotic yield is established.",
+      "evidence_refs": [
+        "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe",
+        "5b9d14e6f2a2168d5de9ec0a827aad61fe4d1f4337cfb70366ec3eeb31e7ae03"
+      ]
+    },
+    {
+      "kind": "ResearchDecision",
+      "content": "STOP after the completed bounded follow-up; no remaining science jobs and no successor execution authorized by this decision.",
+      "evidence_refs": [
+        "5b9d14e6f2a2168d5de9ec0a827aad61fe4d1f4337cfb70366ec3eeb31e7ae03"
+      ]
+    }
+  ]
+}

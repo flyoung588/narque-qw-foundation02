@@ -1,0 +1,103 @@
+{
+  "payload": {
+    "absorbed": 1.4265075493408379e-09,
+    "arrays": {
+      "format": "NPZ_COMPLEX128_FLOAT64",
+      "keys": [
+        "K",
+        "V",
+        "W",
+        "axis",
+        "psi"
+      ],
+      "path": "arrays/d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556.npz",
+      "sha256": "d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556"
+    },
+    "controls": [],
+    "initial": {
+      "center_R": 6.0,
+      "energy_eV": 0.6,
+      "sigma_R": 0.6
+    },
+    "model": {
+      "Hamiltonian": "T=-(dxx+dyy-dxy)/m + V_LSTH(x,y,x+y) - i W(x,y)",
+      "Hilbert_space": "L2(dx dy), COM removed, x>0,y>0; finite FFT box discretization",
+      "boundary": {
+        "CAP": true,
+        "FFT": "periodic computational box",
+        "W": "0.04*max((x-11.5)/2.9,0)^4 + same(y), Eh",
+        "lower_boundary": "no absorber; monitor edge mass; no wraparound claim"
+      },
+      "coordinates": [
+        "x=B-A",
+        "y=C-B"
+      ],
+      "energy_zero": "3 separated ground-state H atoms of the LSTH PES",
+      "grid": {
+        "dx_bohr": 0.0546875,
+        "length_bohr": 14.0,
+        "lower_bohr": 0.4,
+        "n": 256
+      },
+      "id": "QML_LSTH_COLLINEAR_H3_GROUND_DOUBLET",
+      "limitations": [
+        "No electronic excitation, rotation, nuclear permutation statistics or nonadiabatic coupling",
+        "Periodic numerical boundary is not periodic matter",
+        "Finite region populations are not asymptotic reaction probabilities",
+        "Finite-box conditional energy uses surviving norm with CAP",
+        "No measured material accuracy or W2 certification"
+      ],
+      "mass_me": 1836.15267343,
+      "normalization": "sum(abs(psi)^2)*dx^2",
+      "propagator": "Core-01 second-order Strang split FFT",
+      "representation": "complex128 uniform 2D ordered-distance grid",
+      "surface": "single ground electronic doublet BO LSTH",
+      "units": {
+        "energy": "Eh",
+        "momentum": "hbar/bohr",
+        "position": "bohr",
+        "time": "atomic_time"
+      }
+    },
+    "norm": 0.999999998573507,
+    "operation": {
+      "dt_au": 0.5,
+      "source_state_sha256": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "steps": 800,
+      "type": "EVOLVE_WAVEPACKET"
+    },
+    "parent_state_id": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+    "physical_continuity": "CONTINUED_PARENT_PSI",
+    "schema": "QW_COLLINEAR_NUCLEAR_WAVEPACKET_01",
+    "scope": [
+      "No electronic excitation, rotation, nuclear permutation statistics or nonadiabatic coupling",
+      "Periodic numerical boundary is not periodic matter",
+      "Finite region populations are not asymptotic reaction probabilities",
+      "Finite-box conditional energy uses surviving norm with CAP",
+      "No measured material accuracy or W2 certification"
+    ],
+    "state_kind": "COLLINEAR_H3_NUCLEAR_WAVEPACKET",
+    "time_au": 1400.0,
+    "time_origin_au": 0.0,
+    "world_spec": {
+      "matter": {
+        "charge": 0,
+        "elements": [
+          "H",
+          "H",
+          "H"
+        ],
+        "periodic": false,
+        "spin_2S": 1,
+        "type": "ordered_collinear_nuclei"
+      },
+      "object_id": "collinear-H3-LSTH",
+      "physics": {
+        "engine": "QML_LSTH_Core01",
+        "method": "single_BO_nuclear_TDSE"
+      }
+    }
+  },
+  "sha256": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+  "state_id": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a"
+}

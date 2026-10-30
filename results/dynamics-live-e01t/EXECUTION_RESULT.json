@@ -1,0 +1,327 @@
+{
+  "status": "BOUNDED_LIVE_LOOP_COMPLETED_SUBMITTED_FOR_BCHAT_REVIEW",
+  "candidate_for_review": "QW_LIVE_DYNAMICS_LOOP_PROVEN_BOUNDED",
+  "mode": "ENGINEERING_RECOVERED_CONTINUATION",
+  "not_uninterrupted_first_pass": true,
+  "source_repository": "flyoung588/narque-qw-foundation02",
+  "source_branch": "qw-dynamics-live-e01t",
+  "new_real_propagations": 2,
+  "scientific_execution_routes": "WorldSession\u2192DynamicsExecutionFabric/ExecutionBroker\u2192unchanged Core Worker\u2192verified State/Observation\u2192ContinuationResearchSession\u2192real model feedback",
+  "continuation_session_id": "774c22368484a49f7858d7f91ebec157d56366498373a8f7b121da74ad6b3347",
+  "original_scientific_intent_hash": "88922133659d615c408018b1c9a1a4b5cb5137a65daff570b3ff0cd78c33e30e",
+  "states": [
+    {
+      "event_sha256": "1adc669c25922a80a20f2dc7020f15832af7705cf92b96c6619ee72b53c3e817",
+      "observation_hash": "80543d5fb87ca539670db02dbaf2bd4cee4f89403a39da292dda2cd113788493",
+      "state": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+      "evidence_role": "HISTORICAL_REAL_EVIDENCE_REPLAY",
+      "physical_time_au": 0.0,
+      "physical_time_fs": 0.0,
+      "norm": 1.0000000000000013,
+      "absorbed": 0.0,
+      "probability_balance": 1.0000000000000013,
+      "balance_defect": 1.3322676295501878e-15,
+      "boundary_mass": 3.57582197343525e-09,
+      "energy_Eh": -0.14212497898531404,
+      "survival_conditioned_energy_change_from_initial_Eh": 0.0,
+      "interaction_region": 8.480741446300038e-05,
+      "product_region": 5.707091779612427e-16,
+      "reactant_region": 0.9999151925854535,
+      "interaction_plus_product": 8.480741446357109e-05,
+      "momentum_hbar_per_bohr": [
+        -3.6736185474138106,
+        -7.347237094830643
+      ],
+      "mean_positions_bohr": [
+        1.448350352885244,
+        5.275824823557378
+      ],
+      "npz_sha256": "238420577a937ec59c64b1987971fa5b541798c55f01ed17c18b395ca448c593"
+    },
+    {
+      "event_sha256": "3945ed92e9c3dcde5d6f32a2ba582954d2d0754d32012a246bf7a277871bdb5f",
+      "observation_hash": "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe",
+      "state": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "evidence_role": "NEW_SCIENTIFIC_EXECUTION",
+      "physical_time_au": 1000.0,
+      "physical_time_fs": 24.188843265857003,
+      "norm": 0.9999999999974463,
+      "absorbed": 2.6382686628146516e-12,
+      "probability_balance": 1.0000000000000846,
+      "balance_defect": 8.459899447643693e-14,
+      "boundary_mass": 6.8008805571935844e-09,
+      "energy_Eh": -0.1421249787839045,
+      "survival_conditioned_energy_change_from_initial_Eh": 2.0140952794456268e-10,
+      "interaction_region": 0.5948674270768561,
+      "product_region": 0.3427048102691904,
+      "reactant_region": 0.06242776264533296,
+      "interaction_plus_product": 0.9375722373460466,
+      "momentum_hbar_per_bohr": [
+        4.552888462230848,
+        2.526401932838156
+      ],
+      "mean_positions_bohr": [
+        2.692946347971237,
+        1.7426887960448763
+      ],
+      "npz_sha256": "15f042f47b03b0e98a09141154d00d49fb142e1cda5b334a8c5b20bfee4e1eb7"
+    },
+    {
+      "event_sha256": "4f578efce8fa91b1b08a06bd5f8a961d39b60164f1f67a300fd87ce2b9c4bdb7",
+      "observation_hash": "5b9d14e6f2a2168d5de9ec0a827aad61fe4d1f4337cfb70366ec3eeb31e7ae03",
+      "state": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+      "evidence_role": "NEW_SCIENTIFIC_EXECUTION",
+      "physical_time_au": 1400.0,
+      "physical_time_fs": 33.8643805721998,
+      "norm": 0.99999999857355,
+      "absorbed": 1.4265075493408379e-09,
+      "probability_balance": 1.0000000000000575,
+      "balance_defect": 5.750955267558311e-14,
+      "boundary_mass": 1.0387410751672209e-08,
+      "energy_Eh": -0.14212499476953602,
+      "survival_conditioned_energy_change_from_initial_Eh": -1.578422198500462e-08,
+      "interaction_region": 0.11248536509734908,
+      "product_region": 0.7577638629959711,
+      "reactant_region": 0.12975077047372122,
+      "interaction_plus_product": 0.8702492280933202,
+      "momentum_hbar_per_bohr": [
+        5.515222642077219,
+        3.2375486104781275
+      ],
+      "mean_positions_bohr": [
+        4.285064373094313,
+        1.9656838825078378
+      ],
+      "npz_sha256": "d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556"
+    }
+  ],
+  "first_prediction": {
+    "initial_interaction_plus_product": 8.480741446357109e-05,
+    "t1000_interaction_plus_product": 0.9375722373460466,
+    "direction_supported": true,
+    "scope": "conditional finite collinear BO LSTH model only"
+  },
+  "second_model_prediction": "At t=1400 atomic time, raw product-region population will exceed its t=1000 value of 0.3427048102691904.",
+  "second_prediction_test": {
+    "t1000_product": 0.3427048102691904,
+    "t1400_product": 0.7577638629959711,
+    "difference": 0.4150590527267807,
+    "supported": true,
+    "combined_interaction_plus_product_change": -0.06732300925272638,
+    "interpretation": "continuing regional redistribution; no plateau or asymptotic yield claim"
+  },
+  "runs": [
+    {
+      "intent_hash": "5b052da48d02124cc1cf69b3d2910f9698bd37168046953f55b925c527820ebf",
+      "run_id": 41026053624,
+      "job_id": 123964321879,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/41026053624",
+      "attempt": 1,
+      "commit": "666dcbf415a7d3e792757d2e40d0b6efdb8f8549",
+      "raw_log_sha256": "aa8ce2f20948d9c3dbc321f15336f1ce4c44719f5bef2dbb3f56bb6542b1f6a8",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-30T08:23:00Z",
+      "completed_at": "2026-10-30T08:23:56Z",
+      "cgroup_cpu_usage_delta_seconds": 5.592616,
+      "memory_max_bytes": 1073741824,
+      "memory_swap_max_bytes": 0,
+      "memory_current_before": 27049984,
+      "memory_current_after": 37421056,
+      "peak_memory": "NOT_MEASURED",
+      "cpu_max": "100000 100000",
+      "threads": 1,
+      "affinity_count": 1,
+      "network_interfaces": [
+        "lo"
+      ],
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "versions": {
+        "ase": "3.29.0",
+        "jsonschema": "4.25.1",
+        "numpy": "2.2.6",
+        "pyscf": "2.8.0",
+        "scipy": "1.15.3"
+      }
+    },
+    {
+      "intent_hash": "fb88f8acd10f8fbf4c7a03a179b19af97cd9bf0eee6f0d9cef8a0b38883eb19b",
+      "run_id": 41026472290,
+      "job_id": 123965675273,
+      "run_url": "https://github.com/flyoung588/narque-qw-foundation02/actions/runs/41026472290",
+      "attempt": 1,
+      "commit": "ad2dc51c4410184b3556a390896501590c09ca13",
+      "raw_log_sha256": "2608298053196a7f6198f3716edc1c1e1a15c0bac33fdc605d61d5e6698ac17c",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-30T08:26:45Z",
+      "completed_at": "2026-10-30T08:27:48Z",
+      "cgroup_cpu_usage_delta_seconds": 1.78251,
+      "memory_max_bytes": 1073741824,
+      "memory_swap_max_bytes": 0,
+      "memory_current_before": 28966912,
+      "memory_current_after": 45477888,
+      "peak_memory": "NOT_MEASURED",
+      "cpu_max": "100000 100000",
+      "threads": 1,
+      "affinity_count": 1,
+      "network_interfaces": [
+        "lo"
+      ],
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "versions": {
+        "ase": "3.29.0",
+        "jsonschema": "4.25.1",
+        "numpy": "2.2.6",
+        "pyscf": "2.8.0",
+        "scipy": "1.15.3"
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "call_number": 3,
+      "purpose": "CONTINUATION_IDENTITY_INCLUDED_IN_CUMULATIVE_SIX",
+      "gateway_model": "gpt-6.1-sol",
+      "effort": "low",
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "start_utc": "2026-10-30T08:22:25.371410+00:00",
+      "end_utc": "2026-10-30T08:22:29.241698+00:00",
+      "request_sha256": "ed032dc8bf40f2a50133d49cd08d0711e6e34d9b162470eebe5a864f097bed01",
+      "response_sha256": "b342fc286d0216cc212e0d7ba234894e2e7283ddf14f959adf0fe7fd5924308a",
+      "receipt_sha256": "7b833b07fd06359f7234b9957bb23af75187c10aec0c486929eb2c4eabb51798",
+      "transcript_sha256": "ddb70662ba5e0c1a8ec71d9dffbb8f85a9e2b47066fff47c8c46cc49138c06e0",
+      "usage": {
+        "totalTokens": 13858,
+        "inputTokens": 13843,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 15,
+        "reasoningOutputTokens": 0
+      }
+    },
+    {
+      "call_number": 4,
+      "purpose": "QW_DYNAMICS01_SEPARATELY_AUTHORIZED",
+      "gateway_model": "gpt-6.1-sol",
+      "effort": "low",
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "start_utc": "2026-10-30T08:24:45.072117+00:00",
+      "end_utc": "2026-10-30T08:25:21.620891+00:00",
+      "request_sha256": "4e5f2be1d39ad5b3c89185dea088ad2f3bf5f39ee1f62e90b135ca6d88e95796",
+      "response_sha256": "2523ae6b7dd50c372cf906e7ee6203870f7cbbedc0e4e79a8aeb12edafc38584",
+      "receipt_sha256": "67b754b760d3df1869c29c4a830ac0fa4a769674fbfe9d6791c90ee7007c60d3",
+      "transcript_sha256": "0e34180f32c30341c0af9ed383e720128961b4b603ee9c399e7740b9cbfbc7cb",
+      "usage": {
+        "totalTokens": 27196,
+        "inputTokens": 25444,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1752,
+        "reasoningOutputTokens": 99
+      }
+    },
+    {
+      "call_number": 5,
+      "purpose": "QW_DYNAMICS01_SEPARATELY_AUTHORIZED",
+      "gateway_model": "gpt-6.1-sol",
+      "effort": "low",
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "start_utc": "2026-10-30T08:25:23.407269+00:00",
+      "end_utc": "2026-10-30T08:25:52.778806+00:00",
+      "request_sha256": "5f199f5a2a9328ac4b65099f5a3891e1b4a48720119ee733b561e6a86081f3e4",
+      "response_sha256": "7d277bc660897c2f8b99132150511787a3ecbe06865048456b134eb7a56477c6",
+      "receipt_sha256": "e5a11ae7eb99c4120b0ff92b3d36d15dce3df578843ad8df8e24abf901920454",
+      "transcript_sha256": "4c677ab10f8ba2f60e7a68e4692499faef9d71390e5d3517439d268576186450",
+      "usage": {
+        "totalTokens": 39819,
+        "inputTokens": 38127,
+        "cachedInputTokens": 27008,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1692,
+        "reasoningOutputTokens": 32
+      }
+    },
+    {
+      "call_number": 6,
+      "purpose": "QW_DYNAMICS01_SEPARATELY_AUTHORIZED",
+      "gateway_model": "gpt-6.1-sol",
+      "effort": "low",
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "start_utc": "2026-10-30T08:28:14.245940+00:00",
+      "end_utc": "2026-10-30T08:28:37.814328+00:00",
+      "request_sha256": "466fafe007170d0ac27016cb1b4d47a6495609f1c5e56f1f5abb32cdf0d119f0",
+      "response_sha256": "7c63bb6d16e1e4344b928ee3e2f57fe482d5065e1c797abc3b09dda8e5b83c2f",
+      "receipt_sha256": "82c8a38d60e36c37a0e31e0f420f0e33cbc3ed90251bba423d81698d5c22d63d",
+      "transcript_sha256": "5b5d933cf98a84f3b3f2fe9cd43ccd1192e808aebe96020ae4316a1563d900cf",
+      "usage": {
+        "totalTokens": 56678,
+        "inputTokens": 55390,
+        "cachedInputTokens": 39680,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1288,
+        "reasoningOutputTokens": 0
+      }
+    }
+  ],
+  "model_calls_new": 4,
+  "model_calls_historical": 2,
+  "model_calls_cumulative": 6,
+  "clarification_used": 1,
+  "rejected_decision": {
+    "call": 4,
+    "reason": "FRONTIER_COMPETITION_REQUIRED",
+    "science_dispatched_from_rejected_decision": false,
+    "original_response_preserved": true
+  },
+  "accepted_postobservation_decisions": [
+    {
+      "call": 5,
+      "operation": "EVOLVE_WAVEPACKET",
+      "dt_au": 0.5,
+      "steps": 800,
+      "target_time_au": 1400
+    },
+    {
+      "call": 6,
+      "action": "STOP"
+    }
+  ],
+  "stop": {
+    "owner": "REAL_MODEL_ACCEPTED_DECISION",
+    "decision_event": "674439a954592822292c066c089b5db2a5d5fd6463b0c0b51fed19db30ba27a6",
+    "stopped_event": "67a1c905b612df7fee0c41cb48dde2cc93b1ab7dc744740753e29f0a197ea084",
+    "no_third_job": true
+  },
+  "reported_new_model_tokens_including_cached_input_once": 137551,
+  "reported_experimental_model_tokens_all_six": 175158,
+  "cached_input_not_added_again": true,
+  "science_container_cpu_usage_delta_seconds_total": 7.375126,
+  "science_job_duration_seconds": [
+    56,
+    63
+  ],
+  "new_job_reservations": 2,
+  "old_failed_reservation_preserved": 1,
+  "old_refund": false,
+  "automatic_reruns": 0,
+  "new_purchases": 0,
+  "coordinator_token_usage": "NOT_EXPOSED",
+  "total_host_cpu_and_peak_memory": "NOT_MEASURED; container snapshots and hard caps recorded",
+  "quality": {
+    "normalization_CAP_accounting": "verified fixed-state contract; max recorded deficit/surplus 8.459899447643693e-14",
+    "energy": "surviving-norm conditioned T+V; endpoint energy shifts reported, not convergence proof",
+    "independent_arithmetic_readback": "PASS on same arrays; not independent physical validation",
+    "grid_and_timestep_convergence": "NOT_ESTABLISHED_BY_THIS_TRANCHE",
+    "PES_real_world_accuracy": "NOT_CERTIFIED",
+    "full_3D_or_electronic_nuclear_dynamics": false,
+    "scientific_novelty": "NOT_ESTABLISHED; newly executed reproductions/continuation, not a discovery claim"
+  },
+  "Scientific_Delta": "new traceable nuclear-wavepacket States at t1000/t1400; prediction tests plus observation-driven continuation and STOP",
+  "Method_Delta": "NONE_QUALIFIED; no controlled efficacy comparison; RSI unchanged",
+  "canonical_change": "NONE",
+  "historical_scientific_verdict_change": "NONE",
+  "W2_A2_A3_original_discovery_promotion": "NONE",
+  "automatic_next_round": false,
+  "completion": "STOP_AND_RETURN_TO_BCHAT"
+}

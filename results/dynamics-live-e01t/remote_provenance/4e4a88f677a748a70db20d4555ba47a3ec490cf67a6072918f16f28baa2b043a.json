@@ -1,0 +1,31 @@
+{
+  "array_sha256": "d1360cf0c8fccebcd4c6f3b818d2e0cf8c2819d415479bfc678a288df9178556",
+  "intent_hash": "fb88f8acd10f8fbf4c7a03a179b19af97cd9bf0eee6f0d9cef8a0b38883eb19b",
+  "package_sha256": "46bb4e309c5fcea2ea944372624547cdbdec3b824079d636d1c8dda2e6b2fffb",
+  "parent": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+  "state": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a",
+  "verified_run": {
+    "REST_inputs_exposure": "not supplied by run GET; dispatch binding is checked through run title + exact raw request + pinned workflow source",
+    "branch": "qw-dynamics-live-e01t",
+    "code_commit": "ad2dc51c4410184b3556a390896501590c09ca13",
+    "conclusion": "success",
+    "grant_sha256": "5482f82725c35a4c5f4d4f553412ece05268827f74d2bfeaae1e57f94580cfc6",
+    "intent_hash": "fb88f8acd10f8fbf4c7a03a179b19af97cd9bf0eee6f0d9cef8a0b38883eb19b",
+    "job_id": 123965675273,
+    "job_optional_fields_present": [
+      "run_attempt",
+      "head_sha",
+      "head_branch"
+    ],
+    "raw_log_sha256": "2608298053196a7f6198f3716edc1c1e1a15c0bac33fdc605d61d5e6698ac17c",
+    "repository": "flyoung588/narque-qw-foundation02",
+    "repository_id": 1427746629,
+    "run_attempt": 1,
+    "run_id": 41026472290,
+    "source": "AUTHENTICATED_GITHUB_REST_GET_AND_RAW_JOB_LOG",
+    "source_sha256": "29ca308e1ab826447db45d03596bad39fa2a9dec6729285890eb788d2efc8985",
+    "status": "completed",
+    "workflow_id": 401447000,
+    "workflow_path": ".github/workflows/qw-dynamics01-once.yml"
+  }
+}

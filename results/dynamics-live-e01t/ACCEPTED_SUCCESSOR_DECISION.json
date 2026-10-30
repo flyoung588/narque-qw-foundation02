@@ -1,0 +1,87 @@
+{
+  "schema": "QW_EXPLORER_DECISION_01",
+  "request_hash": "265aeb3b7b5340db885e48aa0b03c6d0f2e22367ff2d4713b02573fd771a13d5",
+  "goal_interpretation": "Compare a bounded continuous follow-up with stopping on the existing finite-time evidence.",
+  "candidates": [
+    {
+      "id": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "kind": "RESEARCH",
+      "question": "Will product-region mass increase during a 400-atomic-time continuation of the actual t=1000 packet?",
+      "information_value": "Tests transient redistribution without changing preparation or Hamiltonian.",
+      "cost_and_limits": "One remaining science job; 800 steps at dt=0.5. Cannot establish an asymptotic reaction probability.",
+      "why_not_selected": "Selected."
+    },
+    {
+      "id": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+      "kind": "STOP",
+      "question": "Should research stop with the observed redistribution from the initial packet?",
+      "information_value": "Preserves the supported finite-time conclusion without further execution, but leaves subsequent redistribution unresolved.",
+      "cost_and_limits": "No science job; no additional temporal evidence.",
+      "why_not_selected": "A single bounded continuation can directly test whether the current regional accumulation changes, with one job remaining."
+    }
+  ],
+  "selected": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+  "action": "CONTINUE",
+  "operation": {
+    "name": "PROPOSE_EXPERIMENT",
+    "source": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+    "other": null,
+    "parameters": {
+      "intent": {
+        "research_session": "774c22368484a49f7858d7f91ebec157d56366498373a8f7b121da74ad6b3347",
+        "world_session": "8ed35de807ef4a5c9a4ca99ea0d9aed8380469c57c422a1968b09451165c7ab6",
+        "goal": "Test finite-time product-region redistribution between t=1000 and t=1400 atomic time.",
+        "candidate": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+        "input_state": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+        "prediction": "At t=1400 atomic time, raw product-region population will exceed its t=1000 value of 0.3427048102691904.",
+        "falsifier": "A final raw product-region population no greater than 0.3427048102691904 falsifies the predicted increase.",
+        "resource_ref": "ac0af17335bf7d86e8a40210281a694e3b7248eed26c900e510d6c380932b24d",
+        "authorization_ref": "5482f82725c35a4c5f4d4f553412ece05268827f74d2bfeaae1e57f94580cfc6",
+        "stop_condition": "After this single remaining science job, interpret its actual result and STOP without further dispatch.",
+        "experiment_ref": "4c040e7ba961dc91ee69f0be10e54d1b13e892937f13c1966415f780d83eb69a",
+        "model": "dynamics",
+        "operation": {
+          "type": "EVOLVE_WAVEPACKET",
+          "source_state_sha256": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+          "dt_au": 0.5,
+          "steps": 800
+        },
+        "observables": [
+          "density",
+          "norm",
+          "time",
+          "position",
+          "momentum",
+          "energy",
+          "regional_population",
+          "absorbed",
+          "boundary_mass"
+        ],
+        "mode": "NEW_SCIENTIFIC_EXECUTION"
+      }
+    }
+  },
+  "observation_refs": [
+    "80543d5fb87ca539670db02dbaf2bd4cee4f89403a39da292dda2cd113788493",
+    "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe"
+  ],
+  "interpretation": "The supplied t=1000 observation supports the original finite-time redistribution prediction: interaction-region mass is 0.5948674270768561 and product-region mass is 0.3427048102691904, with reported probability balance near unity. Continue only the saved t=1000 psi, array SHA256 15f042f47b03b0e98a09141154d00d49fb142e1cda5b334a8c5b20bfee4e1eb7, retaining Hamiltonian model hash 877551366930a8c64e5017fe2b3b56eb2bbace2055d7f009780f89e380192e1e.",
+  "limitations": "Finite collinear ground-doublet BO LSTH nuclear dynamics only. Neither present nor proposed regional masses are asymptotic S-matrix probabilities. Small boundary mass and good probability balance do not establish numerical convergence. Independent grant verification and runtime admission remain required.",
+  "competing_explanations": [
+    "Outgoing redistribution increases product-region mass.",
+    "Coherent recrossing or continued interaction prevents that increase."
+  ],
+  "prediction": "Product-region mass at t=1400 will exceed 0.3427048102691904.",
+  "falsifier": "Product-region mass at t=1400 no greater than 0.3427048102691904.",
+  "resource_reason": "One job remains; the proposed 400-atomic-time continuation meets the second-duration bound. Interpret and STOP afterward.",
+  "negative_evidence_response": "The prior decision was rejected for frontier competition, not by a new physical observation. Explicitly compare continuation with STOP; preserve the same physical prediction. Retain any failed prediction or numerical-quality concern without rerun.",
+  "memory_updates": [
+    {
+      "kind": "ResearchDecision",
+      "content": "Choose one bounded continuation over STOP to test transient regional redistribution; no further science after that job.",
+      "evidence_refs": [
+        "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe"
+      ]
+    }
+  ]
+}

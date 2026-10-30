@@ -1,0 +1,87 @@
+{
+  "schema": "QW_EXPLORER_DECISION_01",
+  "request_hash": "e58c2d8df2d76baf9155fd9e8c9aa3b861cde557184fc968d0b57d04ce164772",
+  "goal_interpretation": "Test whether the observed finite-time regional accumulation continues to redistribute under the same collinear H3 LSTH nuclear Hamiltonian.",
+  "candidates": [
+    {
+      "id": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+      "kind": "RESEARCH",
+      "question": "Does the saved t=1000 packet redistribute toward the product region over another 400 atomic time?",
+      "information_value": "A physically continuous second observation tests whether the present regional populations remain transient.",
+      "cost_and_limits": "One remaining science job; 800 steps at dt=0.5. No asymptotic or convergence certification.",
+      "why_not_selected": "Selected."
+    },
+    {
+      "id": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+      "kind": "RESEARCH",
+      "question": "Would a newly prepared packet give different finite-time regional populations?",
+      "information_value": "Could test preparation sensitivity, but would not resolve the evolution of the latest actual packet.",
+      "cost_and_limits": "Consumes the remaining job and introduces a different initial condition.",
+      "why_not_selected": "Continuous follow-up provides a cleaner test of transient redistribution."
+    }
+  ],
+  "selected": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+  "action": "CONTINUE",
+  "operation": {
+    "name": "PROPOSE_EXPERIMENT",
+    "source": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+    "other": null,
+    "parameters": {
+      "intent": {
+        "research_session": "774c22368484a49f7858d7f91ebec157d56366498373a8f7b121da74ad6b3347",
+        "world_session": "8ed35de807ef4a5c9a4ca99ea0d9aed8380469c57c422a1968b09451165c7ab6",
+        "goal": "Measure continuous finite-time redistribution from t=1000 to t=1400 atomic time.",
+        "candidate": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+        "input_state": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+        "prediction": "At t=1400 atomic time, raw product-region population will exceed its t=1000 value of 0.3427048102691904.",
+        "falsifier": "A product-region population at t=1400 no greater than 0.3427048102691904 falsifies the predicted increase.",
+        "resource_ref": "ac0af17335bf7d86e8a40210281a694e3b7248eed26c900e510d6c380932b24d",
+        "authorization_ref": "5482f82725c35a4c5f4d4f553412ece05268827f74d2bfeaae1e57f94580cfc6",
+        "stop_condition": "After this one job, interpret the returned observation and STOP; do not dispatch further science.",
+        "experiment_ref": "4c040e7ba961dc91ee69f0be10e54d1b13e892937f13c1966415f780d83eb69a",
+        "model": "dynamics",
+        "operation": {
+          "type": "EVOLVE_WAVEPACKET",
+          "source_state_sha256": "3616a9e4604c7e37e8722abd4cc097cc3b6e88321e8595c40b4e051f6bb97ba2",
+          "dt_au": 0.5,
+          "steps": 800
+        },
+        "observables": [
+          "density",
+          "norm",
+          "time",
+          "position",
+          "momentum",
+          "energy",
+          "regional_population",
+          "absorbed",
+          "boundary_mass"
+        ],
+        "mode": "NEW_SCIENTIFIC_EXECUTION"
+      }
+    }
+  },
+  "observation_refs": [
+    "80543d5fb87ca539670db02dbaf2bd4cee4f89403a39da292dda2cd113788493",
+    "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe"
+  ],
+  "interpretation": "The supplied t=1000 observation supports the original redistribution prediction: interaction and product populations are 0.5948674271 and 0.3427048103, respectively. Reported norm plus absorbed mass is near unity. Continue the actual saved psi at t=1000, array hash 15f042f47b03b0e98a09141154d00d49fb142e1cda5b334a8c5b20bfee4e1eb7, retaining Hamiltonian model hash 877551366930a8c64e5017fe2b3b56eb2bbace2055d7f009780f89e380192e1e.",
+  "limitations": "Finite-region populations are not asymptotic reaction probabilities. Small reported boundary mass and balance defect do not establish timestep, grid or physical-model accuracy. Execution requires independent grant verification and runtime admission; this decision grants neither.",
+  "competing_explanations": [
+    "Product-region accumulation may continue as the packet leaves the interaction region.",
+    "Coherent redistribution or recrossing may instead prevent a product-population increase."
+  ],
+  "prediction": "Raw product-region population at t=1400 will exceed 0.3427048102691904.",
+  "falsifier": "A final product-region population no greater than the t=1000 value falsifies this prediction.",
+  "resource_reason": "Use the single remaining job for a 400-atomic-time continuation within the second-duration bound; then STOP.",
+  "negative_evidence_response": "Retain any failed prediction. If boundary contamination or probability-accounting problems appear, qualify the interpretation rather than claiming reaction yield; do not rerun.",
+  "memory_updates": [
+    {
+      "kind": "ModelKnowledge",
+      "content": "The supplied t=1000 observation supports finite-time redistribution, not an asymptotic scattering probability.",
+      "evidence_refs": [
+        "b3a1a73b124b3126f54732b805ad5d1f02f7c8bb724d1cdee61f0fb6727ab0fe"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "evidence": {
+    "intent_sha256": "fb88f8acd10f8fbf4c7a03a179b19af97cd9bf0eee6f0d9cef8a0b38883eb19b",
+    "mode": "NEW_SCIENTIFIC_EXECUTION",
+    "resources": {
+      "affinity_count": 1,
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 238386\nuser_usec 184524\nsystem_usec 53861\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 6\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "interfaces": [
+        "lo"
+      ],
+      "memory.current": "29491200",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "threads": 1
+    }
+  },
+  "mode": "NEW_SCIENTIFIC_EXECUTION",
+  "state_file_sha256": "1dfa936d49ccbf9a40b9de662cc39806d5c37a5db29f74a1b4e0aaf36c30b813",
+  "state_sha256": "4e4a88f677a748a70db20d4555ba47a3ec490cf67a6072918f16f28baa2b043a"
+}
