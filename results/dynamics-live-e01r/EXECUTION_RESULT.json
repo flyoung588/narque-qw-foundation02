@@ -1,0 +1,88 @@
+{
+  "status": "BLOCKED_BEFORE_SCIENTIFIC_DISPATCH",
+  "date": "2026-10-30",
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-dynamics-live-e01r",
+  "source_commit": "9a636fd55ac169df9e680dd743144c72b254ad7c",
+  "approved_initial_files": 36,
+  "exact_original_manifest_preflight": "PASS",
+  "activation_only_authority_fields": true,
+  "source_after_activation": "7f458cbd44e5e9da2fb2da5f93efc9a97a156ada5283a2cbe36494224089d1a7",
+  "preregistration_sha256": "4c040e7ba961dc91ee69f0be10e54d1b13e892937f13c1966415f780d83eb69a",
+  "workflow": "manual-only default-disabled; one exact main registration completed",
+  "cost_admission": "public standard runner free; logs only; existing included ChatGPT allowance, no credits/purchases",
+  "model_calls": [
+    {
+      "call_number": 1,
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "model": "gpt-6.1-sol",
+      "effort": "low",
+      "request_sha256": "7736724395b088024c4f4a927bc1a64c52abca52598da59d45bcc32e9bdcd1ff",
+      "response_sha256": "b342fc286d0216cc212e0d7ba234894e2e7283ddf14f959adf0fe7fd5924308a",
+      "receipt_sha256": "5cb8a792ae317b44788ac44ddde0b79404e6514b329b51ee9f12b6dd97c4a821",
+      "usage": {
+        "totalTokens": 13859,
+        "inputTokens": 13844,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 15,
+        "reasoningOutputTokens": 0
+      }
+    },
+    {
+      "call_number": 2,
+      "status": "MODEL_RESPONSE_RECEIVED",
+      "model": "gpt-6.1-sol",
+      "effort": "low",
+      "request_sha256": "87acc342a18c885d287e4e95872201d72f2e664d6f06b014fb130ea1f30a8519",
+      "response_sha256": "d69a0d319dc0b9a697cc40fc535a85efe1bd7b25d9feba9b3c3a9ceee241785a",
+      "receipt_sha256": "3450b1103ae47384c7a255a7e735674ecb6963807e5df7ca3712384c7d95920e",
+      "usage": {
+        "totalTokens": 23748,
+        "inputTokens": 22218,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1530,
+        "reasoningOutputTokens": 101
+      }
+    }
+  ],
+  "model_total_reported_tokens": 37607,
+  "science_jobs_dispatched": 0,
+  "science_broker_reservations": 1,
+  "science_broker_reservation_refunded": false,
+  "new_physical_observations": 0,
+  "model_selected_first_action": {
+    "operation": "EVOLVE_WAVEPACKET",
+    "dt_au": 0.5,
+    "steps": 2000,
+    "predicted_endpoint_time_au": 1000,
+    "prewritten_by_driver": false
+  },
+  "blocker": {
+    "status": "BLOCKED_BEFORE_DISPATCH",
+    "reason_code": "REMOTE_STAGED_BYTES_MISMATCH",
+    "actual_cause": "Frozen verifier requires Contents API encoding=base64, but >1MiB NPZ returns encoding=none and empty content. This is an acquisition/representation limitation, not evidence of corrupted psi.",
+    "contents_encoding": "none",
+    "contents_size": 1792909,
+    "contents_content_length": 0,
+    "git_blob_sha1": "c2867679bd32b924da04f6b3c90e3b5fb42116e7",
+    "independent_git_blob_sha256": "238420577a937ec59c64b1987971fa5b541798c55f01ed17c18b395ca448c593",
+    "approved_npz_sha256": "238420577a937ec59c64b1987971fa5b541798c55f01ed17c18b395ca448c593",
+    "exact_remote_array_bytes_match": true,
+    "actual_new_github_runs": 0,
+    "scientific_propagations": 0,
+    "scientific_reservations_not_refunded": 1,
+    "frozen_source_modified": false,
+    "rerun": false,
+    "next_execution": "NOT_STARTED; affected execution blocked per approval; no automatic source repair"
+  },
+  "runtime_cgroup_and_network": "NOT_RUN_PENDING",
+  "second_experiment": "NOT_STARTED",
+  "source_repair_performed": false,
+  "history_and_scientific_verdicts": "UNCHANGED",
+  "promotion": "NONE",
+  "canonical_change": "NONE",
+  "automatic_retry": false,
+  "completion": "STOP_AND_RETURN_TO_BCHAT"
+}

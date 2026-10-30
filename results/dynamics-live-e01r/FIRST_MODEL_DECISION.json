@@ -1,0 +1,80 @@
+{
+  "schema": "QW_EXPLORER_DECISION_01",
+  "request_hash": "1aa99284074ac07473255edbec7cd4d2d21d05f2fb15308fde14c0c61a8e799c",
+  "goal_interpretation": "Obtain a new finite-time nuclear observation by propagating the saved H3 packet, then decide whether continuation is informative.",
+  "candidates": [
+    {
+      "id": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+      "kind": "RESEARCH",
+      "question": "Does propagation of the saved packet redistribute finite-region population while preserving norm-plus-absorption balance?",
+      "information_value": "Directly tests physical evolution of the actual parent without confounding it with a new preparation.",
+      "cost_and_limits": "One proposed science job; 2000 steps at 0.5 atomic time. Requires independent grant verification and runtime admission.",
+      "why_not_selected": "Selected."
+    }
+  ,
+    {
+      "id": "STOP",
+      "kind": "STOP",
+      "question": "Should research stop with only the historical initial observation?",
+      "information_value": "Avoids execution cost but supplies no new time-resolved evidence.",
+      "cost_and_limits": "No science job.",
+      "why_not_selected": "A bounded parent-state propagation offers useful information within the stated current resources, subject to admission."
+    }
+  ],
+  "selected": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+  "action": "CONTINUE",
+  "operation": {
+    "name": "PROPOSE_EXPERIMENT",
+    "source": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+    "other": null,
+    "parameters": {
+      "intent": {
+        "research_session": "8268aa89828064d6ea5ec2e09e51f9d0ec7dcb021b2b0263ac6bf4f0c54701ff",
+        "world_session": "a8098daecba954a725c3b342d48651c31b25469c80ea78779c85436b8ffb359f",
+        "goal": "Measure finite-time redistribution of the actual saved nuclear packet.",
+        "candidate": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+        "input_state": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+        "prediction": "At t=1000 atomic time, interaction-region plus product-region raw population will exceed its initial value of approximately 8.48e-5; surviving norm plus absorbed mass should remain near unity.",
+        "falsifier": "A final interaction-plus-product population no greater than the initial value falsifies the redistribution prediction; a balance defect exceeding documented numerical tolerance defeats the probability-accounting expectation.",
+        "resource_ref": "ac0af17335bf7d86e8a40210281a694e3b7248eed26c900e510d6c380932b24d",
+        "authorization_ref": "f24240b586a1226aa4a1029b13c2cd4ed25d64fb71d91cc893634133eb0772ce",
+        "stop_condition": "Return after 2000 steps or runtime safety termination; inspect the actual observation before any further proposal. Stop if admission fails or numerical diagnostics undermine interpretation.",
+        "experiment_ref": "4c040e7ba961dc91ee69f0be10e54d1b13e892937f13c1966415f780d83eb69a",
+        "model": "dynamics",
+        "operation": {
+          "type": "EVOLVE_WAVEPACKET",
+          "source_state_sha256": "989662458b39c50609f90fd743a045ebf97952655321cfd0695425f5309e42a6",
+          "dt_au": 0.5,
+          "steps": 2000
+        },
+        "observables": [
+          "density",
+          "norm",
+          "time",
+          "position",
+          "momentum",
+          "energy",
+          "regional_population",
+          "absorbed",
+          "boundary_mass"
+        ],
+        "mode": "NEW_SCIENTIFIC_EXECUTION"
+      }
+    }
+  },
+  "observation_refs": [
+    "6ea062d9d94af2e461fe1bf82f4566863bed3b25fe8b4e69e649253fd855511f"
+  ],
+  "interpretation": "The supplied observation is historical at t=0, with array SHA256 238420577a937ec59c64b1987971fa5b541798c55f01ed17c18b395ca448c593. Propagate that actual psi under the unchanged metric kinetic operator, LSTH surface and CAP; no new preparation or control is proposed.",
+  "limitations": "No new execution has occurred. Finite-region populations are not asymptotic scattering probabilities. Single-surface collinear nuclear dynamics excludes electronic excitation, rotations and nonadiabatic effects; timestep convergence is not established.",
+  "competing_explanations": [
+    "Regional changes may represent transient passage or accumulation rather than persistent product formation.",
+    "CAP loss or boundary artifacts may affect apparent redistribution.",
+    "A newly prepared packet would test preparation dependence but would not continue this parent; a momentum kick is outside the currently allowed operations."
+  ],
+  "prediction": "Interaction-plus-product regional mass increases above its initial approximately 8.48e-5 at t=1000 atomic time, with norm-plus-absorbed near unity.",
+  "falsifier": "No such increase falsifies the endpoint prediction; unacceptable balance or boundary diagnostics prevent a clean dynamical interpretation.",
+  "resource_reason": "Uses one of two current science jobs and stays within the first-duration bound. Referenced authority must be independently validated by runtime; this decision grants none.",
+  "negative_evidence_response": "Retain an absent redistribution or numerical failure as negative evidence. Do not automatically reprepare, retune or dispatch a second job.",
+  "memory_updates": []
+}
