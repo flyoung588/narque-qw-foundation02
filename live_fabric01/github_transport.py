@@ -106,15 +106,58 @@ class GithubFabricTransport(GithubTransport):
   for key,expected in [('run_attempt',1),('head_sha',g['code_commit']),('head_branch',g['branch'])]:
    if key in job:require(job[key]==expected,'REMOTE_JOB_SOURCE_OR_ATTEMPT_MISMATCH')
   return run,workflow,job,meta
+ def read_verified_remote_blob(self,repository,repository_id,commit,path,expected_sha256,attempt,label,expected_size=None):
+  """Authenticated GET only; commit→complete tree→regular blob→exact bytes.
+  Caller supplies the already-authorized commit and SHA256, never a Blob ID.
+  No branch lookup or trust in a return package occurs in this acquisition path.
+  """
+  import re,binascii
+  from urllib.parse import quote
+  require(repository=='flyoung588/narque-qw-foundation02' and type(repository_id) is int and repository_id==1427746629,'REMOTE_BLOB_REPOSITORY_NOT_AUTHORIZED')
+  require(isinstance(commit,str) and re.fullmatch('[0-9a-f]{40}',commit) is not None,'REMOTE_BLOB_COMMIT_INVALID')
+  require(isinstance(path,str) and path and not path.startswith('/') and all(x not in ('','.','..') for x in path.split('/')) and not any(x in path for x in ('\\','?','#','%')),'REMOTE_BLOB_PATH_INVALID')
+  require(isinstance(expected_sha256,str) and re.fullmatch('[0-9a-f]{64}',expected_sha256) is not None,'REMOTE_BLOB_SHA256_INVALID')
+  require(expected_size is None or type(expected_size) is int and 0<=expected_size<=32*1024*1024,'REMOTE_BLOB_SIZE_INVALID')
+  repo=self._get('repos/'+repository,attempt,label+'_repository')
+  require(repo.get('id')==repository_id and type(repo.get('id')) is int and repo.get('full_name')==repository,'REMOTE_BLOB_REPOSITORY_MISMATCH')
+  commit_meta=self._get(f'repos/{repository}/git/commits/{commit}',attempt,label+'_commit')
+  require(commit_meta.get('sha')==commit,'REMOTE_BLOB_COMMIT_MISMATCH')
+  tree_sha=commit_meta.get('tree',{}).get('sha');require(isinstance(tree_sha,str) and re.fullmatch('[0-9a-f]{40}',tree_sha) is not None,'REMOTE_BLOB_TREE_ID_INVALID')
+  tree=self._get(f'repos/{repository}/git/trees/{tree_sha}?recursive=1',attempt,label+'_tree')
+  require(tree.get('sha')==tree_sha and tree.get('truncated') is False and isinstance(tree.get('tree'),list),'REMOTE_BLOB_TREE_INCOMPLETE')
+  entries=[x for x in tree['tree'] if x.get('path')==path];require(len(entries)==1,'REMOTE_BLOB_PATH_NOT_UNIQUE')
+  entry=entries[0];blob_sha=entry.get('sha');size=entry.get('size')
+  require(entry.get('type')=='blob' and entry.get('mode') in ('100644','100755') and isinstance(blob_sha,str) and re.fullmatch('[0-9a-f]{40}',blob_sha) is not None,'REMOTE_BLOB_NOT_REGULAR_FILE')
+  require(type(size) is int and 0<=size<=32*1024*1024 and (expected_size is None or size==expected_size),'REMOTE_BLOB_TREE_SIZE_MISMATCH')
+  content=self._get(f'repos/{repository}/contents/{quote(path,safe="/")}?ref={commit}',attempt,label+'_contents')
+  require(content.get('path')==path and content.get('type')=='file' and content.get('sha')==blob_sha and content.get('size')==size,'REMOTE_BLOB_CONTENTS_ID_MISMATCH')
+  def decode(v):
+   require(isinstance(v,str),'REMOTE_BLOB_BASE64_INVALID')
+   try:return base64.b64decode(''.join(v.split()),validate=True)
+   except (ValueError,binascii.Error):require(False,'REMOTE_BLOB_BASE64_INVALID')
+  if content.get('encoding')=='base64':
+   raw=decode(content.get('content'));channel='CONTENTS_BASE64'
+  else:
+   require(content.get('encoding')=='none' and content.get('content')=='','REMOTE_BLOB_CONTENTS_ENCODING_UNSUPPORTED')
+   blob=self._get(f'repos/{repository}/git/blobs/{blob_sha}',attempt,label+'_blob')
+   require(blob.get('sha')==blob_sha and blob.get('size')==size and blob.get('encoding')=='base64','REMOTE_BLOB_RESPONSE_ID_MISMATCH')
+   raw=decode(blob.get('content'));channel='GIT_BLOB_BASE64'
+  require(len(raw)==size,'REMOTE_BLOB_BYTES_SIZE_MISMATCH')
+  require(hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==blob_sha,'REMOTE_BLOB_OBJECT_ID_MISMATCH')
+  require(hashlib.sha256(raw).hexdigest()==expected_sha256,'REMOTE_BLOB_SHA256_MISMATCH')
+  receipt={'repository':repository,'repository_id':repository_id,'authorized_commit':commit,'tree_sha':tree_sha,'path':path,'type':'blob','mode':entry['mode'],'git_blob_sha1':blob_sha,'size_bytes':len(raw),'sha256':expected_sha256,'channel':channel,'status':'EXACT_BYTES_VERIFIED','branch_lookup':False}
+  (attempt/(label+'_verified_blob.json')).write_text(json.dumps(receipt,indent=2));return raw
+
  def _verify_staged_source(self,world,intent,g,attempt):
   from dynamics01.transfer import staged_references
   repo=g['repository'];require(repo=='flyoung588/narque-qw-foundation02','REMOTE_REPOSITORY_MISMATCH')
   wf=self._get(f"repos/{repo}/contents/.github/workflows/qw-dynamics01-once.yml?ref={g['code_commit']}",attempt,'authorized_workflow_source')
   require(wf.get('encoding')=='base64','WORKFLOW_CONTENT_UNAVAILABLE');code=base64.b64decode(wf['content'],validate=False);require(hashlib.sha256(code).hexdigest()==g.get('workflow_sha256'),'WORKFLOW_SOURCE_NOT_AUTHORIZED')
   refs=staged_references(world,intent['input_state'],g)
+  from dynamics01.transfer import parent_files as physical_parent_files
+  parent_files=physical_parent_files(world,intent['input_state'])
   for number,(rel,v) in enumerate(sorted(refs.items())):
-   raw=self._get(f"repos/{repo}/contents/{v['source_path']}?ref={g['code_commit']}",attempt,f'staged_source_{number}')
-   require(raw.get('encoding')=='base64' and hashlib.sha256(base64.b64decode(raw['content'])).hexdigest()==v['sha256'],'REMOTE_STAGED_BYTES_MISMATCH')
+   self.read_verified_remote_blob(repo,g['repository_id'],g['code_commit'],v['source_path'],v['sha256'],attempt,f'staged_source_{number}',expected_size=parent_files[rel].stat().st_size)
   provenance=world.root/'remote_provenance'/f"{intent['input_state']}.json"
   if provenance.exists():
    record=json.loads(provenance.read_text());previous=record['verified_run'];require(g.get('parent_execution')=={k:previous[k] for k in ('run_id','job_id','code_commit','raw_log_sha256')} and record['state']==intent['input_state'],'SECOND_PARENT_EXECUTION_NOT_BOUND')
