@@ -1,7 +1,7 @@
 {
   "scope": "QW-LIVE-FABRIC-01",
-  "release": "LIVE-E01R",
+  "release": "QW-DYNAMICS-01",
   "status": "HUMAN_GRANTED",
-  "human_reference": "DIRECT_HUMAN_APPROVAL_LIVE_E01R_20261027",
-  "authorization_receipt_sha256": "ff891c8ce7159028bbc3a167999df9cd24f63c4a8e2bbb586dd111b49043a4c8"
+  "human_reference": "DIRECT_USER_APPROVAL_QW_DYNAMICS_LIVE_E01R_20261030_EXACT_BYTE_PREFLIGHT",
+  "reason": "New dynamics/model/publication grant not inherited from exhausted LIVE-E01R"
 }

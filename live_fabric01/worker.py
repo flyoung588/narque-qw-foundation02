@@ -12,6 +12,7 @@ def main(io):
  require(hashlib.sha256((io/'grant.json').read_bytes()).hexdigest()==bundle['grant_sha256'],'WORKER_GRANT_MISMATCH')
  require(grant.get('scope')==SCOPE and grant.get('status')=='HUMAN_GRANTED' and grant.get('limits')==LIMITS,'WORKER_AUTHORITY_MISSING')
  require(intent['authorization_ref']==bundle['grant_sha256'] and intent['experiment_ref']==grant['preregistration_sha256'],'WORKER_SCOPE_MISMATCH')
+ if intent['model']=='dynamics':require(grant.get('release')=='QW-DYNAMICS-01','DYNAMICS_RELEASE_NOT_AUTHORIZED')
  require(platform.python_version().startswith('3.12.'),'PYTHON_VERSION_MISMATCH')
  expected={'numpy':'2.2.6','scipy':'1.15.3','jsonschema':'4.25.1','ase':'3.29.0','pyscf':'2.8.0'}
  if intent['model']=='effective':expected['qutip']='5.2.1'
@@ -22,6 +23,9 @@ def main(io):
  facts=runtime_probe();resource_check(facts);require(facts['memory.swap.max']=='0','SWAP_NOT_ZERO');freeze(io/'resources_before.json',facts)
  # Parent and arrays are already staged unchanged by transport. State store reused.
  store=CorrelatedStore(io/'world');parent=store.load(intent['input_state'])
+ if intent['model']=='dynamics':
+  from dynamics01.worker import execute
+  execute(io,intent,store);return
  from frontier01.world_runtime import act,prepare
  if intent['operation']['type']=='PREPARE_CORRELATED_STATE':
   # Preserve the explicit structural parent rather than prepare() creating another source.

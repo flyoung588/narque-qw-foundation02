@@ -124,7 +124,7 @@ class ExecutionFabric:
     # Admission and result ingestion remain broker-owned, never model-owned.
     result=self.world.ingest_worker(package,i,h,attempt)
    freeze(attempt/'result.json',result)
-   with self.j.lock():self.j.append('ExecutionReturned',{'intent_hash':h,'result_hash':digest(result),'state':result['state'],'new_science':new});self.j.checkpoint()
+   with self.j.lock():self.j.append('ExecutionReturned',{'intent_hash':h,'result_hash':digest(result),'state':result['state'],'new_science':new,**({'provenance_receipt':result['provenance_receipt']} if result.get('provenance_receipt') else {})});self.j.checkpoint()
    return result
   except BaseException as e:
    failure={'status':'FAILED_NO_RETRY','reason':getattr(e,'code',type(e).__name__),'detail':str(e),'slot_released':False,'new_scientific_executions_successful':0}
@@ -134,6 +134,10 @@ class ExecutionFabric:
 
  def read_completed_return(self,i,attempt,source_grant):
   """Read-only recovery of an already successful Job. Never consumes/releases a Job slot."""
+  if i.get('model')=='dynamics':
+   require(hasattr(self.transport,'read_completed_return'),'DYNAMICS_VERIFIED_READBACK_UNAVAILABLE')
+   require(self.grant_path is not None and filehash(self.grant_path)==i['authorization_ref'],'READBACK_GRANT_PIN_MISMATCH')
+   return self.transport.read_completed_return(i,self.world,attempt,self.grant_path,i['authorization_ref'],source_grant['source_sha256'])
   import base64,zlib
   from .github_transport import GithubFabricTransport
   from world01.session import publish_bytes

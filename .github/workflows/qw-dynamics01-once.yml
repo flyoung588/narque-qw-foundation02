@@ -1,0 +1,41 @@
+name: QW Dynamics manually gated single operation
+run-name: QWLF01-${{ inputs.intent_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      enabled:
+        type: boolean
+        default: false
+        required: true
+      intent_id:
+        type: string
+        required: true
+      request_b64:
+        type: string
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: qw-live-fabric01
+  cancel-in-progress: false
+jobs:
+  science:
+    if: inputs.enabled && github.event.repository.private == false && github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source-owned Human authority before installing anything
+        run: python3 -c 'import json; s=json.load(open("live_fabric01/REMOTE_APPROVAL.json")); assert s["status"]=="HUMAN_GRANTED" and s["scope"]=="QW-LIVE-FABRIC-01" and s["human_reference"]'
+      - name: Fixed dependencies without cache service
+        run: timeout --kill-after=5s 210s docker build --no-cache -f dynamics01/Dockerfile -t qw-live-fabric:once .
+      - name: One admitted science container
+        env:
+          QWLF_INTENT_ID: ${{ inputs.intent_id }}
+          QWLF_REQUEST_B64: ${{ inputs.request_b64 }}
+        run: python3 -B -m live_fabric01.remote_host
+      - name: Preserve successful or failed scientific evidence in logs only
+        if: always()
+        run: python3 -B -m live_fabric01.remote_host --export

@@ -16,7 +16,7 @@ class DockerTransport:
   require('@sha256:' in self.image,'IMAGE_DIGEST_REQUIRED')
   grant=json.loads(pathlib.Path(grant_path).read_text());require(grant.get('container_image')==self.image,'IMAGE_NOT_IN_GRANT')
   io=attempt/'container_io';io.mkdir();shutil.copyfile(grant_path,io/'grant.json')
-  source={str(p.relative_to(self.repo)):filehash(p) for p in self.repo.rglob('*') if p.is_file() and p.suffix in ('.py','.json') and '__pycache__' not in p.parts and '.git' not in p.parts}
+  source={str(p.relative_to(self.repo)):filehash(p) for p in self.repo.rglob('*') if p.is_file() and p.suffix in ('.py','.json','.f90','.npz') and '__pycache__' not in p.parts and '.git' not in p.parts}
   require(digest(source)==source_sha,'TRANSPORT_SOURCE_CHANGED');freeze(io/'source.json',source)
   freeze(io/'request.json',{'intent':intent,'grant_sha256':grant_sha,'source_sha256':source_sha})
   for folder,pattern in [('states','*.json'),('arrays','*.npz')]:

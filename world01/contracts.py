@@ -58,7 +58,7 @@ def envelope(state,provenance,source_execution=None):
     model=p.get('correlation_model',p.get('model',p['world_spec']['physics']))
     return {'schema':'QW_SCIENTIFIC_STATE_ENVELOPE_01','state_kind':kind,'source_state_hash':state['sha256'],
             'parent_state_hash':p.get('parent_state_id'),'model_hash':digest(model),'actual_model':model,
-            'representation':KIND[kind][0],'units':{'convention':KIND[kind][1],'position':'angstrom','energy':'Eh/cell' if p['world_spec']['matter']['periodic'] else 'Eh'},
+            'representation':KIND[kind][0],'units':{'convention':KIND[kind][1],'position':'bohr' if kind=='QW_COLLINEAR_NUCLEAR_WAVEPACKET_01' else 'angstrom','energy':'Eh/cell' if p['world_spec']['matter']['periodic'] else 'Eh'},
             'time_origin':p.get('control_origin_au'),'physical_time':p.get('time_au'),
             'norm':p.get('norm'),'array_refs':p.get('arrays'),'scope':p.get('scope','Static structure; not quantum evolution'),
             'object':{'object_id':p['world_spec']['object_id'],'matter_type':p['world_spec']['matter']['type'],'matter_spec':p['world_spec']['matter']},
