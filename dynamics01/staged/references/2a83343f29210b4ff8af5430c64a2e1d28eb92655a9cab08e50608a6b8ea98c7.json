@@ -1,0 +1,17 @@
+{
+  "evidence": {
+    "license": "QML vendor/LICENSE retained",
+    "mode": "HISTORICAL_REAL_EVIDENCE_REPLAY",
+    "new_scientific_executions": 0,
+    "original_execution": "QW-CORE01-FIRST-RUN-20261017",
+    "scope": "restoring saved output, no new propagation",
+    "source_files": {
+      "results/experiment-0.6-state.npz": "0bf7858dd1e6d1b4c936316ef4c30153e9401fa57d5f206fc765d1f6f552db8f",
+      "results/experiment-0.6.json": "11a2a8d547bd2b3b65b414a2c6f38ece852d61479e8fc26d6ed0cf7795586418",
+      "results/view_payload.json": "21daff8003935d54853edd18f1afaa1075142132bd4ff23cc8f0c286a5e5ad43"
+    }
+  },
+  "mode": "HISTORICAL_REAL_EVIDENCE_REPLAY",
+  "state_file_sha256": "dbf5235ae97b70706a37662d85352999cb0a17058c08831a4fa9507eea79f24b",
+  "state_sha256": "2a83343f29210b4ff8af5430c64a2e1d28eb92655a9cab08e50608a6b8ea98c7"
+}

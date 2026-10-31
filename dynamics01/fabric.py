@@ -20,13 +20,24 @@ class DynamicsExecutionFabric(ExecutionFabric):
   require(self.grant_path is not None and self.grant_sha256 is not None,'NEW_DYNAMICS_EXECUTION_AUTHORIZATION_REQUIRED');require(filehash(self.grant_path)==self.grant_sha256,'GRANT_PIN_MISMATCH');g=json.loads(self.grant_path.read_text());require(g.get('release')=='QW-DYNAMICS-01' and g.get('status')=='HUMAN_GRANTED' and g.get('human_reference') and g.get('scope')==SCOPE,'NEW_DYNAMICS_EXECUTION_AUTHORIZATION_REQUIRED');require(g.get('source_sha256')==self.source_hash and g.get('limits')==LIMITS,'SOURCE_RESOURCE_BINDING_MISMATCH');require(i['authorization_ref']==self.grant_sha256 and i['resource_ref']==digest(LIMITS) and i['experiment_ref']==g['preregistration_sha256'],'INTENT_SCOPE_MISMATCH');require(i['operation']['type'] in g['operations'],'DYNAMICS_ACTION_NOT_GRANTED')
   require(provider_record and raw_decision and self.model_budget,'REAL_MODEL_AND_SHARED_BUDGET_REQUIRED')
   from explorer01.l1_audit import verify_invocation
-  d=json.loads(raw_decision);bound=copy.deepcopy(d['operation']['parameters']['intent']);bound['model_request_hash']=d['request_hash']
-  if bound==i:
-   verify_invocation(pathlib.Path(provider_record['transcript_path']).parent,expected_request_hash=i['model_request_hash'],expected_decision_raw=raw_decision)
+  if provider_record.get('source')=='OPENCLAW_AGENT_RAW_RECORDS':
+   from explorer01.openclaw_evidence import verify_openclaw,CONTRACT
+   require(g.get('model_evidence_contract')==CONTRACT,'OPENCLAW_EVIDENCE_CONTRACT_NOT_GRANTED')
+   require(g.get('max_new_scientific_jobs')==1 and not any(e['data']['new_science'] for e in self.j.query('ExecutionReserved')),'OPENCLAW_SINGLE_EXECUTION_ONLY')
+   require(g.get('exact_operation')==i['operation'],'OPENCLAW_EXACT_OPERATION_NOT_GRANTED')
+   proof=verify_openclaw(provider_record['records_path'],g['model_evidence_pins'],i,bindings=g.get('model_intent_bindings'),grant_sha256=self.grant_sha256)
+   require(json.loads(raw_decision)==proof['decision_original'],'OPENCLAW_RAW_DECISION_MISMATCH')
+   require(hasattr(self.model_budget,'snapshot'),'EXISTING_XREM_BUDGET_VIEW_REQUIRED')
+   snapshot=self.model_budget.snapshot()
+   require(g.get('shared_budget_ledger_sha256')==snapshot['ledger_sha256'],'SHARED_BUDGET_BINDING_MISMATCH')
   else:
-   require(i.get('delegation_ref') and g.get('continuation'),'MODEL_INTENT_MISMATCH')
-   from .continuation import validate_execution_delegation
-   validate_execution_delegation(self,i,g,provider_record,raw_decision)
+   d=json.loads(raw_decision);bound=copy.deepcopy(d['operation']['parameters']['intent']);bound['model_request_hash']=d['request_hash']
+   if bound==i:
+    verify_invocation(pathlib.Path(provider_record['transcript_path']).parent,expected_request_hash=i['model_request_hash'],expected_decision_raw=raw_decision)
+   else:
+    require(i.get('delegation_ref') and g.get('continuation'),'MODEL_INTENT_MISMATCH')
+    from .continuation import validate_execution_delegation
+    validate_execution_delegation(self,i,g,provider_record,raw_decision)
   require(i['research_session']==g['research_session'] and i['world_session']==digest(str(self.world.root.resolve())),'SESSION_SCOPE_MISMATCH')
   returned=[e['data']['state'] for e in self.j.query('ExecutionReturned') if e['data']['new_science']];require(i['input_state'] in g.get('initial_states',[])+returned,'UNAUTHORIZED_PHYSICAL_PARENT')
   from .model import LIVE_BOUNDS,screen_live_action
