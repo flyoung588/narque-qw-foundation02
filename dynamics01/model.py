@@ -55,7 +55,7 @@ def validate_operation(p,action):
  require(set(action)==allowed,'UNDECLARED_ACTION_FIELDS')
  return kind
 
-def transition_arrays(a,p,action):
+def transition_arrays(a,p,action,observer=None):
  """Compute only AFTER broker/worker admission. No hidden initial-state regeneration."""
  kind=validate_operation(p,action);e=engine_from_arrays(a,p['model']);w=core.ExperimentControl(e);w.state=core.WorldState(a['psi'].copy(),p['time_au'],p['absorbed'],copy.deepcopy(p['controls']),copy.deepcopy(p['initial']))
  if kind in ('PREPARE_WAVEPACKET','PREPARE_AND_EVOLVE_WAVEPACKET'):
@@ -63,7 +63,9 @@ def transition_arrays(a,p,action):
   # Original engine prepares same-PES diatom ground state; do not approximate it from a final packet.
   e=core.PhysicsEngine(n=p['model']['grid']['n'],length=p['model']['grid']['length_bohr'],lower=p['model']['grid']['lower_bohr'],cap=p['model']['boundary']['CAP']);w=core.ExperimentControl(e);w.prepare(prep['energy_eV'],prep['center_R_bohr'],prep['sigma_R_bohr'])
   if kind=='PREPARE_AND_EVOLVE_WAVEPACKET':w.step(action['evolution']['steps'],action['evolution']['dt_au'])
- elif kind=='EVOLVE_WAVEPACKET':w.step(action['steps'],action['dt_au'])
+ elif kind=='EVOLVE_WAVEPACKET':
+  if observer is None:w.step(action['steps'],action['dt_au'])
+  else:core.TimeEvolution.advance(e,w.state,action['dt_au'],action['steps'],observer=observer)
  elif kind=='APPLY_CONTROL':w.apply('momentum_kick',delta_k=action['delta_k_bohr_inv'])
  else:require(False,'READ_OR_FORK_HAS_NO_SOLVER_TRANSITION')
  arrays={'psi':w.state.psi,'axis':e.axis,'V':e.V,'W':e.W,'K':e.K}

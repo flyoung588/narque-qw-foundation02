@@ -48,7 +48,7 @@ class WorldState:
 
 class TimeEvolution:
     @staticmethod
-    def advance(engine,state,dt,count):
+    def advance(engine,state,dt,count,observer=None):
         a=np.exp((-1j*engine.V-engine.W)*dt/2)
         b=np.exp(-1j*engine.K*dt)
         for _ in range(count):
@@ -58,6 +58,7 @@ class TimeEvolution:
             lost=float(np.sum(abs(state.psi)**2*decay_loss)*engine.dx**2)
             middle=np.fft.ifft2(b*np.fft.fft2(a*state.psi))
             lost+=float(np.sum(abs(middle)**2*decay_loss)*engine.dx**2)
+            if observer is not None: observer.record(state.psi,middle,a,decay_loss,dt,state.t)
             state.psi=a*middle
             state.absorbed+=lost
             state.t+=dt

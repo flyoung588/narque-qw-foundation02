@@ -16,7 +16,15 @@ def execute(io,intent,store):
   import pathlib
   require(pathlib.Path('/opt/qw-core/vendor/liblsth.so').is_file(),'LSTH_PREPARATION_LIBRARY_UNAVAILABLE')
   core_world.ROOT=pathlib.Path('/opt/qw-core')
- arrays,change=transition_arrays(a,p,intent['operation'])
+ recorder=None
+ if intent.get('request',{}).get('schema')=='PARTITION_BALANCE_STRANG_V1':
+  from .partition_balance import validate,Recorder
+  grant=json.loads((io/'grant.json').read_text());validate(intent,grant,p);recorder=Recorder(a['axis'],p['model']['grid']['dx_bohr'])
+ arrays,change=transition_arrays(a,p,intent['operation'],observer=recorder)
+ if recorder is not None:
+  summary=recorder.export(io)
+  require(abs(sum(summary['L'])-(change['absorbed']-p['absorbed']))<1e-10,'DIAGNOSTIC_SCALAR_LOSS_MISMATCH')
+  change['measurement_contract_sha256']=digest(intent['request'])
  # Store and publish primitives remain the same; wrapper only supplies root/store.
  from types import SimpleNamespace
  world=SimpleNamespace(root=store.root,store=store)

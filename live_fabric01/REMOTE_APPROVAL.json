@@ -2,6 +2,6 @@
   "scope": "QW-LIVE-FABRIC-01",
   "release": "QW-DYNAMICS-01",
   "status": "HUMAN_GRANTED",
-  "human_reference": "NW_E03R_APPROVED_INCREMENT_20261031",
+  "human_reference": "NW_PARTITION_DIAGNOSTIC_USER_APPROVAL_20261101",
   "reason": "New dynamics/model/publication grant not inherited from exhausted LIVE-E01R"
 }

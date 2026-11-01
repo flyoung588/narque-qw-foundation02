@@ -126,6 +126,9 @@ def verify_return_files(world,base,ret,intent):
   require(p['initial']=={'energy_eV':prep['energy_eV'],'center_R':prep['center_R_bohr'],'sigma_R':prep['sigma_R_bohr']} and p['controls']==[],'DYNAMIC_INITIAL_CONDITIONS_MISMATCH')
  else:require(False,'DYNAMIC_ACTION_NOT_IN_LIVE_EXPERIMENT_SCOPE')
  require(abs(p['time_au']-expected)<1e-9 and p['time_origin_au']==0.,'DYNAMIC_PHYSICAL_TIME_MISMATCH')
+ if intent.get('request',{}).get('schema')=='PARTITION_BALANCE_STRANG_V1':
+  from .partition_balance import validate
+  validate(intent,p=parent['payload']);require(p.get('measurement_contract_sha256')==digest(intent['request']),'DIAGNOSTIC_MEASUREMENT_IDENTITY_MISMATCH')
  actual=observe_arrays(a,p);require(rec.get('result_sha256')==digest(ret.get('observation')),'DYNAMIC_OBSERVATION_HASH_MISMATCH');compare_observations(actual,ret['observation'])
  # Reference metadata from the worker must bind exactly the emitted state file.
  ref=base/'references'/f"{s['sha256']}.json";require(ref.is_file(),'DYNAMIC_STATE_REFERENCE_MISSING');v=json.loads(ref.read_text())

@@ -14,10 +14,16 @@ class DynamicsExecutionFabric(ExecutionFabric):
   if i.get('model')!='dynamics':return super().resolve(i)
   require(all(i.get(k) not in (None,'',[]) for k in ('research_session','world_session','goal','candidate','model','operation','input_state','prediction','falsifier','observables','resource_ref','authorization_ref','stop_condition','mode')),'INCOMPLETE_PHYSICAL_INTENT');require(i['world_session'] in (str(self.world.root.resolve()),digest(str(self.world.root.resolve()))),'WORLD_SESSION_MISMATCH')
   parent=self.world.store.load(i['input_state']);self.world.load(i['input_state']);require(is_dynamic(parent),'DYNAMIC_PARENT_REQUIRED');require(i['operation']['source_state_sha256']==parent['sha256'],'STALE_PHYSICAL_PARENT');validate_operation(parent['payload'],i['operation']);require(not set(i['observables'])-set(OBS),'OBSERVABLE_OUT_OF_DOMAIN')
+  if i.get('request',{}).get('schema')=='PARTITION_BALANCE_STRANG_V1':
+   from .partition_balance import validate
+   validate(i,p=parent['payload'])
   require(i['mode']=='NEW_SCIENTIFIC_EXECUTION','USE_HASH_PINNED_HISTORY_IMPORT_NOT_SYNTHETIC_EXECUTION');return {'model':'dynamics','worker':'dynamics01.worker.execute'}
  def authorize(self,i,provider_record=None,raw_decision=None):
   if i.get('model')!='dynamics':return super().authorize(i,provider_record,raw_decision)
   require(self.grant_path is not None and self.grant_sha256 is not None,'NEW_DYNAMICS_EXECUTION_AUTHORIZATION_REQUIRED');require(filehash(self.grant_path)==self.grant_sha256,'GRANT_PIN_MISMATCH');g=json.loads(self.grant_path.read_text());require(g.get('release')=='QW-DYNAMICS-01' and g.get('status')=='HUMAN_GRANTED' and g.get('human_reference') and g.get('scope')==SCOPE,'NEW_DYNAMICS_EXECUTION_AUTHORIZATION_REQUIRED');require(g.get('source_sha256')==self.source_hash and g.get('limits')==LIMITS,'SOURCE_RESOURCE_BINDING_MISMATCH');require(i['authorization_ref']==self.grant_sha256 and i['resource_ref']==digest(LIMITS) and i['experiment_ref']==g['preregistration_sha256'],'INTENT_SCOPE_MISMATCH');require(i['operation']['type'] in g['operations'],'DYNAMICS_ACTION_NOT_GRANTED')
+  if i.get('request',{}).get('schema')=='PARTITION_BALANCE_STRANG_V1':
+   from .partition_balance import authorize
+   return authorize(self,i,g)
   require(provider_record and raw_decision and self.model_budget,'REAL_MODEL_AND_SHARED_BUDGET_REQUIRED')
   from explorer01.l1_audit import verify_invocation
   if provider_record.get('source')=='OPENCLAW_AGENT_RAW_RECORDS':
