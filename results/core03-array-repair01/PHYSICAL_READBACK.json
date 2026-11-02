@@ -1,0 +1,107 @@
+{
+  "status": "SAVED_ARRAY_AND_OFFICIAL_RUN_READBACK_PASS",
+  "run_id": 41409681168,
+  "job_id": 125159625938,
+  "science_commit": "dbe5b05c9063657cc648346ed6c3aa7501a5bd17",
+  "run_attempt": 1,
+  "job_seconds": 36,
+  "official_log_package_files_exact": 16,
+  "parent_state": "a09bad8f6e5daca5a85c474a31a5846b3e75bb6155f5fb9619db243f6820d7df",
+  "new_state": "b639bd057d44d6815290fdc46537c2345c281d07c4a928e0094d540bcb0aa620",
+  "array_sha256": "57ea58de1934a5e1bfbabce7e86ade55500a074ab8f8869615cb137762d5c83b",
+  "static_arrays_unchanged": {
+    "R": true,
+    "Vg": true,
+    "Vu": true,
+    "mu_gu": true,
+    "K": true
+  },
+  "observations": [
+    {
+      "Pg": 0.987421777707071,
+      "Pu": 0.012578222295020158,
+      "coherence_gu": [
+        0.0010934801051325532,
+        0.00047883520040496914
+      ],
+      "mean_R": 2.089296358187162,
+      "norm": 1.0000000000020912,
+      "energy_Eh": -0.5915213388209822,
+      "work_input_Eh": 0.005457624863318383,
+      "electric_field_au": 0.0,
+      "edge_probability": 9.029787268030459e-09,
+      "time_au": 240.00000000002032
+    },
+    {
+      "Pg": 0.9869021631864844,
+      "Pu": 0.01309783681603896,
+      "coherence_gu": [
+        -0.006241919448215947,
+        -0.005529365406221642
+      ],
+      "mean_R": 2.1081245995939875,
+      "norm": 1.0000000000025229,
+      "energy_Eh": -0.5913042258633209,
+      "work_input_Eh": 0.005674741905206087,
+      "electric_field_au": 0.0,
+      "edge_probability": 6.062483346829317e-09,
+      "time_au": 290.00000000003166
+    }
+  ],
+  "deltas": {
+    "Pg": -0.0005196145205865754,
+    "Pu": 0.0005196145210188026,
+    "norm": 4.3165471197426086e-13,
+    "mean_R": 0.018828241406825263,
+    "energy_Eh": 0.0002171129576613584,
+    "work_input_Eh": 0.00021711704188770355,
+    "time_au": 50.00000000001134
+  },
+  "work_energy_residual_Eh": -4.084226345145436e-09,
+  "worker_quality": {
+    "norm_error": 2.5228708011582057e-12,
+    "original_norm_limit": 1e-09,
+    "original_work_limit_Eh": 1e-05,
+    "physical_accuracy": "NOT_CERTIFIED",
+    "work_energy_residual_Eh": -4.084226345145436e-09
+  },
+  "checkpoint_probe": {
+    "checkpoint_array_sha256": "59604c4382a3e1f65e1d615fefa762fa9be3840a46ec831563c21d99eef631e7",
+    "checkpoint_time_au": 265.000000000026,
+    "continued_to_au": 290.00000000003166,
+    "extra_steps": 0,
+    "initial_fields_and_active_pulse_restored": true,
+    "status": "EXACT_BYTES_RESTORED_AND_CONTINUED",
+    "total_requested_steps": 1000
+  },
+  "resources": {
+    "resources_before": {
+      "affinity_count": 1,
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 635639\nuser_usec 558439\nsystem_usec 77199\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 6\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "interfaces": [
+        "lo"
+      ],
+      "memory.current": "31834112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "threads": 1
+    },
+    "resources_after": {
+      "affinity_count": 1,
+      "cpu.max": "100000 100000",
+      "cpu.stat": "usage_usec 1277981\nuser_usec 1129983\nsystem_usec 147997\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "interfaces": [
+        "lo"
+      ],
+      "memory.current": "52928512",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "1073741824",
+      "memory.swap.max": "0",
+      "threads": 1
+    }
+  },
+  "offline_method": "Saved state restoration and observation only; propagation entry blocked. Same model algebra, not independent physical validation.",
+  "limits": "No matched control, new grid/time convergence run, independent engine, physical accuracy certification, autonomous model decision or discovery qualification."
+}

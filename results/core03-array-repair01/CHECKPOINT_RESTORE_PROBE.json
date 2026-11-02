@@ -1,0 +1,9 @@
+{
+  "checkpoint_array_sha256": "59604c4382a3e1f65e1d615fefa762fa9be3840a46ec831563c21d99eef631e7",
+  "checkpoint_time_au": 265.000000000026,
+  "continued_to_au": 290.00000000003166,
+  "extra_steps": 0,
+  "initial_fields_and_active_pulse_restored": true,
+  "status": "EXACT_BYTES_RESTORED_AND_CONTINUED",
+  "total_requested_steps": 1000
+}
