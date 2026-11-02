@@ -1,0 +1,23 @@
+science	One admitted science container	2026-11-02T07:14:04.1111876Z ##[endgroup]
+science	One admitted science container	2026-11-02T07:14:06.1966164Z Traceback (most recent call last):
+science	One admitted science container	2026-11-02T07:14:06.1967501Z   File "<frozen runpy>", line 198, in _run_module_as_main
+science	One admitted science container	2026-11-02T07:14:06.1968330Z   File "<frozen runpy>", line 88, in _run_code
+science	One admitted science container	2026-11-02T07:14:06.1971715Z     ^^^^^^^^^^^^^^^^^^^^^^^^
+science	One admitted science container	2026-11-02T07:14:06.1972195Z   File "/app/core03_live/worker.py", line 10, in execute
+science	One admitted science container	2026-11-02T07:14:06.1974471Z     facts=runtime_probe();resource_check(facts);require(facts['memory.swap.max']=='0','SWAP_NOT_ZERO');parent=store.load(intent['input_state']);p=parent['payload'];require(p['schema']==SCHEMA and intent['operation']['source_state_sha256']==parent['sha256'],'CORE03_WORKER_PARENT_MISMATCH');a=store.arrays(parent);validate_arrays(a,p)
+science	One admitted science container	2026-11-02T07:14:06.1976979Z                                                                                                                                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^
+science	One admitted science container	2026-11-02T07:14:06.1978101Z   File "/app/core03_live/model.py", line 35, in validate_arrays
+science	One admitted science container	2026-11-02T07:14:06.1978889Z     require(a[key].dtype==np.float64 and np.array_equal(a[key],expected),'COUPLED_MODEL_ARRAY_MISMATCH')
+science	One admitted science container	2026-11-02T07:14:06.1979628Z   File "/app/core03_live/model.py", line 18, in require
+science	One admitted science container	2026-11-02T07:14:06.1980098Z     if not ok:raise WorldError(code)
+science	One admitted science container	2026-11-02T07:14:06.1980493Z               ^^^^^^^^^^^^^^^^^^^^^^
+science	One admitted science container	2026-11-02T07:14:06.1980944Z world01.contracts.WorldError: COUPLED_MODEL_ARRAY_MISMATCH
+science	One admitted science container	2026-11-02T07:14:06.4247742Z Traceback (most recent call last):
+science	One admitted science container	2026-11-02T07:14:06.4248419Z   File "<frozen runpy>", line 198, in _run_module_as_main
+science	One admitted science container	2026-11-02T07:14:06.4249100Z   File "<frozen runpy>", line 88, in _run_code
+science	One admitted science container	2026-11-02T07:14:06.4251933Z   File "/home/runner/work/narque-qw-foundation02/narque-qw-foundation02/live_fabric01/remote_host.py", line 24, in main
+science	One admitted science container	2026-11-02T07:14:06.4252911Z     result=subprocess.run(['docker','start','-a',cid],timeout=630);assert result.returncode==0,'SOLVER_FAILURE_NO_RETRY'
+science	One admitted science container	2026-11-02T07:14:06.4254021Z                                                                           ^^^^^^^^^^^^^^^^^^^^
+science	One admitted science container	2026-11-02T07:14:06.4254492Z AssertionError: SOLVER_FAILURE_NO_RETRY
+science	One admitted science container	2026-11-02T07:14:06.4411898Z ##[error]Process completed with exit code 1.
+science	Preserve successful or failed scientific evidence in logs only	﻿2026-11-02T07:14:06.4465149Z ##[group]Run python3 -B -m live_fabric01.remote_host --export

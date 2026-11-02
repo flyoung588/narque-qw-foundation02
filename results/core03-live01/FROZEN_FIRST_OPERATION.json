@@ -1,0 +1,18 @@
+{
+  "first_operation": {
+    "type": "PULSE_AND_EVOLVE_COUPLED_STATE",
+    "source_state_sha256": "866cf1616101f1c17cc93bbb8ecdd525f760b264b5c201affa266bd4df99ef45",
+    "control": {
+      "operation": "electric_pulse",
+      "amplitude_au": 0.002,
+      "duration_au": 50.0,
+      "omega_ratio_to_local_gap": 1.0,
+      "omega_au": 0.4350955420166891,
+      "cep_rad": 0.0
+    },
+    "dt_au": 0.05,
+    "steps": 1000
+  },
+  "decision_sha256": "e970348d26b1f09236f43831130465e0a1a183acc906433e1b89f807012a3a32",
+  "new_physics_result": "NONE_FAILURE_BEFORE_PROPAGATION"
+}
