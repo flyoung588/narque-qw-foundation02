@@ -1,0 +1,21 @@
+{
+ "id":"QW-CORE03-20261017",
+ "execution_authority":"PENDING_EXPLICIT_HUMAN_APPROVAL_FOR_CORE03_GITHUB_WRITE_AND_ONCE_RUN",
+ "model":"H2+ two BO electronic sigma channels, fixed axis/COM, parallel classical electric field, radial nuclear wavefunction",
+ "Hamiltonian":"T_R I2 + [[epsilon_g+1/R,-mu_gu E(t)],[-mu_gu E(t),epsilon_u+1/R]]",
+ "electronic_inputs":"PySCF actual1e Coulomb/overlap/dipole, generalized eigh, inversion parity and Lz sigma identity, cross-R overlap phase continuation",
+ "no_artificial_coupling":true,
+ "primary_basis":"aug-cc-pVTZ","secondary_basis":"aug-cc-pVQZ",
+ "source_grid":{"lower_bohr":0.7,"upper_bohr":12,"spacing_bohr":0.05,"interpolation":"cubic spline, no extrapolation; compare stride2"},
+ "nuclear_grid":{"n":255,"refined_n":511,"boundary":"Dirichlet on positive truncated interval, no CAP; monitor edge mass"},
+ "field":"sin² envelope, finite support; frequency fixed from primary actual gap and held fixed for all numerical/basis comparisons; amplitude/intensity/duration/CEP/polarization recorded",
+ "experiments":["A zero field, g-only initial nuclear packet","B actual computed dipole electric pulse","C true fork of same prepared state, amplitude-only change"],
+ "tests":{"electronic_residual_Eh":1e-9,"parity_error":1e-7,"sigma_Lz_norm":1e-7,"AO_overlap_min_eigenvalue":1e-10,"adjacent_phase_overlap_min":0.7,"forbidden_xy_dipole":1e-8,"zero_field_Pu":1e-14,"nonzero_driven_transfer_min":1e-6,"total_probability_error":1e-9,"zero_field_energy_drift_Eh":1e-6,"work_energy_error_Eh":1e-5,"analytic_Rabi_error":1e-12,"Core02_short_state_error":1e-12,"browser_core_state_error":1e-10},
+ "sensitivity_policy":"report timestep/grid/interpolation/basis effects individually; differences are diagnostics, not rigorous physical error bounds",
+ "Rabi_benchmark":"fixed R physical constant-field Hermitian2x2, exact detuned Rabi formula and independent scipy.expm; no resonant-RWA/real-surface-accuracy inference",
+ "reference":"arXiv1705.03608v2 table1, tabulated gap in Ry; divide by2 for Eh; reference is not a bound-certified modern curve",
+ "resources":{"jobs":1,"attempts":1,"science_CPU":1,"threads":1,"science_memory_GiB":1,"job_minutes":15,"science_network":"none","swap":0,"new_purchase":0,"auto_rerun":false},
+ "limits":["no intrinsic nonadiabatic derivative coupling or Born-Huang correction","no rotational dynamics","no ionization/higher electronic states","no electronic spin change","no relativity/QED","no AUTONOMOUS_DISCOVERY","no Core04"],
+ "history":"Core01/Core02 original commits/results immutable; only four-step backward regression",
+ "physical_execution_so_far":"NOT_RUN"
+}

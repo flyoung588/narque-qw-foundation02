@@ -19,6 +19,9 @@ MANIFESTS={
  'correlated':manifest('correlated','Neutral singlet 2/4/6H STO-3G <=400 determinants; real-run evidence H4 only','FCI alpha/beta determinant tensor,1/2RDM',['DISPLACE_ATOM','OBSERVE_CORRELATIONS'],['energy','natural_occupations','double_occupancy','spin_correlations','charge_covariance'],['forces','material_magnetism','real_time_dynamics'],'Fixed-nuclei finite-basis singlet full Coulomb FCI, RHF reference separately labeled','results/frontier01/EXECUTION_REPORT.json',['Lowdin partition nonunique','Static eigenstate not time dynamics','No basis/UHF/material certification'],'frontier01.world_runtime.act','Eh total BO; spin hbar^2; occupation dimensionless; Lowdin convention')}
 def select(state):
     p=state['payload'];k=p['schema']
+    if k=='QW_COUPLED_RADIAL_NUCLEAR_STATE_01':
+        from core03_live.session import MANIFESTS as registered
+        return copy.deepcopy(registered['core03_coupled'])
     if k=='QW_COLLINEAR_NUCLEAR_WAVEPACKET_01':
         from dynamics01.integration import MANIFESTS as registered
         return copy.deepcopy(registered['dynamics'])

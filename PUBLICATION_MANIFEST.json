@@ -1,0 +1,28 @@
+{
+  "repository": "flyoung588/narque-qw-foundation02",
+  "branch": "qw-live-core03-01",
+  "base_commit": "ca4b666cedf2dfbcad3534cc6ea249f459d86c76",
+  "files": {
+    "core03_live/README.md": "886c309af9f745ec2257c153f4d60e65645f3f99eedaa32433d0eb63b748ffb8",
+    "core03_live/__init__.py": "a98857297bc671a2f5d10c0b44db1260b2f28f45a9378b2ea9b1d4503eb7b06a",
+    "core03_live/controller.py": "07a9dbd5a5c8cfc40e39463aeb3c605252839aeab58e55feec5824c94bd0e631",
+    "core03_live/data/curve.json": "12b4765d965fd36357c398e3b5b8faaabf33eed692c419d9fa621580cc600f91",
+    "core03_live/data/original_protocol.json": "4727f1b7baf3cab892f4b3c2218b3ac3c6bbbb02465799a13ace2b86b842bc66",
+    "core03_live/explorer.py": "2dd3c29944518f6afd1dafaf3672c5dc2c0e993c87c5ca323fd5dfd4dc3dfbbd",
+    "core03_live/fabric.py": "64224de7d6c2ee3c30caed01fb3d66dd710dcebc8ce67d0a87c3dfbf2c16efe4",
+    "core03_live/model.py": "a22dbea8f89ff5654d8f1549e2dddda9b2a8d97116775f9a15cbb1a4d72f270b",
+    "core03_live/session.py": "227b97ecde568038eb398c5e1824c40f5bf521f6d3f1bcd9e182db46edd00fe7",
+    "core03_live/test_integration.py": "915b32c5b0e093a9ef29a85b1ad940258c2b4df40a7c02782c62d209e1f2a74f",
+    "core03_live/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core03_live/vendor/coupled.py": "2ea832d930f59cf99b2d961a19b71ba51fef22c167213e28451fec5ceb2d5f37",
+    "core03_live/vendor/h2plus_adapter.py": "2c6af9561ebe9bd56477f88bc91f3d5f10cb27a49e63bd623b879273b4900964",
+    "core03_live/vendor/runtime.py": "1a148e8957fbb940f12ef2ddd1c756ba253ec62680edd0cd171f11445027a7b4",
+    "core03_live/worker.py": "48093affabbe78737646e21f9b857fe01a5b7e0709f5f21992c5c3ce68bcc186",
+    "live_fabric01/REMOTE_APPROVAL.json": "ded3dac90ab00b1817626a6bc70d6fa454d224d56a3f2a057e35be1bbf66a856",
+    "live_fabric01/worker.py": "af9b60d3a45a49c30e220d9516d783531be9c71388ef9e7f03b310a8eb2eff83",
+    "world01/fabric.py": "a7d0e03d347d39f4e20f596c1b8125feb7409eb3d3ab49fa2120226b32954014"
+  },
+  "activation": "REMOTE_APPROVAL status/human_reference only; direct Human scope approved",
+  "scientific_source_changes": "NONE beyond reviewed18-file delta",
+  "live_execution_status": "NOT_EXECUTED"
+}
